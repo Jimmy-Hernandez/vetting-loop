@@ -6,6 +6,7 @@ import Nominees from './views/Nominees';
 import NomineeDossier from './views/NomineeDossier';
 import Vote from './views/Vote';
 import Methodology from './views/Methodology';
+import About from './views/About';
 import NostrFallback from './views/NostrFallback';
 
 function Chrome({ children }: { children: ReactNode }) {
@@ -33,6 +34,9 @@ function Chrome({ children }: { children: ReactNode }) {
                 {a.label}
               </NavLink>
             ))}
+            <NavLink to="/about" className="util" aria-current={loc.pathname === '/about' ? 'page' : undefined}>
+              About
+            </NavLink>
           </nav>
         </div>
       </header>
@@ -40,7 +44,7 @@ function Chrome({ children }: { children: ReactNode }) {
       <footer className="sitefoot">
         <div className="fin">
           <span>Vetta — a civic tech tool<span className="dot">·</span>Impunity begins at confirmation.</span>
-          <span>All claims source-linked<span className="dot">·</span>Non-partisan<span className="dot">·</span><Link to="/methodology">Methodology</Link></span>
+          <span>All claims source-linked<span className="dot">·</span>Non-partisan<span className="dot">·</span><Link to="/about">About</Link><span className="dot">·</span><Link to="/methodology">Methodology</Link></span>
         </div>
       </footer>
     </>
@@ -67,6 +71,7 @@ export default function App() {
           <Route path="/nominee/:idOrSlug" element={<NomineeDossier />} />
           <Route path="/vote" element={<Vote />} />
           <Route path="/methodology" element={<Methodology />} />
+          <Route path="/about" element={<About />} />
           <Route path="/fallback" element={<NostrFallback />} />
           <Route path="*" element={<Fallback />} />
         </Routes>

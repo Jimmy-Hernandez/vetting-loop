@@ -52,6 +52,9 @@ nav.acts a:hover{color:var(--ink);}
 nav.acts a[aria-current="page"]{color:var(--ink-strong);border-bottom-color:var(--red);}
 nav.acts a .no{display:block;font-size:9px;font-weight:600;color:var(--grey-400);letter-spacing:.12em;}
 nav.acts a[aria-current="page"] .no{color:var(--red);}
+nav.acts a.util{border-bottom-width:1px;padding:8px 10px 7px;letter-spacing:.12em;color:#999;font-weight:600;}
+nav.acts a.util:hover{color:var(--ink);}
+nav.acts a.util[aria-current="page"]{color:var(--ink-strong);border-bottom-color:var(--grey-400);}
 
 /* ============ layout ============ */
 .doc{max-width:1120px;margin:0 auto;padding:0 24px 96px;}
