@@ -26,9 +26,7 @@ function Chrome({ children }: { children: ReactNode }) {
         <div className="chrome-inner">
           <div className="breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <img src="/vetta-emblem.png" alt="Vetta emblem" width="26" height="26" style={{ display: 'block', borderRadius: 4 }} />
-            <a href="https://mzalendo.com">Mzalendo</a>
-            <span className="sep">›</span>Civic Tech Tools
-            <span className="sep">›</span><span className="here">Vetta</span>
+            <span className="here">Vetta</span>
           </div>
           <nav className="acts" aria-label="Vetta — three acts">
             {acts.map((a) => (
