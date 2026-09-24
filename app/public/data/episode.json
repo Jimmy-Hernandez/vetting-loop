@@ -6316,7 +6316,15 @@
         "prior_role": null,
         "prior_portfolio": null,
         "needs_verification": false
-      }
+      },
+      "subsequentEvents": [
+        {
+          "date": "2025-03-26",
+          "text": "The Gender, Culture, Arts and Heritage docket she was rejected for sat vacant ~7 months; filled by Hanna Wendot Cheptumo in the March 2025 reshuffle.",
+          "source": "compiled tracker (Gaita)",
+          "needs_verification": true
+        }
+      ]
     }
   ],
   "gateGaps": [
@@ -6336,6 +6344,12 @@
       "title": "One rejection in three cycles",
       "text": "Of three CS vetting cycles 2022–2024 (22 + 20 + 20 nominees), one nominee has been rejected — Stella Soi Lang'at, August 2024.",
       "source": "compiled tracker (2022 Part 1 slate: 22; 2024: 20 vetted; Lang'at rejection, Committee on Appointments Second Report)",
+      "needs_verification": true
+    },
+    {
+      "title": "Scrutiny concentrates where risk is acute",
+      "text": "The Goma (DR Congo) consul-general post is the only station with repeated knowledge-of-docket pushback — a 2025 nominee was reminded that 'we have rejected a nominee to this station before for lack of knowledge.' Scrutiny as exception, confirmation as default.",
+      "source": "compiled observations (Gaita) — Capital FM/press reports",
       "needs_verification": true
     }
   ]
