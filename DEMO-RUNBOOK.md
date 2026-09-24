@@ -126,5 +126,5 @@ launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.dsh.vettingloop.plis
 ## Fallback URL (verified)
 
 The app uses **HashRouter**: the fallback works from BOTH the dev server and the static bundle:
-- dev: http://localhost:5173/fallback (or /#/fallback)
+- dev: http://localhost:5173/#/fallback (hash form required — clean /fallback shows landing under HashRouter)
 - static file:// or `npx serve app/dist`: open `index.html#/fallback`
