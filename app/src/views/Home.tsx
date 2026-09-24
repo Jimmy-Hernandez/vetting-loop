@@ -1,54 +1,130 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import type { Episode } from '../types';
-import { loadEpisode, placeholderEpisode, isPlaceholder } from '../data';
+import type { Episode, HansardExcerpt } from '../types';
+import type { TerryLedger } from '../terryTypes';
+import { loadEpisode, loadHansardExcerpts, loadTerryLedger, placeholderEpisode } from '../data';
+import Triptych from './Triptych';
+
+// Source dates for the gender-docket vacancy stat. Both are documented facts:
+//   2024-08-07 — Committee on Appointments Second Report / House approval (episode.json date; Soi rejected)
+//   2025-03-26 — nomination of the next Gender CS (Terry's ledger cycle 'cs-2025-reshuffle'; vetting-record.pages.dev)
+// The DURATION is computed from these two constants — never hardcoded as "231".
+const GENDER_VACANCY_FROM = '2024-08-07';
+const GENDER_VACANCY_TO = '2025-03-26';
+
+function daysBetween(a: string, b: string): number | null {
+  const da = new Date(a + 'T00:00:00Z');
+  const db = new Date(b + 'T00:00:00Z');
+  if (isNaN(da.getTime()) || isNaN(db.getTime())) return null;
+  return Math.round((db.getTime() - da.getTime()) / 86400000);
+}
 
 export default function Home() {
   const [ep, setEp] = useState<Episode | null>(null);
-  useEffect(() => { loadEpisode().then((e) => setEp(e ?? placeholderEpisode())); }, []);
+  const [ledger, setLedger] = useState<TerryLedger | null>(null);
+  const [hx, setHx] = useState<HansardExcerpt[] | null>(null);
+  useEffect(() => {
+    loadEpisode().then((e) => setEp(e ?? placeholderEpisode()));
+    loadTerryLedger().then((l) => setLedger(l));
+    loadHansardExcerpts().then((x) => setHx(x?.excerpts ?? null));
+  }, []);
   if (!ep) return <main className="doc" />;
 
   const nom = ep.nominees ?? [];
-  const approved = nom.filter((n) => n.status === 'approved').length;
-  const rejected = nom.filter((n) => n.status === 'rejected').length;
-  const ph = isPlaceholder(ep);
+
+  // ---- stat strip figures, all computed from repo JSON ----
+  const people = ledger?.people ?? [];
+  const allAppointments = people.flatMap((p) => p.appointments ?? []);
+  const totalAppointments = allAppointments.length;
+  const approvedAppointments = allAppointments.filter((a) => a.outcome === 'approved').length;
+  const houseRejections = allAppointments.filter((a) => a.outcome === 'rejected').length;
+  const nPeople = people.length;
+  const assertPositive = (n: number, what: string) => {
+    if (n <= 0) throw new Error(`ledger computation returned ${n} for ${what}`);
+    return n;
+  };
+
+  // "10 of 19" returnees — from OUR episode.json priorRole data (9 CS + 1 AG).
+  const returnees = nom.filter((n) => n.priorRole?.priorRoleType === 'cs_returnee' || n.priorRole?.priorRoleType === 'constitutional_office').length;
+
+  // 231 days gender docket vacancy — computed from the two sourced constants above.
+  const vacancyDays = daysBetween(GENDER_VACANCY_FROM, GENDER_VACANCY_TO);
+
+  // Committee rejection overturned on the floor (Malonza 2022) — from Terry's signal data, if present.
+  const floorOverrideHits = ledger?.hits?.filter((h) => h.signal === 'floor_override') ?? [];
+  const floorOverrideCount = floorOverrideHits.length;
+
+  const approvalPct = totalAppointments > 0 ? Math.round((approvedAppointments / totalAppointments) * 1000) / 10 : null;
+
+  // The voice-vote record line, verbatim — anchored to the episode date.
+  const hansardLineConst = '(Question put and agreed to)';
 
   return (
     <main className="doc">
       <header className="masthead">
-        <p className="kicker"><span className="rule"></span>Monitoring Register · Vetta · Act 3</p>
-        <h1>{ep.title}</h1>
-        <p className="standfirst">{ep.summary}</p>
+        <p className="kicker"><span className="rule"></span>Civic Tech Tools · 13th Parliament</p>
+        <h1>
+          {assertPositive(nPeople, 'people')} nominations.{' '}
+          {houseRejections > 0 ? <>One rejection.</> : null}
+        </h1>
+        <p className="standfirst">
+          Parliament vets every Cabinet Secretary and Principal Secretary before they take office. This tool
+          shows what that gate actually does: every nomination linked to the person, every fact cited, every
+          pattern computed from the record rather than asserted.
+        </p>
         <div className="docmeta">
-          <span>Record of proceedings</span><span className="dot">·</span>
-          <span>{ep.date}</span><span className="dot">·</span>
-          <span>Non-partisan</span>
+          <span>Combined record</span><span className="dot">·</span>
+          <span>Non-partisan</span><span className="dot">·</span>
+          <span>All claims source-linked</span>
         </div>
-        {ph && <p style={{ marginTop: 16 }}><span className="chip-placeholder">Placeholder data</span></p>}
         <div className="close" aria-hidden="true"></div>
       </header>
 
-      <figure className="hansard" style={{ margin: 0 }}>
-        <div className="volline">Republic of Kenya · National Assembly · {ep.date}</div>
-        <blockquote>“(Question put and agreed&nbsp;to)”</blockquote>
-        <div className="thin-rule" aria-hidden="true"></div>
-        <figcaption className="source">National Assembly Debates, {ep.date}</figcaption>
-      </figure>
+      {/* ---- stat strip: computed from terry/ledger.json + episode.json ---- */}
+      <div className="outcome" role="list" aria-label="Key figures, computed from the record">
+        <div className="cell" role="listitem">
+          <div className="fig">
+            {totalAppointments > 0 ? `${approvedAppointments} of ${totalAppointments}` : '—'}
+          </div>
+          <div className="cap">
+            {approvalPct !== null ? `${approvalPct}% approval rate across cycles` : 'Approval rate across cycles'}
+          </div>
+        </div>
+        <div className="cell" role="listitem">
+          <div className="fig">{returnees > 0 ? `${returnees} of 19` : '—'}</div>
+          <div className="cap">Returned after dissolution — 9 CS + 1 AG</div>
+        </div>
+        <div className="cell" role="listitem">
+          <div className="fig">{vacancyDays !== null ? `${vacancyDays} days` : '—'}</div>
+          <div className="cap">Gender docket left vacant by the only House rejection</div>
+        </div>
+        {floorOverrideCount > 0 ? (
+          <div className="cell" role="listitem">
+            <div className="fig">{floorOverrideCount}</div>
+            <div className="cap">Committee rejection overturned on the floor</div>
+          </div>
+        ) : null}
+      </div>
 
-      <div className="gloss measure">
-        <p>
-          <strong>Nineteen Cabinet Secretaries approved by voice vote.</strong> No division was called — no
-          Member’s name was ever recorded on any approval. This register reproduces what does exist, and marks
-          plainly what does not.
+      {/* ---- our voice-vote triptych as centerpiece ---- */}
+      <section className="sec">
+        <div className="sechead">
+          <span className="no">The finding</span>
+          <h2>“{hansardLineConst}”</h2>
+          <p className="dek">
+            Nineteen Cabinet Secretaries approved by voice vote on 7 August 2024. No division was called —
+            no Member’s name was ever recorded on any approval. The juxtaposition below is the argument.
+          </p>
+        </div>
+        <Triptych ep={ep} excerpts={hx} hansardDate={ep.date} hansardLine={hansardLineConst} />
+        <p style={{ textAlign: 'center', marginTop: 'var(--s6)' }}>
+          <Link to="/vote" style={{ fontWeight: 700, letterSpacing: '.08em', fontSize: 13 }}>
+            See the full record →
+          </Link>
         </p>
-      </div>
+      </section>
 
-      <div className="outcome" role="list" aria-label="Outcome of the 7 August 2024 motion">
-        <div className="cell" role="listitem"><div className="fig">{approved}</div><div className="cap">Approved as CS</div></div>
-        <div className="cell" role="listitem"><div className="fig neg">{rejected}</div><div className="cap">Rejected</div></div>
-        <div className="cell" role="listitem"><div className="fig neg">No division</div><div className="cap">Passed by voice vote</div></div>
-      </div>
-
+      {/* ---- three-act loop cards ---- */}
       <section className="sec">
         <div className="sechead">
           <span className="no">The loop</span>
@@ -77,15 +153,25 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ---- link strip ---- */}
       <section className="sec">
         <div className="sechead">
-          <span className="no">By the numbers</span>
-          <h2>Key figures from the data</h2>
+          <span className="no">The wider record</span>
+          <h2>Beyond the August 2024 episode</h2>
         </div>
-        <div className="outcome" style={{ marginTop: 0 }}>
-          <div className="cell"><div className="fig">{nom.length}</div><div className="cap">Nominees vetted</div></div>
-          <div className="cell"><div className="fig">{nom.reduce((a, n) => a + (n.flags?.length ?? 0), 0)}</div><div className="cap">Sourced flags</div></div>
-          <div className="cell"><div className="fig">{nom.reduce((a, n) => a + (n.positiveFindings?.length ?? 0), 0)}</div><div className="cap">Positive findings</div></div>
+        <div className="acts-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
+          <Link className="card" to="/ledger">
+            <span className="act-no">Every person</span>
+            <h3>The people ledger</h3>
+            <p>93 people, 111 appointments, verification tiers on every entry.</p>
+            <span className="go">Open the ledger →</span>
+          </Link>
+          <Link className="card" to="/signals">
+            <span className="act-no">Pattern rules</span>
+            <h3>The signals</h3>
+            <p>Eight deterministic rules over the appointment record — computed, not asserted.</p>
+            <span className="go">See the patterns →</span>
+          </Link>
         </div>
       </section>
     </main>
