@@ -104,7 +104,7 @@ export default function Signals() {
 
       <p className="led-credit">
         Ledger &amp; signals: Vetting Record (Terry/Agent9). Hearing-depth record &amp; episode analysis: Vetta
-        (KITT lane). Combined for Mzalendo Civic Tech Tools.
+        (KITT lane). Combined from two independent builds (Vetta × Vetting Record).
       </p>
     </main>
   );

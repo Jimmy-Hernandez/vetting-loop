@@ -270,7 +270,7 @@ export default function Ledger() {
 
       <p className="led-credit">
         Ledger &amp; signals: Vetting Record (Terry/Agent9). Hearing-depth record &amp; episode analysis: Vetta
-        (KITT lane). Combined for Mzalendo Civic Tech Tools. Verification tiers: ○ compiled · ◐ cross-checked ·
+        (KITT lane). Combined from two independent builds (Vetta × Vetting Record). Verification tiers: ○ compiled · ◐ cross-checked ·
         ✓ gazette-verified.
       </p>
     </main>
