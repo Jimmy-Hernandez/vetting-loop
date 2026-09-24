@@ -5,6 +5,7 @@ import Home from './views/Home';
 import Nominees from './views/Nominees';
 import NomineeDossier from './views/NomineeDossier';
 import Vote from './views/Vote';
+import Methodology from './views/Methodology';
 
 function Chrome({ children }: { children: ReactNode }) {
   const loc = useLocation();
@@ -37,7 +38,7 @@ function Chrome({ children }: { children: ReactNode }) {
       <footer className="sitefoot">
         <div className="fin">
           <span>The Vetting Loop — a civic tech tool<span className="dot">·</span>Impunity begins at confirmation.</span>
-          <span>All claims source-linked<span className="dot">·</span>Non-partisan</span>
+          <span>All claims source-linked<span className="dot">·</span>Non-partisan<span className="dot">·</span><Link to="/methodology">Methodology</Link></span>
         </div>
       </footer>
     </>
@@ -63,6 +64,7 @@ export default function App() {
           <Route path="/nominees" element={<Nominees />} />
           <Route path="/nominee/:idOrSlug" element={<NomineeDossier />} />
           <Route path="/vote" element={<Vote />} />
+          <Route path="/methodology" element={<Methodology />} />
           <Route path="*" element={<Fallback />} />
         </Routes>
       </Chrome>
