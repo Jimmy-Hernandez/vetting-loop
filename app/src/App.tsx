@@ -1,122 +1,71 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
+import type { ReactNode } from 'react';
+import { useEffect } from 'react';
+import Home from './views/Home';
+import Nominees from './views/Nominees';
+import NomineeDossier from './views/NomineeDossier';
+import Vote from './views/Vote';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Chrome({ children }: { children: ReactNode }) {
+  const loc = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [loc.pathname]);
+  const acts = [
+    { to: '/nominees', no: 'Act 1', label: 'Before' },
+    { to: '/vote', no: 'Act 2', label: 'During' },
+    { to: '/', no: 'Act 3', label: 'After' },
+  ];
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+      <header className="chrome">
+        <div className="chrome-inner">
+          <div className="breadcrumb">
+            <a href="https://mzalendo.com">Mzalendo</a>
+            <span className="sep">›</span>Civic Tech Tools
+            <span className="sep">›</span><span className="here">The Vetting Loop</span>
+          </div>
+          <nav className="acts" aria-label="The Vetting Loop — three acts">
+            {acts.map((a) => (
+              <NavLink key={a.to} to={a.to} aria-current={loc.pathname === a.to ? 'page' : undefined}>
+                <span className="no">{a.no}</span>
+                {a.label}
+              </NavLink>
+            ))}
+          </nav>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
+      </header>
+      {children}
+      <footer className="sitefoot">
+        <div className="fin">
+          <span>The Vetting Loop — a civic tech tool<span className="dot">·</span>Impunity begins at confirmation.</span>
+          <span>All claims source-linked<span className="dot">·</span>Non-partisan</span>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+      </footer>
     </>
-  )
+  );
 }
 
-export default App
+function Fallback() {
+  return (
+    <main className="doc">
+      <div className="empty" style={{ marginTop: 'var(--s12)' }}>
+        Not found. <Link to="/">Return to the record</Link>.
+      </div>
+    </main>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Chrome>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/nominees" element={<Nominees />} />
+          <Route path="/nominee/:id" element={<NomineeDossier />} />
+          <Route path="/vote" element={<Vote />} />
+          <Route path="*" element={<Fallback />} />
+        </Routes>
+      </Chrome>
+    </BrowserRouter>
+  );
+}
