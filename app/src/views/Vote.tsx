@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
-import type { DivisionsFile } from '../types';
-import { loadDivisions, placeholderDivisions } from '../data';
+import type { DivisionsFile, Episode } from '../types';
+import { loadDivisions, loadEpisode, placeholderDivisions } from '../data';
 
 export default function Vote() {
   const [d, setD] = useState<DivisionsFile | null>(null);
-  useEffect(() => { loadDivisions().then((x) => setD(x ?? placeholderDivisions())); }, []);
+  const [ep, setEp] = useState<Episode | null>(null);
+  useEffect(() => {
+    loadDivisions().then((x) => setD(x ?? placeholderDivisions()));
+    loadEpisode().then((e) => setEp(e));
+  }, []);
   if (!d) return <main className="doc" />;
 
   const v = d.vetting_vote;
@@ -86,6 +90,29 @@ export default function Vote() {
           </div>
         )}
       </section>
+
+      {ep?.gateGaps && ep.gateGaps.length > 0 && (
+        <section className="sec">
+          <div className="sechead">
+            <span className="no">§ 3 — The gate itself</span>
+            <h2>The gate has gaps</h2>
+            <p className="dek">What the vetting gate catches — and what slips past it.</p>
+          </div>
+          <ol className="gaps">
+            {ep.gateGaps.map((g, i) => (
+              <li key={i}>
+                <span className="num">{i + 1}</span>
+                <div>
+                  <h4>{g.title}</h4>
+                  <p>{g.text}</p>
+                  <span className="cite"><b>Source</b> {g.source}</span>
+                  {g.needs_verification && <span className="src-chip unverified">needs verification</span>}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
 
       {ph && (
         <section className="sec">

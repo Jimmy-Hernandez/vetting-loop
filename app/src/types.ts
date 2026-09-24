@@ -97,12 +97,20 @@ export interface Nominee {
   reportPageRef: string;
 }
 
+export interface GateGap {
+  title: string;
+  text: string;
+  source: string;
+  needs_verification: boolean;
+}
+
 export interface Episode {
   slug: string;
   title: string;
   date: string;
   summary: string;
   nominees: Nominee[];
+  gateGaps?: GateGap[];
 }
 
 export interface Division {

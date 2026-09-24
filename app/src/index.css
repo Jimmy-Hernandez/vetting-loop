@@ -188,6 +188,15 @@ section.sec{margin-top:72px;}
 .epilogue .ev-date{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--ink-strong);min-width:86px;flex-shrink:0;}
 .epilogue .ev-text{flex:1;min-width:200px;}
 
+/* ============ gate gaps (vote view) ============ */
+.gaps{list-style:none;margin:0;padding:0;max-width:860px;}
+.gaps li{display:flex;gap:16px;padding:18px 0;border-top:1px solid var(--line);}
+.gaps li:first-child{border-top:none;}
+.gaps .num{font-size:22px;font-weight:700;color:var(--red);min-width:32px;}
+.gaps h4{margin:0 0 6px;font-size:15px;font-weight:700;color:var(--ink-strong);}
+.gaps p{margin:0 0 8px;font-size:14px;line-height:1.6;color:var(--ink);}
+.gaps .cite{font-size:11px;color:#888;letter-spacing:.04em;display:block;margin-bottom:4px;}
+
 /* ============ dossier ============ */
 .dossier{max-width:var(--measure);margin:0 auto;}
 .dossier-id{
