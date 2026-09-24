@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { DivisionsFile, Episode, HansardExcerpt } from '../types';
 import { loadDivisions, loadEpisode, loadHansardExcerpts, placeholderDivisions } from '../data';
 import Triptych from './Triptych';
+import { Link } from 'react-router-dom';
 
 export default function Vote() {
   const [d, setD] = useState<DivisionsFile | null>(null);
@@ -118,7 +119,7 @@ export default function Vote() {
             ))}
           </ol>
         </section>
-      )}
+            )}
 
       {ph && (
         <section className="sec">
@@ -131,6 +132,12 @@ export default function Vote() {
           </p>
         </section>
       )}
-    </main>
+          <section className="prior-cycle" style={{ margin: 'var(--s6) 0' }}>
+        <p style={{ margin: 0 }}>
+          This episode is one batch of <b>93 nominations across 10 vetting cycles</b> since 2022.{' '}
+          <Link to="/ledger" style={{ textDecoration: 'underline' }}>View the full people ledger →</Link>
+        </p>
+      </section>
+</main>
   );
 }

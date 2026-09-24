@@ -86,7 +86,14 @@ export default function Ledger() {
           verification tier. Signals describe the appointment process, never a person's conduct.
         </p>
         <div className="close" aria-hidden="true"></div>
-      </header>
+              <section className="prior-cycle" style={{ marginTop: 'var(--s4)' }}>
+          <p style={{ margin: 0 }}>
+            <b>The August 2024 reconstitution</b> — 20 nominees heard over four days, approved by voice vote
+            with <b>no recorded per-MP vote</b>. {' '}
+            <Link to="/vote" style={{ textDecoration: 'underline' }}>How this batch was approved → The Vote That Wasn't Recorded</Link>
+          </p>
+        </section>
+</header>
 
       <div className="led-tools">
         <input
@@ -145,7 +152,11 @@ export default function Ledger() {
                     {(p.appointments ?? []).map((a) => (
                       <div key={a.id} className="led-appt">
                         <span className="led-portfolio">{a.portfolio}</span>
-                        <span className={'led-outcome led-out-' + a.outcome}>{a.outcome}</span>
+                        {a.cycle === 'CS 2024' ? (
+                          <Link className={'led-outcome led-out-' + a.outcome} to="/vote" title="How this batch was approved — the voice vote with no recorded division">{a.outcome}</Link>
+                        ) : (
+                          <span className={'led-outcome led-out-' + a.outcome}>{a.outcome}</span>
+                        )}
                         <span className="led-cycle">{a.cycle}</span>
                       </div>
                     ))}
