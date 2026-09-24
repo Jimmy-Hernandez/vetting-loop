@@ -6,6 +6,7 @@ import Nominees from './views/Nominees';
 import NomineeDossier from './views/NomineeDossier';
 import Vote from './views/Vote';
 import Methodology from './views/Methodology';
+import NostrFallback from './views/NostrFallback';
 
 function Chrome({ children }: { children: ReactNode }) {
   const loc = useLocation();
@@ -65,6 +66,7 @@ export default function App() {
           <Route path="/nominee/:idOrSlug" element={<NomineeDossier />} />
           <Route path="/vote" element={<Vote />} />
           <Route path="/methodology" element={<Methodology />} />
+          <Route path="/fallback" element={<NostrFallback />} />
           <Route path="*" element={<Fallback />} />
         </Routes>
       </Chrome>

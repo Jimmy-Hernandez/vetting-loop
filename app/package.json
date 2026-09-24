@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "nostr-tools": "^2.25.2",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "react-router-dom": "^7.18.4"
+    "react-router-dom": "^7.18.4",
+    "ws": "^8.21.3"
   },
   "devDependencies": {
     "@types/node": "^24.13.3",
