@@ -1,0 +1,862 @@
+{
+  "source": "mzalendo.com",
+  "collected": "2026-09-24",
+  "parliament": "13th",
+  "house": "National Assembly",
+  "note": "Mzalendo publishes no overall scorecard score ('no overall score · Speaker not ranked'); comparative_rankings are per-measure. Committee attendance is stated as not published by Parliament; plenary vote attendance is in voting_summary. 3 queried names not found on site.",
+  "not_found_on_site": [
+    "Kimathan Madoya Githome",
+    "Kimichahi Wamweza Maina",
+    "Rahimallabid Farahad Daudi"
+  ],
+  "mps": [
+    {
+      "name": "Boss Gladys Jepkosgei",
+      "constituency": null,
+      "county": null,
+      "party": "UDA",
+      "role": null,
+      "status": null,
+      "term": null,
+      "party_confirmed_by_roster": true,
+      "session_stats": {
+        "Contributions": 191,
+        "Presiding": 6,
+        "Committees": 4,
+        "Topics": 12,
+        "Bills": 8,
+        "Acts": 2,
+        "Voting Records": 7,
+        "Motions": 10,
+        "Petitions": 10,
+        "Questions": 1,
+        "Statements": 12,
+        "Papers Laid": 8
+      },
+      "comparative_rankings": {
+        "Contributions in Hansard": {
+          "value": 191,
+          "rank": 39,
+          "of": 348,
+          "ahead_pct": 89,
+          "median": "46"
+        },
+        "Divisions voted in": {
+          "value": 5,
+          "rank": 261,
+          "of": 348,
+          "ahead_pct": 12,
+          "median": "7"
+        },
+        "Bills sponsored": {
+          "value": 8,
+          "rank": 5,
+          "of": 348,
+          "ahead_pct": 98,
+          "median": "0"
+        },
+        "Motions, questions, petitions and statements": {
+          "value": 33,
+          "rank": 13,
+          "of": 348,
+          "ahead_pct": 96,
+          "median": "6"
+        }
+      },
+      "committee_attendance": "not published by Parliament (stated on page)",
+      "overall_score": null,
+      "voting_summary": {
+        "ayes": 4,
+        "noes": 1,
+        "abstain_spoilt": 0,
+        "absent": 2,
+        "divisions_attended": 5
+      },
+      "queried_as": "Gladys Boss Shollei",
+      "match_confidence": "medium",
+      "match_note": "Site roster name is 'Boss Gladys Jepkosgei' (Deputy Speaker, Uasin Gishu); 'Shollei' not in site name",
+      "source_url": "https://mzalendo.com/mps-performance/national-assembly/13th-parliament/boss-gladys-jepkosgei/"
+    },
+    {
+      "name": "Baya Owen Yaa",
+      "constituency": null,
+      "county": null,
+      "party": "UDA",
+      "role": null,
+      "status": null,
+      "term": null,
+      "party_confirmed_by_roster": true,
+      "session_stats": {
+        "Contributions": 1016,
+        "Committees": 3,
+        "Topics": 12,
+        "Bills": 5,
+        "Acts": 1,
+        "Voting Records": 9,
+        "Motions": 78,
+        "Petitions": 5,
+        "Questions": 1,
+        "Statements": 15,
+        "Papers Laid": 2068
+      },
+      "comparative_rankings": {
+        "Contributions in Hansard": {
+          "value": 1016,
+          "rank": 2,
+          "of": 348,
+          "ahead_pct": 99,
+          "median": "46"
+        },
+        "Divisions voted in": {
+          "value": 9,
+          "rank": 18,
+          "of": 348,
+          "ahead_pct": 78,
+          "median": "7"
+        },
+        "Bills sponsored": {
+          "value": 5,
+          "rank": 8,
+          "of": 348,
+          "ahead_pct": 98,
+          "median": "0"
+        },
+        "Motions, questions, petitions and statements": {
+          "value": 79,
+          "rank": 2,
+          "of": 348,
+          "ahead_pct": 99,
+          "median": "6"
+        }
+      },
+      "committee_attendance": "not published by Parliament (stated on page)",
+      "overall_score": null,
+      "voting_summary": {
+        "ayes": 7,
+        "noes": 2,
+        "abstain_spoilt": 0,
+        "absent": 0,
+        "divisions_attended": 9
+      },
+      "queried_as": "Owen Baya",
+      "match_confidence": "high",
+      "match_note": "Site name 'Baya Owen Yaa' — same person, roster name order",
+      "source_url": "https://mzalendo.com/mps-performance/national-assembly/13th-parliament/baya-owen-yaa/"
+    },
+    {
+      "name": "Musau Robert Mbui",
+      "constituency": null,
+      "county": null,
+      "party": "WDM–K",
+      "role": null,
+      "status": null,
+      "term": null,
+      "party_confirmed_by_roster": true,
+      "session_stats": {
+        "Contributions": 246,
+        "Committees": 3,
+        "Topics": 12,
+        "Bills": 0,
+        "Voting Records": 9,
+        "Motions": 15,
+        "Petitions": 0,
+        "Questions": 11,
+        "Statements": 10,
+        "Papers Laid": 3
+      },
+      "comparative_rankings": {
+        "Contributions in Hansard": {
+          "value": 246,
+          "rank": 26,
+          "of": 348,
+          "ahead_pct": 93,
+          "median": "46"
+        },
+        "Divisions voted in": {
+          "value": 8,
+          "rank": 76,
+          "of": 348,
+          "ahead_pct": 58,
+          "median": "7"
+        },
+        "Bills sponsored": {
+          "value": 0,
+          "rank": 81,
+          "of": 348,
+          "ahead_pct": 0,
+          "median": "0"
+        },
+        "Motions, questions, petitions and statements": {
+          "value": 26,
+          "rank": 24,
+          "of": 348,
+          "ahead_pct": 93,
+          "median": "6"
+        }
+      },
+      "committee_attendance": "not published by Parliament (stated on page)",
+      "overall_score": null,
+      "voting_summary": {
+        "ayes": 3,
+        "noes": 5,
+        "abstain_spoilt": 0,
+        "absent": 1,
+        "divisions_attended": 8
+      },
+      "queried_as": "Robert Mbui",
+      "match_confidence": "high",
+      "match_note": "Site name 'Musau Robert Mbui'",
+      "source_url": "https://mzalendo.com/mps-performance/national-assembly/13th-parliament/musau-robert-mbui/"
+    },
+    {
+      "name": "Rahab Mukami Wachira",
+      "constituency": null,
+      "county": null,
+      "party": "UDA",
+      "role": null,
+      "status": null,
+      "term": null,
+      "party_confirmed_by_roster": true,
+      "session_stats": {
+        "Contributions": 40,
+        "Committees": 3,
+        "Topics": 4,
+        "Bills": 0,
+        "Voting Records": 9,
+        "Motions": 7,
+        "Petitions": 0,
+        "Questions": 1,
+        "Statements": 4,
+        "Papers Laid": 3
+      },
+      "comparative_rankings": {
+        "Contributions in Hansard": {
+          "value": 40,
+          "rank": 187,
+          "of": 348,
+          "ahead_pct": 45,
+          "median": "46"
+        },
+        "Divisions voted in": {
+          "value": 8,
+          "rank": 76,
+          "of": 348,
+          "ahead_pct": 58,
+          "median": "7"
+        },
+        "Bills sponsored": {
+          "value": 0,
+          "rank": 81,
+          "of": 348,
+          "ahead_pct": 0,
+          "median": "0"
+        },
+        "Motions, questions, petitions and statements": {
+          "value": 11,
+          "rank": 88,
+          "of": 348,
+          "ahead_pct": 70,
+          "median": "6"
+        }
+      },
+      "committee_attendance": "not published by Parliament (stated on page)",
+      "overall_score": null,
+      "voting_summary": {
+        "ayes": 6,
+        "noes": 2,
+        "abstain_spoilt": 0,
+        "absent": 1,
+        "divisions_attended": 8
+      },
+      "queried_as": "Rahab Maruka Mukami",
+      "match_confidence": "medium",
+      "match_note": "Site name 'Rahab Mukami Wachira', Nyeri Women's Representative; 'Maruka' not in site name",
+      "source_url": "https://mzalendo.com/mps-performance/national-assembly/13th-parliament/rahab-mukami-wachira/"
+    },
+    {
+      "name": "Col (Rtd) Ali Rasso Dido",
+      "constituency": null,
+      "county": null,
+      "party": "UDA",
+      "role": null,
+      "status": null,
+      "term": null,
+      "party_confirmed_by_roster": true,
+      "session_stats": {
+        "Contributions": 381,
+        "Committees": 2,
+        "Topics": 12,
+        "Bills": 0,
+        "Voting Records": 9,
+        "Motions": 12,
+        "Petitions": 0,
+        "Questions": 0,
+        "Statements": 2,
+        "Papers Laid": 83
+      },
+      "comparative_rankings": {
+        "Contributions in Hansard": {
+          "value": 381,
+          "rank": 14,
+          "of": 348,
+          "ahead_pct": 96,
+          "median": "46"
+        },
+        "Divisions voted in": {
+          "value": 7,
+          "rank": 146,
+          "of": 348,
+          "ahead_pct": 43,
+          "median": "7"
+        },
+        "Bills sponsored": {
+          "value": 0,
+          "rank": 81,
+          "of": 348,
+          "ahead_pct": 0,
+          "median": "0"
+        },
+        "Motions, questions, petitions and statements": {
+          "value": 6,
+          "rank": 167,
+          "of": 348,
+          "ahead_pct": 46,
+          "median": "6"
+        }
+      },
+      "committee_attendance": "not published by Parliament (stated on page)",
+      "overall_score": null,
+      "voting_summary": {
+        "ayes": 6,
+        "noes": 1,
+        "abstain_spoilt": 0,
+        "absent": 2,
+        "divisions_attended": 7
+      },
+      "queried_as": "Dido Ali Raso",
+      "match_confidence": "high",
+      "match_note": "Site name 'Col (Rtd) Ali Rasso Dido' — Raso/Rasso spelling variant",
+      "source_url": "https://mzalendo.com/mps-performance/national-assembly/13th-parliament/col-rtd-ali-rasso-dido/"
+    },
+    {
+      "name": "George Gitonga Murugara",
+      "constituency": null,
+      "county": null,
+      "party": "UDA",
+      "role": null,
+      "status": null,
+      "term": null,
+      "party_confirmed_by_roster": true,
+      "session_stats": {
+        "Contributions": 518,
+        "Committees": 4,
+        "Topics": 12,
+        "Bills": 6,
+        "Voting Records": 9,
+        "Motions": 38,
+        "Petitions": 0,
+        "Questions": 7,
+        "Statements": 8,
+        "Papers Laid": 135
+      },
+      "comparative_rankings": {
+        "Contributions in Hansard": {
+          "value": 518,
+          "rank": 8,
+          "of": 348,
+          "ahead_pct": 98,
+          "median": "46"
+        },
+        "Divisions voted in": {
+          "value": 8,
+          "rank": 76,
+          "of": 348,
+          "ahead_pct": 58,
+          "median": "7"
+        },
+        "Bills sponsored": {
+          "value": 6,
+          "rank": 7,
+          "of": 348,
+          "ahead_pct": 98,
+          "median": "0"
+        },
+        "Motions, questions, petitions and statements": {
+          "value": 38,
+          "rank": 8,
+          "of": 348,
+          "ahead_pct": 97,
+          "median": "6"
+        }
+      },
+      "committee_attendance": "not published by Parliament (stated on page)",
+      "overall_score": null,
+      "voting_summary": {
+        "ayes": 6,
+        "noes": 2,
+        "abstain_spoilt": 0,
+        "absent": 1,
+        "divisions_attended": 8
+      },
+      "queried_as": "Gitongo Murugar",
+      "match_confidence": "medium",
+      "match_note": "Site name 'George Gitonga Murugara' — phonetic spelling variant of query",
+      "source_url": "https://mzalendo.com/mps-performance/national-assembly/13th-parliament/george-gitonga-murugara/"
+    },
+    {
+      "name": "David Gikaria",
+      "constituency": null,
+      "county": null,
+      "party": "UDA",
+      "role": null,
+      "status": null,
+      "term": null,
+      "party_confirmed_by_roster": true,
+      "session_stats": {
+        "Contributions": 214,
+        "Committees": 3,
+        "Topics": 12,
+        "Bills": 3,
+        "Voting Records": 10,
+        "Motions": 12,
+        "Petitions": 0,
+        "Questions": 7,
+        "Statements": 7,
+        "Papers Laid": 10
+      },
+      "comparative_rankings": {
+        "Contributions in Hansard": {
+          "value": 214,
+          "rank": 29,
+          "of": 348,
+          "ahead_pct": 91,
+          "median": "46"
+        },
+        "Divisions voted in": {
+          "value": 9,
+          "rank": 18,
+          "of": 348,
+          "ahead_pct": 78,
+          "median": "7"
+        },
+        "Bills sponsored": {
+          "value": 3,
+          "rank": 13,
+          "of": 348,
+          "ahead_pct": 95,
+          "median": "0"
+        },
+        "Motions, questions, petitions and statements": {
+          "value": 25,
+          "rank": 26,
+          "of": 348,
+          "ahead_pct": 92,
+          "median": "6"
+        }
+      },
+      "committee_attendance": "not published by Parliament (stated on page)",
+      "overall_score": null,
+      "voting_summary": {
+        "ayes": 8,
+        "noes": 1,
+        "abstain_spoilt": 0,
+        "absent": 1,
+        "divisions_attended": 9
+      },
+      "queried_as": "Davis Gikaria",
+      "match_confidence": "high",
+      "match_note": "Site name 'David Gikaria' — Davis/David variant",
+      "source_url": "https://mzalendo.com/mps-performance/national-assembly/13th-parliament/david-gikaria/"
+    },
+    {
+      "name": "Ferdinard Kevin Wanyonyi",
+      "constituency": null,
+      "county": null,
+      "party": "FORD-KENYA",
+      "role": null,
+      "status": null,
+      "term": null,
+      "party_confirmed_by_roster": true,
+      "session_stats": {
+        "Contributions": 158,
+        "Committees": 3,
+        "Topics": 1,
+        "Bills": 0,
+        "Voting Records": 9,
+        "Motions": 0,
+        "Petitions": 0,
+        "Questions": 0,
+        "Statements": 0,
+        "Papers Laid": 0
+      },
+      "comparative_rankings": {
+        "Contributions in Hansard": {
+          "value": 158,
+          "rank": 56,
+          "of": 348,
+          "ahead_pct": 84,
+          "median": "46"
+        },
+        "Divisions voted in": {
+          "value": 9,
+          "rank": 18,
+          "of": 348,
+          "ahead_pct": 78,
+          "median": "7"
+        },
+        "Bills sponsored": {
+          "value": 0,
+          "rank": 81,
+          "of": 348,
+          "ahead_pct": 0,
+          "median": "0"
+        },
+        "Motions, questions, petitions and statements": {
+          "value": 0,
+          "rank": 303,
+          "of": 348,
+          "ahead_pct": 0,
+          "median": "6"
+        }
+      },
+      "committee_attendance": "not published by Parliament (stated on page)",
+      "overall_score": null,
+      "voting_summary": {
+        "ayes": 8,
+        "noes": 1,
+        "abstain_spoilt": 0,
+        "absent": 0,
+        "divisions_attended": 9
+      },
+      "queried_as": "Ferdinand Wanyonyi",
+      "match_confidence": "high",
+      "match_note": "Site name 'Kevin Ferdinand Wanyonyi'; site slug misspells 'ferdinard'",
+      "source_url": "https://mzalendo.com/mps-performance/national-assembly/13th-parliament/ferdinard-kevin-wanyonyi/"
+    },
+    {
+      "name": "Mary Emaase Otuch",
+      "constituency": null,
+      "county": null,
+      "party": "UDA",
+      "role": null,
+      "status": null,
+      "term": null,
+      "party_confirmed_by_roster": true,
+      "session_stats": {
+        "Contributions": 167,
+        "Committees": 3,
+        "Topics": 12,
+        "Bills": 1,
+        "Voting Records": 9,
+        "Motions": 5,
+        "Petitions": 0,
+        "Questions": 3,
+        "Statements": 6,
+        "Papers Laid": 2
+      },
+      "comparative_rankings": {
+        "Contributions in Hansard": {
+          "value": 167,
+          "rank": 49,
+          "of": 348,
+          "ahead_pct": 86,
+          "median": "46"
+        },
+        "Divisions voted in": {
+          "value": 9,
+          "rank": 18,
+          "of": 348,
+          "ahead_pct": 78,
+          "median": "7"
+        },
+        "Bills sponsored": {
+          "value": 1,
+          "rank": 41,
+          "of": 348,
+          "ahead_pct": 77,
+          "median": "0"
+        },
+        "Motions, questions, petitions and statements": {
+          "value": 10,
+          "rank": 104,
+          "of": 348,
+          "ahead_pct": 66,
+          "median": "6"
+        }
+      },
+      "committee_attendance": "not published by Parliament (stated on page)",
+      "overall_score": null,
+      "voting_summary": {
+        "ayes": 8,
+        "noes": 1,
+        "abstain_spoilt": 0,
+        "absent": 0,
+        "divisions_attended": 9
+      },
+      "queried_as": "Mary Wangusi Emaase",
+      "match_confidence": "high",
+      "match_note": "Site name 'Mary Emaase Otuch'",
+      "source_url": "https://mzalendo.com/mps-performance/national-assembly/13th-parliament/mary-emaase-otuch/"
+    },
+    {
+      "name": "Junet Sheikh Nuh Mohamed",
+      "constituency": null,
+      "county": null,
+      "party": "ODM",
+      "role": null,
+      "status": null,
+      "term": null,
+      "party_confirmed_by_roster": false,
+      "session_stats": {
+        "Contributions": 446,
+        "Committees": 4,
+        "Topics": 12,
+        "Bills": 1,
+        "Voting Records": 9,
+        "Motions": 37,
+        "Petitions": 0,
+        "Questions": 0,
+        "Statements": 0,
+        "Papers Laid": 1
+      },
+      "comparative_rankings": {
+        "Contributions in Hansard": {
+          "value": 446,
+          "rank": 10,
+          "of": 348,
+          "ahead_pct": 97,
+          "median": "46"
+        },
+        "Divisions voted in": {
+          "value": 8,
+          "rank": 76,
+          "of": 348,
+          "ahead_pct": 58,
+          "median": "7"
+        },
+        "Bills sponsored": {
+          "value": 1,
+          "rank": 41,
+          "of": 348,
+          "ahead_pct": 77,
+          "median": "0"
+        },
+        "Motions, questions, petitions and statements": {
+          "value": 6,
+          "rank": 167,
+          "of": 348,
+          "ahead_pct": 46,
+          "median": "6"
+        }
+      },
+      "committee_attendance": "not published by Parliament (stated on page)",
+      "overall_score": null,
+      "voting_summary": {
+        "ayes": 4,
+        "noes": 4,
+        "abstain_spoilt": 0,
+        "absent": 1,
+        "divisions_attended": 8
+      },
+      "queried_as": "Junet Salim Mohammed",
+      "match_confidence": "high",
+      "match_note": "Site/roster name 'Junet Sheikh Nuh Mohamed', Suna East — commonly known as Junet Salim",
+      "source_url": "https://mzalendo.com/mps-performance/national-assembly/13th-parliament/nuh-junet/"
+    },
+    {
+      "name": "Nelson Koech",
+      "constituency": null,
+      "county": null,
+      "party": "UDA",
+      "role": null,
+      "status": null,
+      "term": null,
+      "party_confirmed_by_roster": true,
+      "session_stats": {
+        "Contributions": 99,
+        "Committees": 3,
+        "Topics": 12,
+        "Bills": 0,
+        "Voting Records": 10,
+        "Motions": 18,
+        "Petitions": 0,
+        "Questions": 0,
+        "Statements": 0,
+        "Papers Laid": 15
+      },
+      "comparative_rankings": {
+        "Contributions in Hansard": {
+          "value": 99,
+          "rank": 86,
+          "of": 348,
+          "ahead_pct": 75,
+          "median": "46"
+        },
+        "Divisions voted in": {
+          "value": 8,
+          "rank": 76,
+          "of": 348,
+          "ahead_pct": 58,
+          "median": "7"
+        },
+        "Bills sponsored": {
+          "value": 0,
+          "rank": 81,
+          "of": 348,
+          "ahead_pct": 0,
+          "median": "0"
+        },
+        "Motions, questions, petitions and statements": {
+          "value": 17,
+          "rank": 50,
+          "of": 348,
+          "ahead_pct": 84,
+          "median": "6"
+        }
+      },
+      "committee_attendance": "not published by Parliament (stated on page)",
+      "overall_score": null,
+      "voting_summary": {
+        "ayes": 7,
+        "noes": 1,
+        "abstain_spoilt": 0,
+        "absent": 2,
+        "divisions_attended": 8
+      },
+      "queried_as": "Nelson Koech Kipkorir",
+      "match_confidence": "high",
+      "match_note": "Site name 'Nelson Koech' — roster order",
+      "source_url": "https://mzalendo.com/mps-performance/national-assembly/13th-parliament/nelson-koech/"
+    },
+    {
+      "name": "Abdi Omar Shurie",
+      "constituency": null,
+      "county": null,
+      "party": "JP",
+      "role": null,
+      "status": null,
+      "term": null,
+      "party_confirmed_by_roster": true,
+      "session_stats": {
+        "Contributions": 61,
+        "Committees": 3,
+        "Topics": 5,
+        "Bills": 0,
+        "Voting Records": 6,
+        "Motions": 16,
+        "Petitions": 0,
+        "Questions": 2,
+        "Statements": 0,
+        "Papers Laid": 14
+      },
+      "comparative_rankings": {
+        "Contributions in Hansard": {
+          "value": 61,
+          "rank": 137,
+          "of": 348,
+          "ahead_pct": 60,
+          "median": "46"
+        },
+        "Divisions voted in": {
+          "value": 2,
+          "rank": 332,
+          "of": 348,
+          "ahead_pct": 3,
+          "median": "7"
+        },
+        "Bills sponsored": {
+          "value": 0,
+          "rank": 81,
+          "of": 348,
+          "ahead_pct": 0,
+          "median": "0"
+        },
+        "Motions, questions, petitions and statements": {
+          "value": 17,
+          "rank": 50,
+          "of": 348,
+          "ahead_pct": 84,
+          "median": "6"
+        }
+      },
+      "committee_attendance": "not published by Parliament (stated on page)",
+      "overall_score": null,
+      "voting_summary": {
+        "ayes": 2,
+        "noes": 0,
+        "abstain_spoilt": 0,
+        "absent": 4,
+        "divisions_attended": 2
+      },
+      "queried_as": "Abdi Daba Shurie",
+      "match_confidence": "medium",
+      "match_note": "Site/roster name 'Shurie Abdi Omar', Balambala; middle name Omar vs queried Daba",
+      "source_url": "https://mzalendo.com/mps-performance/national-assembly/13th-parliament/abdi-omar-shurie/"
+    },
+    {
+      "name": "Millie Grace Akoth Odhiambo Mabona",
+      "constituency": null,
+      "county": null,
+      "party": "ODM",
+      "role": null,
+      "status": null,
+      "term": null,
+      "party_confirmed_by_roster": true,
+      "session_stats": {
+        "Contributions": 579,
+        "Committees": 4,
+        "Topics": 6,
+        "Bills": 3,
+        "Voting Records": 6,
+        "Motions": 16,
+        "Petitions": 0,
+        "Questions": 1,
+        "Statements": 3,
+        "Papers Laid": 4
+      },
+      "comparative_rankings": {
+        "Contributions in Hansard": {
+          "value": 579,
+          "rank": 7,
+          "of": 348,
+          "ahead_pct": 98,
+          "median": "46"
+        },
+        "Divisions voted in": {
+          "value": 5,
+          "rank": 261,
+          "of": 348,
+          "ahead_pct": 12,
+          "median": "7"
+        },
+        "Bills sponsored": {
+          "value": 3,
+          "rank": 13,
+          "of": 348,
+          "ahead_pct": 95,
+          "median": "0"
+        },
+        "Motions, questions, petitions and statements": {
+          "value": 9,
+          "rank": 118,
+          "of": 348,
+          "ahead_pct": 64,
+          "median": "6"
+        }
+      },
+      "committee_attendance": "not published by Parliament (stated on page)",
+      "overall_score": null,
+      "voting_summary": {
+        "ayes": 3,
+        "noes": 2,
+        "abstain_spoilt": 0,
+        "absent": 1,
+        "divisions_attended": 5
+      },
+      "queried_as": "Esther Akoth",
+      "match_confidence": "possible",
+      "match_note": "'Esther Akoth' NOT found on mzalendo. Nearest match: Suba North ODM seat held by 'Millie Grace Akoth Odhiambo Mabona'; only the 'Akoth' token matches — UNVERIFIED identity, review before use",
+      "source_url": "https://mzalendo.com/mps-performance/national-assembly/13th-parliament/millie-grace-akoth-odhiambo-mabona/"
+    }
+  ]
+}
