@@ -1,0 +1,424 @@
+[
+  {
+    "nominee_id": "4.1",
+    "name": "Hon. (Prof) Kithure Kindiki, EGH",
+    "portfolio": "Cabinet Secretary for Interior and National Administration",
+    "section_pages": "pp. 33-48 (observations p. 48)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment to State Office; Kenyan citizen born 1972 in Tharaka-Nithi County, does not hold dual citizenship", "page": 48, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Extensive record: CS for Interior Oct 2022-Jul 2024; Senator Tharaka Nithi 2013-2022; Leader of Majority Party then Deputy Speaker; admitted as Defence Counsel at the ICC at The Hague; Advocate of the High Court of Kenya for the last 24 years; consultant for AU and UN; Associate Dean, School of Law and Head of Department of Public Law, University of Nairobi; senior lecturer at Moi University and UoN", "page": 48, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Holds PhD in International Law and Master of Laws (LL.M) from University of Pretoria, LL.B from Moi University, Diploma in Legal Studies from Kenya School of Law; 'His academic credentials, professional training and experience thus comply with sections 6(7) and 7 of the Public Appointments (Parliamentary Approval) Act.'", "page": 48, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for Interior and National Administration'", "page": 48, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed among statutory bodies from which clearance obtained under Chapter 6)", "page": 48, "quote": "meets the requirements of Chapter 6 of the Constitution on leadership and integrity having obtained clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed with EACC/KRA/DCI/ORPP)", "page": 48, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 48, "quote": "Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 48, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 48, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.2",
+    "name": "Dr. Debra Mlongo Barasa (OCR: 'Miongo Barasa')",
+    "portfolio": "Cabinet Secretary for Health",
+    "section_pages": "pp. 49-57 (observations pp. 57-58)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment; Kenyan citizen born 1982 in Nairobi County, no dual citizenship", "page": 57, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee possesses extensive experience in the health sector and currently serves as an Infectious Diseases Consultant at the World Health Organization'; previously Internal Medicine Physician/Senior Registrar at Mater Hospital, Internal Medicine Physician/Technical Advisor at Eastern Deanery AIDS Relief Program, Medical Registrar at Kenyatta Hospital, Medical Officer Intern at Machakos General Hospital", "page": 57, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Pursuing MSc in Infectious Diseases at London School of Hygiene and Tropical Medicine; holds Master of Internal Medicine and MBChB from University of Nairobi; credentials comply with sections 6(7) and 7 of the Public Appointments (Parliamentary Approval) Act", "page": 57, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for Health'", "page": 58, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed)", "page": 57, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 58, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 58, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 58, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 57, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.3",
+    "name": "Hon. Alice Wahome, EGH",
+    "portfolio": "Cabinet Secretary for Lands, Public Works, Housing and Urban Development",
+    "section_pages": "pp. 57-67 (observations pp. 65-66)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment; Kenyan citizen born 1959 in Murang'a County, no dual citizenship", "page": 65, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee possesses relevant experience in Public Service' - CS Lands (Oct 2022-Jul 2024), CS Water (2022-2023), MP Kandara 2013-2022; holds LLB (UoN), Diploma in Legal Practice (KSL), Diploma in Teaching and Training, Certificate in Corporate Governance; credentials comply with s.6(7) and 7", "page": 65, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for Lands, Public Works, Housing and Urban Development'", "page": 66, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Committee dismissed memoranda against her: she 'was not dismissed under the provisions of Article 75(2) of the Constitution and is therefore not disqualified from holding any other state office'; arbitrator Isaac Aluochier 'did not have jurisdiction'", "page": 64, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed)", "page": 65, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 65, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 65, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 65, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 65, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.4",
+    "name": "Mr. Julius Migos Ogamba",
+    "portfolio": "Cabinet Secretary for Education",
+    "section_pages": "pp. 67-76 (observations pp. 76-77)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment; Kenyan citizen born 1967 in Kisii County, no dual citizenship", "page": 76, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Senior Partner at Migos-Ogambe and Waudo Advocates since 1993; Chairman of KenGen since 2023", "page": 76, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Holds Bachelor of Laws (UoN), Post-Graduate Diploma in Law (KSL), Diploma in Law from Institute of Advanced Legal Studies, University of London; credentials comply with s.6(7) and 7", "page": 76, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for Education'", "page": 77, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed)", "page": 76, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 76, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 76, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 76, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 76, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.5",
+    "name": "Hon. Roselinda Soipan Tuya, EGH",
+    "portfolio": "Cabinet Secretary for Defence",
+    "section_pages": "pp. 77-85 (observations pp. 85-86)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment; Kenyan citizen born 1978 in Narok County, no dual citizenship", "page": 85, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Previously CS Environment, Climate Change and Forestry (Oct 2022-Jul 2024); nominated Senator; Woman Representative Narok County 2013-2022; First Chairperson of the Speaker's Panel in the 12th Parliament; Land Law and Gender Specialist with USAID Justice Project; Legal Aid Coordinator at Kituo Cha Sheria", "page": 85, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Holds LL.M in Sustainable International Development (University of Washington, Seattle), LL.B (UoN), Postgraduate Diploma in Law (KSL); credentials comply with s.6(7) and 7", "page": 86, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for Defence'", "page": 86, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed)", "page": 86, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 86, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 86, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 86, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 86, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.6",
+    "name": "Dr. Andrew Mwihia Karanja",
+    "portfolio": "Cabinet Secretary for Agriculture and Livestock Development",
+    "section_pages": "pp. 86-94 (observations pp. 94-95)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment; Kenyan citizen born 1962 in Kiambu County, no dual citizenship", "page": 94, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Principal Consultant, Best Results Associates Ltd since Jan 2015; previously Senior Agricultural Economist and Task Team Leader for the World Bank (2003-2014); Research Fellow, Egerton University; Senior Agricultural Economist, Coffee Research Foundation; Planning Officer/Lecturer, Ministry of Agriculture and Livestock", "page": 94, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Holds PhD in Development Economics and Policy (Wageningen University, Netherlands), MSc Agricultural Economics and BSc Agriculture (UoN), Certificate in Development Oriented Agriculture; credentials comply with s.6(7) and 7", "page": 95, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for Agriculture and Livestock Development'", "page": 95, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed)", "page": 95, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 95, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 95, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 95, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 95, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.7",
+    "name": "Hon. Aden Bare Duale, EGH",
+    "portfolio": "Cabinet Secretary for Environment, Climate Change and Forestry",
+    "section_pages": "pp. 95-104 (observations pp. 104-105)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment; Kenyan citizen born 1965 in Garissa County, no dual citizenship", "page": 104, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Immediate former Cabinet Secretary for Defence; MP for Garissa Township and Dujis; elected MP four consecutive terms; Leader of the Majority Party in the National Assembly for eight years; former Assistant Minister for Livestock; CEO Livestock Traders and Marketing Kenya Society; directorships including Kenya Broadcasting Corporation and Mombasa Export Slaughter House", "page": 104, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Holds Honorary Doctorate in Political Science (Garissa University), MBA (JKUAT), Bachelor's Degree in Education (Moi University); credentials comply with s.6(7) and 7", "page": 104, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for Environment, Climate Change and Forestry'", "page": 105, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed)", "page": 105, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 105, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 105, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 105, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 105, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.8",
+    "name": "Mr. Eric Murithi Mugaa",
+    "portfolio": "Cabinet Secretary for Water, Sanitation and Irrigation",
+    "section_pages": "pp. 105-113 (observations pp. 113-114)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment; Kenyan citizen born 1992 in Meru County, no dual citizenship", "page": 113, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'duly registered member of the Institution of Engineers of Kenya with over nine (9) years of experience in the water and sanitation sector'; Assistant Project Engineer at Water and Sanitation Development Project; previously Nairobi Rivers Sewerage, Murang'a water supply masterplan feasibility, Kenya Transport Sector Support Project", "page": 113, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Holds Master's in Civil Engineering (Water Resources) and Bachelor's in Civil and Construction Engineering (UoN); credentials comply with s.6(7) and 7", "page": 113, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for Water, Sanitation and Irrigation'", "page": 114, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed)", "page": 113, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 114, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 114, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 114, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 113, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.9",
+    "name": "Mr. Davis Chirchir, EGH",
+    "portfolio": "Cabinet Secretary for Roads and Transport",
+    "section_pages": "pp. 114-123 (observations pp. 123-124)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment; Kenyan citizen born 1960 in Kericho County, no dual citizenship", "page": 123, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Immediate former CS Energy and Petroleum (previously 2013-2015); former Chief of Staff, Office of the Deputy President; General Manager, Kenya Posts and Telecommunications Corporation; Commissioner at the interim Independent Electoral Commission (IIEC); served on Technology Committee, Nairobi Stock Exchange", "page": 123, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Holds MBA in International Management (Royal Holloway, University of London), BSc Physics and Computer Science (UoN), Postgraduate Diploma in Tele-Traffic Engineering; credentials comply with s.6(7) and 7", "page": 123, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for Roads and Transport'", "page": 124, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed)", "page": 123, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 123, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 123, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 123, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 123, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.10",
+    "name": "Dr. Margaret Nyambura Ndung'u",
+    "portfolio": "Cabinet Secretary for Information, Communication and the Digital Economy",
+    "section_pages": "pp. 124-132 (observations pp. 132-134)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment; Kenyan citizen born 1972 in Nakuru County, no dual citizenship", "page": 132, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee possesses extensive experience in the ICT sector and currently serves as Senior Research Manager at the Global Digital Inclusion Partnership'; previously Senior Regulatory and Internet Governance Expert at the African Union Commission, lead author of the WSIS Africa Progress Report, consultant at ICT Authority, World Bank short-term consultant, member of Multi-Stakeholder Board at UNESCO, Lead Kenya Partner for Research ICT Africa, lecturer at University of Nairobi and Tshwane University of Technology", "page": 133, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Holds Post-Doctorate Fellowship in Innovation Value Chain (Tshwane University of Technology), PhD in Information Systems (UoN), MBA in Management Science and BSc Information Science (Moi University), plus certificates in Cybersecurity Diplomacy and Internet Governance (Diplo Foundation) and Media Studies and Information Management (Hamburg University); credentials comply with s.6(7) and 7", "page": 133, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for Information, Communication and Digital Economy'", "page": 134, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed)", "page": 133, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 133, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 133, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 133, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 133, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.11",
+    "name": "Hon. John Mbadi Ng'ongo, EGH",
+    "portfolio": "Cabinet Secretary for The National Treasury and Economic Planning",
+    "section_pages": "pp. 135-142 (observations pp. 142-143)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment; Kenyan citizen born 1971 in Homa Bay County, no dual citizenship", "page": 142, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Nominated MP from Aug 2022; previously MP for Suba South (2017-2022), Suba (2013-2017), Gwassi (2008-2013); member of Budget Committee 'engaged in the preparation of the Budget Estimates of Kenya... and is conversant with the budget-making process and government expenditure in Kenya and the process of restructuring debt'; former Chairperson of the Public Accounts Committee; Finance Director, Medair East Africa - South Sudan Programme; senior accounting roles at University of Nairobi/UNES", "page": 142, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Holds Bachelor of Commerce (Accounting Option) from University of Nairobi and is a Certified Public Accountant of Kenya (CPA-K); credentials comply with s.6(7) and 7", "page": 143, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for National Treasury and Economic Planning'", "page": 143, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed)", "page": 143, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 143, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 143, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 143, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 143, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.12",
+    "name": "Hon. Salim Mvurya Mgala, EGH",
+    "portfolio": "Cabinet Secretary for Investments, Trade and Industry",
+    "section_pages": "pp. 143-152 (observations pp. 152-153)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment; Kenyan citizen born 1970 in Kwale County, no dual citizenship", "page": 152, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Served as CS Mining, Blue Economy and Maritime Affairs (Oct 2022-Jul 2024); first Governor of Kwale County for two terms (2013-2022); Program Unit Manager, Plan International Kilifi (2003-2012) and Program Officer, Plan International Kwale (2000-2003)", "page": 152, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Holds Master of Arts in Participation, Power and Social Change (University of Sussex, UK, 2011) and Bachelors in Agribusiness Management (Egerton University, 1996); credentials comply with s.6(7) and 7", "page": 152, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for Investments, Trade and Industry'", "page": 153, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed)", "page": 152, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 152, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 152, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 152, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 152, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.13",
+    "name": "Ms. Rebecca Miano, EGH",
+    "portfolio": "Cabinet Secretary for Tourism and Wildlife",
+    "section_pages": "pp. 155-166 (observations pp. 166-167)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment; Kenyan citizen born 1966 in Nyandarua County, no dual citizenship", "page": 166, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Immediate former CS Investments, Trade & Industry and former CS EAC, ASALs & Regional Development; previously held senior roles at KenGen PLC including Managing Director & Chief Executive Officer, Company Secretary/Legal Affairs Director, Acting HR & Administration Director; also Legal Research Assistant, Slater & Gordon Queensland Australia; Legal Officer, Kenya Power Lighting Company; Associate Lawyer, Musyoka Annan & Co. Advocates", "page": 166, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Holds Masters in Law (University of Salford, Manchester), Advanced Management Program (Strathmore Business School & Navarra University, Spain), Post-Graduate Diploma in Law (KSL), LLB (UoN); credentials comply with s.6(7) and 7", "page": 167, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for Tourism and Wildlife'", "page": 167, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed)", "page": 167, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 167, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 167, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 167, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 167, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.14",
+    "name": "Hon. James Opiyo Wandayi, EGH",
+    "portfolio": "Cabinet Secretary for Energy and Petroleum",
+    "section_pages": "pp. 168-178 (observations pp. 178-179)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment; Kenyan citizen born 1972 in Siaya County, no dual citizenship", "page": 178, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Leader of the Minority Party in the National Assembly and MP Ugunja Constituency; former Chairperson, Public Accounts Committee (PAC) during 12th Parliament; Secretary-General, African Organization of Public Accounts Committees (AFROPAC); consecutive third term MP; previously held core management positions in the private sector including Lead Business Sustainability Manager for Uganda and DRC at British American Tobacco", "page": 178, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Holds Master's in Business Administration (JKUAT), Bachelor of Law Degree (Daystar University), BSc in Agriculture (Agricultural Economics) (UoN); credentials comply with s.6(7) and 7", "page": 178, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for Energy and Petroleum'", "page": 179, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed)", "page": 178, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 178, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 178, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 178, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 178, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.15",
+    "name": "Hon. Onesimus Kipchumba Murkomen, EGH",
+    "portfolio": "Cabinet Secretary for Youth Affairs, Creative Economy and Sports",
+    "section_pages": "pp. 179-187 (observations pp. 187-189)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment; Kenyan citizen born 1979 in Elgeyo Marakwet County, no dual citizenship", "page": 188, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Served as CS Roads and Transport (2022-2024); Senator for Elgeyo Marakwet 2013-2022; consultant at Kirui Law Firm, Arlington Virginia; lecturer at University of Nairobi, Moi University and Catholic University of East Africa; advocate at Kelly and Company Advocates; consultant, Lutheran World Federation; member of the Task Force on Devolved Government", "page": 188, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Advocate of the High Court of Kenya; holds Master of Laws (LLM) from American University's Washington College of Law and from University of Pretoria 'where he graduated with distinction'; LLB (UoN); Diploma in Law (KSL); credentials comply with s.6(7) and 7", "page": 188, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for Youth Affairs, Creative Economy and Sports'", "page": 189, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed)", "page": 188, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 188, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 188, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 188, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 188, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.16",
+    "name": "Hon. Hassan Ali Joho, EGH",
+    "portfolio": "Cabinet Secretary for Mining, Blue Economy and Maritime Affairs",
+    "section_pages": "pp. 188-201 (observations pp. 201-202)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment; Kenyan citizen born 1973 in Mombasa County, no dual citizenship", "page": 201, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Previously served as Governor of Mombasa County (2013-2022), Member of Parliament for Kisauni Constituency and Assistant Minister for Transport; holds Public Leadership Credential from Harvard Kennedy School of Government, Bachelors of Business Administration (Kampala University), Diploma in Human Resource Management (Kampala University), Certificate in Business Administration (Kampala University); credentials comply with s.6(7) and 7", "page": 201, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for Mining, Blue Economy and Maritime Affairs'", "page": 202, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed)", "page": 201, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 202, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 202, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 202, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 201, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.17",
+    "name": "Hon. (Dr.) Alfred Nganga Mutua, EGH",
+    "portfolio": "Cabinet Secretary for Labour and Social Protection",
+    "section_pages": "pp. 202-209 (observations pp. 209-210)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment; Kenyan citizen born 1970 in Machakos County, no dual citizenship", "page": 209, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Immediate former CS Tourism and Wildlife; former CS Foreign and Diaspora Affairs; Governor of Machakos County 2013-2022; first official Government Spokesman of Kenya and Public Communications Secretary 2002-2012; lecturer at Daystar University and assistant professor at Zayed University's College of Communication and Media Studies, Dubai", "page": 209, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Holds Doctorate from University of Western Sydney (2002), MSc in Communication (Eastern Washington University, 1997), BA in Journalism (Whitworth University, 1996); credentials comply with s.6(7) and 7", "page": 209, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for Labour and Social Protection'", "page": 210, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed)", "page": 209, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 210, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 210, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 210, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 209, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.18",
+    "name": "Hon. Wycliffe Ambetsa Oparanya (OCR: 'Oparanyah')",
+    "portfolio": "Cabinet Secretary for Co-operatives and Micro, Small and Medium Enterprises (MSMEs) Development",
+    "section_pages": "pp. 210-220 (observations pp. 220-221)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment; Kenyan citizen born 1956 in Kakamega County, no dual citizenship", "page": 220, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Governor of Kakamega County 2013-2022; Minister of State for Planning, Development and Vision 2030 (2008-2013); MP Butere Constituency (2002-2013); Chief Financial Controller at Kenya Aerotech Company Limited (1996-2003); Senior Audit Manager at Ernst & Young (OCR: 'Earnest Young')", "page": 220, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Fellow Certified Practicing Accountant (FCPA) and CPA-K; holds MBA Finance Option (UoN, 2002), Bachelor of Commerce (UoN, 1980); 'on the verge of completing his Doctor of Philosophy Degree (Ph.D. in Economics) from the University of Dar es Salaam'; credentials comply with s.6(7) and 7", "page": 220, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for Micro, Small and Medium Enterprises (MSMEs) Development'", "page": 221, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "NOT LISTED - clearance paragraph names only KRA, DCI, ORPP and HELB (EACC absent from the list, unlike other nominees; possible OCR/compositing gap)", "page": 220, "quote": "the nominee obtained clearance from the following statutory bodies; the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 220, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 220, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 220, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 220, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.19",
+    "name": "Hon. Justin Bedan Muturi, EGH",
+    "portfolio": "Cabinet Secretary for Public Service and Human Capital Development",
+    "section_pages": "pp. 223-229 (observations pp. 229-230)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment; Kenyan citizen born 1956 in Embu County, no dual citizenship", "page": 229, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee served is a distinguished lawyer, and a seasoned politician possessing extensive experience in the Law sector'; Attorney General of Kenya (Oct 2022-Jul 2024); Speaker of the National Assembly and Chairperson of the Parliamentary Service Commission (2013-2022); Chairperson of the Centre for Multi-Party Democracy (2011-2013); MP Siakago Constituency (1999-2007); magistrate of the Judiciary of Kenya (1982-1997)", "page": 229, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Advocate of the High Court; holds Bachelor of Laws Degree (UoN) and Postgraduate Diploma in Law (KSL); credentials comply with s.6(7) and 7", "page": 229, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee demonstrated knowledge of topical, administrative and technical issues touching on government and has the requisite abilities, qualifications and experience to serve as the Cabinet Secretary for Public Service and Human Capital Development'", "page": 230, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed)", "page": 230, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 230, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 230, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 230, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 230, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": null
+  },
+  {
+    "nominee_id": "4.20",
+    "name": "Ms. Stella Soi Lang'at",
+    "portfolio": "Cabinet Secretary for Gender, Culture, The Arts and Heritage (REJECTED)",
+    "section_pages": "pp. 231-239 (observations pp. 237-239)",
+    "positive_findings": [
+      {"claim": "Eligible for appointment to State Office; Kenyan citizen born 1970 in Kericho County, does not hold dual citizenship", "page": 237, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee possesses extensive experience in public service' - Director, Administration, Ministry of Interior (Mar-Jul 2024); Director, Administration, State Department of Housing and Urban Development (Oct 2021-Feb 2024); County Secretary and Head of Public Service, Bomet County (Apr 2020-Oct 2021); Senior Deputy County Commissioner II / Deputy County Commissioner, Sameta Kisii and Mwingi Sub County (2015-2019); Under Secretary, Office of the Attorney General/State Law Office (2014-2015); Interim County Secretary and Head of Public Service, Narok County/Transition Authority (2013-2014)", "page": 237, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Holds Masters in Public Administration (Executive) from Moi University (2008-2009), Bachelor of Arts majoring in Political Science (University of Nairobi, 1990-1993), Diploma in Business Management (Kenya Institute of Management, 1996), Certificate in Computer Studies (Wote Institute, 1992); additional qualifications include Certified Professional Mediator (2021), Strategic Management Programme (ESAMI Arusha, 2014), Strategic Leadership and Development (Kenya Institute of Administration, 2010); 'Her academic credentials, professional training and experience thus comply with sections 6(7) and 7 of the Public Appointments (Parliamentary Approval) Act.'", "page": 238, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Meets Chapter 6 of the Constitution on leadership and integrity having obtained clearance from EACC, KRA, DCI, ORPP and HELB", "page": 238, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "'the nominee has neither been charged in a court of law nor adversely mentioned in any investigatory report of Parliament or any Commission of Inquiry in the past three years'", "page": 238, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Does not hold office in any political party", "page": 238, "ocr_confidence": "high", "needs_verification": false},
+      {"claim": "Has never been dismissed from office under Article 75 of the Constitution for contravention of Articles 75(1), 76, 77 and 78(2)", "page": 238, "ocr_confidence": "high", "needs_verification": false}
+    ],
+    "background_checks": {
+      "eacc": {"outcome": "cleared (listed)", "page": 238, "quote": "clearance from the following statutory bodies; the Ethics and Anti-Corruption Commission (EACC), the Kenya Revenue Authority (KRA), the Directorate of Criminal Investigations (DCI), Office of the Registrar of Political Parties (ORPP) and the Higher Educations Loan Board (HELB)"},
+      "helb": {"outcome": "cleared (listed)", "page": 238, "quote": "the Higher Educations Loan Board (HELB)"},
+      "dci": {"outcome": "cleared (listed)", "page": 238, "quote": "Directorate of Criminal Investigations (DCI)"},
+      "orpp": {"outcome": "cleared (listed)", "page": 238, "quote": "Office of the Registrar of Political Parties (ORPP)"},
+      "kra": {"outcome": "cleared (listed)", "page": 238, "quote": "the Kenya Revenue Authority (KRA)"},
+      "cue": {"outcome": "not mentioned for this nominee", "page": null, "quote": null}
+    },
+    "rejection_reason": "Committee observations 4.20.3 items (8)-(13), pp. 238-239, verbatim: (8) 'THAT, the nominee's experience in the public service is marked by frequent job transitions in various roles. All the six (6) different postings that the nominee has held do not require any long-term strategic planning. As a result she has not become grounded in any specific leadership role in the public service;' (9) 'THAT, the nominee failed to demonstrate adequate knowledge of topical, administrative and technical issues touching on the Ministry of Gender, Culture, The Arts and Heritage to which she has been nominated;' (10) 'THAT, the nominee is unsuitable for the position to which she was nominated as she was unable to respond in a satisfactory manner to the queries raised during the approval hearing relating to Gender, Heritage and Culture;' (11) 'THAT, the Ministry is strategically important and is tasked with overseeing critical national policies and services.' (12) 'THAT, the Ministry requires leadership with a strong strategic vision, cultural sensitivity, and a deep understanding of policy management.' (13) 'THAT, given the Ministry's functions and mandate, a person seeking to head it must be an effective communicator, innovative, and committed to promoting cultural heritage and gender equality. The nominee failed to exhibit any of these qualities to the committee's satisfaction.' Chapter 5, para 1100(2), p. 241: 'THAT Ms. Stella Soi Lang'at did NOT demonstrate adequate knowledge of topical, administrative and technical issues touching on the portfolio to which she had been nominated; and lacked the requisite abilities, and qualities to be approved for appointment to the office of Cabinet Secretary for Gender, Culture, The Arts and Heritage.' Recommendation, p. 243: 'Rejects the nomination of Ms. Stella Soi Lang'at for appointment as Cabinet Secretary for Gender, Culture, The Arts and Heritage'."
+  }
+]
