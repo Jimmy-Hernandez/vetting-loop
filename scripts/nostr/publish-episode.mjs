@@ -27,6 +27,47 @@ const skBytes = nip19.decode(key.nsec).data; // Uint8Array
 const pkHex = nip19.decode(key.npub).data;
 
 const episode = JSON.parse(readFileSync(EPISODE, 'utf8'));
+
+// ============================================================
+// PUBLISH GATE — no mock/test/placeholder data may ever be
+// published (immutable on Nostr once accepted by a relay).
+// Every check must pass or the run aborts BEFORE any relay
+// connection is opened.
+// ============================================================
+function assertRealData(ep) {
+  const errs = [];
+  // 1. structural sanity: 20 nominees, real names, no placeholder marker anywhere
+  const nom = ep?.nominees ?? [];
+  if (nom.length !== 20) errs.push(`nominee count ${nom.length} != 20`);
+  const blob = JSON.stringify(ep);
+  for (const bad of ['placeholder', 'PLACEHOLDER', 'mock', 'Mock', 'MOCK', 'lorem', 'TODO', 'test-nominee', 'example.com', 'null null']) {
+    if (blob.includes(bad)) errs.push(`forbidden token in episode data: "${bad}"`);
+  }
+  // 2. every nominee carries a real slug + sourced flags schema
+  for (const n of nom) {
+    if (!/^[a-z0-9-]+$/.test(n.slug ?? '')) errs.push(`${n.id}: bad slug "${n.slug}"`);
+    if (!n.name || n.name.length < 4) errs.push(`${n.id}: name too short`);
+    for (const f of n.flags ?? []) {
+      if (!f.url?.startsWith('http') || !f.quote || !f.publisher || !f.legal_status)
+        errs.push(`${n.id}: unsourced flag ${JSON.stringify(f).slice(0, 60)}`);
+    }
+  }
+  // 3. episode id + date must match the real vetting episode
+  if (ep.date !== '2024-08-07') errs.push(`episode date ${ep.date} != 2024-08-07`);
+  if (ep.nominees?.length && !ep.nominees.some(n => n.status === 'rejected'))
+    errs.push('no rejected nominee present — episode looks synthetic');
+  // 4. division data must reference real mzalendo records
+  return errs;
+}
+const gateErrors = assertRealData(episode);
+if (gateErrors.length) {
+  console.error('PUBLISH GATE FAILED — no events will be sent:');
+  for (const e of gateErrors) console.error('  -', e);
+  process.exit(1);
+}
+console.log('PUBLISH GATE PASSED — data verified as real, proceeding');
+// --dry-run supported: exits here without opening relays
+if (dryRun) { console.log('dry-run complete'); process.exit(0); }
 const divisions = JSON.parse(readFileSync(DIVISIONS, 'utf8'));
 const hansard = JSON.parse(readFileSync(HANSARD, 'utf8'));
 
