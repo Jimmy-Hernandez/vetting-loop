@@ -9,15 +9,14 @@ import Methodology from './views/Methodology';
 import About from './views/About';
 import NostrFallback from './views/NostrFallback';
 import Ledger from './views/Ledger';
-import Signals from './views/Signals';
 
 function Chrome({ children }: { children: ReactNode }) {
   const loc = useLocation();
   useEffect(() => { window.scrollTo(0, 0); }, [loc.pathname]);
   const acts = [
     { to: '/nominees', no: 'Act 1', label: 'Before' },
-    { to: '/vote', no: 'Act 2', label: 'During' },
-    { to: '/', no: 'Act 3', label: 'After' },
+    { to: '/vote', no: 'Act 3', label: 'After' },
+    { to: '/', no: '', label: 'Overview' },
   ];
   return (
     <>
@@ -38,9 +37,6 @@ function Chrome({ children }: { children: ReactNode }) {
             ))}
             <NavLink to="/ledger" className="util" aria-current={loc.pathname === '/ledger' ? 'page' : undefined}>
               Ledger
-            </NavLink>
-            <NavLink to="/signals" className="util" aria-current={loc.pathname === '/signals' ? 'page' : undefined}>
-              Signals
             </NavLink>
             <NavLink to="/about" className="util" aria-current={loc.pathname === '/about' ? 'page' : undefined}>
               About
@@ -79,7 +75,7 @@ export default function App() {
           <Route path="/nominee/:idOrSlug" element={<NomineeDossier />} />
           <Route path="/vote" element={<Vote />} />
           <Route path="/ledger" element={<Ledger />} />
-          <Route path="/signals" element={<Signals />} />
+          <Route path="/signals" element={<Methodology />} />
           <Route path="/methodology" element={<Methodology />} />
           <Route path="/about" element={<About />} />
           <Route path="/fallback" element={<NostrFallback />} />

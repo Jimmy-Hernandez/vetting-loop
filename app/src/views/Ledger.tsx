@@ -95,7 +95,21 @@ export default function Ledger() {
         </section>
 </header>
 
-      <div className="led-tools">
+            <details style={{ margin: 'var(--s4) 0' }}>
+        <summary style={{ cursor: 'pointer', fontWeight: 600 }}>Signal legend — what these chips mean</summary>
+        <ol style={{ margin: 'var(--s3) 0 0', paddingLeft: 'var(--s6)' }}>
+          {(ledger?.signals ?? []).map((sig) => (
+            <li key={sig.id} style={{ marginBottom: 6 }}>
+              <b>{sig.label}</b> — {sig.rule}
+            </li>
+          ))}
+        </ol>
+        <p style={{ margin: 'var(--s2) 0 0', opacity: 0.75, fontSize: '0.9em' }}>
+          Signals describe the appointment process, never a person's conduct. Full methodology →{' '}
+          <Link to="/methodology">Methodology &amp; signals</Link>.
+        </p>
+      </details>
+<div className="led-tools">
         <input
           className="led-search"
           type="search"

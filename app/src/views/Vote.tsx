@@ -26,7 +26,7 @@ export default function Vote() {
   return (
     <main className="doc">
       <header className="masthead">
-        <p className="kicker"><span className="rule"></span>Act 2 · During the sitting</p>
+        <p className="kicker"><span className="rule"></span>Act 3 · After — the accountability trail</p>
         <h1>The Vote That Wasn’t Recorded</h1>
         <p className="standfirst">
           {v.hansard_date}: nineteen Cabinet Secretaries approved by voice vote. Hansard’s complete record of

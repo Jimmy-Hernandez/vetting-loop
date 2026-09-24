@@ -191,7 +191,8 @@ export default function NomineeDossier() {
             <h4>Asked ({asked.length})</h4>
             {asked.length === 0 ? <Empty>No questions recorded.</Empty> : (
               <ul>
-                {asked.map((q, i) => (
+                <p className="kicker"><span className="rule"></span>Act 2 · During — the hearing record</p>
+            {asked.map((q, i) => (
                   <li key={i}>
                     {q.text}
                     <br />
