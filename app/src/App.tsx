@@ -2,6 +2,7 @@ import { HashRouter, Routes, Route, Link, NavLink, useLocation } from 'react-rou
 import type { ReactNode } from 'react';
 import { useEffect } from 'react';
 import Home from './views/Home';
+import Hearings from './views/Hearings';
 import Nominees from './views/Nominees';
 import NomineeDossier from './views/NomineeDossier';
 import Vote from './views/Vote';
@@ -15,6 +16,7 @@ function Chrome({ children }: { children: ReactNode }) {
   useEffect(() => { window.scrollTo(0, 0); }, [loc.pathname]);
   const acts = [
     { to: '/nominees', no: 'Act 1', label: 'Before' },
+    { to: '/hearings', no: 'Act 2', label: 'During' },
     { to: '/vote', no: 'Act 3', label: 'After' },
     { to: '/', no: '', label: 'Overview' },
   ];
@@ -73,6 +75,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/nominees" element={<Nominees />} />
           <Route path="/nominee/:idOrSlug" element={<NomineeDossier />} />
+          <Route path="/hearings" element={<Hearings />} />
           <Route path="/vote" element={<Vote />} />
           <Route path="/ledger" element={<Ledger />} />
           <Route path="/signals" element={<Methodology />} />

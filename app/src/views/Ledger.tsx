@@ -90,7 +90,7 @@ export default function Ledger() {
           <p style={{ margin: 0 }}>
             <b>The August 2024 reconstitution</b> — 20 nominees heard over four days, approved by voice vote
             with <b>no recorded per-MP vote</b>. {' '}
-            <Link to="/vote" style={{ textDecoration: 'underline' }}>How this batch was approved → The Vote That Wasn't Recorded</Link>
+            <Link to="/vote" style={{ textDecoration: 'underline' }}>How this batch was approved → The Vote That Wasn't Recorded</Link> · <Link to="/hearings" style={{ textDecoration: 'underline' }}>The hearing record →</Link>
           </p>
         </section>
 </header>
