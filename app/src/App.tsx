@@ -45,7 +45,7 @@ function Chrome({ children }: { children: ReactNode }) {
       <footer className="sitefoot">
         <div className="fin">
           <span>Vetta — a civic tech tool<span className="dot">·</span>Impunity begins at confirmation.</span>
-          <span>All claims source-linked<span className="dot">·</span>Non-partisan<span className="dot">·</span><Link to="/about">About</Link><span className="dot">·</span><Link to="/methodology">Methodology</Link></span>
+          <span>All claims source-linked<span className="dot">·</span>Non-partisan<span className="dot">·</span><Link to="/">About</Link><span className="dot">·</span><Link to="/methodology">Methodology</Link></span>
         </div>
       </footer>
     </>
