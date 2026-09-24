@@ -65,7 +65,7 @@ export default function Home() {
   return (
     <main className="doc">
       <header className="masthead">
-        <p className="kicker"><span className="rule"></span>Civic Tech Tools · 13th Parliament</p>
+        <p className="kicker"><span className="rule"></span>13th Parliament · Kenya</p>
         <h1>
           {assertPositive(nPeople, 'people')} nominations.{' '}
           {houseRejections === 1 ? 'One rejection.' : <>{houseRejections} rejections.</>}
