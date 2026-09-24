@@ -28,6 +28,21 @@ export default function Nominees() {
         </p>
         {ph && <p style={{ marginTop: 16 }}><span className="chip-placeholder">Placeholder data</span></p>}
         <div className="close" aria-hidden="true"></div>
+              {ep.priorCycles?.cabinet_2022 && (() => {
+          const pc = ep.priorCycles.cabinet_2022;
+          const rets = pc.nominees.filter((x) => x.returned_in_2024);
+          return (
+            <section className="prior-cycle" style={{ marginTop: 'var(--s4)' }}>
+              <p style={{ margin: 0 }}>
+                <b>Context.</b> The original cabinet nominated {pc.nominated} — {pc.nominees.length} CS
+                nominees{pc.sameAnnouncementOffices?.length ? ` plus ${pc.sameAnnouncementOffices.length} offices announced the same day` : ''} —
+                was {' '}vetted and {pc.outcome.toLowerCase()}. Of these, <b>{rets.length}</b> reappear
+                among the {nom.filter((x) => x.status === 'approved').length} approvals vetted {ep.date}.
+                {pc.needs_verification && <span className="chip">verify vs Kenya Gazette</span>}
+              </p>
+            </section>
+          );
+        })()}
       </header>
 
       {nom.length === 0 ? (

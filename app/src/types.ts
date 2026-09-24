@@ -105,12 +105,20 @@ export interface GateGap {
   needs_verification: boolean;
 }
 
+export interface PriorCycleNominee {
+  name: string;
+  portfolio: string;
+  cycle: string;
+  returned_in_2024?: string;
+}
+
 export interface Episode {
   slug: string;
   title: string;
   date: string;
   summary: string;
   nominees: Nominee[];
+  priorCycles?: { cabinet_2022?: { nominated: string; vetted: string; outcome: string; source: string; needs_verification: boolean; nominees: PriorCycleNominee[]; sameAnnouncementOffices?: {office:string;name:string}[] } };
   gateGaps?: GateGap[];
 }
 
