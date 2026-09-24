@@ -1,0 +1,8 @@
+{
+  "name": "vetting-loop-scripts",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "nostr-tools": "^2.25.2"
+  }
+}

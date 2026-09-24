@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import { useEffect } from 'react';
 import Home from './views/Home';
@@ -58,7 +58,7 @@ function Fallback() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Chrome>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -70,6 +70,6 @@ export default function App() {
           <Route path="*" element={<Fallback />} />
         </Routes>
       </Chrome>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

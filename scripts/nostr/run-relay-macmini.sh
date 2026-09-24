@@ -35,11 +35,16 @@ else
     echo "Pulling $IMAGE…"
     docker pull "$IMAGE"
   fi
+  mkdir -p "${VOLUME_DIR}/db"
+  # VERIFIED on this image: strfry needs the db dir to pre-exist (mdb_env_open fails
+  # otherwise), conf must point db = "./strfry-db/" (relative), and the entrypoint
+  # must pre-create it before /app/strfry.sh runs.
   docker run -d --name "$CONTAINER" \
-    -p "127.0.0.1:${PORT}:7778" \
-    -v "${VOLUME}:/data" \
+    -p "127.0.0.1:${PORT}:7777" \
+    -v "${VOLUME_DIR}/strfry.conf:/etc/strfry.conf:ro" \
+    -v "${VOLUME_DIR}/db:/app/strfry-db" \
     --restart unless-stopped \
-    "$IMAGE"
+    --entrypoint sh "$IMAGE" -c "mkdir -p /app/strfry-db && /app/strfry.sh"
 fi
 
 # Health check: WebSocket handshake (strfry answers any HTTP GET on 7778).

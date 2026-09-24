@@ -109,3 +109,22 @@ Three independent copies. Demo complete.
 - App-side network code is subscribe/fetch ONLY — nothing in `app/src` publishes.
 - The `vetting-relay` container is disposable (`--down`), volume retained.
 - SatPicks infra is off-limits for this demo.
+
+
+## Server toggle (MacBook DSH launchd — prevents auto-respawn during the kill step)
+
+```bash
+# CRASH DEMO: disable auto-respawn BEFORE killing the server
+launchctl bootout gui/$(id -u)/com.dsh.vettingloop
+
+# ... run the kill + fallback steps ...
+
+# RESTORE after the demo
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.dsh.vettingloop.plist
+```
+
+## Fallback URL (verified)
+
+The app uses **HashRouter**: the fallback works from BOTH the dev server and the static bundle:
+- dev: http://localhost:5173/fallback (or /#/fallback)
+- static file:// or `npx serve app/dist`: open `index.html#/fallback`
