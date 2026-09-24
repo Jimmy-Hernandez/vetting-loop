@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { TerryLedger, TerryPerson } from '../terryTypes';
 import { loadTerryLedger } from '../data';
+import { toOurSlug } from '../slugSeam';
 
 // Ledger & signals: Vetting Record (Terry/Agent9). Hearing-depth record & episode analysis: Vetta (KITT lane).
 
@@ -39,7 +40,12 @@ export default function Ledger() {
     fetch(`${import.meta.env.BASE_URL}data/episode.json`)
       .then((r) => (r.ok ? r.json() : null))
       .then((ep) => {
-        if (ep?.nominees) setOurSlugs(new Set(ep.nominees.map((n: { slug: string }) => n.slug)));
+        if (ep?.nominees) {
+          // Store OUR slugs normalized: map Terry slug -> our slug via alias seam, plus identity.
+          const s = new Set<string>();
+          for (const n of ep.nominees) s.add(n.slug);
+          setOurSlugs(s);
+        }
       })
       .catch(() => undefined);
   }, []);
@@ -127,7 +133,8 @@ export default function Ledger() {
             {filtered.map((p) => {
               const tier = personTier(p);
               const sigs = (ledger.hits ?? []).filter((h) => h.slug === p.slug);
-              const hasHearing = ourSlugs.has(p.slug);
+              const ourSlug = toOurSlug(p.slug);
+              const hasHearing = ourSlugs.has(ourSlug);
               return (
                 <tr key={p.slug}>
                   <td>
@@ -161,7 +168,7 @@ export default function Ledger() {
                   </td>
                   <td>
                     {hasHearing ? (
-                      <Link className="led-hearing" to={`/nominee/${p.slug}`}>Dossier →</Link>
+                      <Link className="led-hearing" to={`/nominee/${ourSlug}`}>Dossier →</Link>
                     ) : (
                       <span className="led-none">—</span>
                     )}

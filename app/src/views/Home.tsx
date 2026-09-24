@@ -37,7 +37,10 @@ export default function Home() {
   const allAppointments = people.flatMap((p) => p.appointments ?? []);
   const totalAppointments = allAppointments.length;
   const approvedAppointments = allAppointments.filter((a) => a.outcome === 'approved').length;
-  const houseRejections = allAppointments.filter((a) => a.outcome === 'rejected').length;
+  // "One rejection": House rejections across the vetting-gate cycles (CS 2022, PS 2022, CS 2024) —
+  // Terry's own framing. The third raw 'rejected' is an envoy-cycle rejection, not a gate rejection.
+  const gateCycleIds = new Set((ledger?.cycles ?? []).filter((c) => c.gate).map((c) => c.id));
+  const houseRejections = allAppointments.filter((a) => a.outcome === 'rejected' && gateCycleIds.has(a.cycle)).length;
   const nPeople = people.length;
   const assertPositive = (n: number, what: string) => {
     if (n <= 0) throw new Error(`ledger computation returned ${n} for ${what}`);
@@ -65,7 +68,7 @@ export default function Home() {
         <p className="kicker"><span className="rule"></span>Civic Tech Tools · 13th Parliament</p>
         <h1>
           {assertPositive(nPeople, 'people')} nominations.{' '}
-          {houseRejections > 0 ? <>One rejection.</> : null}
+          {houseRejections === 1 ? 'One rejection.' : <>{houseRejections} rejections.</>}
         </h1>
         <p className="standfirst">
           Parliament vets every Cabinet Secretary and Principal Secretary before they take office. This tool

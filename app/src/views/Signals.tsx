@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { TerryLedger, TerryHit } from '../terryTypes';
 import { loadTerryLedger } from '../data';
+import { toOurSlug } from '../slugSeam';
 
 // "What it is not" — Terry's verbatim framing from vetting-record.pages.dev/signals.
 const WHAT_NOT = [
@@ -69,8 +70,8 @@ export default function Signals() {
                     {matches.map((h) => (
                       <li key={h.slug + h.appointmentIds.join('|')}>
                         <div className="sig-m-name">
-                          {ourSlugs.has(h.slug) ? (
-                            <Link to={`/nominee/${h.slug}`}>{personName(ledger, h.slug)} →</Link>
+                          {ourSlugs.has(toOurSlug(h.slug)) ? (
+                            <Link to={`/nominee/${toOurSlug(h.slug)}`}>{personName(ledger, h.slug)} →</Link>
                           ) : (
                             personName(ledger, h.slug)
                           )}
