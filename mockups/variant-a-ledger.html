@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Vetting Loop — ACT 3: The Accountability Trail</title>
+<style>
+  :root{
+    --red: hsl(358 81% 41%);
+    --red-light: hsl(358 84% 49%);
+    --red-dark: hsl(358 76% 25%);
+    --red-tint: #f3d6d8;
+    --green: hsl(144 100% 25%);
+    --white: #fff;
+    --grey-50: #f8f9fa;
+    --grey-100: #f0f0f0;
+    --grey-200: #eee;
+    --grey-300: #ddd;
+    --grey-400: #ccc;
+    --ink: #000;
+    --font-main: 'Montserrat', sans-serif;
+    --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', 'Segoe UI Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+    --r-1: 4px; --r-2: 8px; --r-3: 14px;
+    --s-1: 0.25rem; --s-2: 0.5rem; --s-3: 0.75rem; --s-4: 1rem;
+    --s-5: 1.5rem; --s-6: 2rem; --s-7: 3rem;
+    --container: 1120px;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{
+    font-family: var(--font-main);
+    font-size: 1rem;
+    line-height: 1.55;
+    color: var(--ink);
+    background: var(--white);
+  }
+  .container{ max-width: var(--container); margin: 0 auto; padding: 0 clamp(1rem, 1.65vw, 2.4rem); }
+
+  /* ---------- Masthead ---------- */
+  .masthead{ border-bottom: 3px solid var(--red); background: var(--white); }
+  .masthead-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: var(--s-4) 0; gap: var(--s-4); flex-wrap: wrap;
+  }
+  .brand{ display:flex; align-items:center; gap: var(--s-3); }
+  .brand-mark{
+    width: 34px; height: 34px; border-radius: var(--r-1);
+    background: var(--red); color: #fff; font-weight: 700; font-size: .95rem;
+    display:flex; align-items:center; justify-content:center; flex: 0 0 auto;
+  }
+  .brand-text .tool-name{ font-weight: 700; font-size: 1.05rem; letter-spacing: .01em; }
+  .brand-text .site{ font-size: .72rem; color: #555; letter-spacing: .08em; text-transform: uppercase; }
+  .crumb{ font-size: .78rem; color: #555; }
+  .crumb a{ color: var(--red); text-decoration: none; }
+  .crumb a:hover{ text-decoration: underline; }
+
+  /* ---------- Page head ---------- */
+  .act{ background: var(--grey-50); border-bottom: 1px solid var(--grey-300); }
+  .act-inner{ padding: var(--s-7) 0 var(--s-6); }
+  .act-eyebrow{
+    display:inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: #fff; background: var(--red);
+    padding: var(--s-1) var(--s-3); border-radius: var(--r-1); margin-bottom: var(--s-4);
+  }
+  .act h1{ font-size: clamp(1.6rem, 3.4vw, 2.4rem); line-height: 1.2; font-weight: 700; margin-bottom: var(--s-3); }
+  .act h1 .muted{ color: var(--red); }
+  .act .lede{ max-width: 46rem; font-size: 1.02rem; color: #333; }
+
+  /* ---------- Event strip ---------- */
+  .event{
+    display: flex; flex-wrap: wrap; gap: var(--s-4); align-items: stretch;
+    margin-top: var(--s-5); border: 1px solid var(--grey-300); border-radius: var(--r-2);
+    background: var(--white); overflow: hidden;
+  }
+  .event .cell{ flex: 1 1 200px; padding: var(--s-4) var(--s-5); border-left: 1px solid var(--grey-300); }
+  .event .cell:first-child{ border-left: none; }
+  .event .label{ font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #666; margin-bottom: var(--s-1); }
+  .event .value{ font-size: .95rem; font-weight: 600; }
+  .event .value .out{ color: var(--red); font-weight: 700; }
+
+  /* ---------- Finding banner ---------- */
+  .finding{ background: var(--white); padding: var(--s-7) 0 var(--s-6); }
+  .finding-banner{
+    border: 1px solid var(--red); border-left: 6px solid var(--red);
+    border-radius: var(--r-2); background: #fff; padding: var(--s-5) var(--s-6);
+  }
+  .finding-banner .tag{
+    display:inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--red); background: var(--red-tint);
+    padding: var(--s-1) var(--s-2); border-radius: var(--r-1); margin-bottom: var(--s-3);
+  }
+  .finding-banner h2{ font-size: clamp(1.15rem, 2.4vw, 1.5rem); line-height: 1.3; font-weight: 700; margin-bottom: var(--s-3); }
+  .finding-banner p{ color: #333; max-width: 52rem; }
+  .finding-banner .hansard{
+    margin-top: var(--s-4); font-family: var(--font-mono); font-size: .9rem;
+    background: var(--grey-100); border: 1px solid var(--grey-300); border-radius: var(--r-1);
+    padding: var(--s-3) var(--s-4);
+  }
+  .finding-banner .hansard .src{ font-family: var(--font-main); font-size: .72rem; color: #666; margin-top: var(--s-2); letter-spacing: .04em; }
+
+  /* ---------- Ledger ---------- */
+  .ledger-section{ padding-bottom: var(--s-7); }
+  .sec-head{ margin: var(--s-6) 0 var(--s-4); }
+  .sec-head h3{ font-size: 1.15rem; font-weight: 700; }
+  .sec-head p{ font-size: .88rem; color: #555; max-width: 52rem; margin-top: var(--s-1); }
+
+  .ledger-wrap{ overflow-x: auto; border: 1px solid var(--grey-300); border-radius: var(--r-2); }
+  table.ledger{ width: 100%; border-collapse: collapse; font-size: .82rem; background: var(--white); min-width: 760px; }
+  table.ledger caption{
+    caption-side: top; text-align: left; font-size: .72rem; color: #666;
+    padding: var(--s-3) var(--s-4); letter-spacing: .03em; background: var(--grey-50);
+    border-bottom: 1px solid var(--grey-300);
+  }
+  table.ledger th, table.ledger td{ padding: var(--s-3) var(--s-4); border-bottom: 1px solid var(--grey-300); text-align: left; vertical-align: top; }
+  table.ledger thead th{
+    font-size: .68rem; letter-spacing: .08em; text-transform: uppercase;
+    color: #fff; background: var(--red-dark); font-weight: 700;
+  }
+  table.ledger thead th.nom{ text-align: center; }
+  table.ledger tbody tr:nth-child(even){ background: var(--grey-50); }
+  td.mp-name{ font-weight: 600; white-space: nowrap; }
+  td.mp-sub{ display:block; font-weight: 400; font-size: .7rem; color: #666; margin-top: 2px; }
+  td.vote-cell{ font-family: var(--font-mono); font-size: .74rem; text-align: center; color: #888; background: repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(0,0,0,.02) 6px, rgba(0,0,0,.02) 12px); }
+  td.vote-cell .dash{ color: var(--grey-400); font-weight: 700; margin-right: .35em; }
+  tr.all-row td{ font-weight: 700; background: var(--grey-100); }
+  tr.all-row td.vote-cell{ color: #888; font-weight: 600; }
+  tr.stella-row td{ background: var(--red-tint); }
+  tr.stella-row td.vote-cell{ color: var(--red-dark); background: #fbe9ea; }
+  tr.stella-row td.mp-name{ color: var(--red-dark); }
+  .ledger-footnote{ font-size: .75rem; color: #666; margin-top: var(--s-3); }
+  .ledger-footnote strong{ color: var(--red-dark); }
+
+  /* ---------- Contrast: the recorded division ---------- */
+  .contrast{
+    margin-top: var(--s-6); display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--s-5);
+    border: 1px solid var(--green); border-radius: var(--r-2); background: #fff; overflow: hidden;
+  }
+  .contrast .text{ padding: var(--s-5) var(--s-6); }
+  .contrast .tag{
+    display:inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    color: #fff; background: var(--green); padding: var(--s-1) var(--s-2); border-radius: var(--r-1); margin-bottom: var(--s-3);
+  }
+  .contrast h4{ font-size: 1.05rem; font-weight: 700; margin-bottom: var(--s-2); }
+  .contrast p{ font-size: .9rem; color: #333; }
+  .contrast .tally{
+    background: var(--grey-50); border-left: 1px solid var(--grey-300);
+    padding: var(--s-5) var(--s-6); display:flex; flex-direction: column; justify-content:center; gap: var(--s-3);
+  }
+  .tally .row{ display:flex; align-items: baseline; gap: var(--s-3); }
+  .tally .party-label{ font-size: .8rem; font-weight: 700; width: 5.5em; }
+  .tally .bar-wrap{ flex: 1; display: flex; height: 18px; border-radius: var(--r-1); overflow: hidden; }
+  .tally .yes{ background: var(--green); }
+  .tally .no{ background: var(--red); }
+  .tally .num{ font-family: var(--font-mono); font-size: .85rem; font-weight: 700; }
+  .tally .num.y{ color: var(--green); }
+  .tally .num.n{ color: var(--red); }
+  .contrast .link-line{ font-size: .8rem; margin-top: var(--s-3); }
+  .contrast .link-line a{ color: var(--green); font-weight: 600; text-decoration: none; }
+  .contrast .link-line a:hover{ text-decoration: underline; }
+
+  /* ---------- Stella Soi card ---------- */
+  .stella-section{ background: var(--grey-50); border-top: 1px solid var(--grey-300); padding: var(--s-7) 0; }
+  .stella-section .sec-head{ margin-top: 0; }
+  .stella-card{
+    display: grid; grid-template-columns: 1fr 1.4fr; gap: var(--s-5);
+    background: #fff; border: 1px solid var(--grey-300); border-radius: var(--r-3);
+    padding: var(--s-6); border-top: 6px solid var(--red);
+  }
+  .stella-card .who .role-tag{
+    display:inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--red-dark); background: var(--red-tint); padding: var(--s-1) var(--s-2); border-radius: var(--r-1); margin-bottom: var(--s-2);
+  }
+  .stella-card .who h4{ font-size: 1.35rem; font-weight: 700; margin-bottom: var(--s-2); }
+  .stella-card .who .docket{ font-size: .88rem; color: #555; margin-bottom: var(--s-4); }
+  .stella-card .who .verdict{
+    font-family: var(--font-mono); font-size: .8rem; color: var(--red-dark);
+    border: 1px dashed var(--red); border-radius: var(--r-1); padding: var(--s-3); background: #fff;
+  }
+  .stella-card blockquote{
+    border-left: 4px solid var(--red); padding: var(--s-3) var(--s-4);
+    background: var(--grey-50); border-radius: 0 var(--r-2) var(--r-2) 0; margin-bottom: var(--s-4);
+  }
+  .stella-card blockquote p{ font-size: .95rem; color: #222; }
+  .stella-card blockquote p + p{ margin-top: var(--s-2); }
+  .stella-card blockquote cite{
+    display: block; font-style: normal; font-size: .72rem; letter-spacing: .05em;
+    color: #666; margin-top: var(--s-2); text-transform: uppercase; font-weight: 600;
+  }
+  .stella-card .method-note{ font-size: .78rem; color: #555; }
+  .stella-card .method-note strong{ color: var(--red-dark); }
+
+  /* ---------- Footer ---------- */
+  footer{ border-top: 3px solid var(--red); padding: var(--s-5) 0 var(--s-6); font-size: .78rem; color: #555; }
+  footer .container{ display:flex; justify-content: space-between; gap: var(--s-4); flex-wrap: wrap; }
+  footer a{ color: var(--red); text-decoration: none; }
+  footer a:hover{ text-decoration: underline; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px){
+    .contrast{ grid-template-columns: 1fr; }
+    .contrast .tally{ border-left: none; border-top: 1px solid var(--grey-300); }
+    .stella-card{ grid-template-columns: 1fr; }
+  }
+  @media (max-width: 390px){
+    .masthead-inner{ flex-direction: column; align-items: flex-start; gap: var(--s-2); }
+    .act-inner{ padding: var(--s-6) 0 var(--s-5); }
+    .event{ flex-direction: column; }
+    .event .cell{ border-left: none; border-top: 1px solid var(--grey-300); }
+    .event .cell:first-child{ border-top: none; }
+    .finding{ padding: var(--s-5) 0; }
+    .finding-banner{ padding: var(--s-4); border-left-width: 4px; }
+    table.ledger{ min-width: 640px; } /* horizontal scroll; the gap stays legible */
+    .ledger-wrap{ -webkit-overflow-scrolling: touch; }
+    .stella-card{ padding: var(--s-4); border-top-width: 4px; }
+    .contrast .text, .contrast .tally{ padding: var(--s-4); }
+    .stella-section{ padding: var(--s-6) 0; }
+    .tally .party-label{ width: 4.5em; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="container masthead-inner">
+    <div class="brand">
+      <div class="brand-mark">VL</div>
+      <div class="brand-text">
+        <div class="tool-name">The Vetting Loop</div>
+        <div class="site">Mzalendo · Civic Tech Tools</div>
+      </div>
+    </div>
+    <div class="crumb"><a href="#">Nominee File</a> &rsaquo; <a href="#">What Was Asked</a> &rsaquo; <strong>Accountability Trail</strong></div>
+  </div>
+</header>
+
+<section class="act">
+  <div class="container act-inner">
+    <span class="act-eyebrow">Act 3 — After</span>
+    <h1>ACT 3: <span class="muted">The Accountability Trail</span></h1>
+    <p class="lede">The House has heard the nominees. The committee has reported. One question decides 19 cabinet appointments — and on 7 August 2024, the question was put and agreed to in under a minute. This page asks the only question that matters afterwards: <strong>who, exactly, approved?</strong></p>
+
+    <div class="event">
+      <div class="cell">
+        <div class="label">House</div>
+        <div class="value">National Assembly</div>
+      </div>
+      <div class="cell">
+        <div class="label">Sitting</div>
+        <div class="value">Wednesday, 7 August 2024 — afternoon</div>
+      </div>
+      <div class="cell">
+        <div class="label">Motion</div>
+        <div class="value">Committee on Appointments — Second Report</div>
+      </div>
+      <div class="cell">
+        <div class="label">Outcome</div>
+        <div class="value">19 Cabinet Secretary nominees approved · <span class="out">1 rejected: Ms Stella Soi Lang'at</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="finding">
+  <div class="container">
+    <div class="finding-banner">
+      <span class="tag">The Finding</span>
+      <h2>All 19 approvals passed by voice vote. No per-MP recorded vote exists — anywhere.</h2>
+      <p>Hansard records exactly one line for the decision of the whole House: <em>&ldquo;(Question put and agreed to)&rdquo;</em>. No division was called, no member's vote was recorded, no aye/no tally exists. Every MP's vote on every nominee is, officially, unknown. The blankness below is not missing data — it is the public record.</p>
+      <div class="hansard">
+        &ldquo;(&nbsp;Question put and agreed to&nbsp;)&rdquo;
+        <div class="src">— Hansard, National Assembly afternoon sitting, Wed 7 Aug 2024 — the complete voting record for 19 CS approvals</div>
+      </div>
+    </div>
+
+    <div class="sec-head">
+      <h3>The per-MP ledger</h3>
+      <p>Members of the Committee on Appointments, cross-referenced against three of the 19 approved nominees. Each MP sat through days of public hearings — then cast a vote that no official record preserves. Read any cell. It reads the same.</p>
+    </div>
+
+    <div class="ledger-wrap">
+      <table class="ledger">
+        <caption>Sample: 10 Committee on Appointments members × representative nominees · source: Hansard 7 Aug 2024; Mzalendo MP records · every cell = no recorded vote</caption>
+        <thead>
+          <tr>
+            <th scope="col" style="width:26%">Member of Parliament</th>
+            <th scope="col" class="nom">Hon. Wycliffe Oparanya — CS nominee</th>
+            <th scope="col" class="nom">Hon. Hassan Joho — CS nominee</th>
+            <th scope="col" class="nom">Hon. Alfred Mutua — CS nominee</th>
+            <th scope="col" class="nom">…all 19 approved</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="mp-name">Hon. Gladys Boss<span class="mp-sub">Deputy Speaker · UDA</span></td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+          </tr>
+          <tr>
+            <td class="mp-name">Hon. Owen Baya<span class="mp-sub">UDA</span></td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+          </tr>
+          <tr>
+            <td class="mp-name">Hon. Robert Mbui<span class="mp-sub">WDM–K</span></td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+          </tr>
+          <tr>
+            <td class="mp-name">Hon. Rahab Mukami<span class="mp-sub">NADP</span></td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+          </tr>
+          <tr>
+            <td class="mp-name">Hon. Ali Rasso Dido<span class="mp-sub">UDA</span></td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+          </tr>
+          <tr>
+            <td class="mp-name">Hon. George Murugara<span class="mp-sub">UDA</span></td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+          </tr>
+          <tr>
+            <td class="mp-name">Hon. David Gikaria<span class="mp-sub">UDA</span></td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+          </tr>
+          <tr>
+            <td class="mp-name">Hon. Mary Emaase<span class="mp-sub">UDA</span></td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+          </tr>
+          <tr>
+            <td class="mp-name">Hon. Junet Mohamed<span class="mp-sub">ODM</span></td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+          </tr>
+          <tr>
+            <td class="mp-name">Hon. Millie Odhiambo<span class="mp-sub">ODM</span></td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+          </tr>
+          <tr class="all-row">
+            <td class="mp-name">…every other Member<span class="mp-sub">all 348 seats — same record</span></td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+            <td class="vote-cell"><span class="dash">—</span>no recorded vote</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="ledger-footnote"><strong>How to read this:</strong> the empty cells are the accountability finding. When the House approves cabinet nominees by voice vote, no MP — for any nominee — is on record. Ask any member on this list how they voted on any of the 19: the honest answer available to the public is &ldquo;there is no record&rdquo;.</p>
+
+    <div class="contrast">
+      <div class="text">
+        <span class="tag">Contrast — a vote that exists</span>
+        <h4>Finance Bill 2024, Second Reading — a recorded division</h4>
+        <p>When the House does take a recorded division, every member's name is on the roll. The Finance Bill 2024 Second Reading produced exactly that: 192 ayes, 105 noes, each attributed on Mzalendo's voting record. The mechanism exists. It was simply never used for the 19 cabinet approvals.</p>
+        <p class="link-line">Browse every recorded division: <a href="https://mzalendo.com/research-and-knowledge/voting-patterns/">mzalendo.com/research-and-knowledge/voting-patterns/</a></p>
+      </div>
+      <div class="tally">
+        <div class="row">
+          <span class="party-label">Yes</span>
+          <span class="bar-wrap"><span class="yes" style="width:64.6%"></span><span class="no" style="width:35.4%"></span></span>
+          <span class="num y">192</span>
+        </div>
+        <div class="row">
+          <span class="party-label">No</span>
+          <span class="num n">105</span>
+        </div>
+        <div class="row" style="font-size:.72rem;color:#666;">Finance Bill 2024 · 2nd Reading · National Assembly division — per-MP record published</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stella-section">
+  <div class="container">
+    <div class="sec-head">
+      <h3>The one rejection that WAS individually recorded</h3>
+      <p>The House never named who voted for the 19 — but it named, and reasoned on the record, the one nominee it voted down.</p>
+    </div>
+
+    <div class="stella-card">
+      <div class="who">
+        <span class="role-tag">Rejected · 7 Aug 2024</span>
+        <h4>Ms Stella Soi Lang'at</h4>
+        <p class="docket">Cabinet Secretary nominee — Gender, Culture, Arts &amp; Heritage</p>
+        <div class="verdict">House decision: NOT APPROVED — 19 of 20 nominees carried; Lang'at alone rejected</div>
+      </div>
+      <div class="why">
+        <blockquote>
+          <p>&ldquo;Failed to demonstrate adequate knowledge of topical, administrative and technical issues touching on the portfolio.&rdquo;</p>
+          <cite>— Committee on Appointments, Second Report on the Vetting of Cabinet Secretary Nominees, August 2024</cite>
+        </blockquote>
+        <blockquote>
+          <p>&ldquo;Her rejection is not in any way an indictment of her capability or competence to perform other responsibilities.&rdquo;</p>
+          <cite>— Hon. Peter Obokato, Hansard, National Assembly afternoon sitting, 7 August 2024</cite>
+        </blockquote>
+        <p class="method-note"><strong>The asymmetry:</strong> one nominee's rejection earned reasons, debate, and a named MP's argument on the Hansard record. Nineteen approvals earned a single line — <em>&ldquo;(Question put and agreed to)&rdquo;</em> — and no voter's name at all.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>The Vetting Loop · a Mzalendo Civic Tech Tools module · sources: Hansard 7 Aug 2024 · Committee on Appointments Second Report (Aug 2024) · Mzalendo voting records</div>
+    <div><a href="https://mzalendo.com/research-and-knowledge/voting-patterns/">Voting patterns &amp; divisions</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

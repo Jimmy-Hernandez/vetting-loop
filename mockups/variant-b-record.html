@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>After: The Accountability Trail — The Vetting Loop · Mzalendo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#b5212c;
+    --red-dark:#8d1820;
+    --red-tint:#f6e3e4;
+    --green:hsl(144 100% 25%);
+    --white:#fff;
+    --paper:#f8f9fa;
+    --grey-100:#f0f0f0;
+    --grey-200:#e6e6e6;
+    --line:#ddd;
+    --line-soft:#e6e6e6;
+    --grey-400:#ccc;
+    --ink:#333;
+    --ink-strong:#000;
+    --measure:680px;
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s6:24px; --s8:32px; --s12:48px;
+    --r1:4px; --r2:8px; --r3:14px;
+    --font:'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    font-family:var(--font);
+    font-size:17px;
+    line-height:1.68;
+    color:var(--ink);
+    background:var(--white);
+    font-weight:400;
+  }
+  a{color:var(--ink);}
+  a:hover{color:var(--red);}
+
+  /* ============ site chrome ============ */
+  .chrome{border-bottom:1px solid var(--line);background:var(--white);}
+  .chrome-inner{
+    max-width:1120px;margin:0 auto;padding:10px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+  .breadcrumb{
+    font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);white-space:nowrap;
+  }
+  .breadcrumb .sep{color:var(--red);margin:0 6px;font-weight:700;}
+  .breadcrumb .here{color:var(--red-dark);}
+  nav.acts{display:flex;gap:4px;}
+  nav.acts a{
+    font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    text-decoration:none;color:#777;padding:8px 14px 6px;border-bottom:3px solid transparent;
+  }
+  nav.acts a:hover{color:var(--ink);}
+  nav.acts a[aria-current="page"]{color:var(--ink-strong);border-bottom-color:var(--red);}
+  nav.acts a .no{display:block;font-size:9px;font-weight:600;color:var(--grey-400);letter-spacing:.12em;}
+  nav.acts a[aria-current="page"] .no{color:var(--red);}
+
+  /* ============ report column ============ */
+  .doc{max-width:920px;margin:0 auto;padding:0 24px 96px;}
+  .measure{max-width:var(--measure);margin-left:auto;margin-right:auto;}
+
+  /* masthead */
+  .masthead{padding:56px 0 40px;text-align:center;}
+  .kicker{
+    font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red-dark);
+    margin:0 0 20px;
+  }
+  .kicker .rule{display:inline-block;width:28px;height:2px;background:var(--red);vertical-align:middle;margin-right:12px;}
+  h1{
+    font-size:clamp(30px, 4.6vw, 46px);line-height:1.14;font-weight:700;color:var(--ink-strong);
+    letter-spacing:-.012em;margin:0 0 18px;
+  }
+  .standfirst{
+    font-size:18px;line-height:1.62;color:#555;margin:0 auto;max-width:640px;font-weight:400;
+  }
+  .docmeta{
+    display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;
+    margin-top:28px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#888;
+  }
+  .docmeta .dot{color:var(--red);}
+  .masthead .close{width:64px;height:2px;background:var(--ink);margin:36px auto 0;}
+
+  /* footnote sup */
+  sup.fn{font-size:11px;line-height:0;font-weight:700;}
+  sup.fn a{color:var(--red);text-decoration:none;padding:0 1px;}
+  sup.fn a:hover{text-decoration:underline;}
+
+  /* ============ hero: the hansard line ============ */
+  .hansard{
+    background:var(--paper);border:1px solid var(--line-soft);border-top:3px solid var(--red);
+    border-radius:var(--r1);padding:clamp(28px,5vw,56px) clamp(20px,5vw,64px);
+    text-align:center;position:relative;
+  }
+  .hansard .folio{
+    position:absolute;top:12px;left:16px;font-size:10px;font-weight:600;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--grey-400);
+  }
+  .hansard .volline{
+    font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#999;margin-bottom:clamp(20px,4vw,36px);
+  }
+  .hansard blockquote{
+    margin:0;font-size:clamp(26px, 5.2vw, 50px);font-weight:700;line-height:1.16;color:var(--ink-strong);
+    letter-spacing:-.01em;
+  }
+  .hansard .thin-rule{width:120px;height:2px;background:var(--red);margin:clamp(20px,4vw,32px) auto;}
+  .hansard .source{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#777;}
+  .hansard .source a{color:var(--red-dark);text-decoration:none;border-bottom:1px solid var(--red-tint);}
+  .hansard .source a:hover{border-bottom-color:var(--red);}
+
+  .gloss{margin:28px auto 0;}
+  .gloss p{font-size:17px;color:#444;margin:0;text-align:center;}
+  .gloss p strong{color:var(--ink-strong);font-weight:700;}
+
+  /* outcome figures */
+  .outcome{
+    display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line);
+    border:1px solid var(--line);margin-top:var(--s12);border-radius:var(--r1);overflow:hidden;
+  }
+  .outcome .cell{background:var(--white);padding:22px 16px;text-align:center;}
+  .outcome .fig{font-size:clamp(22px,3vw,32px);font-weight:700;color:var(--ink-strong);line-height:1.1;}
+  .outcome .fig.neg{color:var(--red);}
+  .outcome .cap{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#888;margin-top:6px;}
+
+  /* ============ sections ============ */
+  section.sec{margin-top:72px;}
+  .sechead{max-width:var(--measure);margin:0 auto 24px;}
+  .sechead .no{
+    font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:8px;
+  }
+  .sechead h2{
+    font-size:clamp(22px,3vw,29px);font-weight:700;color:var(--ink-strong);letter-spacing:-.01em;line-height:1.22;margin:0 0 10px;
+  }
+  .sechead .dek{font-size:16px;color:#666;margin:0;line-height:1.6;}
+
+  .prose{max-width:var(--measure);margin:0 auto;}
+  .prose p{margin:0 0 1.15em;}
+  .prose p:last-child{margin-bottom:0;}
+
+  /* ============ motion block ============ */
+  .motion{
+    border:1px solid var(--ink);border-radius:var(--r1);background:var(--white);
+    max-width:860px;margin:0 auto;overflow:hidden;
+  }
+  .motion .mhead{
+    display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    padding:14px 24px;border-bottom:1px solid var(--ink);background:var(--ink);color:var(--white);
+  }
+  .motion .mhead .tag{font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;}
+  .motion .mhead .mover{font-size:11.5px;font-weight:500;color:#bbb;}
+  .motion .mbody{padding:28px 24px 28px;}
+  .motion .moved{margin:0 0 20px;font-size:13.5px;color:#666;}
+  .motion blockquote.motiontext{
+    margin:0 0 24px;padding-left:20px;border-left:3px solid var(--red);
+    font-size:15.5px;line-height:1.72;color:var(--ink);font-weight:400;
+  }
+  .motion blockquote.motiontext .cl{display:block;margin-bottom:12px;}
+  .motion blockquote.motiontext .cl:last-child{margin-bottom:0;}
+  .motion blockquote.motiontext .th{font-weight:700;color:var(--ink-strong);letter-spacing:.02em;}
+  .motion .tablecap{
+    font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#888;
+    margin:22px 0 6px;
+  }
+  table.reg{width:100%;border-collapse:collapse;}
+  table.reg caption{text-align:left;}
+  table.reg th{
+    text-align:left;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#888;
+    border-bottom:2px solid var(--ink);padding:6px 10px;
+  }
+  table.reg td{
+    border-bottom:1px solid var(--grey-200);padding:9px 10px;vertical-align:baseline;font-size:14px;line-height:1.45;
+  }
+  table.reg tr:last-child td{border-bottom:1px solid var(--grey-200);}
+  table.reg td.n{width:34px;color:#999;font-weight:600;font-size:12.5px;font-variant-numeric:tabular-nums;}
+  table.reg td.name{width:37%;font-weight:600;color:var(--ink-strong);}
+  table.reg td.office{color:#555;}
+
+  /* rejected block */
+  .rejected{
+    border:1px solid var(--red);border-left:5px solid var(--red);border-radius:var(--r1);
+    background:#fdf7f7;padding:22px 24px;max-width:860px;margin:24px auto 0;
+  }
+  .rejected .rtag{
+    display:inline-block;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--red);border:1px solid var(--red);border-radius:var(--r1);padding:2px 10px;margin-bottom:14px;
+  }
+  .rejected h3{margin:0 0 2px;font-size:19px;font-weight:700;color:var(--ink-strong);}
+  .rejected .docket{font-size:14px;color:#666;margin:0 0 12px;}
+  .rejected p{margin:0 0 10px;font-size:14.5px;line-height:1.62;color:#444;}
+  .rejected p:last-child{margin-bottom:0;}
+
+  /* ============ dossier ============ */
+  .dossier{max-width:var(--measure);margin:0 auto;}
+  .dossier-id{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:var(--r1);overflow:hidden;margin-bottom:28px;
+  }
+  .dossier-id .di{background:var(--white);padding:14px 18px;}
+  .dossier-id dt{font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#999;margin-bottom:3px;}
+  .dossier-id dd{margin:0;font-size:14.5px;font-weight:600;color:var(--ink-strong);line-height:1.4;}
+  .dossier-id dd .party{color:var(--green);font-weight:700;}
+  .dossier-id dd .status-ok{color:var(--green);font-weight:700;}
+  .dossier-id dd .status-note{display:block;font-weight:500;color:#888;font-size:12px;}
+
+  .epigraph{
+    margin:32px 0;padding:24px 28px;background:var(--paper);border-left:3px solid var(--red);border-radius:var(--r1);
+  }
+  .epigraph blockquote{margin:0;}
+  .epigraph .q{font-size:clamp(17px,2.2vw,21px);font-weight:700;line-height:1.5;color:var(--ink-strong);}
+  .epigraph .q .redq{color:var(--red);}
+  .epigraph .attr{font-size:12.5px;color:#777;margin-top:12px;line-height:1.55;}
+
+  .trail{margin:28px 0;padding:0;list-style:none;}
+  .trail li{
+    display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--grey-200);
+  }
+  .trail li:first-child{border-top:none;}
+  .trail .date{
+    font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red-dark);padding-top:3px;
+    font-variant-numeric:tabular-nums;
+  }
+  .trail .what{font-size:15px;line-height:1.6;color:#444;margin:0;}
+  .trail .what strong{color:var(--ink-strong);font-weight:700;}
+
+  .verdict{border-top:2px solid var(--ink);padding-top:20px;margin-top:8px;}
+  .verdict h4{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-strong);margin:24px 0 8px;}
+  .verdict h4:first-child{margin-top:0;}
+  .legalstatus{
+    display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;background:var(--grey-100);
+    border-radius:var(--r1);padding:12px 16px;font-size:13px;margin-top:24px;color:#555;
+  }
+  .legalstatus b{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-strong);}
+
+  /* ============ appendix ============ */
+  .notes{max-width:var(--measure);margin:0 auto;counter-reset:app;}
+  .note{
+    display:grid;grid-template-columns:44px 1fr;gap:12px;padding:20px 0;border-top:1px solid var(--grey-200);
+  }
+  .note:last-child{border-bottom:1px solid var(--grey-200);}
+  .note .num{font-size:20px;font-weight:700;color:var(--red);line-height:1.3;}
+  .note h4{margin:0 0 6px;font-size:15.5px;font-weight:700;color:var(--ink-strong);}
+  .note p{margin:0;font-size:14.5px;line-height:1.62;color:#555;overflow-wrap:break-word;}
+  .note p a{overflow-wrap:anywhere;}
+  .note p + p{margin-top:8px;}
+  .query{
+    margin-top:12px;background:var(--ink);color:#ddd;border-radius:var(--r1);padding:12px 16px;
+    font-size:12.5px;line-height:1.6;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  .query .zero{color:#f2a0a7;font-weight:600;}
+  .query .lbl{display:block;color:#888;font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;font-family:var(--font);font-weight:700;}
+
+  /* endnotes */
+  .endnotes{max-width:var(--measure);margin:56px auto 0;}
+  .endnotes h3{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-strong);border-bottom:2px solid var(--ink);padding-bottom:8px;margin:0 0 4px;}
+  .endnotes ol{padding-left:22px;margin:0;}
+  .endnotes li{font-size:13px;line-height:1.6;color:#555;margin:12px 0;}
+  .endnotes li a{word-break:break-word;color:var(--red-dark);}
+  .endnotes .cite{color:var(--ink-strong);font-weight:600;}
+
+  /* ============ footer ============ */
+  footer.sitefoot{border-top:1px solid var(--line);margin-top:80px;background:var(--paper);}
+  footer.sitefoot .fin{
+    max-width:1120px;margin:0 auto;padding:26px 24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    font-size:11.5px;font-weight:600;letter-spacing:.06em;color:#888;
+  }
+  footer.sitefoot .fin .dot{color:var(--red);margin:0 6px;}
+
+  /* ============ responsive ============ */
+  @media (max-width: 720px){
+    body{font-size:16px;}
+    .breadcrumb{white-space:normal;font-size:10px;letter-spacing:.1em;line-height:1.6;}
+    .chrome-inner{padding:10px 16px;}
+    .query{font-size:11.5px;overflow-wrap:anywhere;}
+    .doc{padding:0 16px 72px;}
+    .masthead{padding:40px 0 32px;}
+    .outcome{grid-template-columns:1fr;}
+    .motion .mbody{padding:22px 16px;}
+    table.reg td.name{width:auto;}
+    .dossier-id{grid-template-columns:1fr;}
+    .trail li{grid-template-columns:1fr;gap:4px;padding:14px 0;}
+    .trail .date{padding-top:0;}
+    .epigraph{padding:20px 18px;}
+  }
+  @media (max-width: 480px){
+    nav.acts a{padding:6px 9px 4px;}
+    .motion .mhead{padding:12px 16px;}
+    table.reg td{padding:8px 6px;font-size:13px;}
+    table.reg td.n{width:26px;}
+    table.reg td.name, table.reg td.office{display:table-cell;}
+  }
+</style>
+</head>
+<body>
+
+<header class="chrome">
+  <div class="chrome-inner">
+    <div class="breadcrumb">Mzalendo<span class="sep">›</span>Civic Tech Tools<span class="sep">›</span><span class="here">The Vetting Loop</span></div>
+    <nav class="acts" aria-label="The Vetting Loop — three acts">
+      <a href="#"><span class="no">Act 1</span>Before</a>
+      <a href="#"><span class="no">Act 2</span>During</a>
+      <a href="#" aria-current="page"><span class="no">Act 3</span>After</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+
+  <!-- ===================== MASTHEAD ===================== -->
+  <header class="masthead">
+    <p class="kicker"><span class="rule"></span>Monitoring Register · The Vetting Loop · Act 3</p>
+    <h1>After: The Accountability Trail</h1>
+    <p class="standfirst">What the public record actually says about 7 August 2024 — the day the National Assembly approved 19 Cabinet Secretaries. Every line on this page is traceable to a filed document; where the record is silent, we say so.</p>
+    <div class="docmeta">
+      <span>Record of proceedings</span><span class="dot">·</span>
+      <span>1 Hansard sitting</span><span class="dot">·</span>
+      <span>1 committee report</span><span class="dot">·</span>
+      <span>4 filed sources</span><span class="dot">·</span>
+      <span>Non-partisan</span>
+    </div>
+    <div class="close" aria-hidden="true"></div>
+  </header>
+
+  <!-- ===================== HERO: THE HANSARD LINE ===================== -->
+  <figure class="hansard" style="margin:0;">
+    <div class="folio">Hansard · p. 26</div>
+    <div class="volline">Republic of Kenya · Thirteenth Parliament · National Assembly · Vol. III No. 66</div>
+    <blockquote>“(Question put and agreed&nbsp;to)”</blockquote>
+    <div class="thin-rule" aria-hidden="true"></div>
+    <figcaption class="source">
+      National Assembly Debates, 7 August 2024 —
+      <a href="https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/">Wednesday 7th August 2024, Afternoon Sitting<sup class="fn"><a href="#fn1">1</a></sup></a>
+    </figcaption>
+  </figure>
+
+  <div class="gloss measure">
+    <p><strong>Four words carry the whole decision.</strong> The House approved nineteen Cabinet Secretaries by voice vote. No division was called — which means no Member’s name was ever recorded on any of the nineteen approvals. This register reproduces what does exist, and marks plainly what does not.</p>
+  </div>
+
+  <div class="outcome" role="list" aria-label="Outcome of the 7 August 2024 motion">
+    <div class="cell" role="listitem"><div class="fig">19</div><div class="cap">Approved as CS</div></div>
+    <div class="cell" role="listitem"><div class="fig neg">1</div><div class="cap">Rejected — Lang’at</div></div>
+    <div class="cell" role="listitem"><div class="fig neg">No division</div><div class="cap">Passed by voice vote</div></div>
+  </div>
+
+  <!-- ===================== §1 THE MOTION ===================== -->
+  <section class="sec" id="motion">
+    <div class="sechead">
+      <span class="no">§ 1 — The document</span>
+      <h2>The motion, as it was actually moved</h2>
+      <p class="dek">Moved in the afternoon sitting by the Leader of the Majority Party. Text reproduced verbatim from Hansard.<sup class="fn"><a href="#fn1">1</a></sup></p>
+    </div>
+
+    <div class="motion">
+      <div class="mhead">
+        <span class="tag">Motion</span>
+        <span class="mover">Moved: Hon. Kimani Ichung’wah (Kikuyu, UDA), Leader of the Majority Party · 7 August 2024</span>
+      </div>
+      <div class="mbody">
+        <blockquote class="motiontext">
+          <span class="cl"><span class="th">THAT,</span> taking into consideration the findings of the Committee on Appointments in its Second Report on the Vetting of the Nominees for Appointment to the Offices of Cabinet Secretaries, laid on the Table of the House today, Wednesday, 7th August 2024 and, pursuant to the provisions of Article 152(2) of the Constitution and sections 3 and 8 of the Public Appointments (Parliamentary Approval) Act, 2011, this House—</span>
+          <span class="cl"><span class="th">(i)</span> approves the appointment of the following persons as Cabinet Secretaries–</span>
+        </blockquote>
+
+        <p class="tablecap">No. — Name — Office · as printed in the motion</p>
+        <table class="reg">
+          <thead>
+            <tr><th scope="col">No.</th><th scope="col">Name</th><th scope="col">Office</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="n">1</td><td class="name">Hon. (Prof.) Kithure Kindiki, EGH</td><td class="office">Ministry of Interior &amp; National Administration</td></tr>
+            <tr><td class="n">2</td><td class="name">Dr. Debra Mulongo Barasa</td><td class="office">Ministry of Health</td></tr>
+            <tr><td class="n">3</td><td class="name">Hon. Alice Wahome, EGH</td><td class="office">Ministry of Lands, Public Works, Housing &amp; Urban Development</td></tr>
+            <tr><td class="n">4</td><td class="name">Mr. Julius Migos Ogamba, EBS</td><td class="office">Ministry of Education</td></tr>
+            <tr><td class="n">5</td><td class="name">Hon. Roselinda Soipan Tuya, EGH</td><td class="office">Ministry of Defence</td></tr>
+            <tr><td class="n">6</td><td class="name">Dr. Andrew Mwihia Karanja</td><td class="office">Ministry of Agriculture &amp; Livestock Development</td></tr>
+            <tr><td class="n">7</td><td class="name">Hon. Aden Barre Duale, EGH</td><td class="office">Ministry of Environment, Climate Change &amp; Forestry</td></tr>
+            <tr><td class="n">8</td><td class="name">Mr. Eric Muriithi Mugaa</td><td class="office">Ministry of Water, Sanitation and Irrigation</td></tr>
+            <tr><td class="n">9</td><td class="name">Mr. Davis Chirchir, EGH</td><td class="office">Ministry of Roads &amp; Transport</td></tr>
+            <tr><td class="n">10</td><td class="name">Dr. Margaret Nyambura Ndung’u</td><td class="office">Ministry of Information, Communication &amp; the Digital Economy</td></tr>
+            <tr><td class="n">11</td><td class="name">Hon. John Mbadi Ng’ongo, EGH</td><td class="office">The National Treasury and Economic Planning</td></tr>
+            <tr><td class="n">12</td><td class="name">Hon. Salim Mvurya Mgala, EGH</td><td class="office">Cabinet Secretary, Ministry of Investments, Trade &amp; Industry</td></tr>
+            <tr><td class="n">13</td><td class="name">Ms. Rebecca Miano, EGH</td><td class="office">Cabinet Secretary, Ministry of Tourism and Wildlife</td></tr>
+            <tr><td class="n">14</td><td class="name">Hon. James Opiyo Wandayi, EGH</td><td class="office">Cabinet Secretary, Ministry of Energy and Petroleum</td></tr>
+            <tr><td class="n">15</td><td class="name">Hon. Onesmus Kipchumba Murkomen, EGH</td><td class="office">Cabinet Secretary, Ministry of Youth Affairs, Creative Economy and Sports</td></tr>
+            <tr><td class="n">16</td><td class="name">Hon. Hassan Ali Joho, EGH</td><td class="office">Cabinet Secretary, Ministry of Mining, Blue Economy and Maritime Affairs</td></tr>
+            <tr><td class="n">17</td><td class="name">Hon. (Dr.) Alfred Nganga Mutua, EGH</td><td class="office">Cabinet Secretary, Ministry of Labour and Social Protection</td></tr>
+            <tr><td class="n">18</td><td class="name">Hon. Wycliffe Ambetsa Oparanya, EGH</td><td class="office">Cabinet Secretary, Ministry of Co-operatives &amp; Micro, Small and Medium Enterprises (MSME) Development</td></tr>
+            <tr><td class="n">19</td><td class="name">Hon. Justin Bedan Njoka Muturi, EGH</td><td class="office">Cabinet Secretary, Ministry of Public Service &amp; Human Capital Development</td></tr>
+          </tbody>
+        </table>
+
+        <blockquote class="motiontext" style="margin-top:24px;margin-bottom:0;">
+          <span class="cl" style="margin-bottom:0;"><span class="th">(ii)</span> rejects the appointment of Ms. Stella Soi Lang’at as the Cabinet Secretary, Ministry of Gender, Culture, the Arts &amp; Heritage.</span>
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="rejected">
+      <span class="rtag">Rejected — clause (ii)</span>
+      <h3>Ms. Stella Soi Lang’at</h3>
+      <p class="docket">Nominee — Cabinet Secretary, Ministry of Gender, Culture, the Arts &amp; Heritage. The only nominee the House declined, on the Committee’s recommendation.</p>
+      <p>The Committee found that she “did not demonstrate adequate understanding of the docket to which she had been nominated” and noted that her public-service experience was “marked by very frequent job transitions in various roles” across six postings.<sup class="fn"><a href="#fn2">2</a></sup> Moving the motion, the Majority Leader added that the rejection was “in no way an indictment of the capability or competence of a nominee to perform other responsibilities”.<sup class="fn"><a href="#fn1">1</a></sup></p>
+    </div>
+  </section>
+
+  <!-- ===================== §2 THE DOSSIER ===================== -->
+  <section class="sec" id="dossier">
+    <div class="sechead">
+      <span class="no">§ 2 — One nominee, end to end</span>
+      <h2>The paper trail on item No. 18: Wycliffe Ambetsa Oparanya</h2>
+      <p class="dek">One nominee, followed document by document — from the agency check that flagged him, to the voice vote that approved him.</p>
+    </div>
+
+    <div class="dossier">
+      <dl class="dossier-id">
+        <div class="di"><dt>Nominee</dt><dd>Wycliffe Ambetsa Oparanya, EGH</dd></div>
+        <div class="di"><dt>Party affiliation</dt><dd><span class="party">ODM</span> — resigned party office before appointment, per Committee finding<sup class="fn"><a href="#fn1">1</a></sup></dd></div>
+        <div class="di"><dt>Office nominated</dt><dd>CS, Co-operatives &amp; MSME Development</dd></div>
+        <div class="di"><dt>Approval hearing</dt><dd>Committee on Appointments, County Hall — 4 Aug 2024</dd></div>
+        <div class="di"><dt>House decision</dt><dd><span class="status-ok">Approved</span><span class="status-note">Motion item 18 · voice vote, 7 Aug 2024<sup class="fn"><a href="#fn1">1</a></sup></span></dd></div>
+        <div class="di"><dt>Integrity check (EACC)</dt><dd>Adverse letter — no charges reported filed<sup class="fn"><a href="#fn1">1</a></sup><sup class="fn"><a href="#fn3">3</a></sup></dd></div>
+      </dl>
+
+      <div class="epigraph">
+        <blockquote>
+          <p class="q">The EACC “confiscated my children’s phones” at the Integrity Centre — yet <span class="redq">“I have never been called to record a statement.”</span></p>
+          <p class="attr">— Wycliffe Oparanya, as reported in his own account of the EACC investigation, Daily Nation, 4 August 2024<sup class="fn"><a href="#fn3">3</a></sup></p>
+        </blockquote>
+      </div>
+
+      <ol class="trail">
+        <li>
+          <span class="date">29 Jul 2024</span>
+          <p class="what"><strong>EACC writes to the Clerk.</strong> In response to the Assembly’s background-check request, the anti-graft commission states that the nominee’s integrity is in question: it is investigating alleged corruption, abuse of office, money laundering and conflict of interest from his time as Kakamega County Governor, and says it has secured court orders freezing assets amounting to ~Sh28.9&nbsp;million.<sup class="fn"><a href="#fn3">3</a></sup></p>
+        </li>
+        <li>
+          <span class="date">4 Aug 2024</span>
+          <p class="what"><strong>He answers at the hearing.</strong> Before the Committee on Appointments, Oparanya denies the allegations, says the EACC “confiscated my children’s phones” during its raid and that he went to the Integrity Centre only to retrieve them — and states “I have never been called to record a statement” on the allegations.<sup class="fn"><a href="#fn3">3</a></sup> The Committee’s record of its own questioning is contained in its Second Report.<sup class="fn"><a href="#fn2">2</a></sup></p>
+        </li>
+        <li>
+          <span class="date">7 Aug 2024</span>
+          <p class="what"><strong>The Committee reports to the House.</strong> Committee member Hon. Junet Mohamed (Suna East, ODM) tells the House: allegations of corruption were raised against the nominee — “We clarified that the Ethics and Anti-Corruption Commission (EACC) and the Director of Public Prosecutions (DPP) wrote to Parliament and said there were no charges against him. Based on that, we made a decision.”<sup class="fn"><a href="#fn1">1</a></sup></p>
+        </li>
+        <li>
+          <span class="date">7 Aug 2024</span>
+          <p class="what"><strong>The motion passes without a division.</strong> Oparanya is carried in item 18 of the 19-name approval schedule. The recorded outcome is a single line: <em>“(Question put and agreed to)”</em>.<sup class="fn"><a href="#fn1">1</a></sup></p>
+        </li>
+      </ol>
+
+      <div class="verdict prose">
+        <h4>What the record shows</h4>
+        <p>An adverse integrity letter exists, dated and filed with the Clerk (29 July 2024), describing an open investigation and asset-preservation orders of about Sh28.9&nbsp;million.<sup class="fn"><a href="#fn3">3</a></sup> A self-disclosed account of the same episode exists — the nominee’s own hearing testimony on 4 August 2024.<sup class="fn"><a href="#fn3">3</a></sup> And a committee clarification to the plenary exists, stating that the EACC and DPP had written to Parliament reporting no charges against him, and that the Committee decided on that basis.<sup class="fn"><a href="#fn3">3</a></sup><sup class="fn"><a href="#fn1">1</a></sup> On this record, the House approved him — in a package of 19, by voice vote, in a single clause.</p>
+        <h4>What the record does not show</h4>
+        <p>No charge or case number appears in the record as of the approval date. No recorded vote exists for item 18 — or for any of the 19. A per-Member query of the vetting decision returns nothing, because the House never divided.<sup class="fn"><a href="#fn4">4</a></sup></p>
+        <div class="legalstatus">
+          <b>Legal status:</b> <span>Self-disclosed by the nominee at hearing · EACC letter of 29 Jul 2024 on the parliamentary record · no case filed and no charge reported as of 7 August 2024.<sup class="fn"><a href="#fn1">1</a></sup><sup class="fn"><a href="#fn3">3</a></sup></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== §3 APPENDIX ===================== -->
+  <section class="sec" id="appendix">
+    <div class="sechead">
+      <span class="no">§ 3 — Appendix</span>
+      <h2>Evidence notes</h2>
+      <p class="dek">Three findings about the record itself — kept separate from the story, so each can be checked on its own.</p>
+    </div>
+
+    <div class="notes">
+      <div class="note">
+        <span class="num">1</span>
+        <div>
+          <h4>Contrast — a decision that <em>was</em> divided.</h4>
+          <p>On 20 June 2024, the Finance Bill 2024 (Second Reading) was decided by a recorded division: <strong>192 to 105</strong>. Every Member’s vote was captured, name by name, and is downloadable.<sup class="fn"><a href="#fn4">4</a></sup> The Assembly knows how to record a vote when it chooses to — <a href="https://mzalendo.com/research-and-knowledge/voting-patterns/na/1/">see the per-MP record</a>.</p>
+        </div>
+      </div>
+      <div class="note">
+        <span class="num">2</span>
+        <div>
+          <h4>Vetting approvals were never divided.</h4>
+          <p>The 7 August approvals were carried by voice vote — Hansard’s “(Question put and agreed to)” is the complete record of the decision.<sup class="fn"><a href="#fn1">1</a></sup> Across Mzalendo’s full dataset of recorded National Assembly divisions, no division has ever been taken on a Cabinet Secretary approval.</p>
+          <div class="query">
+            <span class="lbl">Mzalendo data query — per-MP vote, CS approval motion, 7 Aug 2024</span>
+            query: how_did_vote(motion="Cabinet Secretaries approval", mp="any")<br>
+            result: <span class="zero">0 rows — no division recorded</span>
+          </div>
+        </div>
+      </div>
+      <div class="note">
+        <span class="num">3</span>
+        <div>
+          <h4>Primary source.</h4>
+          <p>Hansard, National Assembly Debates, Wednesday, 7 August 2024 (afternoon sitting): the motion as moved, the 19-name schedule, the Lang’at rejection clause, Hon. Junet Mohamed’s clarification, and the closing <em>“(Question put and agreed to)”</em>. Full sitting: <a href="https://info.mzalendo.com/hansard/sitting/national_assembly/2024-08-07-14-30-00">info.mzalendo.com/hansard/sitting/national_assembly/2024-08-07-14-30-00</a> — and the certified PDF, “Hansard Report — Wednesday, 7th August 2024”, parliament.go.ke.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== ENDNOTES ===================== -->
+    <div class="endnotes" id="sources">
+      <h3>Notes &amp; sources</h3>
+      <ol>
+        <li id="fn1"><span class="cite">Hansard, National Assembly Debates</span>, Vol. III No. 66, Wednesday, 7 August 2024, afternoon sitting (motion text; the 19-name schedule; rejection clause; remarks of Hon. Kimani Ichung’wah and Hon. Junet Mohamed; “(Question put and agreed to)”). <a href="https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/">mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728</a> · <a href="https://info.mzalendo.com/hansard/sitting/national_assembly/2024-08-07-14-30-00">certified text</a></li>
+        <li id="fn2"><span class="cite">Committee on Appointments, Second Report on the Vetting of the Nominees for Appointment to the Offices of Cabinet Secretaries</span>, August 2024 — including p. 238, observation 8 (Lang’at: frequent job transitions across six postings; “adequate knowledge of her docket” finding). <a href="https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf">parliament.go.ke (PDF)</a></li>
+        <li id="fn3"><span class="cite">David Mwere &amp; Kevin Cheruiyot, “Wycliffe Oparanya: I have never been summoned by EACC over graft claims”</span>, Daily Nation, 4 August 2024 — EACC letter of 29 July 2024 to the Clerk; Sh28.9m asset-freeze orders; Oparanya’s statements on the confiscated phones and never being called to record a statement. <a href="https://nation.africa/kenya/news/politics/wycliffe-oparanya-i-have-never-been-summoned-by-eacc-over-graft-claims-4713568">nation.africa</a></li>
+        <li id="fn4"><span class="cite">Mzalendo voting-pattern records</span> — Finance Bill 2024 (Second Reading), 20 June 2024: Yes 192 / No 105, recorded per Member. <a href="https://mzalendo.com/research-and-knowledge/voting-patterns/na/1/">mzalendo.com/research-and-knowledge/voting-patterns/na/1</a> · <a href="https://mzalendo.com/research-and-knowledge/voting-patterns/?format=csv">full CSV export</a></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="sitefoot">
+  <div class="fin">
+    <span>Built on Mzalendo data rails<span class="dot">·</span>All claims source-linked<span class="dot">·</span>Non-partisan</span>
+    <span>The Vetting Loop · Act 3 of 3</span>
+  </div>
+</footer>
+
+</body>
+</html>
