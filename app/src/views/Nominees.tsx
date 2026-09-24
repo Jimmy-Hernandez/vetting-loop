@@ -32,14 +32,36 @@ export default function Nominees() {
           const pc = ep.priorCycles.cabinet_2022;
           const rets = pc.nominees.filter((x) => x.returned_in_2024);
           return (
-            <section className="prior-cycle" style={{ marginTop: 'var(--s4)' }}>
-              <p style={{ margin: 0 }}>
-                <b>Context.</b> The original cabinet nominated {pc.nominated} — {pc.nominees.length} CS
-                nominees{pc.sameAnnouncementOffices?.length ? ` plus ${pc.sameAnnouncementOffices.length} offices announced the same day` : ''} —
-                was {' '}vetted and {pc.outcome.toLowerCase()}. Of these, <b>{rets.length}</b> reappear
-                among the {nom.filter((x) => x.status === 'approved').length} approvals vetted {ep.date}.
+            <section style={{ marginTop: 'var(--s4)' }}>
+              <p className="standfirst" style={{ marginTop: 0 }}>
+                <b>Context.</b> The cabinet nominated {pc.nominated} — {pc.nominees.length} CS nominees —
+                was vetted and {pc.outcome.toLowerCase()}. {rets.length} of them reappear among the {' '}
+                {nom.filter((x) => x.status === 'approved').length} approvals vetted {ep.date}.
                 {pc.needs_verification && <span className="chip">verify vs Kenya Gazette</span>}
               </p>
+              <h2 style={{ marginTop: 'var(--s6)', fontSize: '1.15rem' }}>The 2022 slate — 22 nominees, and what became of each</h2>
+              <p className="standfirst" style={{ marginTop: 'var(--s2)' }}>
+                The full original list, preserved as published. Each entry links to its dossier where
+                the nominee returned in this episode's reconstitution.
+              </p>
+              <div className="nomgrid" style={{ marginTop: 'var(--s3)' }}>
+                {pc.nominees.map((x) => {
+                  const inner = (
+                    <>
+                      <strong>{x.name}</strong>
+                      <span style={{ display: 'block', opacity: 0.75, marginTop: 2 }}>{x.portfolio}</span>
+                      <span style={{ display: 'block', marginTop: 6, fontSize: '0.85em' }}>
+                        {x.returned_in_2024 ? '↳ Returned in the August 2024 reconstitution' : x.fate}
+                      </span>
+                    </>
+                  );
+                  return x.returned_in_2024 ? (
+                    <Link key={x.name} to={'/nominee/' + x.returned_in_2024} className="nomcard">{inner}</Link>
+                  ) : (
+                    <div key={x.name} className="nomcard" style={{ opacity: 0.82 }}>{inner}</div>
+                  );
+                })}
+              </div>
             </section>
           );
         })()}

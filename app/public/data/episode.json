@@ -6392,121 +6392,152 @@
     {
      "name": "Musalia Mudavadi",
      "portfolio": "Prime Cabinet Secretary",
-     "cycle": "2022-09"
+     "cycle": "2022-09",
+     "fate": "Not re-appointed to the August 2024 cabinet"
     },
     {
      "name": "Kithure Kindiki",
      "portfolio": "Interior and National Administration",
      "cycle": "2022-09",
-     "returned_in_2024": "nominee-01"
+     "returned_in_2024": "nominee-01",
+     "fate": "Returned — re-appointed in the August 2024 reconstitution",
+     "returned_slug": "kithure-kindiki"
     },
     {
      "name": "Prof. Njuguna Ndung'u",
      "portfolio": "National Treasury and Economic Planning",
-     "cycle": "2022-09"
+     "cycle": "2022-09",
+     "fate": "Not re-appointed to the August 2024 cabinet"
     },
     {
      "name": "Aisha Jumwa",
      "portfolio": "Public Service and Gender",
-     "cycle": "2022-09"
+     "cycle": "2022-09",
+     "fate": "Not re-appointed to the August 2024 cabinet"
     },
     {
      "name": "Aden Duale",
      "portfolio": "Defence",
      "cycle": "2022-09",
-     "returned_in_2024": "nominee-07"
+     "returned_in_2024": "nominee-07",
+     "fate": "Returned — re-appointed in the August 2024 reconstitution",
+     "returned_slug": "aden-bare-duale"
     },
     {
      "name": "Alice Wahome",
      "portfolio": "Water, Sanitation and Irrigation",
      "cycle": "2022-09",
-     "returned_in_2024": "nominee-03"
+     "returned_in_2024": "nominee-03",
+     "fate": "Returned — re-appointed in the August 2024 reconstitution",
+     "returned_slug": "alice-wahome"
     },
     {
      "name": "Alfred Mutua",
      "portfolio": "Foreign and Diaspora Affairs",
      "cycle": "2022-09",
-     "returned_in_2024": "nominee-17"
+     "returned_in_2024": "nominee-17",
+     "fate": "Returned — re-appointed in the August 2024 reconstitution",
+     "returned_slug": "alfred-nganga-mutua"
     },
     {
      "name": "Moses Kuria",
      "portfolio": "Investments, Trade and Industry",
-     "cycle": "2022-09"
+     "cycle": "2022-09",
+     "fate": "Not re-appointed to the August 2024 cabinet"
     },
     {
      "name": "Rebecca Miano",
      "portfolio": "East African Community and Regional Development",
      "cycle": "2022-09",
-     "returned_in_2024": "nominee-13"
+     "returned_in_2024": "nominee-13",
+     "fate": "Returned — re-appointed in the August 2024 reconstitution",
+     "returned_slug": "rebecca-miano"
     },
     {
      "name": "Kipchumba Murkomen",
      "portfolio": "Roads and Transport",
      "cycle": "2022-09",
-     "returned_in_2024": "nominee-15"
+     "returned_in_2024": "nominee-15",
+     "fate": "Returned — re-appointed in the August 2024 reconstitution",
+     "returned_slug": "onesimus-kipchumba-murkomen"
     },
     {
      "name": "Zachariah Mwangi Njeru",
      "portfolio": "Lands, Public Works, Housing and Urban Development",
-     "cycle": "2022-09"
+     "cycle": "2022-09",
+     "fate": "Not re-appointed to the August 2024 cabinet"
     },
     {
      "name": "Peninah Malonza",
      "portfolio": "Tourism and Wildlife",
-     "cycle": "2022-09"
+     "cycle": "2022-09",
+     "fate": "Not re-appointed to the August 2024 cabinet"
     },
     {
      "name": "Mithika Linturi",
      "portfolio": "Agriculture and Livestock Development",
-     "cycle": "2022-09"
+     "cycle": "2022-09",
+     "fate": "Not re-appointed to the August 2024 cabinet"
     },
     {
      "name": "Ezekiel Machogu",
      "portfolio": "Education",
-     "cycle": "2022-09"
+     "cycle": "2022-09",
+     "fate": "Not re-appointed to the August 2024 cabinet"
     },
     {
      "name": "Davis Chirchir",
      "portfolio": "Energy and Petroleum",
      "cycle": "2022-09",
-     "returned_in_2024": "nominee-09"
+     "returned_in_2024": "nominee-09",
+     "fate": "Returned — re-appointed in the August 2024 reconstitution",
+     "returned_slug": "davis-chirchir"
     },
     {
      "name": "Ababu Namwamba",
      "portfolio": "Youth Affairs, Sports and Arts",
-     "cycle": "2022-09"
+     "cycle": "2022-09",
+     "fate": "Not re-appointed to the August 2024 cabinet"
     },
     {
      "name": "Simon Chelugui",
      "portfolio": "Cooperatives and MSME Development",
-     "cycle": "2022-09"
+     "cycle": "2022-09",
+     "fate": "Not re-appointed to the August 2024 cabinet"
     },
     {
      "name": "Salim Mvurya",
      "portfolio": "Mining, Blue Economy and Maritime Affairs",
      "cycle": "2022-09",
-     "returned_in_2024": "nominee-12"
+     "returned_in_2024": "nominee-12",
+     "fate": "Returned — re-appointed in the August 2024 reconstitution",
+     "returned_slug": "salim-mvurya-mgala"
     },
     {
      "name": "Florence Bore",
      "portfolio": "Labour and Social Protection",
-     "cycle": "2022-09"
+     "cycle": "2022-09",
+     "fate": "Not re-appointed to the August 2024 cabinet"
     },
     {
      "name": "Susan Nakhumicha Wafula",
      "portfolio": "Health",
-     "cycle": "2022-09"
+     "cycle": "2022-09",
+     "fate": "Not re-appointed to the August 2024 cabinet"
     },
     {
      "name": "Eliud Owalo",
      "portfolio": "Information, Communication and the Digital Economy",
-     "cycle": "2022-09"
+     "cycle": "2022-09",
+     "fate": "Not re-appointed to the August 2024 cabinet"
     },
     {
      "name": "Roselinda Soipan Tuya",
      "portfolio": "Environment, Climate Change and Forestry",
      "cycle": "2022-09",
-     "returned_in_2024": "nominee-05"
+     "returned_in_2024": "nominee-05",
+     "fate": "Returned — re-appointed in the August 2024 reconstitution",
+     "returned_slug": "roselinda-soipan-tuya"
     }
    ],
    "sameAnnouncementOffices": []

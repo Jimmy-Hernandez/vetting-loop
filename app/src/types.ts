@@ -105,11 +105,12 @@ export interface GateGap {
   needs_verification: boolean;
 }
 
-export interface PriorCycleNominee {
+interface PriorCycleNominee {
   name: string;
   portfolio: string;
   cycle: string;
   returned_in_2024?: string;
+  fate?: string;
 }
 
 export interface Episode {
