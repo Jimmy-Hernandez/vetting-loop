@@ -11,8 +11,7 @@ export default function About() {
         <p className="standfirst">
           Vetta is a public register of parliamentary vetting — who was nominated for office, what citizens
           submitted, what the committee asked, and how each decision was made. Every claim is sourced to a
-          document; every number can be checked. It is built to live inside Mzalendo&rsquo;s Civic Tech Tools as a
-          durable public instrument.
+          document; every number can be checked. It is built to run as a durable public instrument, independent of any single host.
         </p>
         <div className="close" aria-hidden="true"></div>
       </header>
@@ -215,7 +214,7 @@ export default function About() {
         <figure className="hansard" style={{ margin: 0 }}>
           <blockquote>Vetta exists so that when the record matters, someone has already kept it.</blockquote>
           <div className="thin-rule" aria-hidden="true"></div>
-          <figcaption className="source">Vetta · a Civic Tech Tools prototype</figcaption>
+          <figcaption className="source">Vetta · a public-record prototype</figcaption>
         </figure>
       </section>
     <section className="sec">

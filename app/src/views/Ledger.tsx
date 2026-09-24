@@ -113,7 +113,7 @@ export default function Ledger() {
     <main className="doc">
       <header className="masthead">
         <p className="kicker"><span className="rule"></span>13th Parliament · Kenya</p>
-        <h1>
+        <h1 style={{ color: 'var(--red)' }}>
           {assertPositive(nPeople, 'people')} nominations.{' '}
           {houseRejections === 1 ? 'One rejection.' : <>{houseRejections} rejections.</>}
         </h1>
