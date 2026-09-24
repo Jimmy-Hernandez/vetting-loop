@@ -425,7 +425,15 @@
         "prior_role": "2022 Cabinet Secretary",
         "prior_portfolio": "Interior and National Administration",
         "needs_verification": true
-      }
+      },
+      "subsequentEvents": [
+        {
+          "date": "2024-11-01",
+          "text": "Sworn in as Deputy President following Gachagua impeachment; resigned as Interior CS.",
+          "source": "compiled-tracker",
+          "needs_verification": true
+        }
+      ]
     },
     {
       "id": "nominee-02",
@@ -697,7 +705,15 @@
         "prior_role": null,
         "prior_portfolio": null,
         "needs_verification": false
-      }
+      },
+      "subsequentEvents": [
+        {
+          "date": "2025-03-26",
+          "text": "Moved from Health to Environment.",
+          "source": "compiled-tracker",
+          "needs_verification": true
+        }
+      ]
     },
     {
       "id": "nominee-03",
@@ -1945,7 +1961,21 @@
         "prior_role": null,
         "prior_portfolio": null,
         "needs_verification": false
-      }
+      },
+      "subsequentEvents": [
+        {
+          "date": "2025-01-17",
+          "text": "Replaced as Agriculture and Livestock Development CS by Mutahi Kagwe.",
+          "source": "compiled-tracker",
+          "needs_verification": true
+        },
+        {
+          "date": null,
+          "text": "Subsequently removed from cabinet and nominated envoy to Brazil (tracker records this in its later-2025 changes without a date).",
+          "source": "compiled-tracker",
+          "needs_verification": true
+        }
+      ]
     },
     {
       "id": "nominee-07",
@@ -2298,7 +2328,15 @@
         "prior_role": "2022 Cabinet Secretary",
         "prior_portfolio": "Defence",
         "needs_verification": true
-      }
+      },
+      "subsequentEvents": [
+        {
+          "date": "2025-03-26",
+          "text": "Moved from Environment to Health in mini-reshuffle.",
+          "source": "compiled-tracker",
+          "needs_verification": true
+        }
+      ]
     },
     {
       "id": "nominee-08",
@@ -3067,7 +3105,21 @@
         "prior_role": null,
         "prior_portfolio": null,
         "needs_verification": false
-      }
+      },
+      "subsequentEvents": [
+        {
+          "date": "2025-01-17",
+          "text": "Replaced as Information, Communication and the Digital Economy CS by William Kabogo Gitau.",
+          "source": "compiled-tracker",
+          "needs_verification": true
+        },
+        {
+          "date": null,
+          "text": "Subsequently removed from cabinet and nominated envoy to Ghana — publicly declined (tracker records this in its later-2025 changes without a date).",
+          "source": "compiled-tracker",
+          "needs_verification": true
+        }
+      ]
     },
     {
       "id": "nominee-11",
@@ -3700,7 +3752,15 @@
         "prior_role": "2022 Cabinet Secretary",
         "prior_portfolio": "Mining, Blue Economy and Maritime Affairs",
         "needs_verification": true
-      }
+      },
+      "subsequentEvents": [
+        {
+          "date": "2025-01-17",
+          "text": "Replaced as Investments, Trade and Industry CS by Lee Kinyanjui (tracker: \"Salim Mvurya (moved)\").",
+          "source": "compiled-tracker",
+          "needs_verification": true
+        }
+      ]
     },
     {
       "id": "nominee-13",
@@ -5982,7 +6042,22 @@
         "prior_portfolio": "Attorney-General",
         "priorRoleType": "constitutional_office",
         "needs_verification": true
-      }
+      },
+      "subsequentEvents": [
+        {
+          "date": "2025-03-26",
+          "text": "Dismissed as Public Service CS after public disagreement over 2024 abductions; Geoffrey Ruku nominated.",
+          "source": "compiled-tracker",
+          "needs_verification": true
+        },
+        {
+          "date": "2024-07-11",
+          "text": "Context: Muturi had served as Attorney-General in the 2022 cabinet; the AG office was vacant after the July 2024 cabinet dissolution (Dorcas Oduor later succeeded Muturi as AG).",
+          "source": "compiled-tracker",
+          "needs_verification": true,
+          "kind": "context"
+        }
+      ]
     },
     {
       "id": "nominee-20",

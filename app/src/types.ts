@@ -72,6 +72,14 @@ export interface PriorRole {
   needs_verification: boolean;
 }
 
+export interface SubsequentEvent {
+  date: string | null;
+  text: string;
+  source: string;
+  needs_verification: boolean;
+  kind?: 'context';
+}
+
 export interface Nominee {
   id: string;
   name: string;
@@ -80,6 +88,7 @@ export interface Nominee {
   party: string | null;
   status: 'approved' | 'rejected';
   priorRole?: PriorRole;
+  subsequentEvents?: SubsequentEvent[];
   flags: Flag[];
   positiveFindings: PositiveFinding[];
   backgroundChecks: BackgroundChecks;

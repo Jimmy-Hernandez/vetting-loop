@@ -42,6 +42,7 @@ export default function Nominees() {
                   <span className="fl"><b>{c.flags}</b> flags</span>
                   <span><b>{c.positive}</b> positive</span>
                   <span><b>{c.memoranda}</b> memoranda</span>
+                  {n.subsequentEvents?.length ? <span className="ev-dot" title="Has post-vote events" aria-label="Has post-vote events"></span> : null}
                 </div>
               </Link>
             );

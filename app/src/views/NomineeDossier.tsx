@@ -92,6 +92,22 @@ export default function NomineeDossier() {
           </div>
         </dl>
 
+        {n.subsequentEvents && n.subsequentEvents.length > 0 && (
+          <div className="epilogue">
+            <h4>What happened after the vote</h4>
+            <ul>
+              {n.subsequentEvents.map((e, i) => (
+                <li key={i}>
+                  <span className="ev-date">{e.date ?? 'Date not stated in source'}</span>
+                  <span className="ev-text">{e.text}</span>
+                  {e.kind === 'context' && <span className="src-chip">context</span>}
+                  {e.needs_verification && <span className="src-chip unverified">needs verification</span>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {epi ? (
           <div className="epigraph">
             <blockquote>
