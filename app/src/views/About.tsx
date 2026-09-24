@@ -1,21 +1,8 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import type { Episode, HansardExcerpt } from '../types';
-import { loadEpisode, loadHansardExcerpts, placeholderEpisode } from '../data';
-import Triptych from './Triptych';
 
 // /about — the tool's own page. Approved copy, verbatim (brief 2026-09-24).
 // Static document register: same tokens, same .doc conventions as Methodology.
 export default function About() {
-  const [ep, setEp] = useState<Episode | null>(null);
-  const [hx, setHx] = useState<HansardExcerpt[] | null>(null);
-  useEffect(() => {
-    loadEpisode().then((e) => setEp(e ?? placeholderEpisode()));
-    loadHansardExcerpts().then((x) => setHx(x?.excerpts ?? null));
-  }, []);
-  const ep2 = ep; // for hero/triptych blocks below
-  if (!ep2) return <main className="doc" />;
-  const hansardLineConst = '(Question put and agreed to)';
   return (
     <main className="doc">
       <header className="masthead">
@@ -58,29 +45,14 @@ export default function About() {
 
       
 {/* ---- our voice-vote triptych as centerpiece ---- */}
-      <section className="sec">
-        <div className="sechead">
-          <span className="no">The finding</span>
-          <h2>“{hansardLineConst}”</h2>
-          <p className="dek">
-            Nineteen Cabinet Secretaries approved by voice vote on 7 August 2024. No division was called —
-            no Member’s name was ever recorded on any approval. The juxtaposition below is the argument.
-          </p>
-        </div>
-        <Triptych ep={ep} excerpts={hx} hansardDate={ep.date} hansardLine={hansardLineConst} />
-        <p style={{ textAlign: 'center', marginTop: 'var(--s6)' }}>
-          <Link to="/vote" style={{ fontWeight: 700, letterSpacing: '.08em', fontSize: 13 }}>
-            See the full record →
-          </Link>
-        </p>
-      </section>
+      
 
 
 <section className="sec">
         <div className="sechead">
           <span className="no">The loop</span>
           <h2>Three acts, one paper trail</h2>
-          <p className="dek">Before the hearing, during the sitting, after the vote. Follow the documents.</p>
+          <p className="dek">Before the hearing, during the hearings, after the vote. Follow the documents.</p>
         </div>
         <div className="acts-grid">
           <Link className="card" to="/nominees">
@@ -243,7 +215,7 @@ export default function About() {
         <figure className="hansard" style={{ margin: 0 }}>
           <blockquote>Vetta exists so that when the record matters, someone has already kept it.</blockquote>
           <div className="thin-rule" aria-hidden="true"></div>
-          <figcaption className="source"><Link to="/">Return to the record</Link></figcaption>
+          <figcaption className="source">Vetta · a Civic Tech Tools prototype</figcaption>
         </figure>
       </section>
     <section className="sec">
@@ -258,11 +230,11 @@ export default function About() {
             <p>93 people, 111 appointments, verification tiers on every entry.</p>
             <span className="go">Open the ledger →</span>
           </Link>
-          <Link className="card" to="/signals">
+          <Link className="card" to="/methodology">
             <span className="act-no">Pattern rules</span>
-            <h3>The signals</h3>
+            <h3>Methodology &amp; signals</h3>
             <p>Eight deterministic rules over the appointment record — computed, not asserted.</p>
-            <span className="go">See the patterns →</span>
+            <span className="go">How it works →</span>
           </Link>
         </div>
       </section>
