@@ -50,9 +50,13 @@ export default function Nominees() {
                     <>
                       <strong>{x.name}</strong>
                       <span style={{ display: 'block', opacity: 0.75, marginTop: 2 }}>{x.portfolio}</span>
-                      <span style={{ display: 'block', marginTop: 6, fontSize: '0.85em' }}>
-                        {x.returned_in_2024 ? '↳ Returned in the August 2024 reconstitution' : x.fate}
+                      <span style={{ display: 'block', marginTop: 6 }}>
+                        <span className={`badge approved`}>approved {x.approval_cycle ?? ''}</span>
+                        {x.returned_in_2024
+                          ? <span style={{ fontSize: '0.85em', marginLeft: 6 }}>↳ returned in the August 2024 reconstitution</span>
+                          : <span style={{ fontSize: '0.85em', marginLeft: 6 }}>{x.fate}</span>}
                       </span>
+                      {x.note && <span style={{ display: 'block', marginTop: 4, fontSize: '0.8em', opacity: 0.7 }}>{x.note}</span>}
                     </>
                   );
                   return x.returned_in_2024 ? (
