@@ -10,6 +10,7 @@ export default function Nominees() {
 
   const nom = ep.nominees ?? [];
   const ph = isPlaceholder(ep);
+  const returned = nom.filter((n) => n.status === 'approved' && n.priorRole?.prior_role).length;
 
   return (
     <main className="doc">
@@ -19,6 +20,7 @@ export default function Nominees() {
         <p className="standfirst">
           {nom.length} nominees vetted for the Cabinet, {ep.date}. Every flag and every positive finding is
           sourced; empty sections are rendered as empty, never padded.
+          {returned > 0 && <> · <b>{returned} of {nom.filter((x) => x.status === 'approved').length} approvals returned from the 2022 cabinet</b>.</>}
         </p>
         {ph && <p style={{ marginTop: 16 }}><span className="chip-placeholder">Placeholder data</span></p>}
         <div className="close" aria-hidden="true"></div>
@@ -33,6 +35,7 @@ export default function Nominees() {
             return (
               <Link key={n.id} to={`/nominee/${n.slug || n.id}`} className={`nomcard${n.status === 'rejected' ? ' rejected' : ''}`}>
                 <span className={`badge ${n.status}`}>{n.status}</span>
+                {n.priorRole?.prior_role && <span className="badge prior">Returned from 2022 Cabinet</span>}
                 <h3>{n.name}</h3>
                 <p className="portfolio">{n.portfolio}</p>
                 <div className="counts">

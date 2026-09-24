@@ -65,8 +65,22 @@ export default function NomineeDossier() {
       </header>
 
       <div className="dossier" style={{ marginTop: 'var(--s8)' }}>
+        {n.priorRole?.prior_role && (
+          <div style={{ marginBottom: 'var(--s4)' }}>
+            <span className="badge prior">Returned from 2022 Cabinet</span>
+            {n.priorRole.needs_verification && <span className="src-chip unverified" style={{ marginLeft: 8 }}>needs verification</span>}
+          </div>
+        )}
         <dl className="dossier-id">
           <div className="di"><dt>Portfolio</dt><dd>{n.portfolio}</dd></div>
+          {n.priorRole?.prior_role && (
+            <div className="di"><dt>Prior role (2022 cabinet)</dt>
+              <dd>
+                {n.priorRole.prior_role} — {n.priorRole.prior_portfolio}
+                {n.priorRole.priorRoleType === 'constitutional_office' && <span className="status-note" style={{ display: 'block' }}>Constitutional office (Attorney-General), appointed alongside the cabinet rather than vetted as a CS nominee</span>}
+              </dd>
+            </div>
+          )}
           <div className="di"><dt>Party</dt><dd>{n.party ? <span className="party">{n.party}</span> : <span className="status-note">Not recorded</span>}</dd></div>
           <div className="di"><dt>Report reference</dt><dd>{n.reportPageRef || '—'}</dd></div>
           <div className="di">

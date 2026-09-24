@@ -65,6 +65,13 @@ export interface Memoranda {
   needs_verification?: boolean;
 }
 
+export interface PriorRole {
+  prior_role: string | null;
+  prior_portfolio: string | null;
+  priorRoleType?: 'constitutional_office';
+  needs_verification: boolean;
+}
+
 export interface Nominee {
   id: string;
   name: string;
@@ -72,6 +79,7 @@ export interface Nominee {
   portfolio: string;
   party: string | null;
   status: 'approved' | 'rejected';
+  priorRole?: PriorRole;
   flags: Flag[];
   positiveFindings: PositiveFinding[];
   backgroundChecks: BackgroundChecks;

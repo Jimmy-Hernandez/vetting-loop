@@ -420,7 +420,12 @@
         "first_line": 2849
       },
       "reportPageRef": "pp. 33-48 (observations p. 48)",
-      "slug": "kithure-kindiki"
+      "slug": "kithure-kindiki",
+      "priorRole": {
+        "prior_role": "2022 Cabinet Secretary",
+        "prior_portfolio": "Interior and National Administration",
+        "needs_verification": true
+      }
     },
     {
       "id": "nominee-02",
@@ -687,7 +692,12 @@
         "needs_verification": true
       },
       "reportPageRef": "pp. 49-57 (observations pp. 57-58)",
-      "slug": "debra-mlongo-barasa"
+      "slug": "debra-mlongo-barasa",
+      "priorRole": {
+        "prior_role": null,
+        "prior_portfolio": null,
+        "needs_verification": false
+      }
     },
     {
       "id": "nominee-03",
@@ -972,7 +982,12 @@
         "first_line": 3713
       },
       "reportPageRef": "pp. 57-67 (observations pp. 65-66)",
-      "slug": "alice-wahome"
+      "slug": "alice-wahome",
+      "priorRole": {
+        "prior_role": "2022 Cabinet Secretary",
+        "prior_portfolio": "Water, Sanitation and Irrigation",
+        "needs_verification": true
+      }
     },
     {
       "id": "nominee-04",
@@ -1353,7 +1368,12 @@
         "first_line": 4232
       },
       "reportPageRef": "pp. 67-76 (observations pp. 76-77)",
-      "slug": "julius-migos-ogamba"
+      "slug": "julius-migos-ogamba",
+      "priorRole": {
+        "prior_role": null,
+        "prior_portfolio": null,
+        "needs_verification": false
+      }
     },
     {
       "id": "nominee-05",
@@ -1607,7 +1627,12 @@
         "first_line": 4698
       },
       "reportPageRef": "pp. 77-85 (observations pp. 85-86)",
-      "slug": "roselinda-soipan-tuya"
+      "slug": "roselinda-soipan-tuya",
+      "priorRole": {
+        "prior_role": "2022 Cabinet Secretary",
+        "prior_portfolio": "Environment, Climate Change and Forestry",
+        "needs_verification": true
+      }
     },
     {
       "id": "nominee-06",
@@ -1915,7 +1940,12 @@
         "needs_verification": true
       },
       "reportPageRef": "pp. 86-94 (observations pp. 94-95)",
-      "slug": "andrew-mwihia-karanja"
+      "slug": "andrew-mwihia-karanja",
+      "priorRole": {
+        "prior_role": null,
+        "prior_portfolio": null,
+        "needs_verification": false
+      }
     },
     {
       "id": "nominee-07",
@@ -2263,7 +2293,12 @@
         "first_line": 5576
       },
       "reportPageRef": "pp. 95-104 (observations pp. 104-105)",
-      "slug": "aden-bare-duale"
+      "slug": "aden-bare-duale",
+      "priorRole": {
+        "prior_role": "2022 Cabinet Secretary",
+        "prior_portfolio": "Defence",
+        "needs_verification": true
+      }
     },
     {
       "id": "nominee-08",
@@ -2514,7 +2549,12 @@
         "needs_verification": true
       },
       "reportPageRef": "pp. 105-113 (observations pp. 113-114)",
-      "slug": "eric-murithi-mugaa"
+      "slug": "eric-murithi-mugaa",
+      "priorRole": {
+        "prior_role": null,
+        "prior_portfolio": null,
+        "needs_verification": false
+      }
     },
     {
       "id": "nominee-09",
@@ -2790,7 +2830,12 @@
         "first_line": 6523
       },
       "reportPageRef": "pp. 114-123 (observations pp. 123-124)",
-      "slug": "davis-chirchir"
+      "slug": "davis-chirchir",
+      "priorRole": {
+        "prior_role": "2022 Cabinet Secretary",
+        "prior_portfolio": "Energy and Petroleum",
+        "needs_verification": true
+      }
     },
     {
       "id": "nominee-10",
@@ -3017,7 +3062,12 @@
         "needs_verification": true
       },
       "reportPageRef": "pp. 124-132 (observations pp. 132-134)",
-      "slug": "margaret-nyambura-ndungu"
+      "slug": "margaret-nyambura-ndungu",
+      "priorRole": {
+        "prior_role": null,
+        "prior_portfolio": null,
+        "needs_verification": false
+      }
     },
     {
       "id": "nominee-11",
@@ -3316,7 +3366,12 @@
         "first_line": 7441
       },
       "reportPageRef": "pp. 135-142 (observations pp. 142-143)",
-      "slug": "john-mbadi-ngongo"
+      "slug": "john-mbadi-ngongo",
+      "priorRole": {
+        "prior_role": null,
+        "prior_portfolio": null,
+        "needs_verification": false
+      }
     },
     {
       "id": "nominee-12",
@@ -3640,7 +3695,12 @@
         "first_line": 7938
       },
       "reportPageRef": "pp. 143-152 (observations pp. 152-153)",
-      "slug": "salim-mvurya-mgala"
+      "slug": "salim-mvurya-mgala",
+      "priorRole": {
+        "prior_role": "2022 Cabinet Secretary",
+        "prior_portfolio": "Mining, Blue Economy and Maritime Affairs",
+        "needs_verification": true
+      }
     },
     {
       "id": "nominee-13",
@@ -4012,7 +4072,12 @@
         "first_line": 8590
       },
       "reportPageRef": "pp. 155-166 (observations pp. 166-167)",
-      "slug": "rebecca-miano"
+      "slug": "rebecca-miano",
+      "priorRole": {
+        "prior_role": "2022 Cabinet Secretary",
+        "prior_portfolio": "East African Community and Regional Development",
+        "needs_verification": true
+      }
     },
     {
       "id": "nominee-14",
@@ -4384,7 +4449,12 @@
         "first_line": 9143
       },
       "reportPageRef": "pp. 168-178 (observations pp. 178-179)",
-      "slug": "james-opiyo-wandayi"
+      "slug": "james-opiyo-wandayi",
+      "priorRole": {
+        "prior_role": null,
+        "prior_portfolio": null,
+        "needs_verification": false
+      }
     },
     {
       "id": "nominee-15",
@@ -4660,7 +4730,12 @@
         "first_line": 9604
       },
       "reportPageRef": "pp. 179-187 (observations pp. 187-189)",
-      "slug": "onesimus-kipchumba-murkomen"
+      "slug": "onesimus-kipchumba-murkomen",
+      "priorRole": {
+        "prior_role": "2022 Cabinet Secretary",
+        "prior_portfolio": "Roads and Transport",
+        "needs_verification": true
+      }
     },
     {
       "id": "nominee-16",
@@ -5082,7 +5157,12 @@
         "first_line": 10234
       },
       "reportPageRef": "pp. 188-201 (observations pp. 201-202)",
-      "slug": "hassan-ali-joho"
+      "slug": "hassan-ali-joho",
+      "priorRole": {
+        "prior_role": null,
+        "prior_portfolio": null,
+        "needs_verification": false
+      }
     },
     {
       "id": "nominee-17",
@@ -5358,7 +5438,12 @@
         "first_line": 10626
       },
       "reportPageRef": "pp. 202-209 (observations pp. 209-210)",
-      "slug": "alfred-nganga-mutua"
+      "slug": "alfred-nganga-mutua",
+      "priorRole": {
+        "prior_role": "2022 Cabinet Secretary",
+        "prior_portfolio": "Foreign and Diaspora Affairs",
+        "needs_verification": true
+      }
     },
     {
       "id": "nominee-18",
@@ -5618,7 +5703,12 @@
         "first_line": 11147
       },
       "reportPageRef": "pp. 210-220 (observations pp. 220-221)",
-      "slug": "wycliffe-ambetsa-oparanya"
+      "slug": "wycliffe-ambetsa-oparanya",
+      "priorRole": {
+        "prior_role": null,
+        "prior_portfolio": null,
+        "needs_verification": false
+      }
     },
     {
       "id": "nominee-19",
@@ -5886,7 +5976,13 @@
         "first_line": 11582
       },
       "reportPageRef": "pp. 223-229 (observations pp. 229-230)",
-      "slug": "justin-bedan-muturi"
+      "slug": "justin-bedan-muturi",
+      "priorRole": {
+        "prior_role": "2022 Cabinet Secretary",
+        "prior_portfolio": "Attorney-General",
+        "priorRoleType": "constitutional_office",
+        "needs_verification": true
+      }
     },
     {
       "id": "nominee-20",
@@ -6140,7 +6236,12 @@
         "needs_verification": true
       },
       "reportPageRef": "pp. 231-239 (observations pp. 237-239)",
-      "slug": "stella-soi-langat"
+      "slug": "stella-soi-langat",
+      "priorRole": {
+        "prior_role": null,
+        "prior_portfolio": null,
+        "needs_verification": false
+      }
     }
   ]
 }
