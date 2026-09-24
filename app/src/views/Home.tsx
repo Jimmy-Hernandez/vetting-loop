@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <main className="doc">
       <header className="masthead">
-        <p className="kicker"><span className="rule"></span>Monitoring Register · The Vetting Loop · Act 3</p>
+        <p className="kicker"><span className="rule"></span>Monitoring Register · Vetta · Act 3</p>
         <h1>{ep.title}</h1>
         <p className="standfirst">{ep.summary}</p>
         <div className="docmeta">

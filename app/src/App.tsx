@@ -23,9 +23,9 @@ function Chrome({ children }: { children: ReactNode }) {
           <div className="breadcrumb">
             <a href="https://mzalendo.com">Mzalendo</a>
             <span className="sep">›</span>Civic Tech Tools
-            <span className="sep">›</span><span className="here">The Vetting Loop</span>
+            <span className="sep">›</span><span className="here">Vetta</span>
           </div>
-          <nav className="acts" aria-label="The Vetting Loop — three acts">
+          <nav className="acts" aria-label="Vetta — three acts">
             {acts.map((a) => (
               <NavLink key={a.to} to={a.to} aria-current={loc.pathname === a.to ? 'page' : undefined}>
                 <span className="no">{a.no}</span>
@@ -38,7 +38,7 @@ function Chrome({ children }: { children: ReactNode }) {
       {children}
       <footer className="sitefoot">
         <div className="fin">
-          <span>The Vetting Loop — a civic tech tool<span className="dot">·</span>Impunity begins at confirmation.</span>
+          <span>Vetta — a civic tech tool<span className="dot">·</span>Impunity begins at confirmation.</span>
           <span>All claims source-linked<span className="dot">·</span>Non-partisan<span className="dot">·</span><Link to="/methodology">Methodology</Link></span>
         </div>
       </footer>

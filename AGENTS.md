@@ -1,4 +1,4 @@
-# AGENTS.md — The Vetting Loop (DSH handover brief)
+# AGENTS.md — Vetta (formerly 'Vetting Loop' during build) (DSH handover brief)
 
 **You are the DSH agent on jimmys-macbook-pro-2, taking over this project as its primary builder.** This file is your complete briefing — read it fully before any work. Your operator is Jimmy (Discord), coordinating with KITT (orchestrator on the Mac mini) and a human co-developer, Terry (separate implementation, merge later). Work autonomously; push everything; never fabricate.
 

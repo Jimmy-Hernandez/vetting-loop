@@ -2,7 +2,7 @@ export default function Methodology() {
   return (
     <main className="doc">
       <header className="masthead">
-        <p className="kicker"><span className="rule"></span>The Vetting Loop · Evidence base</p>
+        <p className="kicker"><span className="rule"></span>Vetta · Evidence base</p>
         <h1>Methodology &amp; sources</h1>
         <p className="standfirst">Every claim in this record is traceable. This page lists the evidence base.</p>
         <div className="close" aria-hidden="true"></div>
