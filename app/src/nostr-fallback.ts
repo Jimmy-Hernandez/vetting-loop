@@ -48,11 +48,6 @@ export interface NostrEvent {
   sig: string;
 }
 
-function tagValue(ev: NostrEvent, name: string): string | null {
-  const t = ev.tags.find((tg) => tg[0] === name);
-  return t ? t[1] : null;
-}
-
 function section(content: string, header: string): string[] {
   // Extract lines under "HEADER (n):" up to the next blank line/section.
   const re = new RegExp(`(?:^|\\n)${header}[^\\n]*:\\s*\\n([\\s\\S]*?)(?=\\n\\n|\\n[A-Z][A-Z ]+\\(|$)`);
@@ -154,6 +149,6 @@ export function fetchEpisodeFromNostr(
       ws.onerror = () => { /* relay unavailable; others may answer */ };
       ws.onclose = () => { /* noop */ };
     }
-    if (open === 0) clearTimeout(timer) || finish();
+    if (open === 0) { clearTimeout(timer); finish(); }
   });
 }
