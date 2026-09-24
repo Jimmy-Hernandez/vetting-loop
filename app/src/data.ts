@@ -40,7 +40,7 @@ export function placeholderEpisode(): Episode {
   const mk = (id: string, name: string, portfolio: string, status: 'approved' | 'rejected'): Nominee => ({
     id,
     name,
-    slug: id.replace('nominee-', 'nominee-'),
+    slug: id,
     portfolio,
     party: null,
     status,

@@ -10,7 +10,6 @@ export default function Nominees() {
 
   const nom = ep.nominees ?? [];
   const ph = isPlaceholder(ep);
-  const returned = nom.filter((n) => n.status === 'approved' && n.priorRole?.prior_role).length;
 
   return (
     <main className="doc">
@@ -20,7 +19,12 @@ export default function Nominees() {
         <p className="standfirst">
           {nom.length} nominees vetted for the Cabinet, {ep.date}. Every flag and every positive finding is
           sourced; empty sections are rendered as empty, never padded.
-          {returned > 0 && <> · <b>{returned} of {nom.filter((x) => x.status === 'approved').length} approvals returned from the 2022 cabinet</b>.</>}
+          {(() => {
+              const approved = nom.filter((x) => x.status === 'approved');
+              const csRet = approved.filter((x) => x.priorRole?.priorRoleType === 'cs_returnee').length;
+              const rotated = approved.filter((x) => x.priorRole?.docket_rotated).length;
+              return <> · <b>{csRet} of {approved.length} approvals had served in the 2022 cabinet ({rotated} rotated dockets)</b>.</>;
+            })()}
         </p>
         {ph && <p style={{ marginTop: 16 }}><span className="chip-placeholder">Placeholder data</span></p>}
         <div className="close" aria-hidden="true"></div>

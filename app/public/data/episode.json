@@ -424,7 +424,8 @@
    "priorRole": {
     "prior_role": "2022 Cabinet Secretary",
     "prior_portfolio": "Interior and National Administration",
-    "needs_verification": true
+    "needs_verification": true,
+    "priorRoleType": "cs_returnee"
    },
    "subsequentEvents": [
     {
@@ -1002,7 +1003,8 @@
    "priorRole": {
     "prior_role": "2022 Cabinet Secretary",
     "prior_portfolio": "Water, Sanitation and Irrigation",
-    "needs_verification": true
+    "needs_verification": true,
+    "priorRoleType": "cs_returnee"
    }
   },
   {
@@ -1647,7 +1649,9 @@
    "priorRole": {
     "prior_role": "2022 Cabinet Secretary",
     "prior_portfolio": "Environment, Climate Change and Forestry",
-    "needs_verification": true
+    "needs_verification": true,
+    "priorRoleType": "cs_returnee",
+    "docket_rotated": true
    },
    "subsequentEvents": [
     {
@@ -2335,7 +2339,9 @@
    "priorRole": {
     "prior_role": "2022 Cabinet Secretary",
     "prior_portfolio": "Defence",
-    "needs_verification": true
+    "needs_verification": true,
+    "priorRoleType": "cs_returnee",
+    "docket_rotated": true
    },
    "subsequentEvents": [
     {
@@ -2880,7 +2886,9 @@
    "priorRole": {
     "prior_role": "2022 Cabinet Secretary",
     "prior_portfolio": "Energy and Petroleum",
-    "needs_verification": true
+    "needs_verification": true,
+    "priorRoleType": "cs_returnee",
+    "docket_rotated": true
    }
   },
   {
@@ -3759,7 +3767,9 @@
    "priorRole": {
     "prior_role": "2022 Cabinet Secretary",
     "prior_portfolio": "Mining, Blue Economy and Maritime Affairs",
-    "needs_verification": true
+    "needs_verification": true,
+    "priorRoleType": "cs_returnee",
+    "docket_rotated": true
    },
    "subsequentEvents": [
     {
@@ -4144,7 +4154,9 @@
    "priorRole": {
     "prior_role": "2022 Cabinet Secretary",
     "prior_portfolio": "East African Community and Regional Development",
-    "needs_verification": true
+    "needs_verification": true,
+    "priorRoleType": "cs_returnee",
+    "docket_rotated": true
    }
   },
   {
@@ -4802,7 +4814,9 @@
    "priorRole": {
     "prior_role": "2022 Cabinet Secretary",
     "prior_portfolio": "Roads and Transport",
-    "needs_verification": true
+    "needs_verification": true,
+    "priorRoleType": "cs_returnee",
+    "docket_rotated": true
    }
   },
   {
@@ -5510,7 +5524,8 @@
    "priorRole": {
     "prior_role": "2022 Cabinet Secretary",
     "prior_portfolio": "Foreign and Diaspora Affairs",
-    "needs_verification": true
+    "needs_verification": true,
+    "priorRoleType": "cs_returnee"
    }
   },
   {
@@ -6338,7 +6353,7 @@
  "gateGaps": [
   {
    "title": "No recorded per-MP vote",
-   "text": "The 19 approvals passed by voice vote on 8 August 2024. Hansard records only \"(Question put and agreed to)\" — no per-MP vote exists anywhere in the record.",
+   "text": "The 19 approvals passed by voice vote on 7 August 2024. Hansard records only \"(Question put and agreed to)\" — no per-MP vote exists anywhere in the record.",
    "source": "Hansard, 7 Aug 2024 (data/hansard/aug7-2024-na.txt); Committee on Appointments Second Report",
    "needs_verification": true
   },
@@ -6360,5 +6375,10 @@
    "source": "compiled observations (Gaita) — Capital FM/press reports",
    "needs_verification": true
   }
- ]
+ ],
+ "stats": {
+  "returnees_cs": 9,
+  "returnees_docket_rotated": 6,
+  "returnees_note": "9 of 19 approvals had served in the 2022 cabinet (incl. the AG→CS move); 6 rotated dockets (compiled sources differ on membership — needs_verification)"
+ }
 }

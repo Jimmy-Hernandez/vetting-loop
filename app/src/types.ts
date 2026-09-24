@@ -68,7 +68,8 @@ export interface Memoranda {
 export interface PriorRole {
   prior_role: string | null;
   prior_portfolio: string | null;
-  priorRoleType?: 'constitutional_office';
+  priorRoleType?: 'cs_returnee' | 'constitutional_office';
+  docket_rotated?: boolean;
   needs_verification: boolean;
 }
 

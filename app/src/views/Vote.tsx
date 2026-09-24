@@ -32,7 +32,7 @@ export default function Vote() {
   const v = d.vetting_vote;
   // Voice-vote motion is the anchor; recorded divisions list is data-driven.
   // Finance Bill 2024 contrast: first division whose title mentions Finance Bill 2024, else the first division.
-  const fb = d.divisions?.find((x) => /finance bill 2024/i.test(x.title)) ?? d.divisions?.[0];
+  const fb = d.divisions?.find((x) => /finance bill 2024.*2nd reading/i.test(x.title) || /2nd reading.*finance bill 2024/i.test(x.title)) ?? d.divisions?.find((x) => /finance bill 2024/i.test(x.title)) ?? d.divisions?.[0];
   const total = fb ? fb.yes + fb.no : 0;
   const ph = v.mechanism !== 'voice_vote' || !v.hansard_line;
   const placeholder = /PLACEHOLDER/.test(v.motion_text);
