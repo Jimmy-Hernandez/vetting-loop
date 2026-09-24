@@ -26,7 +26,7 @@ const AGENCIES: Array<[keyof Nominee['backgroundChecks'], string]> = [
 ];
 
 export default function NomineeDossier() {
-  const { id: idOrSlug } = useParams();
+  const { idOrSlug } = useParams();
   const [ep, setEp] = useState<Episode | null>(null);
   useEffect(() => { loadEpisode().then((e) => setEp(e ?? placeholderEpisode())); }, []);
   if (!ep) return <main className="doc" />;
