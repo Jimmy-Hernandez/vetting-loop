@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { TerryLedger, TerryPerson } from '../terryTypes';
+import type { Episode } from '../types';
+import { loadEpisode, placeholderEpisode } from '../data';
 import { loadTerryLedger } from '../data';
 import { toOurSlug } from '../slugSeam';
 
@@ -27,8 +29,23 @@ function personTier(p: TerryPerson): string {
   return best;
 }
 
+// Source dates for the gender-docket vacancy stat. Both are documented facts:
+//   2024-08-07 — Committee on Appointments Second Report / House approval (episode.json date; Soi rejected)
+//   2025-03-26 — nomination of the next Gender CS (Terry's ledger cycle 'cs-2025-reshuffle'; vetting-record.pages.dev)
+// The DURATION is computed from these two constants — never hardcoded as "231".
+const GENDER_VACANCY_FROM = '2024-08-07';
+const GENDER_VACANCY_TO = '2025-03-26';
+
+function daysBetween(a: string, b: string): number | null {
+  const da = new Date(a + 'T00:00:00Z');
+  const db = new Date(b + 'T00:00:00Z');
+  if (isNaN(da.getTime()) || isNaN(db.getTime())) return null;
+  return Math.round((db.getTime() - da.getTime()) / 86400000);
+}
+
 export default function Ledger() {
   const [ledger, setLedger] = useState<TerryLedger | null>(null);
+  const [ep, setEp] = useState<Episode | null>(null);
   const [q, setQ] = useState('');
   const [office, setOffice] = useState('');
   const [signal, setSignal] = useState('');
@@ -36,6 +53,7 @@ export default function Ledger() {
 
   useEffect(() => {
     loadTerryLedger().then((l) => setLedger(l));
+    loadEpisode().then((e) => setEp(e ?? placeholderEpisode()));
     // Seam: which of Terry's 93 people have a full Vetta hearing dossier in OUR episode.json?
     fetch(`${import.meta.env.BASE_URL}data/episode.json`)
       .then((r) => (r.ok ? r.json() : null))
@@ -65,6 +83,22 @@ export default function Ledger() {
     return Array.from(s).sort();
   }, [ledger]);
 
+
+  // ---- hero figures (transplanted from Home) — computed, never hardcoded ----
+  const nom = ep?.nominees ?? [];
+  const peopleRaw = ledger?.people ?? [];
+  const allAppointments = peopleRaw.flatMap((p) => p.appointments ?? []);
+  const totalAppointments = allAppointments.length;
+  const approvedAppointments = allAppointments.filter((a) => a.outcome === 'approved').length;
+  const gateCycleIds = new Set((ledger?.cycles ?? []).filter((c) => c.gate).map((c) => c.id));
+  const houseRejections = allAppointments.filter((a) => a.outcome === 'rejected' && gateCycleIds.has(a.cycle)).length;
+  const nPeople = peopleRaw.length;
+  const assertPositive = (n: number, what: string) => { if (n <= 0) throw new Error(`ledger computation returned ${n} for ${what}`); return n; };
+  const returnees = nom.filter((n) => n.priorRole?.priorRoleType === 'cs_returnee' || n.priorRole?.priorRoleType === 'constitutional_office').length;
+  const vacancyDays = daysBetween(GENDER_VACANCY_FROM, GENDER_VACANCY_TO);
+  const floorOverrideHits = ledger?.hits?.filter((x) => x.signal === 'floor_override') ?? [];
+  const floorOverrideCount = floorOverrideHits.length;
+  const approvalPct = totalAppointments > 0 ? Math.round((approvedAppointments / totalAppointments) * 1000) / 10 : null;
   const people = ledger?.people ?? [];
   const filtered = people.filter((p) => {
     if (q && !`${p.name} ${p.latestRole}`.toLowerCase().includes(q.toLowerCase())) return false;
@@ -78,22 +112,48 @@ export default function Ledger() {
   return (
     <main className="doc">
       <header className="masthead">
-        <p className="kicker"><span className="rule"></span>The people ledger</p>
-        <h1>Who was nominated, vetted and approved</h1>
+        <p className="kicker"><span className="rule"></span>13th Parliament · Kenya</p>
+        <h1>
+          {assertPositive(nPeople, 'people')} nominations.{' '}
+          {houseRejections === 1 ? 'One rejection.' : <>{houseRejections} rejections.</>}
+        </h1>
         <p className="standfirst">
-          {people.length} people · {people.reduce((a, p) => a + (p.appointments?.length ?? 0), 0)} appointments ·{' '}
-          {ledger.cycles?.length ?? 0} cycles. Every entry is a dated public fact with its source and a
-          verification tier. Signals describe the appointment process, never a person's conduct.
+          Parliament vets every Cabinet Secretary and Principal Secretary before they take office. This tool
+          shows what that gate actually does: every nomination linked to the person, every fact cited, every
+          pattern computed from the record rather than asserted.
         </p>
+        <div className="docmeta">
+          <span>Combined record</span><span className="dot">·</span>
+          <span>Non-partisan</span><span className="dot">·</span>
+          <span>All claims source-linked</span>
+        </div>
         <div className="close" aria-hidden="true"></div>
-              <section className="prior-cycle" style={{ marginTop: 'var(--s4)' }}>
-          <p style={{ margin: 0 }}>
-            <b>The August 2024 reconstitution</b> — 20 nominees heard over four days, approved by voice vote
-            with <b>no recorded per-MP vote</b>. {' '}
-            <Link to="/vote" style={{ textDecoration: 'underline' }}>How this batch was approved → The Vote That Wasn't Recorded</Link> · <Link to="/hearings" style={{ textDecoration: 'underline' }}>The hearing record →</Link>
-          </p>
-        </section>
-</header>
+      </header>
+
+      <div className="outcome" role="list" aria-label="Key figures, computed from the record">
+        <div className="cell" role="listitem">
+          <div className="fig">
+            {totalAppointments > 0 ? `${approvedAppointments} of ${totalAppointments}` : '—'}
+          </div>
+          <div className="cap">
+            {approvalPct !== null ? `${approvalPct}% approval rate across cycles` : 'Approval rate across cycles'}
+          </div>
+        </div>
+        <div className="cell" role="listitem">
+          <div className="fig">{returnees > 0 ? `${returnees} of 19` : '—'}</div>
+          <div className="cap">Returned after dissolution — 9 CS + 1 AG</div>
+        </div>
+        <div className="cell" role="listitem">
+          <div className="fig">{vacancyDays !== null ? `${vacancyDays} days` : '—'}</div>
+          <div className="cap">Gender docket left vacant by the only House rejection</div>
+        </div>
+        {floorOverrideCount > 0 ? (
+          <div className="cell" role="listitem">
+            <div className="fig">{floorOverrideCount}</div>
+            <div className="cap">Committee rejection overturned on the floor</div>
+          </div>
+        ) : null}
+      </div>
 
             <details style={{ margin: 'var(--s4) 0' }}>
         <summary style={{ cursor: 'pointer', fontWeight: 600 }}>Signal legend — what these chips mean</summary>

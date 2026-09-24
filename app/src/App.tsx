@@ -1,7 +1,6 @@
 import { HashRouter, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import { useEffect } from 'react';
-import Home from './views/Home';
 import Hearings from './views/Hearings';
 import Nominees from './views/Nominees';
 import NomineeDossier from './views/NomineeDossier';
@@ -18,7 +17,7 @@ function Chrome({ children }: { children: ReactNode }) {
     { to: '/nominees', no: 'Act 1', label: 'Before' },
     { to: '/hearings', no: 'Act 2', label: 'During' },
     { to: '/vote', no: 'Act 3', label: 'After' },
-    { to: '/', no: '', label: 'Overview' },
+    { to: '/', no: '', label: 'About' },
   ];
   return (
     <>
@@ -70,7 +69,7 @@ export default function App() {
     <HashRouter>
       <Chrome>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<About />} />
           <Route path="/nominees" element={<Nominees />} />
           <Route path="/nominee/:idOrSlug" element={<NomineeDossier />} />
           <Route path="/hearings" element={<Hearings />} />

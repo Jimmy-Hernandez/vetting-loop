@@ -1,8 +1,21 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import type { Episode, HansardExcerpt } from '../types';
+import { loadEpisode, loadHansardExcerpts, placeholderEpisode } from '../data';
+import Triptych from './Triptych';
 
 // /about — the tool's own page. Approved copy, verbatim (brief 2026-09-24).
 // Static document register: same tokens, same .doc conventions as Methodology.
 export default function About() {
+  const [ep, setEp] = useState<Episode | null>(null);
+  const [hx, setHx] = useState<HansardExcerpt[] | null>(null);
+  useEffect(() => {
+    loadEpisode().then((e) => setEp(e ?? placeholderEpisode()));
+    loadHansardExcerpts().then((x) => setHx(x?.excerpts ?? null));
+  }, []);
+  const ep2 = ep; // for hero/triptych blocks below
+  if (!ep2) return <main className="doc" />;
+  const hansardLineConst = '(Question put and agreed to)';
   return (
     <main className="doc">
       <header className="masthead">
@@ -43,44 +56,58 @@ export default function About() {
         </div>
       </section>
 
+      
+{/* ---- our voice-vote triptych as centerpiece ---- */}
       <section className="sec">
         <div className="sechead">
-          <span className="no">The three acts</span>
-          <h2>The three acts</h2>
-          <p className="dek">The same structure as the record itself — before, during, after.</p>
+          <span className="no">The finding</span>
+          <h2>“{hansardLineConst}”</h2>
+          <p className="dek">
+            Nineteen Cabinet Secretaries approved by voice vote on 7 August 2024. No division was called —
+            no Member’s name was ever recorded on any approval. The juxtaposition below is the argument.
+          </p>
         </div>
-        <ol className="gaps">
-          <li>
-            <span className="num">1</span>
-            <div>
-              <h4>Before: The Nominee File</h4>
-              <p>
-                Career, declarations, the six state integrity checks (EACC, DCI, HELB, ORPP, KRA, CUE), and every
-                integrity flag with its source.
-              </p>
-            </div>
-          </li>
-          <li>
-            <span className="num">2</span>
-            <div>
-              <h4>During: The hearing record</h4>
-              <p>
-                What citizens submitted, what was asked, what was ignored. Memoranda are preserved verbatim.
-              </p>
-            </div>
-          </li>
-          <li>
-            <span className="num">3</span>
-            <div>
-              <h4>After: The accountability trail</h4>
-              <p>
-                The report against the submissions, and the vote: recorded where it was recorded, shown as absent
-                where it was not.
-              </p>
-            </div>
-          </li>
-        </ol>
+        <Triptych ep={ep} excerpts={hx} hansardDate={ep.date} hansardLine={hansardLineConst} />
+        <p style={{ textAlign: 'center', marginTop: 'var(--s6)' }}>
+          <Link to="/vote" style={{ fontWeight: 700, letterSpacing: '.08em', fontSize: 13 }}>
+            See the full record →
+          </Link>
+        </p>
       </section>
+
+
+<section className="sec">
+        <div className="sechead">
+          <span className="no">The loop</span>
+          <h2>Three acts, one paper trail</h2>
+          <p className="dek">Before the hearing, during the sitting, after the vote. Follow the documents.</p>
+        </div>
+        <div className="acts-grid">
+          <Link className="card" to="/nominees">
+            <span className="act-no">Act 1 · Before</span>
+            <h3>The Nominee File</h3>
+            <p>Source-linked dossier: CV, track record, integrity flags. Public question queue with upvotes.</p>
+            <span className="go">Open the register →</span>
+          </Link>
+          <Link className="card" to="/hearings">
+            <span className="act-no">Act 2 · During</span>
+            <h3>The hearing record</h3>
+            <p>Who asked what, tagged by topic — citizen questions shown alongside: asked vs. ignored.</p>
+            <span className="go">Open the hearing record →</span>
+          </Link>
+          <Link className="card" to="/vote">
+            <span className="act-no">Act 3 · After</span>
+            <h3>The accountability trail</h3>
+            <p>Report vs. submissions, side by side. Per-MP vote on every approval — one query.</p>
+            <span className="go">Trace a nominee →</span>
+          </Link>
+        </div>
+        <p className="standfirst" style={{ marginTop: 'var(--s3)', opacity: 0.75 }}>
+          ↺ the next appointment re-opens the loop.
+        </p>
+      </section>
+
+
 
       <section className="sec">
         <div className="sechead">
@@ -219,6 +246,27 @@ export default function About() {
           <figcaption className="source"><Link to="/">Return to the record</Link></figcaption>
         </figure>
       </section>
-    </main>
+    <section className="sec">
+        <div className="sechead">
+          <span className="no">The wider record</span>
+          <h2>Beyond the August 2024 episode</h2>
+        </div>
+        <div className="acts-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
+          <Link className="card" to="/ledger">
+            <span className="act-no">Every person</span>
+            <h3>The people ledger</h3>
+            <p>93 people, 111 appointments, verification tiers on every entry.</p>
+            <span className="go">Open the ledger →</span>
+          </Link>
+          <Link className="card" to="/signals">
+            <span className="act-no">Pattern rules</span>
+            <h3>The signals</h3>
+            <p>Eight deterministic rules over the appointment record — computed, not asserted.</p>
+            <span className="go">See the patterns →</span>
+          </Link>
+        </div>
+      </section>
+    
+</main>
   );
 }
