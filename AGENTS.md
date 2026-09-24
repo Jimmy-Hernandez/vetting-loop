@@ -63,7 +63,7 @@
 - App builds (`npx vite build` exit 0), runs (`npm run dev` → localhost:5173), deploys as static bundle (dist/ works from file://)
 - Data: real 20-nominee episode.json landed (270KB). **KNOWN GAP being fixed by the Mac-mini lane in parallel: memoranda.header_found=false and ignored[] count is LOW (10 total) — the memoranda side of asked-vs-ignored is underpopulated. Salvaged extracts for 15/20 nominees sit in data/processed/memoranda-extracts/. Do NOT "fix" this yourself unless it's still broken after your first git pull — a fix lane is on it; avoid merge collisions by pulling before starting any data work.**
 - One correction already applied: the mockup's "Obokato" quote is actually Ichung'wah's line (Hansard L589) — excerpts use the correct attribution. Watch for stale copies of the wrong attribution in any UI copy.
-- git: branch `main`, commits push directly. Tag `contracts-v1` marks the frozen contract point. Private repo — your token authenticates.
+- git: branch `main`, pulls work with your read-only token. Tag `contracts-v1` marks the frozen contract point. Private repo.
 
 ## 5. Your mandate (push rights, full ownership)
 
