@@ -1,8 +1,8 @@
 {
  "slug": "cs-vetting-august-2024",
- "title": "The Vetting of the Cabinet \u2014 August 2024",
+ "title": "The Vetting of the Cabinet — August 2024",
  "date": "2024-08-07",
- "summary": "August 2024 Committee on Appointments vetting of 20 Cabinet Secretary nominees: 4 days of public hearings at County Hall (1-4 Aug 2024), the Committee's Second Report tabled and voted in the National Assembly on 7 August 2024 \u2014 19 approved by voice vote ('(Question put and agreed to)'), 1 rejected (Ms Stella Soi Lang'at). No per-MP recorded vote exists for any approval; that absence is rendered as data.",
+ "summary": "August 2024 Committee on Appointments vetting of 20 Cabinet Secretary nominees: 4 days of public hearings at County Hall (1-4 Aug 2024), the Committee's Second Report tabled and voted in the National Assembly on 7 August 2024 — 19 approved by voice vote ('(Question put and agreed to)'), 1 rejected (Ms Stella Soi Lang'at). No per-MP recorded vote exists for any approval; that absence is rendered as data.",
  "sources": {
   "committee_report": {
    "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
@@ -392,28 +392,32 @@
     ],
     "ignored": [
      {
-      "text": "text",
+      "text": "(5) THAT, the nominee has neither been charged in a court of law nor adversely mentioned in any investigatory report of Parliament or any Commission of Inquiry in the past three years. adversely mentioned in any investigatory report of Parliament or any Commission of Inquiry in the past three years.",
       "source": "citizen",
-      "source_url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
-      "line": "line",
-      "needs_verification": false
+      "source_url": null,
+      "line": 2912,
+      "needs_verification": true,
+      "kind": "affidavit_clause",
+      "line_end": 2913
      },
      {
-      "text": "text",
+      "text": "(7) THAT, the nominee has never been dismissed from office under Article 75 of the Constitution for contravention of the provisions of Articles 75(1) {conflict of interest), Article 76 {financial probity), Article 77 (restriction on activities of State Officers) and Article 78(2) {dual citizenship) of the Constitution.",
       "source": "citizen",
-      "source_url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
-      "line": "line",
-      "needs_verification": false
+      "source_url": null,
+      "line": 2918,
+      "needs_verification": true,
+      "kind": "affidavit_clause"
      }
     ]
    },
    "memoranda": {
-    "header_found": false,
-    "count": 0,
-    "summary": "No memoranda observations extracted for this nominee.",
+    "header_found": true,
+    "count": 4,
+    "summary": "194. The Committee noted that Articles 132(2) and 152(2} of the Constitution of",
+    "quote": "194. The Committee noted that Articles 132(2) and 152(2} of the Constitution of",
     "report_page": null,
-    "hdr_line": null,
-    "quote": null
+    "hdr_line": 2848,
+    "first_line": 2849
    },
    "reportPageRef": "pp. 33-48 (observations p. 48)"
   },
@@ -518,7 +522,7 @@
       "para": 213
      },
      {
-      "text": "On the issue of doctors\u2019 strikes and the deployment of intern doctors",
+      "text": "On the issue of doctors’ strikes and the deployment of intern doctors",
       "source": "committee",
       "mp_name": null,
       "source_url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
@@ -630,7 +634,7 @@
       "para": 230
      },
      {
-      "text": "On the perception of the Ministry of Health as \u2018mafia house\u2019 due to its association with corruption and cartels",
+      "text": "On the perception of the Ministry of Health as ‘mafia house’ due to its association with corruption and cartels",
       "source": "committee",
       "mp_name": null,
       "source_url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
@@ -678,7 +682,8 @@
     "summary": "No standalone memoranda-observations header; responses are inline as a sworn-Affidavit narrative (two-thirds gender rule; practising-certificate question; competence).",
     "report_page": null,
     "hdr_line": 3273,
-    "quote": "Written submissions by the Nominee \u2014 236. The nominee in her Affidavits sworn on 31st July 2024, further stated as follows\u2014 (a) On the issue that the list of nominees did not meet the two-thirds gender rule, the nominee responded that she was nominated by the President to the Cabinet as a female in line with the two-thirds gender principle; (b) That at the World Health Organization where she has been working this year, she is engaged in policy and not clinical practice and therefore, she was not required to have a practicing certificate as per the provisions of the Medical Practitioners and Dentist Act; (c) That she has never engaged in any practice without a license and has always practiced within the law; (d) That she has never lost her job as a Medical Doctor at any time and she is competent to handle the Ministry of Health; and (e) That she has never engaged in any unethical behaviour nor participated in any corrupt or illegal activity and she meets all the requirements of the Constitution and is therefore fit and suitable to hold public office."
+    "quote": "Written submissions by the Nominee — 236. The nominee in her Affidavits sworn on 31st July 2024, further stated as follows— (a) On the issue that the list of nominees did not meet the two-thirds gender rule, the nominee responded that she was nominated by the President to the Cabinet as a female in line with the two-thirds gender principle; (b) That at the World Health Organization where she has been working this year, she is engaged in policy and not clinical practice and therefore, she was not required to have a practicing certificate as per the provisions of the Medical Practitioners and Dentist Act; (c) That she has never engaged in any practice without a license and has always practiced within the law; (d) That she has never lost her job as a Medical Doctor at any time and she is competent to handle the Ministry of Health; and (e) That she has never engaged in any unethical behaviour nor participated in any corrupt or illegal activity and she meets all the requirements of the Constitution and is therefore fit and suitable to hold public office.",
+    "needs_verification": true
    },
    "reportPageRef": "pp. 49-57 (observations pp. 57-58)"
   },
@@ -930,21 +935,39 @@
     ],
     "ignored": [
      {
-      "text": "text",
+      "text": "determined by the High Court and therefore the arbitrator, Isaac Aluochier, did not have jurisdiction to conduct the arbitral proceedings 4.",
       "source": "citizen",
-      "source_url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
-      "line": "line",
-      "needs_verification": false
+      "source_url": null,
+      "line": 3727,
+      "needs_verification": true
+     },
+     {
+      "text": "(4) THAT the nominee has neither been charged in a court of law nor adversely mentioned in any investigatory report of Parliament or any Commission of Inquiry in the last three years. adversely mentioned in any investigatory report of Parliament or any Commission of Inquiry in the last three years.",
+      "source": "citizen",
+      "source_url": null,
+      "line": 3770,
+      "needs_verification": true,
+      "kind": "affidavit_clause",
+      "line_end": 3771
+     },
+     {
+      "text": "(6) THAT, the nominee has never been dismissed from office under Article 75 of the Constitution for contravention of the provisions of Articles 75(1) (conflict of interest), Article 76 [financial probity), Article 77 (restriction on activities of State Officers) and Article 78(2) (dual citizenship} of the Constitution.",
+      "source": "citizen",
+      "source_url": null,
+      "line": 3776,
+      "needs_verification": true,
+      "kind": "affidavit_clause"
      }
     ]
    },
    "memoranda": {
-    "header_found": false,
-    "count": 0,
-    "summary": "No memoranda observations extracted for this nominee.",
+    "header_found": true,
+    "count": 3,
+    "summary": "282. The Committee noted that—",
+    "quote": "282. The Committee noted that—",
     "report_page": null,
-    "hdr_line": null,
-    "quote": null
+    "hdr_line": 3711,
+    "first_line": 3713
    },
    "reportPageRef": "pp. 57-67 (observations pp. 65-66)"
   },
@@ -1161,7 +1184,7 @@
       "para": 314
      },
      {
-      "text": "On considering dropping the \u2018free education\u2019 or implementing it fully",
+      "text": "On considering dropping the ‘free education’ or implementing it fully",
       "source": "committee",
       "mp_name": null,
       "source_url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
@@ -1177,7 +1200,7 @@
       "para": 316
      },
      {
-      "text": "On teachers\u2019 training",
+      "text": "On teachers’ training",
       "source": "committee",
       "mp_name": null,
       "source_url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
@@ -1297,15 +1320,34 @@
       "para": null
      }
     ],
-    "ignored": []
+    "ignored": [
+     {
+      "text": "(5) THAT the nominee has neither been charged in a court of law nor adversely mentioned in any investigatory report of Parliament or any Commission of Inquiry in the last three years. adversely mentioned in any investigatory report of Parliament or any Commission of Inquiry in the last three years.",
+      "source": "citizen",
+      "source_url": null,
+      "line": 4277,
+      "needs_verification": true,
+      "kind": "affidavit_clause",
+      "line_end": 4278
+     },
+     {
+      "text": "(7) THAT, the nominee has never been dismissed from office under Article 75 of the Constitution for contravention of the provisions of Articles 75(1) (conflict of interest), Article 76 (financial probity), Article 77 (restriction on activities of State Officers) and Article 78(2} (dual citizenship) of the Constitution.",
+      "source": "citizen",
+      "source_url": null,
+      "line": 4283,
+      "needs_verification": true,
+      "kind": "affidavit_clause"
+     }
+    ]
    },
    "memoranda": {
-    "header_found": false,
-    "count": 0,
-    "summary": "No memoranda observations extracted for this nominee.",
+    "header_found": true,
+    "count": 3,
+    "summary": "334. The Committee noted that the nominee was issued with o Certificate of",
+    "quote": "334. The Committee noted that the nominee was issued with o Certificate of",
     "report_page": null,
-    "hdr_line": null,
-    "quote": null
+    "hdr_line": 4231,
+    "first_line": 4232
    },
    "reportPageRef": "pp. 67-76 (observations pp. 76-77)"
   },
@@ -1533,21 +1575,32 @@
     ],
     "ignored": [
      {
-      "text": "text",
+      "text": "(5) THAT the nominee has neither been charged in a court of law nor adversely mentioned in any investigatory report of Parliament or any Commission of Inquiry in the last three years. adversely mentioned in any investigatory report of Parliament or any Commission of Inquiry in the last three years.",
       "source": "citizen",
-      "source_url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
-      "line": "line",
-      "needs_verification": false
+      "source_url": null,
+      "line": 4748,
+      "needs_verification": true,
+      "kind": "affidavit_clause",
+      "line_end": 4749
+     },
+     {
+      "text": "(7) THAT, the nominee has never been dismissed from office under Article 75 of the Constitution for contravention of the provisions of Articles 75{1} (conflict of interest), Article 76 [financial probity), Article 77 (restriction on activities of State Officers) and Article 78({2) (dual citizenship) of the Constitution",
+      "source": "citizen",
+      "source_url": null,
+      "line": 4754,
+      "needs_verification": true,
+      "kind": "affidavit_clause"
      }
     ]
    },
    "memoranda": {
-    "header_found": false,
-    "count": 0,
-    "summary": "No memoranda observations extracted for this nominee.",
+    "header_found": true,
+    "count": 3,
+    "summary": "372. The Committee noted that Articles 132(2) and 152(2) of the Constitution of",
+    "quote": "372. The Committee noted that Articles 132(2) and 152(2) of the Constitution of",
     "report_page": null,
-    "hdr_line": null,
-    "quote": null
+    "hdr_line": 4696,
+    "first_line": 4698
    },
    "reportPageRef": "pp. 77-85 (observations pp. 85-86)"
   },
@@ -1853,7 +1906,8 @@
     "summary": "No standalone header; single inline Affidavit response contesting memoranda on the two-thirds gender rule (Art. 27(8) compliance).",
     "report_page": null,
     "hdr_line": 5108,
-    "quote": "Written submissions by the nominee \u2014 416. Dr. Andrew Mwihia Karanja responded to the memoranda contesting the suitability of the nominees on the issue of non-compliance with the two-thirds gender rule and stated in his Affidavit that H. E. the President had nominated eight female members to the Cabinet and therefore had complied with Article 27(8) of the Constitution in the list of nominees."
+    "quote": "Written submissions by the nominee — 416. Dr. Andrew Mwihia Karanja responded to the memoranda contesting the suitability of the nominees on the issue of non-compliance with the two-thirds gender rule and stated in his Affidavit that H. E. the President had nominated eight female members to the Cabinet and therefore had complied with Article 27(8) of the Constitution in the list of nominees.",
+    "needs_verification": true
    },
    "reportPageRef": "pp. 86-94 (observations pp. 94-95)"
   },
@@ -2191,23 +2245,16 @@
       "para": null
      }
     ],
-    "ignored": [
-     {
-      "text": "text",
-      "source": "citizen",
-      "source_url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
-      "line": "line",
-      "needs_verification": false
-     }
-    ]
+    "ignored": []
    },
    "memoranda": {
-    "header_found": false,
-    "count": 0,
-    "summary": "No memoranda observations extracted for this nominee.",
+    "header_found": true,
+    "count": 1,
+    "summary": "468, The Committee noted that—",
+    "quote": "468, The Committee noted that—",
     "report_page": null,
-    "hdr_line": null,
-    "quote": null
+    "hdr_line": 5575,
+    "first_line": 5576
    },
    "reportPageRef": "pp. 95-104 (observations pp. 104-105)"
   },
@@ -2456,7 +2503,8 @@
     "summary": "No standalone header; inline Affidavit responses to memoranda on (i) lack of requisite qualifications (First Class Honours civil engineering degree; SMEC/Mangat Ib Patel experience) and (ii) the two-thirds gender rule (Art. 27(8) compliance).",
     "report_page": null,
     "hdr_line": 5991,
-    "quote": "Written Submissions by the Nominee \u2014 511. The nominee vide an Affidavit sworn on 4th August 2024, responded to the memoranda that contested his suitability on the basis of lack of the requisite qualifications... 512. On the issue of the two-thirds gender rule, he stated that\u2014 (a) The President nominated seventeen male and eight female persons to the Cabinet. Accordingly, the President has complied with Article 27(8) of the Constitution since eight out of twenty-five members meets the two thirds constitutional threshold, noting that the memoranda did not factor in the nominees for the position of Attorney General and the Ministry of East African Community Affairs and Regional Development."
+    "quote": "Written Submissions by the Nominee — 511. The nominee vide an Affidavit sworn on 4th August 2024, responded to the memoranda that contested his suitability on the basis of lack of the requisite qualifications... 512. On the issue of the two-thirds gender rule, he stated that— (a) The President nominated seventeen male and eight female persons to the Cabinet. Accordingly, the President has complied with Article 27(8) of the Constitution since eight out of twenty-five members meets the two thirds constitutional threshold, noting that the memoranda did not factor in the nominees for the position of Attorney General and the Ministry of East African Community Affairs and Regional Development.",
+    "needs_verification": true
    },
    "reportPageRef": "pp. 105-113 (observations pp. 113-114)"
   },
@@ -2722,23 +2770,16 @@
       "para": null
      }
     ],
-    "ignored": [
-     {
-      "text": "text",
-      "source": "citizen",
-      "source_url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
-      "line": "line",
-      "needs_verification": false
-     }
-    ]
+    "ignored": []
    },
    "memoranda": {
-    "header_found": false,
-    "count": 0,
-    "summary": "No memoranda observations extracted for this nominee.",
+    "header_found": true,
+    "count": 1,
+    "summary": "566. The Committee noted that—",
+    "quote": "566. The Committee noted that—",
     "report_page": null,
-    "hdr_line": null,
-    "quote": null
+    "hdr_line": 6522,
+    "first_line": 6523
    },
    "reportPageRef": "pp. 114-123 (observations pp. 123-124)"
   },
@@ -2963,7 +3004,8 @@
     "summary": "No standalone header; inline sworn-Affidavit response characterising the memoranda as repetitive and intended to discredit the list, and asserting allegations unproven should not be used against her.",
     "report_page": null,
     "hdr_line": 6977,
-    "quote": "Written Submission by the Nominee \u2014 600. The nominee vide an Affidavit sworn on 31st July 2024 further submitted as follows\u2014 (a) That Article 131 of the Constitution mandates the President as the appointing authority to appoint qualified persons to the Cabinet; (b) That the memoranda mostly relate to one nominee and are repetitive and this is an indication that the memoranda are intended to discredit the list of nominees; and (c) That in any case, an allegation until proven, should not be used against her."
+    "quote": "Written Submission by the Nominee — 600. The nominee vide an Affidavit sworn on 31st July 2024 further submitted as follows— (a) That Article 131 of the Constitution mandates the President as the appointing authority to appoint qualified persons to the Cabinet; (b) That the memoranda mostly relate to one nominee and are repetitive and this is an indication that the memoranda are intended to discredit the list of nominees; and (c) That in any case, an allegation until proven, should not be used against her.",
+    "needs_verification": true
    },
    "reportPageRef": "pp. 124-132 (observations pp. 132-134)"
   },
@@ -3252,23 +3294,16 @@
       "para": null
      }
     ],
-    "ignored": [
-     {
-      "text": "text",
-      "source": "citizen",
-      "source_url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
-      "line": "line",
-      "needs_verification": false
-     }
-    ]
+    "ignored": []
    },
    "memoranda": {
-    "header_found": false,
-    "count": 0,
-    "summary": "No memoranda observations extracted for this nominee.",
+    "header_found": true,
+    "count": 1,
+    "summary": "652, The Committee noted that the President has the prerogative under",
+    "quote": "652, The Committee noted that the President has the prerogative under",
     "report_page": null,
-    "hdr_line": null,
-    "quote": null
+    "hdr_line": 7440,
+    "first_line": 7441
    },
    "reportPageRef": "pp. 135-142 (observations pp. 142-143)"
   },
@@ -3585,12 +3620,13 @@
     "ignored": []
    },
    "memoranda": {
-    "header_found": false,
-    "count": 0,
-    "summary": "No memoranda observations extracted for this nominee.",
+    "header_found": true,
+    "count": 1,
+    "summary": "704, The Committee noted that Articles 132(2) and 152(2) of the Constitution of",
+    "quote": "704, The Committee noted that Articles 132(2) and 152(2) of the Constitution of",
     "report_page": null,
-    "hdr_line": null,
-    "quote": null
+    "hdr_line": 7936,
+    "first_line": 7938
    },
    "reportPageRef": "pp. 143-152 (observations pp. 152-153)"
   },
@@ -3955,12 +3991,13 @@
     "ignored": []
    },
    "memoranda": {
-    "header_found": false,
-    "count": 0,
-    "summary": "No memoranda observations extracted for this nominee.",
+    "header_found": true,
+    "count": 1,
+    "summary": "764. The Committee noted that Articles 1322) and 152(2) of the Constitution of",
+    "quote": "764. The Committee noted that Articles 1322) and 152(2) of the Constitution of",
     "report_page": null,
-    "hdr_line": null,
-    "quote": null
+    "hdr_line": 8588,
+    "first_line": 8590
    },
    "reportPageRef": "pp. 155-166 (observations pp. 166-167)"
   },
@@ -4074,7 +4111,7 @@
       "para": 781
      },
      {
-      "text": "On breaking KPLC\u2019s monopoly to allow competition in the energy sector",
+      "text": "On breaking KPLC’s monopoly to allow competition in the energy sector",
       "source": "committee",
       "mp_name": null,
       "source_url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
@@ -4325,12 +4362,13 @@
     "ignored": []
    },
    "memoranda": {
-    "header_found": false,
-    "count": 0,
-    "summary": "No memoranda observations extracted for this nominee.",
+    "header_found": true,
+    "count": 1,
+    "summary": "816. The Committee noted that the President has the prerogative under",
+    "quote": "816. The Committee noted that the President has the prerogative under",
     "report_page": null,
-    "hdr_line": null,
-    "quote": null
+    "hdr_line": 9139,
+    "first_line": 9143
    },
    "reportPageRef": "pp. 168-178 (observations pp. 178-179)"
   },
@@ -4596,23 +4634,16 @@
       "para": null
      }
     ],
-    "ignored": [
-     {
-      "text": "text",
-      "source": "citizen",
-      "source_url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
-      "line": "line",
-      "needs_verification": false
-     }
-    ]
+    "ignored": []
    },
    "memoranda": {
-    "header_found": false,
-    "count": 0,
-    "summary": "No memoranda observations extracted for this nominee.",
+    "header_found": true,
+    "count": 3,
+    "summary": "865. The Committee noted that Articles 132(2) and 152(2) of the Constitution of",
+    "quote": "865. The Committee noted that Articles 132(2) and 152(2) of the Constitution of",
     "report_page": null,
-    "hdr_line": null,
-    "quote": null
+    "hdr_line": 9602,
+    "first_line": 9604
    },
    "reportPageRef": "pp. 179-187 (observations pp. 187-189)"
   },
@@ -5018,21 +5049,22 @@
     ],
     "ignored": [
      {
-      "text": "text",
+      "text": "Regeneration Programme is a subject of on-going court proceedings against the County Government of Mombasa;",
       "source": "citizen",
-      "source_url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
-      "line": "line",
-      "needs_verification": false
+      "source_url": null,
+      "line": 10242,
+      "needs_verification": true
      }
     ]
    },
    "memoranda": {
-    "header_found": false,
-    "count": 0,
-    "summary": "No memoranda observations extracted for this nominee.",
+    "header_found": true,
+    "count": 1,
+    "summary": "927. The Committee observed that—",
+    "quote": "927. The Committee observed that—",
     "report_page": null,
-    "hdr_line": null,
-    "quote": null
+    "hdr_line": 10232,
+    "first_line": 10234
    },
    "reportPageRef": "pp. 188-201 (observations pp. 201-202)"
   },
@@ -5301,12 +5333,13 @@
     "ignored": []
    },
    "memoranda": {
-    "header_found": false,
-    "count": 0,
-    "summary": "No memoranda observations extracted for this nominee.",
+    "header_found": true,
+    "count": 1,
+    "summary": "976. The Committee noted that—",
+    "quote": "976. The Committee noted that—",
     "report_page": null,
-    "hdr_line": null,
-    "quote": null
+    "hdr_line": 10624,
+    "first_line": 10626
    },
    "reportPageRef": "pp. 202-209 (observations pp. 209-210)"
   },
@@ -5444,7 +5477,7 @@
       "para": 1001
      },
      {
-      "text": "On handling of the 2019 nurses\u2019 strike",
+      "text": "On handling of the 2019 nurses’ strike",
       "source": "committee",
       "mp_name": null,
       "source_url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
@@ -5559,12 +5592,13 @@
     "ignored": []
    },
    "memoranda": {
-    "header_found": false,
-    "count": 0,
-    "summary": "No memoranda observations extracted for this nominee.",
+    "header_found": true,
+    "count": 4,
+    "summary": "1019. In relation to the clearance certificate for EACC, the Committee observed",
+    "quote": "1019. In relation to the clearance certificate for EACC, the Committee observed",
     "report_page": null,
-    "hdr_line": null,
-    "quote": null
+    "hdr_line": 11145,
+    "first_line": 11147
    },
    "reportPageRef": "pp. 210-220 (observations pp. 220-221)"
   },
@@ -5816,21 +5850,22 @@
     ],
     "ignored": [
      {
-      "text": "text",
+      "text": "was a question to be determined by the High Court and therefore the arbitrator, Isaac Aluochier, did not have jurisdiction to conduct the arbitral proceedings.",
       "source": "citizen",
-      "source_url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
-      "line": "line",
-      "needs_verification": false
+      "source_url": null,
+      "line": 11606,
+      "needs_verification": true
      }
     ]
    },
    "memoranda": {
-    "header_found": false,
-    "count": 0,
-    "summary": "No memoranda observations extracted for this nominee.",
+    "header_found": true,
+    "count": 1,
+    "summary": "1062. The Committee noted that—",
+    "quote": "1062. The Committee noted that—",
     "report_page": null,
-    "hdr_line": null,
-    "quote": null
+    "hdr_line": 11580,
+    "first_line": 11582
    },
    "reportPageRef": "pp. 223-229 (observations pp. 229-230)"
   },
@@ -5852,7 +5887,7 @@
     },
     {
      "claim": "In tabling the committee report, Majority Leader Kimani Ichung'wah cited her frequent career transitions as leaving her without grounding in any area of leadership - the rarest formal adverse finding of the vetting.",
-     "quote": "\u201cThe nominee\u2019s career has been marked by frequent transitions, with each role lacking the long-term strategic planning essential for leading a ministry effectively,\u201d Ichung\u2019wa stated... \u201cThe result of this frequent role-switching is a lack of grounding in any one area of leadership.\u201d",
+     "quote": "“The nominee’s career has been marked by frequent transitions, with each role lacking the long-term strategic planning essential for leading a ministry effectively,” Ichung’wa stated... “The result of this frequent role-switching is a lack of grounding in any one area of leadership.”",
      "publisher": "Kenyans.co.ke (Samuel Mwanawanjuguna)",
      "url": "https://www.kenyans.co.ke/news/103459-parliament-cites-frequent-job-hopping-lack-expertise-stella-soi-langat-gender-cs",
      "date": "2024-08-07",
@@ -6082,7 +6117,8 @@
     "summary": "No memoranda observations section appears in the Committee's 4.20 narrative (OCR of pp. 231-239 contains no memoranda-response or header; the 4.20.3 observations derive from hearing performance, not public memoranda). Report Ch. 4 opening lists memoranda received generally, but none itemised for 4.20 in the extracted text.",
     "report_page": null,
     "hdr_line": null,
-    "quote": null
+    "quote": null,
+    "needs_verification": true
    },
    "reportPageRef": "pp. 231-239 (observations pp. 237-239)"
   }
