@@ -5,3 +5,8 @@ dist/
 data/parliament-pdf/*.pdf
 data/parliament-pdf/ocr-*/
 data/hansard/*.html
+
+# nostr keys — never commit
+scripts/nostr/*key*.json
+*nsec*
+*.key.json
