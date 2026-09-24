@@ -111,6 +111,9 @@ interface PriorCycleNominee {
   cycle: string;
   returned_in_2024?: string;
   fate?: string;
+  status?: string;
+  approval_cycle?: string;
+  note?: string;
 }
 
 export interface Episode {
