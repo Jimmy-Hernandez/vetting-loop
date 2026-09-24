@@ -6380,5 +6380,135 @@
   "returnees_cs": 9,
   "returnees_docket_rotated": 6,
   "returnees_note": "9 of 19 approvals had served in the 2022 cabinet (incl. the AG→CS move); 6 rotated dockets (compiled sources differ on membership — needs_verification)"
+ },
+ "priorCycles": {
+  "cabinet_2022": {
+   "nominated": "2022-09-27",
+   "vetted": "2022-10",
+   "outcome": "all approved (no rejections recorded)",
+   "source": "compiled tracker (Gaita) — The Star 27 Sep 2022, Wikipedia cross-check",
+   "needs_verification": true,
+   "nominees": [
+    {
+     "name": "Musalia Mudavadi",
+     "portfolio": "Prime Cabinet Secretary",
+     "cycle": "2022-09"
+    },
+    {
+     "name": "Kithure Kindiki",
+     "portfolio": "Interior and National Administration",
+     "cycle": "2022-09",
+     "returned_in_2024": "nominee-01"
+    },
+    {
+     "name": "Prof. Njuguna Ndung'u",
+     "portfolio": "National Treasury and Economic Planning",
+     "cycle": "2022-09"
+    },
+    {
+     "name": "Aisha Jumwa",
+     "portfolio": "Public Service and Gender",
+     "cycle": "2022-09"
+    },
+    {
+     "name": "Aden Duale",
+     "portfolio": "Defence",
+     "cycle": "2022-09",
+     "returned_in_2024": "nominee-07"
+    },
+    {
+     "name": "Alice Wahome",
+     "portfolio": "Water, Sanitation and Irrigation",
+     "cycle": "2022-09",
+     "returned_in_2024": "nominee-03"
+    },
+    {
+     "name": "Alfred Mutua",
+     "portfolio": "Foreign and Diaspora Affairs",
+     "cycle": "2022-09",
+     "returned_in_2024": "nominee-17"
+    },
+    {
+     "name": "Moses Kuria",
+     "portfolio": "Investments, Trade and Industry",
+     "cycle": "2022-09"
+    },
+    {
+     "name": "Rebecca Miano",
+     "portfolio": "East African Community and Regional Development",
+     "cycle": "2022-09",
+     "returned_in_2024": "nominee-13"
+    },
+    {
+     "name": "Kipchumba Murkomen",
+     "portfolio": "Roads and Transport",
+     "cycle": "2022-09",
+     "returned_in_2024": "nominee-15"
+    },
+    {
+     "name": "Zachariah Mwangi Njeru",
+     "portfolio": "Lands, Public Works, Housing and Urban Development",
+     "cycle": "2022-09"
+    },
+    {
+     "name": "Peninah Malonza",
+     "portfolio": "Tourism and Wildlife",
+     "cycle": "2022-09"
+    },
+    {
+     "name": "Mithika Linturi",
+     "portfolio": "Agriculture and Livestock Development",
+     "cycle": "2022-09"
+    },
+    {
+     "name": "Ezekiel Machogu",
+     "portfolio": "Education",
+     "cycle": "2022-09"
+    },
+    {
+     "name": "Davis Chirchir",
+     "portfolio": "Energy and Petroleum",
+     "cycle": "2022-09",
+     "returned_in_2024": "nominee-09"
+    },
+    {
+     "name": "Ababu Namwamba",
+     "portfolio": "Youth Affairs, Sports and Arts",
+     "cycle": "2022-09"
+    },
+    {
+     "name": "Simon Chelugui",
+     "portfolio": "Cooperatives and MSME Development",
+     "cycle": "2022-09"
+    },
+    {
+     "name": "Salim Mvurya",
+     "portfolio": "Mining, Blue Economy and Maritime Affairs",
+     "cycle": "2022-09"
+    },
+    {
+     "name": "Florence Bore",
+     "portfolio": "Labour and Social Protection",
+     "cycle": "2022-09"
+    },
+    {
+     "name": "Susan Nakhumicha Wafula",
+     "portfolio": "Health",
+     "cycle": "2022-09"
+    },
+    {
+     "name": "Eliud Owalo",
+     "portfolio": "Information, Communication and the Digital Economy",
+     "cycle": "2022-09"
+    },
+    {
+     "name": "Roselinda Soipan Tuya",
+     "portfolio": "Environment, Climate Change and Forestry",
+     "cycle": "2022-09",
+     "returned_in_2024": "nominee-05"
+    }
+   ],
+   "sameAnnouncementOffices": []
+  }
  }
 }
