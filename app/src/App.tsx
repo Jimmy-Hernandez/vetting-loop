@@ -61,7 +61,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/nominees" element={<Nominees />} />
-          <Route path="/nominee/:id" element={<NomineeDossier />} />
+          <Route path="/nominee/:idOrSlug" element={<NomineeDossier />} />
           <Route path="/vote" element={<Vote />} />
           <Route path="*" element={<Fallback />} />
         </Routes>

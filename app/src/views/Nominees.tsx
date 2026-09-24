@@ -31,7 +31,7 @@ export default function Nominees() {
           {nom.map((n) => {
             const c = countsFor(n);
             return (
-              <Link key={n.id} to={`/nominee/${n.id}`} className={`nomcard${n.status === 'rejected' ? ' rejected' : ''}`}>
+              <Link key={n.id} to={`/nominee/${n.slug || n.id}`} className={`nomcard${n.status === 'rejected' ? ' rejected' : ''}`}>
                 <span className={`badge ${n.status}`}>{n.status}</span>
                 <h3>{n.name}</h3>
                 <p className="portfolio">{n.portfolio}</p>

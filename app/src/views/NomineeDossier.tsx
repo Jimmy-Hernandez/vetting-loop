@@ -26,12 +26,12 @@ const AGENCIES: Array<[keyof Nominee['backgroundChecks'], string]> = [
 ];
 
 export default function NomineeDossier() {
-  const { id } = useParams();
+  const { id: idOrSlug } = useParams();
   const [ep, setEp] = useState<Episode | null>(null);
   useEffect(() => { loadEpisode().then((e) => setEp(e ?? placeholderEpisode())); }, []);
   if (!ep) return <main className="doc" />;
 
-  const n = (ep.nominees ?? []).find((x) => x.id === id);
+  const n = (ep.nominees ?? []).find((x) => x.id === idOrSlug || (x.slug && x.slug === idOrSlug));
   if (!n) {
     return (
       <main className="doc">

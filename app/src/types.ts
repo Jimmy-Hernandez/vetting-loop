@@ -45,6 +45,8 @@ export interface IgnoredQuestion {
   source_url: string;
   line: number;
   needs_verification: boolean;
+  kind?: string;
+  line_end?: number;
 }
 
 export interface HearingQuestions {
@@ -57,11 +59,16 @@ export interface Memoranda {
   count: number;
   summary: string;
   report_page: string;
+  hdr_line?: number;
+  first_line?: number;
+  quote?: string;
+  needs_verification?: boolean;
 }
 
 export interface Nominee {
   id: string;
   name: string;
+  slug: string;
   portfolio: string;
   party: string | null;
   status: 'approved' | 'rejected';
