@@ -181,7 +181,8 @@ export default function NomineeDossier() {
                   <li key={i}>
                     {q.text}
                     <br />
-                    <span className="src-chip citizen">citizen</span>
+                    {q.kind === 'affidavit_clause' && <span className="src-chip citizen">citizen memorandum</span>}
+                    {!q.kind && <span className="src-chip citizen">citizen</span>}
                     {q.needs_verification && <span className="src-chip unverified">unverified</span>}
                     {q.source_url && <a href={q.source_url}> source</a>}
                     {q.line ? <span className="src-chip">line {q.line}</span> : null}
@@ -195,11 +196,25 @@ export default function NomineeDossier() {
 
       <Section no="§ 5" title="Memoranda" dek="Observations on memoranda submitted against the nominee.">
         <div className="memoranda">
-          <span className={`mtag${mem?.header_found ? '' : ' missing'}`}>
-            {mem?.header_found ? 'Memoranda header found' : 'Memoranda header not found — inline narrative'}
-          </span>
-          <p>{mem?.summary || 'No memoranda summary on record.'}</p>
-          {mem?.report_page && <span className="mref">Report page: {mem.report_page}</span>}
+          {mem?.header_found ? (
+            <>
+              <h4>Memoranda from the public — observed by the Committee</h4>
+              <span className="mtag">{mem.count ?? 0} memoranda observed</span>
+              {mem.quote && <p className="q">“{mem.quote}”</p>}
+              <span className="mref">
+                Report L{mem.hdr_line}
+                {mem.report_page ? ` · ${mem.report_page}` : ''}
+              </span>
+              {mem.needs_verification && <span className="src-chip unverified">needs verification</span>}
+            </>
+          ) : (
+            <>
+              <span className="mtag missing">No memoranda section in the Committee report — inline narrative only.</span>
+              {mem?.quote && <p className="q">“{mem.quote}”</p>}
+              {mem?.hdr_line ? <span className="mref">Report L{mem.hdr_line}</span> : null}
+              {mem?.needs_verification && <span className="src-chip unverified">needs verification</span>}
+            </>
+          )}
         </div>
       </Section>
     </main>
