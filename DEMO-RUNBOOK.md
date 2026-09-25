@@ -1,4 +1,11 @@
-# DEMO-RUNBOOK — Nostr censorship-resistance crash demo (The Vetting Loop)
+# DEMO-RUNBOOK — Nostr takedown-resistance demo (The Vetting Loop)
+
+> **How to describe this, exactly.** Say *takedown-*resistant*, never *proof* or *immune*.
+> Relays are run by people, and an admin can delete their own copy — with enough pressure,
+> they will. What the design actually buys: events are cryptographically signed, so an
+> altered record fails verification, and the signature travels with the content, so any
+> reader holding a copy can re-host it. Deletion is survivable; edits are visible.
+> Overclaiming here is the fastest way to lose a technical judge.
 
 > ## ⛔ NOSTR IS DISABLED (2026-09-25)
 >

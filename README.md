@@ -82,7 +82,10 @@ vote trail. The broader appointment ledger joins by person/slug.
 
 The project includes extraction and signed-event tooling, but the current app does
 not invoke a live AI model. Signed publication is an optional layer; signatures
-would establish publisher integrity, not truth. See [architecture](docs/ARCHITECTURE.md).
+would establish publisher integrity, not truth. Relay operators can delete their
+own copies; a reader retaining a signed copy can re-host it. The design is
+takedown-resistant, not takedown-proof. See [architecture](docs/ARCHITECTURE.md) and
+the [Nostr runbook](DEMO-RUNBOOK.md).
 
 ## Repository orientation
 

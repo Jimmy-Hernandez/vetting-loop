@@ -36,3 +36,6 @@ repository visibility or activate a public relay.
 One integration correction enables `allowImportingTsExtensions` in the companion
 ledger typecheck configuration, matching its existing `.ts` import and `noEmit`
 mode. The manifest preserves both original and corrected checksums for that file.
+
+The concurrent upstream `c4fee6c` wording correction was also merged: Nostr is
+takedown-resistant, not takedown-proof; relay operators can delete their copies.

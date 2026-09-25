@@ -26,7 +26,7 @@ uptime check or field-performance measurement. See [raw results](browser-checks.
 ## Companion and service boundaries
 
 The companion's existing integrity, ledger and sealed-submission tests report
-**41 passed, 0 failed**. Package typechecks are exercised separately
+**41 passed, 0 failed**. All three package typechecks passed separately
 from the Vite build. The entire
 Next.js/API deployment and the optional Go relay have not been redeployed or
 independently audited in this handover. Preserved source is not a live-service claim.
