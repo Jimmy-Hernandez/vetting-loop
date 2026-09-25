@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { checkRecord } from '../scripts/check-record.mjs';
+const read = path => JSON.parse(readFileSync(new URL(`../app/public/data/${path}`,import.meta.url)));
+const fixtures = () => [read('episode.json'),read('divisions.json'),read('terry/ledger.json')];
+test('committed record satisfies structural baseline', () => assert.deepEqual(checkRecord(...fixtures()), []));
+test('reject fabricated per-MP votes', () => { const [e,d,l]=fixtures(); d.vetting_vote.recorded_votes.push({mp:'invented',vote:'aye'}); assert.ok(checkRecord(e,d,l).some(s=>s.includes('Never invent'))); });
+test('reject lost sourcing on allegations and positive findings', () => { const [e,d,l]=fixtures(); e.nominees[0].flags[0].url='javascript:alert(1)'; e.nominees[0].positiveFindings[0].page=0; const errors=checkRecord(e,d,l); assert.ok(errors.some(s=>s.includes('flag provenance'))); assert.ok(errors.some(s=>s.includes('positive-finding'))); });
+test('reject changed outcome and broken cycle reference', () => { const [e,d,l]=fixtures(); e.nominees.find(n=>n.status==='rejected').status='approved'; l.people[0].appointments[0].cycle='missing'; const errors=checkRecord(e,d,l); assert.ok(errors.some(s=>s.includes('rejection'))); assert.ok(errors.some(s=>s.includes('unknown cycle'))); });

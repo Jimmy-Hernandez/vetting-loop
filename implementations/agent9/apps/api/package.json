@@ -1,0 +1,29 @@
+{
+  "name": "@vetting-loop/api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Hono API on Cloudflare Workers",
+  "scripts": {
+    "dev": "wrangler dev --port 8787",
+    "build": "wrangler deploy --dry-run",
+    "deploy": "wrangler deploy",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hono/clerk-auth": "^2.0.0",
+    "@hono/zod-validator": "^0.3.0",
+    "@vetting-loop/db": "workspace:*",
+    "@vetting-loop/types": "workspace:*",
+    "drizzle-orm": "^0.33.0",
+    "hono": "^4.5.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.5.0",
+    "@cloudflare/workers-types": "^4.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0",
+    "wrangler": "^3.0.0"
+  }
+}

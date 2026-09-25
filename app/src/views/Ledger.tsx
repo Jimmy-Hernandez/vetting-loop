@@ -30,9 +30,9 @@ function personTier(p: TerryPerson): string {
 }
 
 // Source dates for the gender-docket vacancy stat. Both are documented facts:
-//   2024-08-07 — Committee on Appointments Second Report / House approval (episode.json date; Soi rejected)
-//   2025-03-26 — nomination of the next Gender CS (Terry's ledger cycle 'cs-2025-reshuffle'; vetting-record.pages.dev)
-// The DURATION is computed from these two constants — never hardcoded as "231".
+//   2024-08-07 - Committee on Appointments Second Report / House approval (episode.json date; Soi rejected)
+//   2025-03-26 - nomination of the next Gender CS (Terry's ledger cycle 'cs-2025-reshuffle'; vetting-record.pages.dev)
+// The DURATION is computed from these two constants - never hardcoded as "231".
 const GENDER_VACANCY_FROM = '2024-08-07';
 const GENDER_VACANCY_TO = '2025-03-26';
 
@@ -84,7 +84,7 @@ export default function Ledger() {
   }, [ledger]);
 
 
-  // ---- hero figures (transplanted from Home) — computed, never hardcoded ----
+  // ---- hero figures (transplanted from Home) - computed, never hardcoded ----
   const nom = ep?.nominees ?? [];
   const peopleRaw = ledger?.people ?? [];
   const allAppointments = peopleRaw.flatMap((p) => p.appointments ?? []);
@@ -92,7 +92,6 @@ export default function Ledger() {
   const approvedAppointments = allAppointments.filter((a) => a.outcome === 'approved').length;
   const gateCycleIds = new Set((ledger?.cycles ?? []).filter((c) => c.gate).map((c) => c.id));
   const houseRejections = allAppointments.filter((a) => a.outcome === 'rejected' && gateCycleIds.has(a.cycle)).length;
-  const nPeople = peopleRaw.length;
   const assertPositive = (n: number, what: string) => { if (n <= 0) throw new Error(`ledger computation returned ${n} for ${what}`); return n; };
   const returnees = nom.filter((n) => n.priorRole?.priorRoleType === 'cs_returnee' || n.priorRole?.priorRoleType === 'constitutional_office').length;
   const vacancyDays = daysBetween(GENDER_VACANCY_FROM, GENDER_VACANCY_TO);
@@ -114,13 +113,13 @@ export default function Ledger() {
       <header className="masthead">
         <p className="kicker"><span className="rule"></span>13th Parliament · Kenya</p>
         <h1>
-          <span style={{ color: 'var(--red)' }}>{assertPositive(nPeople, 'people')} nominations.</span>{' '}
+          <span style={{ color: 'var(--red)' }}>{assertPositive(totalAppointments, 'appointments')} nominations.</span>{' '}
           {houseRejections === 1 ? 'One rejection.' : <>{houseRejections} rejections.</>}
         </h1>
         <p className="standfirst">
           Parliament vets every Cabinet Secretary and Principal Secretary before they take office. This tool
-          shows what that gate actually does. 93 people carry 111 nominations across ten vetting cycles —
-          Cabinet Secretaries, Principal Secretaries, envoys — every appointment linked to the person, every
+          shows what that gate actually does. 93 people carry 111 nominations across ten vetting cycles
+          (Cabinet Secretaries, Principal Secretaries, envoys). Every appointment linked to the person, every
           fact cited, every pattern computed from the record rather than asserted. "Gate" cycles are the
           parliamentary vetting of CS and PS nominees; envoy and elevation cycles sit outside it, in the record.
         </p>
@@ -135,18 +134,18 @@ export default function Ledger() {
       <div className="outcome outcome-4" role="list" aria-label="Key figures, computed from the record">
         <div className="cell" role="listitem">
           <div className="fig">
-            {totalAppointments > 0 ? `${approvedAppointments} of ${totalAppointments}` : '—'}
+            {totalAppointments > 0 ? `${approvedAppointments} of ${totalAppointments}` : 'n/a'}
           </div>
           <div className="cap">
             {approvalPct !== null ? `${approvalPct}% approval rate across cycles` : 'Approval rate across cycles'}
           </div>
         </div>
         <div className="cell" role="listitem">
-          <div className="fig">{returnees > 0 ? `${returnees} of 19` : '—'}</div>
-          <div className="cap">Returned after dissolution — 9 CS + 1 AG</div>
+          <div className="fig">{returnees > 0 ? `${returnees} of 19` : 'n/a'}</div>
+          <div className="cap">Returned after dissolution: 9 CS + 1 AG</div>
         </div>
         <div className="cell" role="listitem">
-          <div className="fig">{vacancyDays !== null ? `${vacancyDays} days` : '—'}</div>
+          <div className="fig">{vacancyDays !== null ? `${vacancyDays} days` : 'n/a'}</div>
           <div className="cap">Gender docket left vacant by the only House rejection</div>
         </div>
         {floorOverrideCount > 0 ? (
@@ -158,11 +157,11 @@ export default function Ledger() {
       </div>
 
             <details style={{ margin: 'var(--s4) 0' }}>
-        <summary style={{ cursor: 'pointer', fontWeight: 600 }}>Signal legend — what these chips mean</summary>
+        <summary style={{ cursor: 'pointer', fontWeight: 600 }}>Signal legend: what these chips mean</summary>
         <ol style={{ margin: 'var(--s3) 0 0', paddingLeft: 'var(--s6)' }}>
           {(ledger?.signals ?? []).map((sig) => (
             <li key={sig.id} style={{ marginBottom: 6 }}>
-              <b>{sig.label}</b> — {sig.rule}
+              <b>{sig.label}</b>: {sig.rule}
             </li>
           ))}
         </ol>
@@ -229,7 +228,7 @@ export default function Ledger() {
                       <div key={a.id} className="led-appt">
                         <span className="led-portfolio">{a.portfolio}</span>
                         {a.cycle === 'cs-2024' ? (
-                          <Link className={'led-outcome led-out-' + a.outcome} to="/vote" title="How this batch was approved — the voice vote with no recorded division">{a.outcome}</Link>
+                          <Link className={'led-outcome led-out-' + a.outcome} to="/vote" title="How this batch was approved: the voice vote with no recorded division">{a.outcome}</Link>
                         ) : (
                           <span className={'led-outcome led-out-' + a.outcome}>{a.outcome}</span>
                         )}
@@ -239,7 +238,7 @@ export default function Ledger() {
                   </td>
                   <td>
                     <div className="chips">
-                      {sigs.length === 0 && <span className="led-none">—</span>}
+                      {sigs.length === 0 && <span className="led-none">none</span>}
                       {sigs.map((h) => {
                         const meta = ledger.signals.find((s) => s.id === h.signal);
                         return (
@@ -257,7 +256,7 @@ export default function Ledger() {
                     {hasHearing ? (
                       <Link className="led-hearing" to={`/nominee/${ourSlug}`}>Dossier →</Link>
                     ) : (
-                      <span className="led-none">—</span>
+                      <span className="led-none">none</span>
                     )}
                   </td>
                 </tr>

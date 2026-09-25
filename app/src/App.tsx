@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import { useEffect } from 'react';
 import Hearings from './views/Hearings';
@@ -12,38 +12,54 @@ import Ledger from './views/Ledger';
 
 function Chrome({ children }: { children: ReactNode }) {
   const loc = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [loc.pathname]);
+  useEffect(() => {
+    // Footer links deep-link into Methodology sections; honour the hash, else start at the top.
+    const target = loc.hash ? document.getElementById(loc.hash.slice(1)) : null;
+    if (target) target.scrollIntoView();
+    else window.scrollTo(0, 0);
+  }, [loc.pathname, loc.hash]);
+  // The three acts read as one sequence: phase above, subject below.
   const acts = [
-    { to: '/', no: '', label: 'About' },
-    { to: '/nominees', no: 'Act 1', label: 'Before' },
-    { to: '/hearings', no: 'Act 2', label: 'During' },
-    { to: '/vote', no: 'Act 3', label: 'After' },
-    { to: '/ledger', no: 'Record', label: 'Ledger' },
+    { to: '/', no: '', phase: 'Home', label: 'About', aria: 'About VETTA' },
+    { to: '/nominees', no: '01', phase: 'BEFORE', label: 'THE VOICE', aria: 'Act 1, before: the voice' },
+    { to: '/hearings', no: '02', phase: 'DURING', label: 'THE VOTE', aria: 'Act 2, during: the vote' },
+    { to: '/vote', no: '03', phase: 'AFTER', label: 'VERDICT', aria: 'Act 3, after: the verdict' },
+    { to: '/ledger', no: '', phase: 'The data', label: 'Ledger', aria: 'Ledger, the full data', cta: true },
   ];
   return (
     <>
+      <a className="skip" href="#main">Skip to content</a>
       <header className="chrome">
         <div className="chrome-inner">
-          <div className="breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <img src="/vetta-emblem.png" alt="Vetta emblem" width="72" height="40" style={{ display: 'block' }} />
-            <span className="here">Vetta</span>
-          </div>
-          <nav className="acts" aria-label="Vetta — main navigation">
+          <Link to="/" className="brand" aria-label="VETTA, home">
+            <img src="/brand/vetta-lockup-reverse.svg" alt="VETTA" width="123" height="24" />
+          </Link>
+          <nav className="acts" aria-label="Main navigation">
             {acts.map((a) => (
-              <NavLink key={a.to} to={a.to} aria-current={loc.pathname === a.to ? 'page' : undefined}>
-                <span className="no">{a.no}</span>
+              <NavLink key={a.to} to={a.to} end className={a.cta ? 'act-cta' : a.no ? 'act-seq' : undefined} aria-label={a.aria} aria-current={loc.pathname === a.to ? 'page' : undefined}>
+                <span className="no">{a.no && <b>{a.no}</b>}{a.phase}</span>
                 {a.label}
               </NavLink>
             ))}
-
           </nav>
         </div>
       </header>
-      {children}
+      <div id="main">{children}</div>
       <footer className="sitefoot">
         <div className="fin">
-          <span>Vetta — a civic tech tool<span className="dot">·</span>Impunity begins at confirmation.</span>
-          <span>All claims source-linked<span className="dot">·</span>Non-partisan<span className="dot">·</span><Link to="/">About</Link><span className="dot">·</span><Link to="/methodology">Methodology</Link></span>
+          <div className="fin-brand">
+            <img src="/brand/vetta-lockup-reverse.svg" alt="VETTA" width="113" height="22" />
+            <p>The public record of parliamentary vetting. Impunity begins at confirmation.</p>
+          </div>
+          <nav className="fin-links" aria-label="Footer">
+            {/* Only what the header does not already carry: how the record is built and kept honest. */}
+            <Link to="/methodology">Methodology</Link>
+            <Link to="/methodology#sources">Sources and data credits</Link>
+            <Link to="/methodology#corrections">Corrections</Link>
+          </nav>
+        </div>
+        <div className="fin-base">
+          <span>All claims source-linked<span className="dot">·</span>Non-partisan<span className="dot">·</span>Civic tech prototype</span>
         </div>
       </footer>
     </>
@@ -62,7 +78,7 @@ function Fallback() {
 
 export default function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Chrome>
         <Routes>
           <Route path="/" element={<About />} />
@@ -78,6 +94,6 @@ export default function App() {
           <Route path="*" element={<Fallback />} />
         </Routes>
       </Chrome>
-    </HashRouter>
+    </BrowserRouter>
   );
 }

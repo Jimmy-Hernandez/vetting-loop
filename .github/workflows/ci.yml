@@ -1,0 +1,53 @@
+name: Verify and package Vetta
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: vetta-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  record-and-app:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            app/package-lock.json
+      - run: npm ci
+      - run: npm ci --prefix app
+      - run: npm test
+      - run: npm run check:record
+      - run: npm run lint
+      - run: npm run build
+      - name: Package static demo
+        run: tar -czf vetta-demo.tar.gz -C app/dist .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vetta-demo-${{ github.sha }}
+          path: vetta-demo.tar.gz
+          if-no-files-found: error
+          retention-days: 14
+  companion-packages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: implementations/agent9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --global pnpm@9.7.0
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - run: pnpm exec vitest run --pool=threads --poolOptions.threads.maxThreads=1 --poolOptions.threads.minThreads=1
+      - run: pnpm --filter @vetting-loop/integrity --filter @vetting-loop/ledger --filter @vetting-loop/sealed typecheck

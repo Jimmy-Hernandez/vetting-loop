@@ -1,0 +1,37 @@
+# The Vetting Loop — .gitignore
+
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+.next/
+dist/
+.turbo/
+out/
+
+# Environment — NEVER commit secrets
+.env
+.env.local
+.env.*.local
+
+# Cloudflare
+.wrangler/
+*.d1
+
+# Test artifacts
+coverage/
+playwright-report/
+test-results/
+
+# OS / editor
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.log
+
+# Data ingestion scratch
+scripts/data/raw/
+scripts/data/tmp/
+*.tsbuildinfo

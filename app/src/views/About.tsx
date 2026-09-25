@@ -1,13 +1,32 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { TerryLedger } from '../terryTypes';
 import { loadTerryLedger } from '../data';
 import { NOSTR_ENABLED } from '../nostr-fallback';
 
-// /about — the tool's own page. Approved copy, verbatim (brief 2026-09-24).
+// Count-up for hero figures. Renders the final value immediately under reduced motion or before JS timing.
+function CountUp({ value }: { value: number | string | null }) {
+  const [shown, setShown] = useState<number | string>(typeof value === 'number' ? 0 : value ?? '…');
+  const raf = useRef(0);
+  useEffect(() => {
+    if (typeof value !== 'number') { setShown(value ?? '…'); return; }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setShown(value); return; }
+    const t0 = performance.now(), dur = 1400;
+    const tick = (t: number) => {
+      const k = Math.max(0, Math.min(1, (t - t0) / dur));
+      setShown(Math.round(value * (1 - Math.pow(1 - k, 3))));
+      if (k < 1) raf.current = requestAnimationFrame(tick);
+    };
+    raf.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf.current);
+  }, [value]);
+  return <>{shown}</>;
+}
+
+// /about - the tool's own page. Approved copy, verbatim (brief 2026-09-24).
 // Static document register: same tokens, same .doc conventions as Methodology.
 export default function About() {
-  // hero figures — computed from terry/ledger.json, same derivation as /ledger
+  // hero figures - computed from terry/ledger.json, same derivation as /ledger
   const [ledger, setLedger] = useState<TerryLedger | null>(null);
   useEffect(() => { loadTerryLedger().then((l) => setLedger(l)); }, []);
   const people = ledger?.people ?? [];
@@ -15,55 +34,77 @@ export default function About() {
   const nPeople = people.length;
   const gateCycleIds = new Set((ledger?.cycles ?? []).filter((c) => c.gate).map((c) => c.id));
   const houseRejections = allAppointments.filter((x) => x.outcome === 'rejected' && gateCycleIds.has(x.cycle)).length;
-  // Integrity guard: never render a zero where the record should have people.
-  // It must only be evaluated once the ledger has LOADED — asserting during the
-  // pre-load render (nPeople === 0) throws and blanks the whole app.
-  const loaded = ledger !== null;
-  const assertPositive = (n: number, w: string) => {
-    if (!loaded) return null;                       // still loading: no assertion
-    if (n <= 0) throw new Error('computed ' + n + ' for ' + w);
-    return n;
-  };
+  const assertPositive = (n: number, w: string) => { if (n <= 0) throw new Error('computed ' + n + ' for ' + w); return n; };
+  // Figures render as an honest dash until the ledger has loaded; the assert applies to loaded data only.
+  const fig = (n: number, w: string) => (ledger ? assertPositive(n, w) : 'n/a');
+
+  const hansardUrl = 'https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/';
 
   return (
-    <main className="doc">
-      <header className="masthead">
-        <p className="kicker"><span className="rule"></span>About the tool</p>
-        <h1>Vetta — the public record of parliamentary vetting</h1>
-        <p className="standfirst">
-          Vetta is a public register of parliamentary vetting — who was nominated for office, what citizens
-          submitted, what the committee asked, and how each decision was made. Every claim is sourced to a
-          document; every number can be checked. It is built to run as a durable public instrument, independent of any single host.
-        </p>
-        <div className="close" aria-hidden="true"></div>
-      </header>
-
-      <section className="sec" style={{ marginTop: 'var(--s6)' }}>
-        <div className="outcome" role="list" aria-label="The record at a glance">
-          <div className="cell" role="listitem">
-            <div className="fig" style={{ color: 'var(--red)' }}>{assertPositive(nPeople, 'people') ?? '—'}</div>
-            <div className="cap">People in the record</div>
-          </div>
-          <div className="cell" role="listitem">
-            <div className="fig">{allAppointments.length}</div>
-            <div className="cap">Nominations across ten cycles</div>
-          </div>
-          <div className="cell" role="listitem">
-            <div className="fig">{houseRejections === 1 ? 1 : houseRejections}</div>
-            <div className="cap">{houseRejections === 1 ? 'Gate rejection' : 'Gate rejections'}</div>
-          </div>
-          <div className="cell" role="listitem">
-            <div className="fig">10 cycles</div>
-            <div className="cap">2022 — 2025, CS · PS · envoys</div>
+    <>
+    <section className="hero" aria-labelledby="hero-title">
+      <div className="hero-inner">
+        <div className="hero-copy">
+          <p className="hero-kicker"><span className="rule"></span>Kenya · Parliamentary vetting · 2022 to 2025</p>
+          <h1 id="hero-title">Impunity begins at confirmation<span className="stop">.</span></h1>
+          <p className="hero-lede">
+            VETTA is the public record of parliamentary vetting: who was nominated, what citizens submitted,
+            what the committee asked, and how each decision was made. Every claim is sourced.
+          </p>
+          <div className="hero-cta">
+            <Link className="btn btn-primary" to="/nominees">Open the nominee register <span aria-hidden="true">→</span></Link>
+            <Link className="btn btn-ghost" to="/vote">See how the vote went</Link>
           </div>
         </div>
-        <p className="standfirst" style={{ marginTop: 'var(--s6)' }}>
-          Parliament must vet every Cabinet Secretary and Principal Secretary before they take office.
-          Vetta is the public record of how that gate actually behaves — before the hearing, during it,
-          and after the vote.
-        </p>
-      </section>
+        <figure className="hero-exhibit">
+          <div className="ex-meta"><span>Exhibit A</span><span>Hansard · National Assembly · 7 Aug 2024</span></div>
+          <blockquote>(Question put and agreed&nbsp;to)</blockquote>
+          <div className="ex-rule" aria-hidden="true"></div>
+          <figcaption>
+            The 19 approvals in August 2024 passed on a voice vote. The record shows only this line.{' '}
+            <a href={hansardUrl} target="_blank" rel="noopener noreferrer">Read the Hansard ↗</a>
+          </figcaption>
+        </figure>
+      </div>
+      <div className="hero-stats" role="list" aria-label="The record at a glance">
+        <div className="hstat" role="listitem">
+          <div className="fig red"><CountUp value={ledger ? fig(nPeople, 'people') : null} /></div>
+          <div className="cap">People in the record</div>
+        </div>
+        <div className="hstat" role="listitem">
+          <div className="fig"><CountUp value={ledger ? fig(allAppointments.length, 'appointments') : null} /></div>
+          <div className="cap">Nominations across ten cycles</div>
+        </div>
+        <div className="hstat" role="listitem">
+          <div className="fig"><CountUp value={ledger ? houseRejections : null} /></div>
+          <div className="cap">{houseRejections === 1 ? 'Gate rejection' : 'Gate rejections'}</div>
+        </div>
+        <div className="hstat" role="listitem">
+          <div className="fig"><CountUp value={10} /></div>
+          <div className="cap">Cycles · CS · PS · envoys</div>
+        </div>
+      </div>
+    </section>
 
+    <main className="doc">
+      <section className="sec" style={{ marginTop: 'var(--s12)' }}>
+        <div className="sechead">
+          <span className="no">About the tool</span>
+          <h2>Vetta: the public record of parliamentary vetting</h2>
+        </div>
+        <div className="prose">
+          <p>
+            Vetta is a public register of parliamentary vetting: who was nominated for office, what citizens
+            submitted, what the committee asked, and how each decision was made. Every claim is sourced to a
+            document; every number can be checked. It is built to run as a durable public instrument, independent of any single host.
+          </p>
+          <p>
+            Parliament must vet every Cabinet Secretary and Principal Secretary before they take office.
+            Vetta is the public record of how that gate actually behaves: before the hearing, during it,
+            and after the vote.
+          </p>
+        </div>
+      </section>
 
       <section className="sec" style={{ marginTop: 48 }}>
         <div className="sechead">
@@ -73,13 +114,13 @@ export default function About() {
         <div className="prose">
           <p>
             The Constitution of Kenya promises transparency, accountability and public participation (Articles 10
-            and 232), and demands integrity of anyone seeking state office (Chapter Six). Vetting — the public
-            confirmation of Cabinet and other senior appointments — is where those promises are tested in the open.
+            and 232), and demands integrity of anyone seeking state office (Chapter Six). Vetting, the public
+            confirmation of Cabinet and other senior appointments, is where those promises are tested in the open.
           </p>
           <p>
             In practice, the record shows a gap. Across three vetting cycles in the 13th Parliament, 62 nominees
             faced the committee: 22 in 2022, 51 Principal Secretaries in 2022, 20 Cabinet Secretaries in August
-            2024. One was rejected. The 19 approvals in August 2024 passed on a voice vote — the record shows only
+            2024. One was rejected. The 19 approvals in August 2024 passed on a voice vote. The record shows only
             &ldquo;(Question put and agreed&nbsp;to)&rdquo;. A nominee in the 2024 diplomatic cycle declined vetting
             and was appointed anyway. The record exists; the accountability of the record is what Vetta adds.
           </p>
@@ -112,13 +153,13 @@ export default function About() {
           <Link className="card" to="/hearings">
             <span className="act-no">Act 2 · During</span>
             <h3>The hearing record</h3>
-            <p>Who asked what, tagged by topic — citizen questions shown alongside: asked vs. ignored.</p>
+            <p>Who asked what, tagged by topic, with citizen questions shown alongside: asked vs. ignored.</p>
             <span className="go">Open the hearing record →</span>
           </Link>
           <Link className="card" to="/vote">
             <span className="act-no">Act 3 · After</span>
             <h3>The accountability trail</h3>
-            <p>Report vs. submissions, side by side. Per-MP vote on every approval — one query.</p>
+            <p>Report vs. submissions, side by side. Per-MP vote on every approval, in one query.</p>
             <span className="go">Trace a nominee →</span>
           </Link>
         </div>
@@ -140,7 +181,7 @@ export default function About() {
             <div>
               <h4>Nothing to seize</h4>
               <p>
-                Vetta is a static document, not a service — no database, no backend, no accounts. A copy is a
+                Vetta is a static document, not a service. No database, no backend, no accounts. A copy is a
                 complete copy.
               </p>
             </div>
@@ -284,18 +325,19 @@ export default function About() {
           <Link className="card" to="/ledger">
             <span className="act-no">Every person</span>
             <h3>The people ledger</h3>
-            <p>93 people, 111 appointments, verification tiers on every entry.</p>
+            <p>{ledger ? `${nPeople} people, ${allAppointments.length} appointments` : 'Every person and appointment'}, verification tiers on every entry.</p>
             <span className="go">Open the ledger →</span>
           </Link>
           <Link className="card" to="/methodology">
             <span className="act-no">Pattern rules</span>
             <h3>Methodology &amp; signals</h3>
-            <p>Eight deterministic rules over the appointment record — computed, not asserted.</p>
+            <p>Eight deterministic rules over the appointment record. Computed, not asserted.</p>
             <span className="go">How it works →</span>
           </Link>
         </div>
       </section>
-    
-</main>
+
+    </main>
+    </>
   );
 }

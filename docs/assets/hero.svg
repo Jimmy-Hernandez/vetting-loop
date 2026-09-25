@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" role="img" aria-labelledby="title desc">
+<title id="title">VETTA — Vetting in Action</title><desc id="desc">A public record of who was nominated, what was asked, and how the decision was made. Source-linked civic accountability.</desc>
+<rect width="1280" height="440" fill="#111111"/><rect x="56" y="52" width="7" height="66" fill="#b5212c"/>
+<g font-family="Arial, Helvetica, sans-serif"><text x="84" y="104" font-size="66" font-weight="800" letter-spacing="5" fill="#fff">VETTA</text>
+<text x="58" y="166" font-size="18" letter-spacing="4" fill="#bbb">VETTING IN ACTION</text>
+<text x="56" y="246" font-size="36" font-weight="700" fill="#fff">The decision is public.</text><text x="56" y="292" font-size="36" font-weight="700" fill="#fff">Make the record visible.</text>
+<path d="M56 336H1224" stroke="#555"/>
+<text x="56" y="380" font-size="18" fill="#ddd">01  BEFORE · NOMINEES</text><text x="451" y="380" font-size="18" fill="#ddd">02  DURING · HEARINGS</text><text x="863" y="380" font-size="18" fill="#ddd">03  AFTER · THE VOTE</text>
+</g></svg>

@@ -87,7 +87,7 @@ const notes = [];
 
 // 1. Episode summary
 notes.push(chunkNote(
-  `${episode.title} (${episode.date})\n\n${episode.summary}\n\nNominees: ${episode.nominees.length} — follow-up notes carry one dossier each, tagged 'nominee-<slug>'. Accountability trail in the final note.\n\n#vetting-loop-aug2024`,
+  `${episode.title} (${episode.date})\n\n${episode.summary}\n\nNominees: ${episode.nominees.length}. Follow-up notes carry one dossier each, tagged 'nominee-<slug>'. Accountability trail in the final note.\n\n#vetting-loop-aug2024`,
   [['t', EPISODE_TAG]]
 ));
 
@@ -103,7 +103,7 @@ for (const n of episode.nominees) {
 const vettingVote = divisions.vetting_vote ?? {};
 const contrast = (divisions.divisions || divisions)[0] ?? {};
 const motionText = hansard.excerpts?.find?.(e => /Question put and agreed/i.test(JSON.stringify(e))) ?? null;
-const trail = `ACCOUNTABILITY TRAIL — ${episode.date}\n\nThe 19 approvals passed by VOICE VOTE. Hansard records only: "(Question put and agreed to)". No per-MP recorded vote exists for any approval — that absence is data.\n\nContrast: Finance Bill 2024 division was recorded per-MP (192 Aye / 105 No).\nVetting vote mechanism: ${vettingVote.mechanism || 'voice vote'} — ${vettingVote.record || 'no record'}\nVerbatim motion: ${motionText ? JSON.stringify(motionText).slice(0, 300) : '(Question put and agreed to)'}\n\n#vetting-loop-aug2024`;
+const trail = `ACCOUNTABILITY TRAIL, ${episode.date}\n\nThe 19 approvals passed by VOICE VOTE. Hansard records only: "(Question put and agreed to)". No per-MP recorded vote exists for any approval — that absence is data.\n\nContrast: Finance Bill 2024 division was recorded per-MP (192 Aye / 105 No).\nVetting vote mechanism: ${vettingVote.mechanism || 'voice vote'} — ${vettingVote.record || 'no record'}\nVerbatim motion: ${motionText ? JSON.stringify(motionText).slice(0, 300) : '(Question put and agreed to)'}\n\n#vetting-loop-aug2024`;
 notes.push(chunkNote(trail, [['t', EPISODE_TAG], ['t', 'vetting-accountability-trail']]));
 
 console.log(`Prepared ${notes.length} notes → relays: ${relays.join(', ')}${dryRun ? ' (DRY RUN)' : ''}`);

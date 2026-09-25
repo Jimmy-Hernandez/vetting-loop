@@ -1,0 +1,21 @@
+name = "vetting-loop-api"
+main = "src/index.ts"
+compatibility_date = "2024-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "vetting-loop-db"
+database_id = "YOUR_D1_DATABASE_ID"   # replace after `wrangler d1 create`
+
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "vetting-loop-docs"
+
+[vars]
+ENVIRONMENT = "development"
+
+# Production secrets — set via `wrangler secret put`
+# CLERK_SECRET_KEY
+# API_INTERNAL_SECRET
+# MZALENDO_API_KEY

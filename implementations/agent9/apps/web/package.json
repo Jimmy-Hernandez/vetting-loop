@@ -1,0 +1,40 @@
+{
+  "name": "@vetting-loop/web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Vetting Record: Next.js 14 static site for Cloudflare Pages",
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p functions",
+    "deploy": "next build && wrangler pages deploy out --project-name vetting-record --branch main"
+  },
+  "dependencies": {
+    "@vetting-loop/integrity": "workspace:*",
+    "@vetting-loop/types": "workspace:*",
+    "@vetting-loop/ui": "workspace:*",
+    "next": "14.2.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "zod": "^3.23.0",
+    "@vetting-loop/ledger": "workspace:*",
+    "@vetting-loop/sealed": "workspace:*"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0",
+    "@cloudflare/workers-types": "^4.20260702.1"
+  }
+}

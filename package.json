@@ -5,6 +5,18 @@
   "dependencies": {
     "@noble/curves": "^2.0.1",
     "@noble/hashes": "^2.0.1",
-    "nostr-tools": "^2.25.2"
+    "nostr-tools": "^2.25.2",
+    "ws": "^8.21.3"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check:record": "node scripts/check-record.mjs",
+    "audit:record": "node scripts/check-record.mjs --report",
+    "build": "npm --prefix app run build",
+    "dev": "npm --prefix app run dev",
+    "lint": "npm --prefix app run lint"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }

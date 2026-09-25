@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    name: Test · Typecheck · Build · Verify ledger
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Unit tests (ledger, sealed box, scoring)
+        run: pnpm --filter @vetting-loop/ledger --filter @vetting-loop/sealed --filter @vetting-loop/integrity test
+
+      - name: Typecheck packages
+        run: pnpm --filter @vetting-loop/ledger --filter @vetting-loop/sealed --filter @vetting-loop/integrity typecheck
+
+      - name: Build static site
+        run: pnpm --filter @vetting-loop/web exec next build
+
+      - name: Typecheck tip endpoint
+        run: pnpm --filter @vetting-loop/web exec tsc --noEmit -p functions
+
+      - name: Verify published ledger against its manifest
+        run: pnpm --filter @vetting-loop/ledger verify apps/web/out/data/ledger.json apps/web/out/data/manifest.json
+
+      - name: Guard against real people in the scoring sandbox
+        run: |
+          if grep -rl "kithure-kindiki\|stella-soi-langat" apps/web/out/integrity; then
+            echo "Real-person slug found in the synthetic sandbox" && exit 1
+          fi

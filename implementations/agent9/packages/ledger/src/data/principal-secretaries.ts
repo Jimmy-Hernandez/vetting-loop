@@ -1,0 +1,81 @@
+import type { Person } from "../types";
+
+/**
+ * Principal Secretaries nominated 2 Nov 2022 (51), as published. Approved by
+ * the National Assembly in November 2022; sworn in 2 Dec 2022. Later PS
+ * changes (2023-2025, including a March 2025 batch of 14) are not yet
+ * compiled, so these records end at the 2022 appointment.
+ */
+const PS_2022: Array<[slug: string, name: string, stateDepartment: string]> = [
+  ["julius-korir", "Julius Korir", "Cabinet Affairs"],
+  ["teresia-mbaika-malokwe", "Teresia Mbaika Malokwe", "Devolution"],
+  ["esther-ngero", "Esther Ngero", "Performance and Delivery Management"],
+  ["aurelia-rono", "Aurelia Rono", "Parliamentary Affairs"],
+  ["raymond-omollo", "Raymond Omollo", "Interior and National Administration"],
+  ["caroline-nyawira-murage", "Caroline Nyawira Murage", "Correctional Services"],
+  ["julius-bitok", "Amb. Julius Bitok", "Citizen Services"],
+  ["chris-kiptoo", "Dr. Chris Kiptoo", "The National Treasury"],
+  ["james-muhati", "James Muhati", "Economic Planning"],
+  ["patrick-mariro", "Patrick Mariro", "Defence"],
+  ["korir-singoei", "Korir Sing'Oei", "Foreign Affairs"],
+  ["roseline-njogu", "Roseline Njogu", "Diaspora Affairs"],
+  ["amos-gathecha", "Amos Gathecha", "Public Service"],
+  ["veronica-mueni-nduva", "Veronica Mueni Nduva", "Gender and Affirmative Action"],
+  ["joseph-mungai-mbugua", "Joseph Mungai Mbugua", "Roads"],
+  ["mohamed-dhagar", "Mohamed Dhagar", "Transport"],
+  ["nixon-korir", "Nixon Korir", "Lands and Physical Planning"],
+  ["charles-hinga", "Charles Hinga", "Housing and Urban Development"],
+  ["joel-arumonyang", "Joel Arumonyang", "Public Works"],
+  ["edward-kisiangani", "Prof. Edward Kisiangani", "Broadcasting and Telecommunications"],
+  ["john-kipchumba-tanui", "Eng. John Kipchumba Tanui", "ICT and Digital Economy"],
+  ["peter-tum", "Eng. Peter Tum", "Medical Services"],
+  ["joseph-mburu", "Dr. Joseph Mburu", "Health Standards and Professional Management"],
+  ["belio-kipsang", "Dr. Belio Kipsang", "Basic Education"],
+  ["esther-thaara-muhoria", "Esther Thaara Muhoria", "TVET"],
+  ["beatrice-inyangala", "Beatrice Inyangala", "Higher Education and Research"],
+  ["phillip-kello-harsama", "Phillip Kello Harsama", "Crop Development"],
+  ["harry-kimutai", "Harry Kimutai", "Livestock Development"],
+  ["alfred-kombundo", "Alfred K'Ombundo", "Trade"],
+  ["abubakar-hassan", "Abubakar Hassan", "Investment Promotion"],
+  ["juma-mukhwana", "Juma Mukhwana", "Industry"],
+  ["patrick-kiburi-kilemi", "Patrick Kiburi Kilemi", "Cooperatives"],
+  ["susan-mangeni", "Susan Mangeni", "MSMEs Development"],
+  ["ismail-madey", "Ismail Madey", "Youth Affairs"],
+  ["jonathan-mueke", "Jonathan Mueke", "Sports and The Arts"],
+  ["festus-ngeno", "Festus Ngeno", "Environment"],
+  ["ephantus-kimotho", "Ephantus Kimotho", "Forestry"],
+  ["john-ololtuaa", "John Ololtuaa", "Tourism"],
+  ["sylvia-naseya-muhoro", "Sylvia Naseya Muhoro", "Wildlife"],
+  ["ummy-mohammed-bashir", "Ummy Mohammed Bashir", "Culture and Heritage"],
+  ["paul-ronoh", "Dr. Paul Ronoh", "Water and Sanitation"],
+  ["gitonga-mugambi", "Gitonga Mugambi", "Irrigation"],
+  ["alex-wachira", "Alex Wachira", "Energy"],
+  ["mohamed-liban", "Mohamed Liban", "Petroleum"],
+  ["geoffrey-kaituko", "Geoffrey Kaituko", "Labour and Skills Development"],
+  ["joseph-mugosi-mutavi", "Joseph Mugosi Mutavi", "Social Protection and Senior Citizen Affairs"],
+  ["abdi-dubart", "Abdi Dubart", "East African Community Development"],
+  ["idris-dogota", "Idris Dogota", "The ASALs and Regional Development"],
+  ["elijah-mwangi", "Elijah Mwangi", "Mining"],
+  ["betsy-muthoni-njagi", "Betsy Muthoni Njagi", "Blue Economy and Fisheries"],
+  ["shadrack-mwadime", "Shadrack Mwadime", "Shipping and Maritime Affairs"],
+];
+
+export const PRINCIPAL_SECRETARIES: Person[] = PS_2022.map(([slug, name, dept]) => ({
+  slug,
+  name,
+  latestRole: `Principal Secretary, ${dept} (2022 appointment)`,
+  appointments: [
+    {
+      id: `${slug}:ps-2022`,
+      office: "principal_secretary",
+      portfolio: dept,
+      cycle: "ps-2022",
+      nominated: "2022-11-02",
+      from: "2022-12-02",
+      outcome: "approved",
+      appearance: "appeared",
+      sources: ["citizen-2022-11-ps", "star-2022-12-02"],
+      verification: "compiled",
+    },
+  ],
+}));

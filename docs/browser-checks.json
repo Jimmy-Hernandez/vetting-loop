@@ -1,0 +1,118 @@
+{
+  "target": "Local merged application",
+  "date": "2026-09-25",
+  "results": [
+    {
+      "width": 1440,
+      "route": "/",
+      "heading": "Impunity begins at confirmation.",
+      "text": 4594,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/nominees",
+      "heading": "The Register of Nominees",
+      "text": 6511,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/nominee/kithure-kindiki",
+      "heading": "Hon. (Prof) Kithure Kindiki, EGH",
+      "text": 11118,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/hearings",
+      "heading": "What was asked, and what was submitted",
+      "text": 4230,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/vote",
+      "heading": "The Vote That Wasn’t Recorded",
+      "text": 5384,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/ledger",
+      "heading": "111 nominations. One rejection.",
+      "text": 15913,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/methodology",
+      "heading": "Methodology & sources",
+      "text": 6201,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/fallback",
+      "heading": "The Vetting of the Cabinet — August 2024",
+      "text": 658,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "heading": "Impunity begins at confirmation.",
+      "text": 4594,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "/nominees",
+      "heading": "The Register of Nominees",
+      "text": 6511,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "/nominee/kithure-kindiki",
+      "heading": "Hon. (Prof) Kithure Kindiki, EGH",
+      "text": 11118,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "/hearings",
+      "heading": "What was asked, and what was submitted",
+      "text": 4230,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "/vote",
+      "heading": "The Vote That Wasn’t Recorded",
+      "text": 5330,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "/ledger",
+      "heading": "111 nominations. One rejection.",
+      "text": 15913,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "/methodology",
+      "heading": "Methodology & sources",
+      "text": 6201,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "/fallback",
+      "heading": "The Vetting of the Cabinet — August 2024",
+      "text": 658,
+      "overflow": false
+    }
+  ]
+}

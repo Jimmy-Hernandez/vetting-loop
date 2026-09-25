@@ -1,3 +1,4 @@
+import ExtLink from '../ExtLink';
 import { useEffect, useState } from 'react';
 import type { DivisionsFile, Episode, HansardExcerpt } from '../types';
 import { loadDivisions, loadEpisode, loadHansardExcerpts, placeholderDivisions } from '../data';
@@ -26,11 +27,11 @@ export default function Vote() {
   return (
     <main className="doc">
       <header className="masthead">
-        <p className="kicker"><span className="rule"></span>Act 3 · After — the accountability trail</p>
+        <p className="kicker"><span className="rule"></span>Act 3 · After · the accountability trail</p>
         <h1>The Vote That Wasn’t Recorded</h1>
         <p className="standfirst">
           {v.hansard_date}: nineteen Cabinet Secretaries approved by voice vote. Hansard’s complete record of
-          the decision is a single line. Here is that line — and, by contrast, a division that was recorded.
+          the decision is a single line. Here is that line and, by contrast, a division that was recorded.
         </p>
         {placeholder && <p style={{ marginTop: 16 }}><span className="chip-placeholder">Placeholder data</span></p>}
         <div className="close" aria-hidden="true"></div>
@@ -41,7 +42,7 @@ export default function Vote() {
 
       <section className="sec" style={{ marginTop: 'var(--s8)' }}>
         <div className="sechead">
-          <span className="no">§ 1 — The document</span>
+          <span className="no">§ 1 · The document</span>
           <h2>The motion, as it was actually moved</h2>
           <p className="dek">Text reproduced verbatim from Hansard, {v.hansard_date}.</p>
         </div>
@@ -58,7 +59,7 @@ export default function Vote() {
 
       <section className="sec">
         <div className="norecord">
-          <blockquote>NO RECORDED VOTE — “{v.hansard_line}”</blockquote>
+          <blockquote>NO RECORDED VOTE: “{v.hansard_line}”</blockquote>
           <div className="nr-cap">
             mechanism: {v.mechanism} · recorded divisions on the approval: {v.recorded_votes?.length ?? 0} · {v.hansard_date}
           </div>
@@ -66,7 +67,7 @@ export default function Vote() {
 
         <p className="contrast-note measure">
           <strong>The contrast.</strong> The House does record divisions when it chooses to. Below: a real
-          recorded division from the same session, with every Member’s vote captured per-MP — against the
+          recorded division from the same session, with every Member’s vote captured per MP, set against the
           single line that carried nineteen Cabinet appointments.
         </p>
 
@@ -86,9 +87,9 @@ export default function Vote() {
             </div>
             <p className="db-foot">
               Recorded per-MP.{' '}
-              {fb.result_url && <a href={fb.result_url}>Division result</a>}
-              {fb.per_mp_csv_url && <> · <a href={fb.per_mp_csv_url}>Per-MP CSV</a></>}
-              {' '}· <a href="https://mzalendo.com/research-and-knowledge/voting-patterns/na/1/">Voting patterns</a>
+              {fb.result_url && <ExtLink href={fb.result_url}>Division result</ExtLink>}
+              {fb.per_mp_csv_url && <> · <ExtLink href={fb.per_mp_csv_url}>Per-MP CSV</ExtLink></>}
+              {' '}· <ExtLink href="https://mzalendo.com/research-and-knowledge/voting-patterns/na/1/">Voting patterns</ExtLink>
             </p>
           </div>
         ) : (
@@ -101,9 +102,9 @@ export default function Vote() {
       {ep?.gateGaps && ep.gateGaps.length > 0 && (
         <section className="sec">
           <div className="sechead">
-            <span className="no">§ 3 — The gate itself</span>
+            <span className="no">§ 3 · The gate itself</span>
             <h2>The gate has gaps</h2>
-            <p className="dek">What the vetting gate catches — and what slips past it.</p>
+            <p className="dek">What the vetting gate catches, and what slips past it.</p>
           </div>
           <ol className="gaps">
             {ep.gateGaps.map((g, i) => (
@@ -124,7 +125,7 @@ export default function Vote() {
       {ph && (
         <section className="sec">
           <div className="sechead">
-            <span className="no">§ 2 — The voice</span>
+            <span className="no">§ 2 · The voice</span>
             <h2>What was said</h2>
           </div>
           <p className="prose" style={{ color: '#888', fontStyle: 'italic', fontSize: 14 }}>

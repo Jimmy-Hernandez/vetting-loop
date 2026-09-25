@@ -1,0 +1,390 @@
+{
+  "scope": "Offline structural audit only. No fresh URL, quotation fidelity, OCR attribution or factual verification.",
+  "findings": [
+    {
+      "nominee": "nominee-01",
+      "field": "hearingQuestions.ignored[0].source_url",
+      "issue": "source URL absent; already marked needs_verification"
+    },
+    {
+      "nominee": "nominee-01",
+      "field": "hearingQuestions.ignored[1].source_url",
+      "issue": "source URL absent; already marked needs_verification"
+    },
+    {
+      "nominee": "nominee-01",
+      "field": "flags[0].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-01",
+      "field": "flags[0].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-01",
+      "field": "flags[1].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-01",
+      "field": "flags[1].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-01",
+      "field": "flags[2].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-01",
+      "field": "flags[2].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-03",
+      "field": "hearingQuestions.ignored[0].source_url",
+      "issue": "source URL absent; already marked needs_verification"
+    },
+    {
+      "nominee": "nominee-03",
+      "field": "hearingQuestions.ignored[1].source_url",
+      "issue": "source URL absent; already marked needs_verification"
+    },
+    {
+      "nominee": "nominee-03",
+      "field": "hearingQuestions.ignored[2].source_url",
+      "issue": "source URL absent; already marked needs_verification"
+    },
+    {
+      "nominee": "nominee-03",
+      "field": "flags[0].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-03",
+      "field": "flags[0].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-03",
+      "field": "flags[1].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-03",
+      "field": "flags[1].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-04",
+      "field": "hearingQuestions.ignored[0].source_url",
+      "issue": "source URL absent; already marked needs_verification"
+    },
+    {
+      "nominee": "nominee-04",
+      "field": "hearingQuestions.ignored[1].source_url",
+      "issue": "source URL absent; already marked needs_verification"
+    },
+    {
+      "nominee": "nominee-05",
+      "field": "hearingQuestions.ignored[0].source_url",
+      "issue": "source URL absent; already marked needs_verification"
+    },
+    {
+      "nominee": "nominee-05",
+      "field": "hearingQuestions.ignored[1].source_url",
+      "issue": "source URL absent; already marked needs_verification"
+    },
+    {
+      "nominee": "nominee-05",
+      "field": "flags[0].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-05",
+      "field": "flags[0].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-06",
+      "field": "flags[0].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-06",
+      "field": "flags[0].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-07",
+      "field": "flags[0].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-07",
+      "field": "flags[0].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-07",
+      "field": "flags[1].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-07",
+      "field": "flags[1].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-07",
+      "field": "flags[2].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-07",
+      "field": "flags[2].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-09",
+      "field": "flags[0].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-09",
+      "field": "flags[0].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-09",
+      "field": "flags[1].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-09",
+      "field": "flags[1].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-12",
+      "field": "flags[0].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-12",
+      "field": "flags[0].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-13",
+      "field": "flags[0].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-13",
+      "field": "flags[0].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-13",
+      "field": "flags[1].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-13",
+      "field": "flags[1].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-14",
+      "field": "flags[0].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-14",
+      "field": "flags[0].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-15",
+      "field": "flags[0].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-15",
+      "field": "flags[0].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-15",
+      "field": "flags[1].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-15",
+      "field": "flags[1].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-16",
+      "field": "hearingQuestions.ignored[0].source_url",
+      "issue": "source URL absent; already marked needs_verification"
+    },
+    {
+      "nominee": "nominee-16",
+      "field": "flags[0].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-16",
+      "field": "flags[0].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-16",
+      "field": "flags[1].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-16",
+      "field": "flags[1].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-16",
+      "field": "flags[2].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-16",
+      "field": "flags[2].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-16",
+      "field": "flags[3].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-16",
+      "field": "flags[3].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-16",
+      "field": "flags[4].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-16",
+      "field": "flags[4].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-16",
+      "field": "flags[5].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-16",
+      "field": "flags[5].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-17",
+      "field": "flags[0].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-17",
+      "field": "flags[0].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-17",
+      "field": "flags[1].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-17",
+      "field": "flags[1].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-18",
+      "field": "flags[0].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-18",
+      "field": "flags[0].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-18",
+      "field": "flags[1].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-18",
+      "field": "flags[1].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-18",
+      "field": "flags[2].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-18",
+      "field": "flags[2].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-19",
+      "field": "hearingQuestions.ignored[0].source_url",
+      "issue": "source URL absent; already marked needs_verification"
+    },
+    {
+      "nominee": "nominee-19",
+      "field": "flags[0].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-19",
+      "field": "flags[0].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-19",
+      "field": "flags[1].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-19",
+      "field": "flags[1].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-20",
+      "field": "flags[0].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-20",
+      "field": "flags[0].source_class",
+      "issue": "provenance class not encoded"
+    },
+    {
+      "nominee": "nominee-20",
+      "field": "flags[1].legal_status",
+      "issue": "outside agreed taxonomy"
+    },
+    {
+      "nominee": "nominee-20",
+      "field": "flags[1].source_class",
+      "issue": "provenance class not encoded"
+    }
+  ]
+}

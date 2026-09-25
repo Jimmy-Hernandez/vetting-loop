@@ -1,81 +1,123 @@
-# Vetta — Vetting in Action
+![Vetta — Vetting in Action](docs/assets/hero.svg)
 
-A public record of parliamentary vetting in Kenya: who was nominated, what citizens
-submitted, what the committee asked, and how the decision was actually made.
+[![Verify and package Vetta](https://github.com/Jimmy-Hernandez/vetting-loop/actions/workflows/ci.yml/badge.svg)](https://github.com/Jimmy-Hernandez/vetting-loop/actions/workflows/ci.yml)
+[![Code: MIT](https://img.shields.io/badge/code-MIT-222222)](LICENSE)
+[![Data review: ongoing](https://img.shields.io/badge/data_review-ongoing-b5212c)](docs/DATA-QUALITY.md)
 
-Vetta exists because the decision is public but the accountability often isn't. In
-August 2024 the National Assembly approved 19 Cabinet Secretaries on a **voice vote**.
-The official record contains six words — *"(Question put and agreed to)"* — and no
-recorded vote. There is nowhere a citizen can look up how their MP voted on the people
-who now govern them. Vetta is that missing record.
+**Who was nominated. What citizens submitted. What the committee asked. How the decision was made.**
 
-## What's in the record
+Vetta connects the stages of Kenyan parliamentary vetting in one source-linked
+public record. Its central exhibit is the August 2024 Cabinet vetting: **20 nominees,
+19 approvals and one rejection**. The approvals passed by **voice vote**. The record
+contains no individual MP roll call; Vetta makes that absence visible without
+inventing votes or treating an allegation as a verdict.
 
-- **93 people** across **111 nominations** in **10 vetting cycles**, 2022–2025
-- The August 2024 episode in depth: **20 nominees, 19 approved, 1 rejected**
-- **510** committee questions reconstructed from the committee's own 258-page report, each line-referenced
-- **1,300+** citizen memoranda; **33** sourced integrity flags beside **82** documented strengths
-- Recorded divisions for contrast: the Finance Bill 2024 divided **192–105**, every name logged
+**Start here:** [Judge walkthrough](docs/JUDGE-GUIDE.md) · [Architecture](docs/ARCHITECTURE.md) ·
+[Data quality](docs/DATA-QUALITY.md) · [Verification](docs/VERIFICATION.md) ·
+[Source handover](docs/SOURCE-SYNC.md)
 
-Every claim carries a quote, a URL, a date and a legal status. Where the record is
-empty, the emptiness is rendered as data — `NO RECORDED VOTE` — never invented.
-No rankings, no bare allegations, and positive findings published with the same
-prominence as flags. `needs_verification` marks anything not yet checked against a
-primary source.
+> [!IMPORTANT]
+> **Working hackathon application; editorial verification remains open.** The checked-in
+> record contains provisional and OCR-derived material. Structural tests do not certify
+> factual accuracy. Nostr publication remains deliberately paused pending due diligence.
+> The companion API and encrypted-tip code are preserved source, not features enabled in
+> the primary demo.
 
-## Run it
+## See the record
+
+![Vetta home, captured from the merged local application](docs/assets/home-1440.png)
+
+*Actual application screenshot, not a concept rendering. Mobile and vote screenshots
+are included in [verification evidence](docs/VERIFICATION.md).*
+
+## The accountability loop
+
+| Stage | Reader can inspect | Evidence boundary |
+|---|---|---|
+| Before | Nominees, sourced flags and positive findings | Allegation is not conviction |
+| During | Committee questions and provisional memorandum extracts | OCR and completeness require review |
+| After | Decision, voice-vote absence and recorded-division contrast | No fabricated individual votes |
+| Across time | Appointment ledger and cycles | People and nominations are distinct counts |
+
+The committed snapshots contain **93 people, 111 nominations and 10 cycles**;
+the detailed episode contains **510 reconstructed committee-question entries,
+33 flags and 82 positive findings**. These are dataset counts, not a finding that
+every entry has passed primary-source review. The 11 provisional memorandum entries
+are not a complete or verified count of ignored citizen questions.
+
+## Run in minutes
+
+Requires **Node 22.12+** and npm. No cloud account, API key or paid service is required
+for the main application.
 
 ```bash
-cd app
-npm install
-npm run dev        # local dev server
-npm run build      # production bundle -> app/dist
+git clone https://github.com/Jimmy-Hernandez/vetting-loop.git
+cd vetting-loop
+npm ci
+npm ci --prefix app
+npm run dev
 ```
 
-The app is a static bundle over data-thin JSON in `app/public/data/`. There is no
-database, no login, and no server-side component required to serve the record.
-
-Node scripts:
+Open the URL printed by Vite. To reproduce the verification and production build:
 
 ```bash
-bash scripts/nostr/demo-preflight.sh          # asserts the Nostr lane is OFF (see below)
-node scripts/nostr/verify-relay.mjs  <relay>  # read-only: verify signatures on any relay
-node scripts/nostr/purge-events.mjs           # read-only inventory of our published records
+npm test
+npm run check:record
+npm run lint
+npm run build
+npm run preview --prefix app
 ```
 
-## Status
+The build is `app/dist/`. Serve it over HTTP with a single-page-app fallback to
+`index.html`; do not open it using `file://`. The included `_redirects` covers hosts
+that support that format. CI packages the build as a downloadable Actions artifact.
+CI does not deploy the application or publish any Nostr events.
 
-**Recording layer: shipped.** The app renders the record from sourced data.
+## How it works
 
-**Nostr publication layer: built, tested, and intentionally OFF.** The record is
-designed to publish as cryptographically signed Nostr events, so that no single host
-can quietly edit or delete it. That layer is implemented and verified — and it is
-currently switched off pending a further due-diligence pass over the underlying data.
-Publishing requires two explicit gates, and nothing from this project is published on
-any public relay at present. The app's offline route says so plainly rather than
-implying a live network. See `DEMO-RUNBOOK.md` for the current state and the re-enable
-procedure.
+The public application is **React + TypeScript + Vite** over checked-in JSON.
+Source documents and extraction outputs live under `data/`; the served snapshots
+live under `app/public/data/`. Data-thin views connect dossiers, hearings and the
+vote trail. The broader appointment ledger joins by person/slug.
 
-**Data verification: in progress.** Items carrying `needs_verification` should not be
-cited externally until checked against the primary source.
+The project includes extraction and signed-event tooling, but the current app does
+not invoke a live AI model. Signed publication is an optional layer; signatures
+would establish publisher integrity, not truth. See [architecture](docs/ARCHITECTURE.md).
 
-## Sources and attribution
+## Repository orientation
 
-See `ATTRIBUTION.md`. Primary sources include the National Assembly's Hansard, the
-Committee on Appointments' own reports (OCR'd and line-referenced in this repo), and
-Mzalendo's published voting records (CC BY-SA 4.0).
+| Path | Role |
+|---|---|
+| [`app/`](app/) | Primary application and public JSON snapshots |
+| [`data/`](data/) | Source archive, OCR extracts and correction history |
+| [`scripts/`](scripts/) | Assembly, structural checks and gated Nostr tools |
+| [`docs/`](docs/) | Judge guide, architecture, audit and verification |
+| [`implementations/agent9/`](implementations/agent9/) | Complete preserved Agent9 companion source snapshot |
+| [`services/relay/`](services/relay/) | Optional Go relay source; outside the default demo |
 
-## Layout
+The [source-sync manifest](docs/source-sync-manifest.json) records checksums for the
+companion source files. Dependencies, build outputs, runtime state and signing keys
+are excluded. Historical handoff notes remain for provenance; current operating
+state is documented here and in [SOURCE-SYNC](docs/SOURCE-SYNC.md).
 
-```
-/app          Vite + React + TypeScript app (the record's public face)
-/data         source documents, OCR output, compiled ledger, memoranda extracts
-/deck         the original problem statement
-/mockups      design explorations
-/scripts      data assembly, Nostr lane (currently disabled), pre-flight checks
-```
+## Credibility and contribution
 
-## License
+Read [DATA-GUARDRAILS](DATA-GUARDRAILS.md) and [CONTRACTS](CONTRACTS.md) before editing
+records. Cite primary evidence, retain legal-status distinctions and apply the same
+evidence bar to positive findings. Corrections belong in `data/CHANGELOG.md`.
 
-Code: MIT (`LICENSE`). Data and content: see `ATTRIBUTION.md` — third-party sources
-retain their own licenses.
+[CONTRIBUTING](CONTRIBUTING.md) defines local checks and review expectations.
+[SECURITY](SECURITY.md) separates public bug reports from sensitive reports.
+[ROADMAP](docs/ROADMAP.md) lists the remaining evidence and usability work.
+
+## Sources, purpose and license
+
+Built for civic accountability in the context of [AI Hack for Freedom III](https://www.aihackforfreedom.org/).
+The judge guide explains the freedom-tech relevance and demonstration boundaries;
+no contest placement, endorsement or completed submission is claimed.
+
+Sources include the Parliament of Kenya, Hansard, Committee on Appointments reports,
+Mzalendo voting records and individually cited reporting. See [ATTRIBUTION](ATTRIBUTION.md).
+Code is [MIT](LICENSE). Third-party data and content retain their own terms;
+Mzalendo-derived datasets are subject to the attribution and ShareAlike terms stated
+in the source attribution file.

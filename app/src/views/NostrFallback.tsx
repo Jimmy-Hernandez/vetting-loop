@@ -36,7 +36,7 @@ export default function NostrFallback() {
       setStatus(
         episode.nominees.length > 0
           ? `Received ${episode.nominees.length} nominee dossiers from ${sources.length} events.`
-          : 'No events received — relays unreachable or record not yet published.',
+          : 'No events received. Relays are unreachable or record not yet published.',
       );
     });
     return () => { cancelled = true; };
@@ -79,13 +79,13 @@ export default function NostrFallback() {
       <div className="banner" role="status" style={{
         border: '1px solid var(--line)', padding: 'var(--s4)', margin: 'var(--s6) 0',
       }}>
-        Primary server unreachable — reading the record from the Nostr network.
+        Primary server unreachable. Reading the record from the Nostr network.
         <div style={{ marginTop: 'var(--s2)', fontSize: '0.85em', color: 'var(--ink-muted, #555)' }}>
           Relays: {relays.join(' · ')}
         </div>
       </div>
 
-      <h1>{episode?.title || 'The Vetting of the Cabinet — August 2024'}</h1>
+      <h1>{episode?.title || 'The Vetting of the Cabinet, August 2024'}</h1>
       <p>{episode?.summary || 'Loading the record from Nostr…'}</p>
       <p style={{ fontSize: '0.9em' }}>{status}</p>
 

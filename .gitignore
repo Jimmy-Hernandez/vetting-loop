@@ -10,3 +10,19 @@ data/hansard/*.html
 scripts/nostr/*key*.json
 *nsec*
 *.key.json
+
+# Local configuration and build state
+.env.*
+!.env.example
+*.pem
+*.key
+*.tsbuildinfo
+.wrangler/
+.next/
+out/
+.turbo/
+coverage/
+playwright-report/
+test-results/
+services/relay/vetta-relay
+services/relay/db/

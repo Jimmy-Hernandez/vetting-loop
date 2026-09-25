@@ -1,0 +1,25 @@
+{
+  "name": "@vetting-loop/db",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Drizzle ORM schema and migrations for Cloudflare D1",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "wrangler d1 migrations apply vetting-loop-db --local",
+    "db:migrate:prod": "wrangler d1 migrations apply vetting-loop-db --remote",
+    "db:studio": "drizzle-kit studio",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@vetting-loop/types": "workspace:*",
+    "drizzle-orm": "^0.33.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.0.0",
+    "drizzle-kit": "^0.24.0",
+    "typescript": "^5.5.0",
+    "wrangler": "^3.0.0"
+  }
+}

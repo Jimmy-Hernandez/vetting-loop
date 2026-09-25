@@ -1,0 +1,9 @@
+# Cloudflare Pages project: static export in ./out plus Pages Functions in ./functions.
+name = "vetting-record"
+pages_build_output_dir = "out"
+compatibility_date = "2026-09-01"
+
+# Sealed tips. Values are ciphertext only; keys expire after 180 days.
+[[kv_namespaces]]
+binding = "TIPS"
+id = "6f476fd6cfc44ced898d07287f33a98d"
