@@ -31,11 +31,11 @@ export default function Hearings() {
         <p className="kicker"><span className="rule"></span>Act 2 · During — the hearing record</p>
         <h1>What was asked — and what was submitted</h1>
         <p className="standfirst">
-          Parliament invited memoranda from the public before the hearings. This page holds the
-          batch-scale record of both channels: what <b>{nom.length} nominees</b> were actually asked
-          across four days at County Hall, and what citizens had submitted against them — preserved
-          verbatim from the Committee's own report, page-referenced.
-        </p>
+          The public had already submitted their memoranda before the sitting began — that record
+          lives in <Link to="/nominees">Act 1, with the nominees they were filed against</Link>. This page is what
+          the committee did with them in the room: what <b>{nom.length} nominees</b> were actually asked
+          across four days at County Hall, and how each submission was handled — preserved
+          verbatim from the Committee's own report, page-referenced.</p>
         <div className="close" aria-hidden="true"></div>
       </header>
 

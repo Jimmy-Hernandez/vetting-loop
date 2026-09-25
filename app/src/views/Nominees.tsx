@@ -28,7 +28,40 @@ export default function Nominees() {
         </p>
         {ph && <p style={{ marginTop: 16 }}><span className="chip-placeholder">Placeholder data</span></p>}
         <div className="close" aria-hidden="true"></div>
-              {ep.priorCycles?.cabinet_2022 && (() => {
+              {(() => {
+          const withMem = nom.filter((n) => n.memoranda?.header_found).length;
+          const memObs = nom.reduce((a, n) => a + ((n.memoranda?.count) || 0), 0);
+          const aff = nom.reduce((a, n) => a + ((n.hearingQuestions?.ignored?.length) || 0), 0);
+          return (
+            <section style={{ marginTop: 'var(--s6)' }}>
+              <div className="sechead">
+                <span className="no">Before the sitting</span>
+                <h2>What citizens submitted</h2>
+                <p className="dek">Parliament invited memoranda from the public ahead of the hearings. The submissions — preserved verbatim in the Committee's own report, page-referenced — travelled with each nominee into the room.</p>
+              </div>
+              <div className="outcome" role="list" aria-label="Citizen submissions, computed from the record">
+                <div className="cell" role="listitem">
+                  <div className="fig">{withMem}/20</div>
+                  <div className="cap">Nominees with a formal memoranda section</div>
+                </div>
+                <div className="cell" role="listitem">
+                  <div className="fig">{memObs}</div>
+                  <div className="cap">Memoranda observations recorded</div>
+                </div>
+                <div className="cell" role="listitem">
+                  <div className="fig">{aff}</div>
+                  <div className="cap">Citizen affidavit clauses preserved</div>
+                </div>
+              </div>
+              <p className="standfirst" style={{ marginTop: 'var(--s4)', maxWidth: 'none' }}>
+                Where the report holds no formal section, submissions appear as inline narrative — shown as
+                an absence, never padded. Each nominee&rsquo;s dossier lists their submissions with page references.
+              </p>
+            </section>
+          );
+        })()}
+
+{ep.priorCycles?.cabinet_2022 && (() => {
           const pc = ep.priorCycles.cabinet_2022;
           const rets = pc.nominees.filter((x) => x.returned_in_2024);
           return (
