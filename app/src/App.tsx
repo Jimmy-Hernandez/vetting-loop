@@ -14,18 +14,18 @@ function Chrome({ children }: { children: ReactNode }) {
   const loc = useLocation();
   useEffect(() => { window.scrollTo(0, 0); }, [loc.pathname]);
   const acts = [
+    { to: '/', no: '', label: 'About' },
     { to: '/nominees', no: 'Act 1', label: 'Before' },
     { to: '/hearings', no: 'Act 2', label: 'During' },
     { to: '/vote', no: 'Act 3', label: 'After' },
     { to: '/ledger', no: 'Record', label: 'Ledger' },
-    { to: '/', no: '', label: 'About' },
   ];
   return (
     <>
       <header className="chrome">
         <div className="chrome-inner">
           <div className="breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <img src="/vetta-emblem.png" alt="Vetta emblem" width="108" height="40" style={{ display: 'block' }} />
+            <img src="/vetta-emblem.png" alt="Vetta emblem" width="72" height="40" style={{ display: 'block' }} />
             <span className="here">Vetta</span>
           </div>
           <nav className="acts" aria-label="Vetta — main navigation">
