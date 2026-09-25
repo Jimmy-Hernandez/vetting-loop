@@ -12,13 +12,19 @@ import Ledger from './views/Ledger';
 
 function Chrome({ children }: { children: ReactNode }) {
   const loc = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [loc.pathname]);
+  useEffect(() => {
+    // Footer links deep-link into Methodology sections; honour the hash, else start at the top.
+    const target = loc.hash ? document.getElementById(loc.hash.slice(1)) : null;
+    if (target) target.scrollIntoView();
+    else window.scrollTo(0, 0);
+  }, [loc.pathname, loc.hash]);
+  // The three acts read as one sequence: phase above, subject below.
   const acts = [
-    { to: '/', no: '', label: 'About' },
-    { to: '/nominees', no: 'Act 1', label: 'Before' },
-    { to: '/hearings', no: 'Act 2', label: 'During' },
-    { to: '/vote', no: 'Act 3', label: 'After' },
-    { to: '/ledger', no: 'The record', label: 'Ledger', cta: true },
+    { to: '/', no: '', phase: 'Home', label: 'About', aria: 'About VETTA' },
+    { to: '/nominees', no: '01', phase: 'Before', label: 'The Vote', aria: 'Act 1, before the vote: the nominees' },
+    { to: '/hearings', no: '02', phase: 'During', label: 'The Record', aria: 'Act 2, during: the hearing record' },
+    { to: '/vote', no: '03', phase: 'After', label: 'Accountability', aria: 'Act 3, after: the accountability trail' },
+    { to: '/ledger', no: '', phase: 'The data', label: 'Ledger', aria: 'Ledger, the full data', cta: true },
   ];
   return (
     <>
@@ -30,8 +36,8 @@ function Chrome({ children }: { children: ReactNode }) {
           </Link>
           <nav className="acts" aria-label="Main navigation">
             {acts.map((a) => (
-              <NavLink key={a.to} to={a.to} end className={a.cta ? 'act-cta' : undefined} aria-current={loc.pathname === a.to ? 'page' : undefined}>
-                <span className="no">{a.no || 'Home'}</span>
+              <NavLink key={a.to} to={a.to} end className={a.cta ? 'act-cta' : a.no ? 'act-seq' : undefined} aria-label={a.aria} aria-current={loc.pathname === a.to ? 'page' : undefined}>
+                <span className="no">{a.no && <b>{a.no}</b>}{a.phase}</span>
                 {a.label}
               </NavLink>
             ))}
@@ -46,17 +52,14 @@ function Chrome({ children }: { children: ReactNode }) {
             <p>The public record of parliamentary vetting. Impunity begins at confirmation.</p>
           </div>
           <nav className="fin-links" aria-label="Footer">
-            <Link to="/">About</Link>
-            <Link to="/nominees">Nominees</Link>
-            <Link to="/hearings">Hearings</Link>
-            <Link to="/vote">The vote</Link>
-            <Link to="/ledger">Ledger</Link>
+            {/* Only what the header does not already carry: how the record is built and kept honest. */}
             <Link to="/methodology">Methodology</Link>
+            <Link to="/methodology#sources">Sources and data credits</Link>
+            <Link to="/methodology#corrections">Corrections</Link>
           </nav>
         </div>
         <div className="fin-base">
           <span>All claims source-linked<span className="dot">·</span>Non-partisan<span className="dot">·</span>Civic tech prototype</span>
-          <Link to="/methodology">Sources and data credits</Link>
         </div>
       </footer>
     </>

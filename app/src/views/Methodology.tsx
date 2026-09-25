@@ -23,7 +23,7 @@ export default function Methodology() {
         <div className="close" aria-hidden="true"></div>
       </header>
 
-      <section className="sec" style={{ marginTop: 48 }}>
+      <section className="sec" id="sources" style={{ marginTop: 48 }}>
         <div className="sechead">
           <span className="no">Sources</span>
           <h2>Source register</h2>
@@ -188,7 +188,7 @@ export default function Methodology() {
         </div>
       </section>
 
-<section className="sec">
+<section className="sec" id="corrections">
         <div className="sechead">
           <span className="no">Verification</span>
           <h2>Unverified items and corrections</h2>
