@@ -49,7 +49,9 @@ node scripts/nostr/purge-events.mjs           # read-only inventory of our publi
 
 **Nostr publication layer: built, tested, and intentionally OFF.** The record is
 designed to publish as cryptographically signed Nostr events, so that no single host
-can quietly edit or delete it. That layer is implemented and verified — and it is
+can quietly rewrite it, an altered copy fails verification, and a deleted copy can be
+re-hosted by anyone holding the record. Takedown-resistant by design — not
+untouchable, and we do not claim otherwise. That layer is implemented and verified — and it is
 currently switched off pending a further due-diligence pass over the underlying data.
 Publishing requires two explicit gates, and nothing from this project is published on
 any public relay at present. The app's offline route says so plainly rather than
