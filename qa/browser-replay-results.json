@@ -1,0 +1,8 @@
+{
+  "checks": [
+    "Public mobile homepage: 20 reviewed entries and new headline",
+    "Public browser verifies signed manifest",
+    "Deployed fallback validates 20 records from a replay of the signed published snapshot"
+  ],
+  "consoleErrors": []
+}
