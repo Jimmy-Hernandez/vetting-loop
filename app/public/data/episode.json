@@ -1653,14 +1653,7 @@
     "priorRoleType": "cs_returnee",
     "docket_rotated": true
    },
-   "subsequentEvents": [
-    {
-     "date": "2025-03-26",
-     "text": "The Gender, Culture, Arts and Heritage docket she was rejected for sat vacant ~7 months; filled by Hanna Wendot Cheptumo in the March 2025 reshuffle.",
-     "source": "compiled tracker (Gaita)",
-     "needs_verification": true
-    }
-   ]
+   "subsequentEvents": []
   },
   {
    "id": "nominee-06",
@@ -3450,7 +3443,7 @@
    "status": "approved",
    "flags": [
     {
-     "claim": "Mvurya, Mining, Blue Economy and Maritime Affairs CS from November 2022, was in the Cabinet dismissed in July 2024; he formally handed the Mining docket to Hassan Joho on 9 August 2024 and was retained instead for Investments, Trade and Industry.",
+     "claim": "Mvurya, Mining, Blue Economy and Maritime Affairs CS from October 2022, was in the Cabinet dismissed in July 2024; he formally handed the Mining docket to Hassan Joho on 9 August 2024 and was retained instead for Investments, Trade and Industry.",
      "quote": "Joho assumed office on August 9, succeeding Salim Mvurya, in a ceremony overseen by President William Ruto.",
      "publisher": "Kenyans.co.ke",
      "url": "https://www.kenyans.co.ke/news/103765-petition-filed-remove-mining-cs-hassan-joho-office-over-misconduct",
@@ -5808,14 +5801,6 @@
      "url": "https://www.businessdailyafrica.com/bd/economy/muturi-disowns-eacc-corruption-report-amid-pressure-from-mps-2103548",
      "date": "2015-12-15",
      "legal_status": "self-admitted official act (denouncing an EACC report); Muturi himself was not accused in that report"
-    },
-    {
-     "claim": "Muturi, 8th Attorney General (2022-2024), confirmed at his 4 August 2024 vetting that he resigned that office - contradicting reports he was sacked - framing it as giving the President freedom to reorganise the Cabinet amid 'general disquiet'.",
-     "quote": "\"It is true that I resigned. There were reasons behind this decision. Considering the National Executive level and the general disquiet at that time, the honorable course was to use the legal route to give the President the freedom to reorganize his Cabinet as he desired\" Muturi stated during his appearance before the National Assembly Committee on Appointments on Sunday.",
-     "publisher": "Nairobi Wire (Richard Kamau)",
-     "url": "https://nairobiwire.com/2024/08/public-service-nominee-muturi-discusses-resignation-internship-program-changes-and-wealth-update.html",
-     "date": "2024-08-05",
-     "legal_status": "self-admitted resignation from prior office amid 'general disquiet' (no charge or wrongdoing alleged)"
     }
    ],
    "positiveFindings": [
@@ -6385,7 +6370,7 @@
   "cabinet_2022": {
    "nominated": "2022-09-27",
    "vetted": "2022-10",
-   "outcome": "all approved (no rejections recorded)",
+   "outcome": "all approved by the House; the Committee recommended rejecting Peninah Malonza (Tourism) and the House overturned that recommendation",
    "source": "compiled tracker (Gaita); The Star 27 Sep 2022, Wikipedia cross-check",
    "needs_verification": true,
    "nominees": [
