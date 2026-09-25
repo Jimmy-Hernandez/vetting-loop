@@ -7,6 +7,12 @@
 // 'nominee-<slug>' t tag and parse into { name, portfolio, status, flags,
 // positiveFindings }; the accountability-trail note carries the voice-vote text.
 
+// NOSTR LANE — DISABLED 2026-09-25 pending further due diligence on the record.
+// The code ships with the build but is OFF unless VITE_NOSTR_ENABLED=1 is set at
+// build time. When off: no relay is contacted and the offline route shows a paused
+// state instead of the record. See DEMO-RUNBOOK.md §"Nostr status".
+export const NOSTR_ENABLED = import.meta.env.VITE_NOSTR_ENABLED === '1';
+
 export const DEFAULT_RELAYS = ['ws://127.0.0.1:7778', 'wss://relay.damus.io'];
 export const EPISODE_TAG = 'vetting-loop-aug2024';
 

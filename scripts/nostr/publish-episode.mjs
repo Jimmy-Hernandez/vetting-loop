@@ -4,6 +4,7 @@
 // Defaults: ws://127.0.0.1:7778 + wss://relay.damus.io
 import { finalizeEvent, nip19 } from 'nostr-tools';
 import { WebSocket } from 'ws';
+import { assertPublishEnabled } from './nostr-config.mjs';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -21,6 +22,11 @@ for (let i = 0; i < argv.length; i++) {
   if (argv[i] === '--relay') relays.push(argv[i + 1]);
 }
 if (relays.length === 0) relays.push('ws://127.0.0.1:7778', 'wss://relay.damus.io');
+
+// ---- KILL SWITCH (2026-09-25): publishing paused pending data due diligence ----
+// Runs BEFORE the key is read and BEFORE any socket is opened. --dry-run is still
+// permitted: it builds the notes locally and touches no network.
+if (!dryRun && !assertPublishEnabled(argv)) process.exit(2);
 
 const key = JSON.parse(readFileSync(KEYFILE, 'utf8'));
 const skBytes = nip19.decode(key.nsec).data; // Uint8Array

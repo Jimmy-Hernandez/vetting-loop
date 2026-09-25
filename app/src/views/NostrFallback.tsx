@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
+  NOSTR_ENABLED,
   fetchEpisodeFromNostr,
   DEFAULT_RELAYS,
   type FallbackEpisode,
@@ -26,6 +27,7 @@ export default function NostrFallback() {
   const [relays] = useState<string[]>(getRelays());
 
   useEffect(() => {
+    if (!NOSTR_ENABLED) return;   // disabled: never open a socket to a relay
     let cancelled = false;
     fetchEpisodeFromNostr(relays).then(({ episode, sources }) => {
       if (cancelled) return;
@@ -41,6 +43,36 @@ export default function NostrFallback() {
   }, [relays]);
 
   const sampleSource = sources[0];
+
+  // DISABLED STATE — 2026-09-25. Publishing and reading are paused pending a
+  // data due-diligence pass. We say so plainly rather than faking an outage.
+  if (!NOSTR_ENABLED) {
+    return (
+      <main className="doc">
+        <div className="banner" role="status" style={{
+          border: '1px solid var(--line)', padding: 'var(--s4)', margin: 'var(--s6) 0',
+        }}>
+          Nostr publication is paused.
+          <div style={{ marginTop: 'var(--s2)', fontSize: '0.85em', color: 'var(--ink-muted, #555)' }}>
+            The team is completing a further due-diligence pass on the record before anything is
+            published to public relays. No relay is being contacted, and no new events are being
+            published. The signed-event layer is built, tested, and shipping with the app — it is
+            switched off, not removed.
+          </div>
+        </div>
+        <h1>The Vetting of the Cabinet — August 2024</h1>
+        <p>
+          The record is available in the app itself. This route exists for the integrity layer
+          that keeps the record independently verifiable; it will be switched on once the review
+          is complete.
+        </p>
+        <p style={{ fontSize: '0.9em' }}>
+          Read the <Link to="/methodology">methodology</Link> for how the record is sourced, and{' '}
+          <Link to="/vote">the vote record</Link> for what the absence of a division means here.
+        </p>
+      </main>
+    );
+  }
 
   return (
     <main className="doc">

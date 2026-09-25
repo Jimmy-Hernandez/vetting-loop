@@ -1,5 +1,25 @@
 # DEMO-RUNBOOK — Nostr censorship-resistance crash demo (The Vetting Loop)
 
+> ## ⛔ NOSTR IS DISABLED (2026-09-25)
+>
+> All publishing to Nostr is paused pending further due diligence on the record.
+> The team is auditing the data before anything goes to a public network.
+>
+> **What that means right now:**
+> - `publish-episode.mjs` **refuses to run** unless two gates are set (see below). Nothing is sent to any relay.
+> - The app's offline route (`/#/fallback`) **does not contact relays** — it shows a paused state. Code ships; feature is off.
+> - The About page's "published to Nostr relays" claim is gated behind the same flag.
+>
+> **To re-enable (only after the due-diligence pass is signed off):**
+> ```bash
+> export NOSTR_PUBLISH_ENABLED=1                                   # script gate
+> cd app && VITE_NOSTR_ENABLED=1 npx vite build                    # app gate
+> node scripts/nostr/publish-episode.mjs --i-have-verified-the-data --relay ws://127.0.0.1:7778
+> ```
+> Two gates on purpose: an exported env var alone is too easy to leave set in a shell, and this lane writes to third-party public relays once it runs.
+>
+> **Already-published events:** a pre-existing test record (22 records × 3 publishes = 66 events) sits on the LOCAL relay only (127.0.0.1, not reachable off-machine). A partial copy escaped to `relay.damus.io` earlier and is **public** — that copy cannot be withdrawn by switching a flag; it needs a NIP-09 deletion request. Flagged for the owner's decision.
+
 Staged demo: crash the local web server, show the record still reachable via
 Nostr relays. Three copies exist at the end: (1) Mac mini relay `vetting-relay`
 on 127.0.0.1:7778, (2) Terry's Raspberry Pi relay, (3) a public relay
@@ -31,6 +51,7 @@ bash scripts/nostr/run-relay-macmini.sh
 ## 2. Publish the episode
 
 ```bash
+# ⛔ DISABLED — this command will refuse to run. Kept for when the lane is re-enabled.
 node scripts/nostr/publish-episode.mjs --relay ws://127.0.0.1:7778 --relay wss://relay.damus.io
 # 22 kind-1 notes: 1 episode summary + 20 nominee dossiers (t: nominee-<slug>)
 # + 1 accountability-trail note. Wait for per-relay OKs; event ids print to stdout.
