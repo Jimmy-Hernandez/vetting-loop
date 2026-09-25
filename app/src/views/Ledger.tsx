@@ -119,8 +119,10 @@ export default function Ledger() {
         </h1>
         <p className="standfirst">
           Parliament vets every Cabinet Secretary and Principal Secretary before they take office. This tool
-          shows what that gate actually does: every nomination linked to the person, every fact cited, every
-          pattern computed from the record rather than asserted.
+          shows what that gate actually does. 93 people carry 111 nominations across ten vetting cycles —
+          Cabinet Secretaries, Principal Secretaries, envoys — every appointment linked to the person, every
+          fact cited, every pattern computed from the record rather than asserted. "Gate" cycles are the
+          parliamentary vetting of CS and PS nominees; envoy and elevation cycles sit outside it, in the record.
         </p>
         <div className="docmeta">
           <span>Combined record</span><span className="dot">·</span>
