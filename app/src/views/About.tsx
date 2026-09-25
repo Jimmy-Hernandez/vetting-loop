@@ -191,8 +191,8 @@ export default function About() {
             <div>
               <h4>Verifiable</h4>
               <p>
-                Every claim carries its quote, publisher and link. Data manifests are signed; the published record
-                carries event identifiers anyone can check.
+                Every claim carries its quote, publisher and link. Data manifests are signed; when the record is
+                published it carries event identifiers anyone can check. Publication is paused while that review completes.
               </p>
             </div>
           </li>
