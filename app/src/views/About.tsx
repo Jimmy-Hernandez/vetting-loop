@@ -47,8 +47,8 @@ export default function About() {
           <p className="hero-kicker"><span className="rule"></span>Kenya · Parliamentary vetting · 2022 to 2025</p>
           <h1 id="hero-title">Impunity begins at confirmation<span className="stop">.</span></h1>
           <p className="hero-lede">
-            VETTA is the public record of parliamentary vetting: who was nominated, what citizens submitted,
-            what the committee asked, and how each decision was made. Every claim is sourced.
+            VETTA closes the loop between citizens and Parliament before the hearing, during, and after the vote on
+            infrastructure that already exists. We’ll bring the receipts.
           </p>
           <div className="hero-cta">
             <Link className="btn btn-primary" to="/nominees">Open the nominee register <span aria-hidden="true">→</span></Link>
