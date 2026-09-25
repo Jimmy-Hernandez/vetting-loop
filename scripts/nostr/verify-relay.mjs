@@ -10,14 +10,19 @@ import { schnorr } from '@noble/curves/secp256k1.js'
 import { hexToBytes } from '@noble/hashes/utils.js'
 
 const RELAY = process.argv[2] || 'ws://localhost:7778'
+// Scope the subscription to this project's records so the same command works against a
+// public relay (where an unscoped kinds:[1] query returns global noise).
+const TAG = process.argv[3] || process.env.VETTA_TAG || 'vetting-loop-aug2024'
+const FILTER = { kinds: [1], '#t': [TAG], limit: 500 }
 const toHex = (h) => (typeof h === 'string' ? h : Buffer.from(h).toString('hex'))
 
 console.log(`\n◆ Opening a raw WebSocket to ${RELAY} — plain NIP-01 JSON, no auth, no keys, no client library.`)
+console.log(`  Subscription: kind 1, #t=${TAG} (the project's own records only)`)
 const ws = new WebSocket(RELAY)
 const events = []
 
 const done = await new Promise((resolve, reject) => {
-  ws.onopen = () => ws.send(JSON.stringify(['REQ', 'vetta-proof', { kinds: [1], limit: 500 }]))
+  ws.onopen = () => ws.send(JSON.stringify(['REQ', 'vetta-proof', FILTER]))
   ws.onmessage = (m) => {
     const msg = JSON.parse(m.data)
     if (msg[0] === 'EVENT') events.push(msg[2])
@@ -29,6 +34,11 @@ const done = await new Promise((resolve, reject) => {
 ws.close()
 
 console.log(`Events pulled from the relay: ${events.length}\n`)
+if (events.length === 0) {
+  console.log('No records matched this relay — the record is not published here (or the relay is refusing).')
+  console.log('Nothing to verify. Try another relay URL, e.g. wss://relay.damus.io')
+  process.exit(1)
+}
 
 // 1) Verify every event: ID recomputes from content, and the BIP-340 signature
 //    verifies against the author's public key.
@@ -51,7 +61,7 @@ const counts = [...byRecord.values()]
 console.log(`Unique records: ${byRecord.size}, each republished ${Math.min(...counts)}–${Math.max(...counts)}× at independent timestamps — three separate signed broadcasts of the same evidence, no shared database to corrupt.`)
 
 // 3) Tamper attempt — flip one phrase in the accountability-trail record
-const target = events.find((e) => /ACCOUNTABILITY TRAIL/i.test(e.content))
+const target = events.find((e) => /ACCOUNTABILITY TRAIL/i.test(e.content)) || events[0]
 const tampered = { ...target, content: target.content.replace(/voice vote/i, 'unanimous approval') }
 const newId = getEventHash(tampered)
 console.log(`\n◆ Tamper test — we rewrote "voice vote" → "unanimous approval" inside the accountability trail:`)
