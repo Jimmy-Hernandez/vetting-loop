@@ -35,10 +35,7 @@ function Chrome({ children }: { children: ReactNode }) {
                 {a.label}
               </NavLink>
             ))}
-            <NavLink to="/ledger" aria-current={loc.pathname === '/ledger' ? 'page' : undefined}>
-              <span className="no">Record</span>
-              Ledger
-            </NavLink>
+
           </nav>
         </div>
       </header>
