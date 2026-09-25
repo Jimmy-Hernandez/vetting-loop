@@ -45,7 +45,7 @@ export default function About() {
       <div className="hero-inner">
         <div className="hero-copy">
           <p className="hero-kicker"><span className="rule"></span>Kenya · Parliamentary vetting · 2022 to 2025</p>
-          <h1 id="hero-title">Impunity begins at confirmation<span className="stop">.</span></h1>
+          <h1 id="hero-title">Vetting in action<span className="stop">.</span></h1>
           <p className="hero-lede">
             VETTA closes the loop between citizens and Parliament before the hearing, during, and after the vote on
             infrastructure that already exists. We’ll bring the receipts.

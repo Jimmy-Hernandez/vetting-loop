@@ -49,7 +49,7 @@ function Chrome({ children }: { children: ReactNode }) {
         <div className="fin">
           <div className="fin-brand">
             <img src="/brand/vetta-lockup-reverse.svg" alt="VETTA" width="113" height="22" />
-            <p>The public record of parliamentary vetting. Impunity begins at confirmation.</p>
+            <p>The public record of parliamentary vetting. Vetting in action.</p>
           </div>
           <nav className="fin-links" aria-label="Footer">
             {/* Only what the header does not already carry: how the record is built and kept honest. */}
