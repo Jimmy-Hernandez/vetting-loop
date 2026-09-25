@@ -1,4 +1,19 @@
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { loadTerryLedger } from '../data';
+import type { TerryLedger } from '../terryTypes';
+
+const WHAT_NOT = [
+  'They are not machine-learning predictions. No model infers anything about anyone.',
+  'They are not allegations of fraud, corruption or misconduct.',
+  'They are not rankings. People are not scored, sorted or compared.',
+];
+
 export default function Methodology() {
+  const [ledger, setLedger] = useState<TerryLedger | null>(null);
+  useEffect(() => { loadTerryLedger().then((l) => setLedger(l)); }, []);
+  const signals = ledger?.signals ?? [];
+
   return (
     <main className="doc">
       <header className="masthead">
@@ -142,7 +157,34 @@ export default function Methodology() {
         </ol>
       </section>
 
-      <section className="sec">
+            <section style={{ marginTop: 'var(--s8)' }}>
+        <h2>How we compute: signals, not scores</h2>
+        <p className="standfirst">
+          Patterns in the appointment record are flagged by <b>deterministic rules</b> — published,
+          re-runnable by hand, no model guesses. A signal flags a pattern in the <i>process</i> worth
+          scrutiny; it is never a finding about a person's conduct, and nothing here scores a real person.
+          Each rule's matches are shown on the <Link to="/ledger">people ledger</Link>.
+        </p>
+        <ol style={{ marginTop: 'var(--s4)', paddingLeft: 'var(--s6)' }}>
+          {signals.map((sig) => (
+            <li key={sig.id} style={{ marginBottom: 'var(--s3)' }}>
+              <b>{sig.label}</b> — {sig.rule}
+              <div style={{ opacity: 0.75, fontSize: '0.9em', marginTop: 2 }}>{sig.why}</div>
+            </li>
+          ))}
+        </ol>
+      
+        <div className="sig-notblock" style={{ marginTop: 'var(--s4)' }}>
+          <h4>What signals are not</h4>
+          <ul>
+            {WHAT_NOT.map((line, i) => (
+              <li key={i}>{line}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+<section className="sec">
         <div className="sechead">
           <span className="no">Verification</span>
           <h2>Unverified items and corrections</h2>

@@ -1,40 +1,41 @@
 import { HashRouter, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import { useEffect } from 'react';
-import Home from './views/Home';
+import Hearings from './views/Hearings';
 import Nominees from './views/Nominees';
 import NomineeDossier from './views/NomineeDossier';
 import Vote from './views/Vote';
 import Methodology from './views/Methodology';
 import About from './views/About';
 import NostrFallback from './views/NostrFallback';
+import Ledger from './views/Ledger';
 
 function Chrome({ children }: { children: ReactNode }) {
   const loc = useLocation();
   useEffect(() => { window.scrollTo(0, 0); }, [loc.pathname]);
   const acts = [
+    { to: '/', no: '', label: 'About' },
     { to: '/nominees', no: 'Act 1', label: 'Before' },
-    { to: '/vote', no: 'Act 2', label: 'During' },
-    { to: '/', no: 'Act 3', label: 'After' },
+    { to: '/hearings', no: 'Act 2', label: 'During' },
+    { to: '/vote', no: 'Act 3', label: 'After' },
+    { to: '/ledger', no: 'Record', label: 'Ledger' },
   ];
   return (
     <>
       <header className="chrome">
         <div className="chrome-inner">
           <div className="breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <img src="/vetta-emblem.png" alt="Vetta emblem" width="26" height="26" style={{ display: 'block', borderRadius: 4 }} />
+            <img src="/vetta-emblem.png" alt="Vetta emblem" width="72" height="40" style={{ display: 'block' }} />
             <span className="here">Vetta</span>
           </div>
-          <nav className="acts" aria-label="Vetta — three acts">
+          <nav className="acts" aria-label="Vetta — main navigation">
             {acts.map((a) => (
               <NavLink key={a.to} to={a.to} aria-current={loc.pathname === a.to ? 'page' : undefined}>
                 <span className="no">{a.no}</span>
                 {a.label}
               </NavLink>
             ))}
-            <NavLink to="/about" className="util" aria-current={loc.pathname === '/about' ? 'page' : undefined}>
-              About
-            </NavLink>
+
           </nav>
         </div>
       </header>
@@ -42,7 +43,7 @@ function Chrome({ children }: { children: ReactNode }) {
       <footer className="sitefoot">
         <div className="fin">
           <span>Vetta — a civic tech tool<span className="dot">·</span>Impunity begins at confirmation.</span>
-          <span>All claims source-linked<span className="dot">·</span>Non-partisan<span className="dot">·</span><Link to="/about">About</Link><span className="dot">·</span><Link to="/methodology">Methodology</Link></span>
+          <span>All claims source-linked<span className="dot">·</span>Non-partisan<span className="dot">·</span><Link to="/">About</Link><span className="dot">·</span><Link to="/methodology">Methodology</Link></span>
         </div>
       </footer>
     </>
@@ -64,10 +65,13 @@ export default function App() {
     <HashRouter>
       <Chrome>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<About />} />
           <Route path="/nominees" element={<Nominees />} />
           <Route path="/nominee/:idOrSlug" element={<NomineeDossier />} />
+          <Route path="/hearings" element={<Hearings />} />
           <Route path="/vote" element={<Vote />} />
+          <Route path="/ledger" element={<Ledger />} />
+          <Route path="/signals" element={<Methodology />} />
           <Route path="/methodology" element={<Methodology />} />
           <Route path="/about" element={<About />} />
           <Route path="/fallback" element={<NostrFallback />} />

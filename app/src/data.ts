@@ -1,4 +1,5 @@
 import type { Episode, DivisionsFile, HansardExcerptsFile, Nominee, BackgroundCheck } from './types';
+import type { TerryLedger } from './terryTypes';
 
 // Graceful loaders: fetch JSON from /data/*; return null on failure.
 // Views must render empty states from null — never invented data.
@@ -16,6 +17,8 @@ async function fetchJson<T>(file: string): Promise<T | null> {
 export const loadEpisode = () => fetchJson<Episode>('episode.json');
 export const loadDivisions = () => fetchJson<DivisionsFile>('divisions.json');
 export const loadHansardExcerpts = () => fetchJson<HansardExcerptsFile>('hansard-excerpts.json');
+
+export const loadTerryLedger = () => fetchJson<TerryLedger>('terry/ledger.json');
 
 export function isPlaceholder(e: Episode | null): boolean {
   return !!(e as unknown as { placeholder?: boolean } | null)?.placeholder;

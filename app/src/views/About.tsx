@@ -1,8 +1,21 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import type { TerryLedger } from '../terryTypes';
+import { loadTerryLedger } from '../data';
 
 // /about — the tool's own page. Approved copy, verbatim (brief 2026-09-24).
 // Static document register: same tokens, same .doc conventions as Methodology.
 export default function About() {
+  // hero figures — computed from terry/ledger.json, same derivation as /ledger
+  const [ledger, setLedger] = useState<TerryLedger | null>(null);
+  useEffect(() => { loadTerryLedger().then((l) => setLedger(l)); }, []);
+  const people = ledger?.people ?? [];
+  const allAppointments = people.flatMap((p) => p.appointments ?? []);
+  const nPeople = people.length;
+  const gateCycleIds = new Set((ledger?.cycles ?? []).filter((c) => c.gate).map((c) => c.id));
+  const houseRejections = allAppointments.filter((x) => x.outcome === 'rejected' && gateCycleIds.has(x.cycle)).length;
+  const assertPositive = (n: number, w: string) => { if (n <= 0) throw new Error('computed ' + n + ' for ' + w); return n; };
+
   return (
     <main className="doc">
       <header className="masthead">
@@ -11,11 +24,37 @@ export default function About() {
         <p className="standfirst">
           Vetta is a public register of parliamentary vetting — who was nominated for office, what citizens
           submitted, what the committee asked, and how each decision was made. Every claim is sourced to a
-          document; every number can be checked. It is built to live inside Mzalendo&rsquo;s Civic Tech Tools as a
-          durable public instrument.
+          document; every number can be checked. It is built to run as a durable public instrument, independent of any single host.
         </p>
         <div className="close" aria-hidden="true"></div>
       </header>
+
+      <section className="sec" style={{ marginTop: 'var(--s6)' }}>
+        <div className="outcome" role="list" aria-label="The record at a glance">
+          <div className="cell" role="listitem">
+            <div className="fig" style={{ color: 'var(--red)' }}>{assertPositive(nPeople, 'people')}</div>
+            <div className="cap">People in the record</div>
+          </div>
+          <div className="cell" role="listitem">
+            <div className="fig">{allAppointments.length}</div>
+            <div className="cap">Nominations across ten cycles</div>
+          </div>
+          <div className="cell" role="listitem">
+            <div className="fig">{houseRejections === 1 ? 1 : houseRejections}</div>
+            <div className="cap">{houseRejections === 1 ? 'Gate rejection' : 'Gate rejections'}</div>
+          </div>
+          <div className="cell" role="listitem">
+            <div className="fig">10 cycles</div>
+            <div className="cap">2022 — 2025, CS · PS · envoys</div>
+          </div>
+        </div>
+        <p className="standfirst" style={{ marginTop: 'var(--s6)' }}>
+          Parliament must vet every Cabinet Secretary and Principal Secretary before they take office.
+          Vetta is the public record of how that gate actually behaves — before the hearing, during it,
+          and after the vote.
+        </p>
+      </section>
+
 
       <section className="sec" style={{ marginTop: 48 }}>
         <div className="sechead">
@@ -43,44 +82,43 @@ export default function About() {
         </div>
       </section>
 
-      <section className="sec">
+      
+{/* ---- our voice-vote triptych as centerpiece ---- */}
+      
+
+
+<section className="sec">
         <div className="sechead">
-          <span className="no">The three acts</span>
-          <h2>The three acts</h2>
-          <p className="dek">The same structure as the record itself — before, during, after.</p>
+          <span className="no">The loop</span>
+          <h2>Three acts, one paper trail</h2>
+          <p className="dek">Before the hearing, during the hearings, after the vote. Follow the documents.</p>
         </div>
-        <ol className="gaps">
-          <li>
-            <span className="num">1</span>
-            <div>
-              <h4>Before: The Nominee File</h4>
-              <p>
-                Career, declarations, the six state integrity checks (EACC, DCI, HELB, ORPP, KRA, CUE), and every
-                integrity flag with its source.
-              </p>
-            </div>
-          </li>
-          <li>
-            <span className="num">2</span>
-            <div>
-              <h4>During: The hearing record</h4>
-              <p>
-                What citizens submitted, what was asked, what was ignored. Memoranda are preserved verbatim.
-              </p>
-            </div>
-          </li>
-          <li>
-            <span className="num">3</span>
-            <div>
-              <h4>After: The accountability trail</h4>
-              <p>
-                The report against the submissions, and the vote: recorded where it was recorded, shown as absent
-                where it was not.
-              </p>
-            </div>
-          </li>
-        </ol>
+        <div className="acts-grid">
+          <Link className="card" to="/nominees">
+            <span className="act-no">Act 1 · Before</span>
+            <h3>The Nominee File</h3>
+            <p>Source-linked dossier: CV, track record, integrity flags. Public question queue with upvotes.</p>
+            <span className="go">Open the register →</span>
+          </Link>
+          <Link className="card" to="/hearings">
+            <span className="act-no">Act 2 · During</span>
+            <h3>The hearing record</h3>
+            <p>Who asked what, tagged by topic — citizen questions shown alongside: asked vs. ignored.</p>
+            <span className="go">Open the hearing record →</span>
+          </Link>
+          <Link className="card" to="/vote">
+            <span className="act-no">Act 3 · After</span>
+            <h3>The accountability trail</h3>
+            <p>Report vs. submissions, side by side. Per-MP vote on every approval — one query.</p>
+            <span className="go">Trace a nominee →</span>
+          </Link>
+        </div>
+        <p className="standfirst" style={{ marginTop: 'var(--s3)', opacity: 0.75 }}>
+          ↺ the next appointment re-opens the loop.
+        </p>
       </section>
+
+
 
       <section className="sec">
         <div className="sechead">
@@ -216,9 +254,30 @@ export default function About() {
         <figure className="hansard" style={{ margin: 0 }}>
           <blockquote>Vetta exists so that when the record matters, someone has already kept it.</blockquote>
           <div className="thin-rule" aria-hidden="true"></div>
-          <figcaption className="source"><Link to="/">Return to the record</Link></figcaption>
+          <figcaption className="source">Vetta · a public-record prototype</figcaption>
         </figure>
       </section>
-    </main>
+    <section className="sec">
+        <div className="sechead">
+          <span className="no">The wider record</span>
+          <h2>Beyond the August 2024 episode</h2>
+        </div>
+        <div className="acts-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
+          <Link className="card" to="/ledger">
+            <span className="act-no">Every person</span>
+            <h3>The people ledger</h3>
+            <p>93 people, 111 appointments, verification tiers on every entry.</p>
+            <span className="go">Open the ledger →</span>
+          </Link>
+          <Link className="card" to="/methodology">
+            <span className="act-no">Pattern rules</span>
+            <h3>Methodology &amp; signals</h3>
+            <p>Eight deterministic rules over the appointment record — computed, not asserted.</p>
+            <span className="go">How it works →</span>
+          </Link>
+        </div>
+      </section>
+    
+</main>
   );
 }

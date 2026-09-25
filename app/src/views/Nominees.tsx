@@ -28,7 +28,40 @@ export default function Nominees() {
         </p>
         {ph && <p style={{ marginTop: 16 }}><span className="chip-placeholder">Placeholder data</span></p>}
         <div className="close" aria-hidden="true"></div>
-              {ep.priorCycles?.cabinet_2022 && (() => {
+              {(() => {
+          const withMem = nom.filter((n) => n.memoranda?.header_found).length;
+          const memObs = nom.reduce((a, n) => a + ((n.memoranda?.count) || 0), 0);
+          const aff = nom.reduce((a, n) => a + ((n.hearingQuestions?.ignored?.length) || 0), 0);
+          return (
+            <section style={{ marginTop: 'var(--s6)' }}>
+              <div className="sechead">
+                <span className="no">Before the sitting</span>
+                <h2>What citizens submitted</h2>
+                <p className="dek">Parliament invited memoranda from the public ahead of the hearings. The submissions — preserved verbatim in the Committee's own report, page-referenced — travelled with each nominee into the room.</p>
+              </div>
+              <div className="outcome" role="list" aria-label="Citizen submissions, computed from the record">
+                <div className="cell" role="listitem">
+                  <div className="fig">{withMem}/20</div>
+                  <div className="cap">Nominees with a formal memoranda section</div>
+                </div>
+                <div className="cell" role="listitem">
+                  <div className="fig">{memObs}</div>
+                  <div className="cap">Memoranda observations recorded</div>
+                </div>
+                <div className="cell" role="listitem">
+                  <div className="fig">{aff}</div>
+                  <div className="cap">Citizen affidavit clauses preserved</div>
+                </div>
+              </div>
+              <p className="standfirst" style={{ marginTop: 'var(--s4)', maxWidth: 'none' }}>
+                Where the report holds no formal section, submissions appear as inline narrative — shown as
+                an absence, never padded. Each nominee&rsquo;s dossier lists their submissions with page references.
+              </p>
+            </section>
+          );
+        })()}
+
+{ep.priorCycles?.cabinet_2022 && (() => {
           const pc = ep.priorCycles.cabinet_2022;
           const rets = pc.nominees.filter((x) => x.returned_in_2024);
           return (
@@ -77,6 +110,7 @@ export default function Nominees() {
         <div className="nomgrid">
           {nom.map((n) => {
             const c = countsFor(n);
+            const memHeaderFound = !!(n.memoranda?.header_found);
             return (
               <Link key={n.id} to={`/nominee/${n.slug || n.id}`} className={`nomcard${n.status === 'rejected' ? ' rejected' : ''}`}>
                 <span className={`badge ${n.status}`}>{n.status}</span>
@@ -84,9 +118,11 @@ export default function Nominees() {
                 <h3>{n.name}</h3>
                 <p className="portfolio">{n.portfolio}</p>
                 <div className="counts">
-                  <span className="fl"><b>{c.flags}</b> flags</span>
-                  <span><b>{c.positive}</b> positive</span>
-                  <span><b>{c.memoranda}</b> memoranda</span>
+                  <span className="fl" title={c.flags === 0 ? 'No documented flags in sources reviewed' : ''}><b>{c.flags}</b> flags</span>
+                  <span title={c.positive === 0 ? 'No positive findings recorded' : ''}><b>{c.positive}</b> positive</span>
+                  <span title={memHeaderFound ? undefined : 'No formal memoranda section in the committee report — inline narrative only'}>
+                    <b>{memHeaderFound ? c.memoranda : '—'}</b> memoranda
+                  </span>
                   {n.subsequentEvents?.length ? <span className="ev-dot" title="Has post-vote events" aria-label="Has post-vote events"></span> : null}
                 </div>
               </Link>

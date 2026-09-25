@@ -8,17 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <script>
-        // HashRouter deep-link shim: /nominees -> /#/nominees etc. (legacy clean paths)
-        (function () {
-          var p = location.pathname.replace(/\/+$/, '');
-          var map = { '/nominees': 1, '/vote': 1, '/methodology': 1, '/fallback': 1, '/about': 1 };
-          var m = p.match(/^\/nominee\/([a-z0-9-]+)$/);
-          if (m) { location.replace('/#/nominee/' + m[1]); }
-          else if (map[p]) { location.replace('/#' + p); }
-        })();
-      </script>
-    </head>
+    <script>
+      // HashRouter deep-link shim: /nominees -> /#/nominees etc. (legacy clean paths)
+      (function () {
+        var p = location.pathname.replace(/\/+$/, '');
+        var map = { '/signals': 1, '/nominees': 1, '/hearings': 1, '/vote': 1, '/methodology': 1, '/fallback': 1, '/about': 1, '/ledger': 1 };;
+        var m = p.match(/^\/nominee\/([a-z0-9-]+)$/);
+        if (m) { location.replace('/#/nominee/' + m[1]); }
+        else if (map[p]) { location.replace('/#' + p); }
+      })();
+    </script>
   </head>
   <body>
     <div id="root">(Question put and agreed to)</div>
