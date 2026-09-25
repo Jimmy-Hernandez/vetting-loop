@@ -1,0 +1,17 @@
+{
+  "schema": "vetta.review",
+  "version": 1,
+  "counts": {
+    "retained": 57,
+    "corrected": 3,
+    "withheld": 6670
+  },
+  "registerSha256": "bdfb77af609abae20645cc23602f97ffbbd7b365e46650631069d0c4cbed08ff",
+  "sourceFiles": {
+    "divisions.json": "1455ca2e21f419656275931ce2fa6a24eb751a4ecdb180505fb0220117732a9c",
+    "episode.json": "ffaa1b072146315ea0627a45c9922e26aaaad7f45199204dc9782de8f4c1f5e3",
+    "hansard-excerpts.json": "7419d28d7353fefd2a29d3837f72dce6574509d00362428d4fea73bc8ee85da5",
+    "terry/ledger.json": "3faf21533ef04ac13ed86a9c2d123ed81a12e678a6dc40fe7f71f4199f737129"
+  },
+  "note": "Counts describe source fields reviewed or withheld, not confirmed factual errors. Withheld material is not evidence of misconduct or clearance."
+}

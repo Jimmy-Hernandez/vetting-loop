@@ -1,0 +1,577 @@
+{
+  "schema": "vetta.reviewed-record",
+  "version": 1,
+  "title": "Follow the record. Question the process.",
+  "episode": "August 2024 Cabinet vetting",
+  "nominees": [
+    {
+      "id": "nominee-01",
+      "slug": "kithure-kindiki",
+      "name": "Hon. (Prof) Kithure Kindiki, EGH",
+      "portfolio": "Cabinet Secretary for Interior and National Administration",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(a) Hon. (Prof.) Kithure Kindiki, EGH as Cabinet Secretary for Interior\n\nand National Administration;",
+          "lineStart": 12209,
+          "lineEnd": 12211
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(a) Hon. (Prof.) Kithure Kindiki, EGH as Cabinet Secretary for Interior\n\nand National Administration;",
+          "lineStart": 12209,
+          "lineEnd": 12211
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-02",
+      "slug": "debra-mlongo-barasa",
+      "name": "Dr. Debra Mlongo Barasa",
+      "portfolio": "Cabinet Secretary for Health",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "4.2 Dr. Debra Mlongo Barasa - Nominee Cabinet Secretary for Health..49",
+          "lineStart": 77,
+          "lineEnd": 77
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(b) Dr. Debra Miongo Barasa as Cabinet Secretary for Health;",
+          "lineStart": 12213,
+          "lineEnd": 12213
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-03",
+      "slug": "alice-wahome",
+      "name": "Hon. Alice Wahome, EGH",
+      "portfolio": "Cabinet Secretary for Lands, Public Works, Housing and Urban Development",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(c) Hon. Alice Wahome, EGH as Cabinet Secretary for Lands, Public\nWorks, Housing and Urban Development;",
+          "lineStart": 12215,
+          "lineEnd": 12216
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(c) Hon. Alice Wahome, EGH as Cabinet Secretary for Lands, Public\nWorks, Housing and Urban Development;",
+          "lineStart": 12215,
+          "lineEnd": 12216
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-04",
+      "slug": "julius-migos-ogamba",
+      "name": "Mr. Julius Migos Ogamba",
+      "portfolio": "Cabinet Secretary for Education",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "{d) Mr. Julius Migos Ogamba as Cabinet Secretary for Education:",
+          "lineStart": 12218,
+          "lineEnd": 12218
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "{d) Mr. Julius Migos Ogamba as Cabinet Secretary for Education:",
+          "lineStart": 12218,
+          "lineEnd": 12218
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-05",
+      "slug": "roselinda-soipan-tuya",
+      "name": "Hon. Roselinda Soipan Tuya, EGH",
+      "portfolio": "Cabinet Secretary for Defence",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "{e) Hon. Roselinda Soipan Tuya, EGH as Cabinet Secretary for\nDefence:",
+          "lineStart": 12220,
+          "lineEnd": 12221
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "{e) Hon. Roselinda Soipan Tuya, EGH as Cabinet Secretary for\nDefence:",
+          "lineStart": 12220,
+          "lineEnd": 12221
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-06",
+      "slug": "andrew-mwihia-karanja",
+      "name": "Dr. Andrew Mwihia Karanja",
+      "portfolio": "Cabinet Secretary for Agriculture and Livestock Development",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(f}) Or. Andrew Mwihia Karanja - as Cabinet Secretary for\nAgriculture and Livestock Development:",
+          "lineStart": 12223,
+          "lineEnd": 12224
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(f}) Or. Andrew Mwihia Karanja - as Cabinet Secretary for\nAgriculture and Livestock Development:",
+          "lineStart": 12223,
+          "lineEnd": 12224
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-07",
+      "slug": "aden-bare-duale",
+      "name": "Hon. Aden Bare Duale, EGH",
+      "portfolio": "Cabinet Secretary for Environment, Climate Change and Forestry",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(g) Hon. Aden Bare Duale, EGH as Cabinet Secretary for\nEnvironment, Climate Change and Forestry:",
+          "lineStart": 12226,
+          "lineEnd": 12227
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(g) Hon. Aden Bare Duale, EGH as Cabinet Secretary for\nEnvironment, Climate Change and Forestry:",
+          "lineStart": 12226,
+          "lineEnd": 12227
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-08",
+      "slug": "eric-murithi-mugaa",
+      "name": "Mr. Eric Murithi Mugaa",
+      "portfolio": "Cabinet Secretary for Water, Sanitation and Irrigation",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(h) Mr. Eric Murithi Mugaa as Cabinet Secretary for Water,\nSanitation and Irrigation;",
+          "lineStart": 12229,
+          "lineEnd": 12230
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(h) Mr. Eric Murithi Mugaa as Cabinet Secretary for Water,\nSanitation and Irrigation;",
+          "lineStart": 12229,
+          "lineEnd": 12230
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-09",
+      "slug": "davis-chirchir",
+      "name": "Mr. Davis Chirchir, EGH",
+      "portfolio": "Cabinet Secretary for Roads and Transport",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "{i) Mr. Davis Chirchir, EGH as Cabinet Secretary for Roads and\nTransport:",
+          "lineStart": 12232,
+          "lineEnd": 12233
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "{i) Mr. Davis Chirchir, EGH as Cabinet Secretary for Roads and\nTransport:",
+          "lineStart": 12232,
+          "lineEnd": 12233
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-10",
+      "slug": "margaret-nyambura-ndungu",
+      "name": "Dr. Margaret Nyambura Ndung'u",
+      "portfolio": "Cabinet Secretary for Information, Communication and the Digital Economy",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(i) Dr. Margaret Nyambura Ndung'u as Cabinet Secretary for\nInformation, Communication and the Digital Economy;",
+          "lineStart": 12235,
+          "lineEnd": 12236
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(i) Dr. Margaret Nyambura Ndung'u as Cabinet Secretary for\nInformation, Communication and the Digital Economy;",
+          "lineStart": 12235,
+          "lineEnd": 12236
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-11",
+      "slug": "john-mbadi-ngongo",
+      "name": "Hon. John Mbadi Ng'ongo, EGH",
+      "portfolio": "Cabinet Secretary for The National Treasury and Economic Planning",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "{k) Hon, John Mbadi Ng'ongo, EGH as Cabinet Secretary for The\nNational Treasury and Economic Planning;",
+          "lineStart": 12238,
+          "lineEnd": 12239
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "{k) Hon, John Mbadi Ng'ongo, EGH as Cabinet Secretary for The\nNational Treasury and Economic Planning;",
+          "lineStart": 12238,
+          "lineEnd": 12239
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-12",
+      "slug": "salim-mvurya-mgala",
+      "name": "Hon. Salim Mvurya Mgala, EGH",
+      "portfolio": "Cabinet Secretary for Investments, Trade and Industry",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(} Hon. Salim Mvurya Mgala, EGH as Cabinet Secretary for\nInvestments, Trade and Industry;",
+          "lineStart": 12241,
+          "lineEnd": 12242
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(} Hon. Salim Mvurya Mgala, EGH as Cabinet Secretary for\nInvestments, Trade and Industry;",
+          "lineStart": 12241,
+          "lineEnd": 12242
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-13",
+      "slug": "rebecca-miano",
+      "name": "Ms. Rebecca Miano, EGH",
+      "portfolio": "Cabinet Secretary for Tourism and Wildlife",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(m) Ms. Rebecca Miano, EGH as Cabinet Secretary for Tourism and\nWildlife;",
+          "lineStart": 12244,
+          "lineEnd": 12245
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(m) Ms. Rebecca Miano, EGH as Cabinet Secretary for Tourism and\nWildlife;",
+          "lineStart": 12244,
+          "lineEnd": 12245
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-14",
+      "slug": "james-opiyo-wandayi",
+      "name": "Hon. James Opiyo Wandayi, EGH",
+      "portfolio": "Cabinet Secretary for Energy and Petroleum",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(n) Hon. James Opiyo Wandayi, EGH as Cabinet Secretary for\nEnergy and Petroleum;",
+          "lineStart": 12247,
+          "lineEnd": 12248
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(n) Hon. James Opiyo Wandayi, EGH as Cabinet Secretary for\nEnergy and Petroleum;",
+          "lineStart": 12247,
+          "lineEnd": 12248
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-15",
+      "slug": "onesimus-kipchumba-murkomen",
+      "name": "Hon. Onesimus Kipchumba Murkomen, EGH",
+      "portfolio": "Cabinet Secretary for Youth Affairs, Creative Economy and Sports",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "{o) Hon. Onesimus Kipchumba Murkomen, EGH as Cabinet\nSecretary for Youth affairs, Creative Economy and Sports:",
+          "lineStart": 12250,
+          "lineEnd": 12251
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "{o) Hon. Onesimus Kipchumba Murkomen, EGH as Cabinet\nSecretary for Youth affairs, Creative Economy and Sports:",
+          "lineStart": 12250,
+          "lineEnd": 12251
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-16",
+      "slug": "hassan-ali-joho",
+      "name": "Hon. Hassan Ali Joho, EGH",
+      "portfolio": "Cabinet Secretary for Mining, Blue Economy and Maritime Affairs",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(p) Hon. Hassan Ali Joho, EGH as Cabinet Secretary for Mining, Blue\nEconomy and Maritime Affairs;",
+          "lineStart": 12253,
+          "lineEnd": 12254
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(p) Hon. Hassan Ali Joho, EGH as Cabinet Secretary for Mining, Blue\nEconomy and Maritime Affairs;",
+          "lineStart": 12253,
+          "lineEnd": 12254
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-17",
+      "slug": "alfred-nganga-mutua",
+      "name": "Hon. (Dr.) Alfred Nganga Mutua, EGH",
+      "portfolio": "Cabinet Secretary for Labour and Social Protection",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "{aq} Hon. (Dr.) Alfred Nganga Mutua, EGH as Cabinet Secretary for\nLabour and Social Protection:",
+          "lineStart": 12256,
+          "lineEnd": 12257
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "{aq} Hon. (Dr.) Alfred Nganga Mutua, EGH as Cabinet Secretary for\nLabour and Social Protection:",
+          "lineStart": 12256,
+          "lineEnd": 12257
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-18",
+      "slug": "wycliffe-ambetsa-oparanya",
+      "name": "Hon. Wycliffe Ambetsa Oparanya",
+      "portfolio": "Cabinet Secretary for Co-operatives and Micro, Small and Medium Enterprises (MSMEs) Development",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Wycliffe Ambetsa Oparanya, EGH Cabinet Secretary, Ministry of Co- operatives &amp; Micro, Small and Medium Enterprises (MSME) Development.",
+          "lineStart": 530,
+          "lineEnd": 530
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(r) Hon. Wycliffe Ambetsa Oparanyah, EGH as Cabinet Secretary\nfor Co-operatives and Micro, Small and Medium Enterprises\nDevelopment: and",
+          "lineStart": 12259,
+          "lineEnd": 12261
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-19",
+      "slug": "justin-bedan-muturi",
+      "name": "Hon. Justin Bedan Muturi, EGH",
+      "portfolio": "Cabinet Secretary for Public Service and Human Capital Development",
+      "status": "approved",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(s) Hon. Justin Bedan Muturi, EGH as Cabinet Secretary for Public\nService and Human Capital Development; and",
+          "lineStart": 12263,
+          "lineEnd": 12264
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(s) Hon. Justin Bedan Muturi, EGH as Cabinet Secretary for Public\nService and Human Capital Development; and",
+          "lineStart": 12263,
+          "lineEnd": 12264
+        },
+        {
+          "url": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+          "passage": "Hon. Members at the Bar, take your seats. Take the nearest seats. Hon. Nguna, that is not the nearest seat that you are going to. Order Hon. Members\nIs Hon. Mbadi in the House?\nHon. Members\nYes.\nHon. Speaker\nWhere is he? We said we will call them in after the vote. He will hold on out there.\n(Question put and agreed to)\nHon. Members\nDivision.\nHon. Speaker\nOrder! It is clear there are no numbers to claim a Division. Hon. Members, you may now call in the colleagues who exited the Chamber of the National Assembly.",
+          "lineStart": 1238,
+          "lineEnd": 1248
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    },
+    {
+      "id": "nominee-20",
+      "slug": "stella-soi-langat",
+      "name": "Ms. Stella Soi Lang'at",
+      "portfolio": "Cabinet Secretary for Gender, Culture, The Arts and Heritage",
+      "status": "rejected",
+      "sources": [
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(2) Rejects the nomination of Ms. Stella Soi Lang'at for appointment as\n\nCabinet Secretary for Gender, Culture, The Arts and Heritage",
+          "lineStart": 12266,
+          "lineEnd": 12268
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(2) Rejects the nomination of Ms. Stella Soi Lang'at for appointment as\n\nCabinet Secretary for Gender, Culture, The Arts and Heritage",
+          "lineStart": 12266,
+          "lineEnd": 12268
+        },
+        {
+          "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+          "passage": "(2) Rejects the nomination of Ms. Stella Soi Lang'at for appointment as\n\nCabinet Secretary for Gender, Culture, The Arts and Heritage",
+          "lineStart": 12266,
+          "lineEnd": 12268
+        }
+      ],
+      "review": "Roster fields reviewed. Dossier claims withheld pending source clearance."
+    }
+  ],
+  "review": {
+    "registerSha256": "bdfb77af609abae20645cc23602f97ffbbd7b365e46650631069d0c4cbed08ff",
+    "counts": {
+      "retained": 57,
+      "corrected": 3,
+      "withheld": 6670
+    },
+    "note": "Counts describe source fields reviewed or withheld, not confirmed factual errors. Withheld material is not evidence of misconduct or clearance."
+  }
+}

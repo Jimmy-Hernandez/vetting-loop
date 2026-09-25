@@ -1,0 +1,14 @@
+{
+  "config": {
+    "ingress": [
+      {
+        "hostname": "vetta-relay.agent9.dev",
+        "service": "http://127.0.0.1:7447",
+        "originRequest": {}
+      },
+      {
+        "service": "http_status:404"
+      }
+    ]
+  }
+}

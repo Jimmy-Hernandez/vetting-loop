@@ -1,0 +1,8 @@
+{
+  "pubkey": "1a1c8a2d1e84562e51053eac7c6fbff1a20731c200b14585a898b18d15cf1bdb",
+  "relays": [
+    "wss://relay.damus.io"
+  ],
+  "tipsEnabled": false,
+  "tipRelay": ""
+}

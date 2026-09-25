@@ -1,0 +1,11 @@
+{
+  "status": "verified_review_artifact_not_published",
+  "mutations": 596,
+  "hearingReferencesRepaired": 510,
+  "questionTextContaminationRemoved": 70,
+  "memorandaCountsSetUnknown": 15,
+  "jobTitlesCorrected": 1,
+  "sourcePassagesMatched": 596,
+  "allHearingReferencesInsideNomineeSection": true,
+  "allUnknownMemorandaCountsNull": true
+}

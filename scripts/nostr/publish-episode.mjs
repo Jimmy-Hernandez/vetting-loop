@@ -1,136 +1,55 @@
-// publish-episode.mjs — publish the vetting-loop episode to Nostr, one kind-1 note per logical chunk.
-// Chunks: 1 episode summary, 1 note per nominee dossier (t tag nominee-<slug>), 1 accountability-trail note.
-// Usage: node scripts/nostr/publish-episode.mjs [--relay ws://...] [--relay wss://...] [--dry-run]
-// Defaults: ws://127.0.0.1:7778 + wss://relay.damus.io
-import { finalizeEvent, nip19 } from 'nostr-tools';
-import { WebSocket } from 'ws';
-import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
+// Public addressable snapshot with immutable correction-chain events.
+// All content comes from the same gated release as the site and offline package.
+import {readFileSync,writeFileSync,mkdirSync,existsSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+import {join} from 'node:path';
+import {finalizeEvent,getPublicKey,nip19,verifyEvent} from '../../app/node_modules/nostr-tools/lib/esm/index.js';
+const root=fileURLToPath(new URL('../../',import.meta.url));
+execFileSync(process.execPath,[join(root,'scripts/release/check.mjs')],{stdio:'inherit'});
+const read=p=>JSON.parse(readFileSync(join(root,p),'utf8'));
+const config=read('app/src/publisher-config.json');const release=read('app/dist/data/release.json');
+const relayArg=process.argv.indexOf('--relay');
+const relays=relayArg>=0?[process.argv[relayArg+1]]:config.relays;
+if(!relays.every(r=>typeof r==='string'&&/^wss:\/\//.test(r)))throw Error('Only secure relay URLs are accepted');
+const current=read('app/public/data/release.json');if(JSON.stringify(current)!==JSON.stringify(release))throw Error('Build is stale');
+const payload={schema:'vetta.fallback',version:1,approval:{status:'approved',registerSha256:release.review.registerSha256,reviewedAt:new Date().toISOString()},episode:{title:release.episode,date:'2024-08-07',summary:'Reviewed historical roster only. 19 House approvals and one committee rejection recommendation. Other dossier claims and hearing metrics are withheld pending source clearance.',nominees:release.nominees.map(n=>({slug:n.slug,name:n.name,portfolio:n.portfolio,status:n.status==='rejected'?'committee_rejection_recommended':n.status,flags:[],positiveCount:0})),trail:null}};
+if(process.argv.includes('--dry-run')){console.log('Dry run passed: reviewed snapshot prepared; no key loaded or network opened.');process.exit(0)}
+if(!process.argv.includes('--publish'))throw Error('Use --dry-run or --publish');
+if(relays.length===0)throw Error('No verified publication relay configured');
+const key=JSON.parse(readFileSync(process.env.VETTA_KEY_FILE||'/home/pi/.config/vetta/vetta-org-key.json','utf8'));const sk=nip19.decode(key.nsec).data;
+if(getPublicKey(sk)!==config.pubkey)throw Error('Publisher key mismatch');
+const state=join(root,'review/publication-receipt.json');const previous=existsSync(state)?JSON.parse(readFileSync(state,'utf8')):null;
+const now=Math.floor(Date.now()/1000);
+const snapshot=finalizeEvent({kind:30378,created_at:now,tags:[['d','vetta:episode:aug2024']],content:JSON.stringify(payload)},sk);
+const correction=finalizeEvent({kind:1,created_at:now,tags:[['t','vetta-corrections'],['e',snapshot.id],...(previous?[['e',previous.snapshotId,'','reply']]:[])],content:JSON.stringify({schema:'vetta.correction',version:1,snapshotId:snapshot.id,previousSnapshotId:previous?.snapshotId??null,registerSha256:release.review.registerSha256,changes:read('app/dist/data/corrections.json')})},sk);
+async function publishBatch(url,events){return new Promise(resolve=>{
+ const results=new Map();let ws;let done=false;let notice='';let sent=false;
+ const timer=setTimeout(()=>finish('acknowledgment timeout'),20000);
+ function finish(reason=''){if(done)return;done=true;clearTimeout(timer);try{ws?.close()}catch{}resolve(events.map(event=>results.get(event.id)||{relay:url,eventId:event.id,accepted:false,detail:reason||notice||'connection closed'}))}
+ try{ws=new WebSocket(url);ws.onopen=()=>ws.send(JSON.stringify(['REQ','publication-preflight',{ids:[events[0].id]}]));ws.onmessage=m=>{try{const a=JSON.parse(m.data);if(a[0]==='EOSE'&&a[1]==='publication-preflight'&&!sent){sent=true;ws.send(JSON.stringify(['CLOSE','publication-preflight']));for(const event of events)ws.send(JSON.stringify(['EVENT',event]))}if(a[0]==='NOTICE')notice=String(a[1]);if(a[0]==='OK'&&events.some(e=>e.id===a[1])){results.set(a[1],{relay:url,eventId:a[1],accepted:a[2]===true,detail:String(a[3]??'')});if(results.size===events.length)finish()}}catch{}};ws.onerror=()=>finish('websocket error');ws.onclose=()=>finish()}catch{finish('connection failed')}
+})}
 
-const REPO = '/Users/jimmy/Desktop/vetting-loop';
-const EPISODE = join(REPO, 'app', 'public', 'data', 'episode.json');
-const DIVISIONS = join(REPO, 'app', 'public', 'data', 'divisions.json');
-const HANSARD = join(REPO, 'app', 'public', 'data', 'hansard-excerpts.json');
-const KEYFILE = join(REPO, 'scripts', 'nostr', 'vetting-loop-key.json');
-const EPISODE_TAG = 'vetting-loop-aug2024';
-
-const argv = process.argv.slice(2);
-const dryRun = argv.includes('--dry-run');
-const relays = [];
-for (let i = 0; i < argv.length; i++) {
-  if (argv[i] === '--relay') relays.push(argv[i + 1]);
+const manifest=read('app/dist/manifest-event.json');const profile=read('app/dist/publisher-profile.json');
+const bundlePath=join(root,'review/publication-bundle.json');
+let bundle={snapshot,correction,manifest,profile,previousSnapshotId:previous?.snapshotId??null};
+if(process.argv.includes('--retry')){bundle=JSON.parse(readFileSync(bundlePath,'utf8'));if(bundle.manifest.id!==manifest.id)throw Error('Retry bundle belongs to an older build')}else{writeFileSync(bundlePath,JSON.stringify(bundle,null,2)+'\n')}
+const events=[bundle.snapshot,bundle.correction,bundle.manifest,bundle.profile];
+for(const event of events)if(!verifyEvent(event))throw Error('Invalid signature');
+async function publishWithRetry(relay){
+ const acknowledged=new Map();let latest=[];
+ for(let attempt=0;attempt<3;attempt++){
+  latest=await publishBatch(relay,events.filter(e=>!acknowledged.has(e.id)));
+  for(const result of latest)if(result.accepted)acknowledged.set(result.eventId,result);
+  if(acknowledged.size===events.length)break;
+  if(attempt<2)await new Promise(resolve=>setTimeout(resolve,1000*(attempt+1)));
+ }
+ return events.map(e=>acknowledged.get(e.id)||latest.find(r=>r.eventId===e.id)||{relay,eventId:e.id,accepted:false,detail:'not acknowledged'});
 }
-if (relays.length === 0) relays.push('ws://127.0.0.1:7778', 'wss://relay.damus.io');
-
-const key = JSON.parse(readFileSync(KEYFILE, 'utf8'));
-const skBytes = nip19.decode(key.nsec).data; // Uint8Array
-const pkHex = nip19.decode(key.npub).data;
-
-const episode = JSON.parse(readFileSync(EPISODE, 'utf8'));
-
-// ============================================================
-// PUBLISH GATE — no mock/test/placeholder data may ever be
-// published (immutable on Nostr once accepted by a relay).
-// Every check must pass or the run aborts BEFORE any relay
-// connection is opened.
-// ============================================================
-function assertRealData(ep) {
-  const errs = [];
-  // 1. structural sanity: 20 nominees, real names, no placeholder marker anywhere
-  const nom = ep?.nominees ?? [];
-  if (nom.length !== 20) errs.push(`nominee count ${nom.length} != 20`);
-  const blob = JSON.stringify(ep);
-  for (const bad of ['placeholder', 'PLACEHOLDER', 'mock', 'Mock', 'MOCK', 'lorem', 'TODO', 'test-nominee', 'example.com', 'null null']) {
-    if (blob.includes(bad)) errs.push(`forbidden token in episode data: "${bad}"`);
-  }
-  // 2. every nominee carries a real slug + sourced flags schema
-  for (const n of nom) {
-    if (!/^[a-z0-9-]+$/.test(n.slug ?? '')) errs.push(`${n.id}: bad slug "${n.slug}"`);
-    if (!n.name || n.name.length < 4) errs.push(`${n.id}: name too short`);
-    for (const f of n.flags ?? []) {
-      if (!f.url?.startsWith('http') || !f.quote || !f.publisher || !f.legal_status)
-        errs.push(`${n.id}: unsourced flag ${JSON.stringify(f).slice(0, 60)}`);
-    }
-  }
-  // 3. episode id + date must match the real vetting episode
-  if (ep.date !== '2024-08-07') errs.push(`episode date ${ep.date} != 2024-08-07`);
-  if (ep.nominees?.length && !ep.nominees.some(n => n.status === 'rejected'))
-    errs.push('no rejected nominee present — episode looks synthetic');
-  // 4. division data must reference real mzalendo records
-  return errs;
-}
-const gateErrors = assertRealData(episode);
-if (gateErrors.length) {
-  console.error('PUBLISH GATE FAILED — no events will be sent:');
-  for (const e of gateErrors) console.error('  -', e);
-  process.exit(1);
-}
-console.log('PUBLISH GATE PASSED — data verified as real, proceeding');
-// --dry-run supported: exits here without opening relays
-if (dryRun) { console.log('dry-run complete'); process.exit(0); }
-const divisions = JSON.parse(readFileSync(DIVISIONS, 'utf8'));
-const hansard = JSON.parse(readFileSync(HANSARD, 'utf8'));
-
-function chunkNote(content, tags) {
-  return finalizeEvent({ kind: 1, created_at: Math.floor(Date.now() / 1000), tags, content }, skBytes);
-}
-
-// ---- Build notes -------------------------------------------------------
-const notes = [];
-
-// 1. Episode summary
-notes.push(chunkNote(
-  `${episode.title} (${episode.date})\n\n${episode.summary}\n\nNominees: ${episode.nominees.length}. Follow-up notes carry one dossier each, tagged 'nominee-<slug>'. Accountability trail in the final note.\n\n#vetting-loop-aug2024`,
-  [['t', EPISODE_TAG]]
-));
-
-// 2. One note per nominee
-for (const n of episode.nominees) {
-  const flagLines = (n.flags || []).map(f => `- [${f.legal_status}] ${f.claim} (${f.publisher}, ${f.date})`);
-  const posLines = (n.positiveFindings || []).map(p => `- ${p.finding ?? p.claim ?? JSON.stringify(p).slice(0, 140)}`);
-  const content = `NOMINEE: ${n.name}\nPortfolio: ${n.portfolio}\nStatus: ${n.status}\nReport ref: ${n.reportPageRef ?? n.report_id ?? 'n/a'}\n\nFLAGS (${(n.flags || []).length}):\n${flagLines.join('\n') || 'No documented findings in sources reviewed.'}\n\nPOSITIVE FINDINGS (${(n.positiveFindings || []).length}):\n${posLines.join('\n') || 'No documented findings in sources reviewed.'}\n\n#vetting-loop-aug2024 #nominee-${n.slug}`;
-  notes.push(chunkNote(content, [['t', EPISODE_TAG], ['t', `nominee-${n.slug}`]]));
-}
-
-// 3. Accountability trail (voice-vote absence + real contrast division)
-const vettingVote = divisions.vetting_vote ?? {};
-const contrast = (divisions.divisions || divisions)[0] ?? {};
-const motionText = hansard.excerpts?.find?.(e => /Question put and agreed/i.test(JSON.stringify(e))) ?? null;
-const trail = `ACCOUNTABILITY TRAIL, ${episode.date}\n\nThe 19 approvals passed by VOICE VOTE. Hansard records only: "(Question put and agreed to)". No per-MP recorded vote exists for any approval — that absence is data.\n\nContrast: Finance Bill 2024 division was recorded per-MP (192 Aye / 105 No).\nVetting vote mechanism: ${vettingVote.mechanism || 'voice vote'} — ${vettingVote.record || 'no record'}\nVerbatim motion: ${motionText ? JSON.stringify(motionText).slice(0, 300) : '(Question put and agreed to)'}\n\n#vetting-loop-aug2024`;
-notes.push(chunkNote(trail, [['t', EPISODE_TAG], ['t', 'vetting-accountability-trail']]));
-
-console.log(`Prepared ${notes.length} notes → relays: ${relays.join(', ')}${dryRun ? ' (DRY RUN)' : ''}`);
-
-if (dryRun) {
-  notes.forEach((n, i) => console.log(`note ${i + 1}: id=${n.id} tags=${JSON.stringify(n.tags)}`));
-  process.exit(0);
-}
-
-// ---- Publish: wait for OK from every relay per note --------------------
-function publishTo(relayUrl, event) {
-  return new Promise((resolve) => {
-    let done = false;
-    const finish = (ok, detail) => { if (!done) { done = true; try { ws.close(); } catch {} resolve({ relayUrl, ok, detail }); } };
-    const ws = new WebSocket(relayUrl, { handshakeTimeout: 10000 });
-    const timer = setTimeout(() => finish(false, 'timeout'), 15000);
-    ws.on('open', () => ws.send(JSON.stringify(['EVENT', event])));
-    ws.on('message', (data) => {
-      try {
-        const msg = JSON.parse(data.toString());
-        if (msg[0] === 'OK' && msg[1] === event.id) { clearTimeout(timer); finish(msg[2], msg[3] || ''); }
-      } catch {}
-    });
-    ws.on('error', (e) => { clearTimeout(timer); finish(false, e.message); });
-  });
-}
-
-for (let i = 0; i < notes.length; i++) {
-  const ev = notes[i];
-  const results = await Promise.all(relays.map(r => publishTo(r, ev)));
-  const ok = results.filter(r => r.ok);
-  console.log(`note ${i + 1}/${notes.length} id=${ev.id} accepted by ${ok.length}/${relays.length} relays` +
-    (ok.length < relays.length ? ' — failures: ' + results.filter(r => !r.ok).map(r => `${r.relay}: ${r.detail}`).join('; ') : ''));
-}
-
-// Do NOT print private key material anywhere.
-console.log('Done. Record the event ids above for verification.');
+const results=(await Promise.all(relays.map(publishWithRetry))).flat();
+const ok=results.every(r=>r.accepted);mkdirSync(join(root,'review'),{recursive:true});
+writeFileSync(join(root,'review/publication-attempt.json'),JSON.stringify({snapshotId:bundle.snapshot.id,correctionId:bundle.correction.id,results},null,2)+'\n');
+if(!ok)throw Error('Relay did not acknowledge every event; inspect publication-attempt.json');
+writeFileSync(state,JSON.stringify({snapshotId:bundle.snapshot.id,correctionId:bundle.correction.id,previousSnapshotId:bundle.previousSnapshotId,results},null,2)+'\n');
+writeFileSync(join(root,'app/dist/nostr-snapshot.json'),JSON.stringify(bundle.snapshot,null,2)+'\n');
+console.log('Reviewed snapshot, correction trail, signed manifest and identity profile acknowledged by configured relays.');

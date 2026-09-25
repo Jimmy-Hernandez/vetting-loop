@@ -14,7 +14,7 @@ function getRelays(): string[] {
     const q = new URLSearchParams(window.location.search).get('relays');
     if (q) return q.split(',').map((s) => s.trim()).filter(Boolean);
     const stored = localStorage.getItem(RELAYS_KEY);
-    if (stored) return JSON.parse(stored);
+    if (stored) { const parsed: unknown = JSON.parse(stored); if (Array.isArray(parsed)) return parsed.filter((s): s is string => typeof s === 'string'); }
   } catch { /* defaults */ }
   return DEFAULT_RELAYS;
 }
@@ -34,7 +34,7 @@ export default function NostrFallback() {
       setStatus(
         episode.nominees.length > 0
           ? `Received ${episode.nominees.length} nominee dossiers from ${sources.length} events.`
-          : 'No events received. Relays are unreachable or record not yet published.',
+          : 'No authenticated records received. The reviewed record may not yet be published to the configured relays.',
       );
     });
     return () => { cancelled = true; };
@@ -43,11 +43,11 @@ export default function NostrFallback() {
   const sampleSource = sources[0];
 
   return (
-    <main className="doc">
+    <main className="doc" style={{ overflowWrap: 'anywhere' }}>
       <div className="banner" role="status" style={{
         border: '1px solid var(--line)', padding: 'var(--s4)', margin: 'var(--s6) 0',
       }}>
-        Primary server unreachable. Reading the record from the Nostr network.
+        Backup reader. Only records signed by the pinned VETTA publisher are accepted.
         <div style={{ marginTop: 'var(--s2)', fontSize: '0.85em', color: 'var(--ink-muted, #555)' }}>
           Relays: {relays.join(' · ')}
         </div>
@@ -64,10 +64,10 @@ export default function NostrFallback() {
             <strong>{n.name}</strong>
             <span style={{ marginLeft: 'var(--s3)' }}>{n.status}</span>
             <span style={{ marginLeft: 'var(--s3)' }}>
-              {n.flags.length} flag{n.flags.length === 1 ? '' : 's'}
+              Dossier claims withheld
             </span>
             <span style={{ marginLeft: 'var(--s3)', color: 'var(--ink-muted, #555)' }}>
-              details unavailable offline
+              reviewed roster entry
             </span>
           </li>
         ))}

@@ -200,7 +200,7 @@ export default function Methodology() {
             smoothed over. Quotations, page and line references are reproduced as they appear in the source.
           </p>
           <p>
-            Corrections to the record are logged in <code>data/CHANGELOG.md</code> in this repository.
+            Corrections are reviewed against the source, documented in the record’s change history, and reflected here.
           </p>
         </div>
       </section>

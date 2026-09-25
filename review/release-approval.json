@@ -1,0 +1,12 @@
+{
+  "registerSha256": "bdfb77af609abae20645cc23602f97ffbbd7b365e46650631069d0c4cbed08ff",
+  "files": {
+    "release.json": "19d2f66fff154a98f9d7062223c64b57be3d662c173178989624805f12e44caf",
+    "corrections.json": "f9931d673e7214b572d58c3d92b666a9f0e85e12f73dd4116359af10bec808bc",
+    "review-summary.json": "550318b17076da71f6437d9f17a57fe5a0a3a631fca43f46bc3eed794dfff71c",
+    "episode.json": "2049ccdaa97002f4fd7c5fb3736d17be917a54d3c9b792660886294d26273b75",
+    "divisions.json": "2049ccdaa97002f4fd7c5fb3736d17be917a54d3c9b792660886294d26273b75",
+    "hansard-excerpts.json": "2049ccdaa97002f4fd7c5fb3736d17be917a54d3c9b792660886294d26273b75",
+    "terry/ledger.json": "2049ccdaa97002f4fd7c5fb3736d17be917a54d3c9b792660886294d26273b75"
+  }
+}

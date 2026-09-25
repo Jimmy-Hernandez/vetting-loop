@@ -1,0 +1,15 @@
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {fileURLToPath} from 'node:url';
+import {join} from 'node:path';
+const root=fileURLToPath(new URL('../../',import.meta.url));const dist=join(root,'app/dist');
+const read=f=>JSON.parse(readFileSync(join(dist,f),'utf8'));const r=read('data/release.json');
+const escape=x=>String(x).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+mkdirSync(join(dist,'downloads'),{recursive:true});
+writeFileSync(join(dist,'downloads/vetta-offline.html'),`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>VETTA reviewed offline record</title><style>body{font:18px system-ui;max-width:850px;margin:40px auto;padding:20px;color:#222;background:#f8f9fa}article{border-top:1px solid #ccc;padding:20px 0}a{color:#b5212c}blockquote{white-space:pre-wrap}small{overflow-wrap:anywhere}</style><h1>VETTA: ${escape(r.title)}</h1><p>${escape(r.episode)} · Historical roster · 19 House approvals and one committee rejection recommendation</p><p>Dossier claims, hearing metrics and the wider ledger are withheld pending source clearance. This file works without a network connection; source links require internet access. Cryptographic fingerprints prove byte integrity, not truth.</p>${r.nominees.map(n=>`<article><h2>${escape(n.name)}</h2><p>${escape(n.portfolio)} · ${n.status==='approved'?'Approved by the House':'Rejection recommended by committee'}</p>${Array.from(new Map(n.sources.map(s=>[s.passage,s])).values()).map(s=>`<details><summary>Source passage</summary><blockquote>${escape(s.passage)}</blockquote><a href="${escape(s.url)}" rel="noreferrer">Parliamentary source</a></details>`).join('')}</article>`).join('')}<p>Review register SHA-256:</p><small>${r.review.registerSha256}</small></html>`);
+const names=['data/release.json','data/corrections.json','data/review-summary.json','downloads/vetta-offline.html'];
+const files=names.map(path=>{const b=readFileSync(join(dist,path));return{path,bytes:b.length,sha256:createHash('sha256').update(b).digest('hex')}});
+const manifest={schema:'vetta.manifest',version:1,createdAt:new Date().toISOString(),registerSha256:r.review.registerSha256,files,records:r.nominees.map(n=>({slug:n.slug,encoding:'JSON.stringify UTF-8',sha256:createHash('sha256').update(JSON.stringify(n)).digest('hex')}))};
+writeFileSync(join(dist,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
+writeFileSync(join(dist,'downloads/README.txt'),'Open vetta-offline.html in any browser, without a server or internet. JSON records and manifest are included. Verify files against the signed manifest using the VETTA verifier. Signature authenticates the publisher, not factual accuracy. Timestamp status is recorded in timestamp-status.json; pending is not Bitcoin confirmation.\n');
+console.log('Offline HTML and per-file SHA-256 manifest generated. Sign and package before deployment.');

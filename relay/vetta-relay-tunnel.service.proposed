@@ -1,0 +1,23 @@
+[Unit]
+Description=VETTA relay Cloudflare Tunnel connector
+After=network-online.target vetta-relay.service
+Wants=network-online.target vetta-relay.service
+
+[Service]
+Type=simple
+ExecStart=/home/pi/agent9-fleet/workspaces/vetta-completion/relay/cloudflared-linux-arm64 tunnel --no-autoupdate run --token-file %h/.config/vetta-relay/tunnel.token
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+[Install]
+WantedBy=default.target

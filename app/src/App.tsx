@@ -1,14 +1,12 @@
 import { BrowserRouter, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import { useEffect } from 'react';
-import Hearings from './views/Hearings';
-import Nominees from './views/Nominees';
-import NomineeDossier from './views/NomineeDossier';
-import Vote from './views/Vote';
-import Methodology from './views/Methodology';
-import About from './views/About';
+import ReviewedRecord from './views/ReviewedRecord';
+import Corrections from './views/Corrections';
+import Support from './views/Support';
+import Resilience from './views/Resilience';
+import Tips from './views/EncryptedTips';
 import NostrFallback from './views/NostrFallback';
-import Ledger from './views/Ledger';
 
 function Chrome({ children }: { children: ReactNode }) {
   const loc = useLocation();
@@ -49,7 +47,7 @@ function Chrome({ children }: { children: ReactNode }) {
         <div className="fin">
           <div className="fin-brand">
             <img src="/brand/vetta-lockup-reverse.svg" alt="VETTA" width="113" height="22" />
-            <p>The public record of parliamentary vetting. Impunity begins at confirmation.</p>
+            <p>The public record of parliamentary vetting. Follow the record. Question the process.</p>
           </div>
           <nav className="fin-links" aria-label="Footer">
             {/* Only what the header does not already carry: how the record is built and kept honest. */}
@@ -59,7 +57,7 @@ function Chrome({ children }: { children: ReactNode }) {
           </nav>
         </div>
         <div className="fin-base">
-          <span>All claims source-linked<span className="dot">·</span>Non-partisan<span className="dot">·</span>Civic tech prototype</span>
+          <span>Reviewed roster · Dossier review ongoing<span className="dot">·</span>Non-partisan<span className="dot">·</span>Civic tech prototype</span>
         </div>
       </footer>
     </>
@@ -81,15 +79,19 @@ export default function App() {
     <BrowserRouter>
       <Chrome>
         <Routes>
-          <Route path="/" element={<About />} />
-          <Route path="/nominees" element={<Nominees />} />
-          <Route path="/nominee/:idOrSlug" element={<NomineeDossier />} />
-          <Route path="/hearings" element={<Hearings />} />
-          <Route path="/vote" element={<Vote />} />
-          <Route path="/ledger" element={<Ledger />} />
-          <Route path="/signals" element={<Methodology />} />
-          <Route path="/methodology" element={<Methodology />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<ReviewedRecord />} />
+          <Route path="/nominees" element={<ReviewedRecord mode="nominees" />} />
+          <Route path="/nominee/:idOrSlug" element={<ReviewedRecord mode="nominee" />} />
+          <Route path="/hearings" element={<ReviewedRecord mode="hearings" />} />
+          <Route path="/vote" element={<ReviewedRecord mode="vote" />} />
+          <Route path="/ledger" element={<ReviewedRecord mode="ledger" />} />
+          <Route path="/signals" element={<Corrections />} />
+          <Route path="/methodology" element={<Corrections />} />
+          <Route path="/about" element={<ReviewedRecord />} />
+          <Route path="/corrections" element={<Corrections />} />
+          <Route path="/resilience" element={<Resilience />} />
+          <Route path="/tips" element={<Tips />} />
+          <Route path="/support" element={<Support />} />
           <Route path="/fallback" element={<NostrFallback />} />
           <Route path="*" element={<Fallback />} />
         </Routes>

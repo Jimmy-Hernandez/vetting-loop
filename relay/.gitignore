@@ -1,0 +1,4 @@
+.gocache/
+.buildtmp/
+vetta-relay
+cloudflared-linux-arm64

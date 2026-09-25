@@ -1,0 +1,30 @@
+[Unit]
+Description=VETTA authenticated record and encrypted-tip relay
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/pi/agent9-fleet/workspaces/vetta-completion/relay/vetta-relay
+WorkingDirectory=/home/pi/agent9-fleet/workspaces/vetta-completion/relay
+EnvironmentFile=%h/.config/vetta-relay/relay.env
+Environment=LISTEN=127.0.0.1:7447
+Environment=DB_PATH=%h/.local/share/vetta-relay/db
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=%h/.local/share/vetta-relay
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+[Install]
+WantedBy=default.target

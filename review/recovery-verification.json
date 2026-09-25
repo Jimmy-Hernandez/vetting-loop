@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-09-25T13:07:46.115Z",
+  "encryptedRecovery": true,
+  "publicKeyMatchesPin": true,
+  "ownerOnlyFiles": true,
+  "recipientDelivery": false,
+  "recipientRecovery": false,
+  "limitation": "Local recovery only; encrypted file and passphrase remain colocated. Recipient and separate delivery channel await confirmation."
+}

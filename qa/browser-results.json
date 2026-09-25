@@ -1,0 +1,119 @@
+{
+  "results": [
+    {
+      "path": "/",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/nominees",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/nominee/kithure-kindiki",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/hearings",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/vote",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/ledger",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/corrections",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/resilience",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/tips",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/support",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/fallback",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/nominees",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/nominee/kithure-kindiki",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/hearings",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/vote",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/ledger",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/corrections",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/resilience",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/tips",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/support",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/fallback",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "offlineNoNetwork": true,
+      "records": 20
+    }
+  ],
+  "consoleErrors": []
+}

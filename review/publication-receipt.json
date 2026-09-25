@@ -1,0 +1,31 @@
+{
+  "snapshotId": "440664bce3792bedd8b57a55322f0394997500da802fc294bee65ff92009417c",
+  "correctionId": "f1d3f1c5e11283e5b9b2b726954010cfe03b49227775a47543cb506652514648",
+  "previousSnapshotId": "08a1162e9d66b490c14c138166aa47cd0ca839ac9261ee8f41bb0b8539c0255a",
+  "results": [
+    {
+      "relay": "wss://relay.damus.io",
+      "eventId": "440664bce3792bedd8b57a55322f0394997500da802fc294bee65ff92009417c",
+      "accepted": true,
+      "detail": "duplicate: have this event"
+    },
+    {
+      "relay": "wss://relay.damus.io",
+      "eventId": "f1d3f1c5e11283e5b9b2b726954010cfe03b49227775a47543cb506652514648",
+      "accepted": true,
+      "detail": "duplicate: have this event"
+    },
+    {
+      "relay": "wss://relay.damus.io",
+      "eventId": "2330290e20ed71780da01d08fcde29a1b105b31754baf6c26e92f0ba1ddcd4ca",
+      "accepted": true,
+      "detail": "duplicate: have this event"
+    },
+    {
+      "relay": "wss://relay.damus.io",
+      "eventId": "bd74b18c50ccb137ca79cfd31fa9750c71faa61673c191fe9c8f53aff3c4fc79",
+      "accepted": true,
+      "detail": "duplicate: have this event"
+    }
+  ]
+}

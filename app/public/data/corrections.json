@@ -1,0 +1,36 @@
+{
+  "schema": "vetta.corrections",
+  "version": 1,
+  "entries": [
+    {
+      "date": "2026-09-25",
+      "action": "Accuracy-first release",
+      "reason": "Withheld unapproved claims, hearing metrics, and expanded appointment ledger. Retained only independently source-reviewed nominee names, portfolios and outcomes.",
+      "registerSha256": "bdfb77af609abae20645cc23602f97ffbbd7b365e46650631069d0c4cbed08ff"
+    },
+    {
+      "date": "2026-09-25",
+      "record": "episode.json#/nominees/1/name",
+      "action": "Corrected roster field",
+      "value": "Dr. Debra Mlongo Barasa",
+      "source": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+      "passage": "4.2 Dr. Debra Mlongo Barasa - Nominee Cabinet Secretary for Health..49"
+    },
+    {
+      "date": "2026-09-25",
+      "record": "episode.json#/nominees/17/name",
+      "action": "Corrected roster field",
+      "value": "Hon. Wycliffe Ambetsa Oparanya",
+      "source": "https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/",
+      "passage": "Hon. Wycliffe Ambetsa Oparanya, EGH Cabinet Secretary, Ministry of Co- operatives &amp; Micro, Small and Medium Enterprises (MSME) Development."
+    },
+    {
+      "date": "2026-09-25",
+      "record": "episode.json#/nominees/19/portfolio",
+      "action": "Corrected roster field",
+      "value": "Cabinet Secretary for Gender, Culture, The Arts and Heritage",
+      "source": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
+      "passage": "(2) Rejects the nomination of Ms. Stella Soi Lang'at for appointment as\n\nCabinet Secretary for Gender, Culture, The Arts and Heritage"
+    }
+  ]
+}

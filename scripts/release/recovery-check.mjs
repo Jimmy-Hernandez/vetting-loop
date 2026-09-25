@@ -1,0 +1,14 @@
+import {readFileSync,statSync,writeFileSync} from 'node:fs';
+import {getPublicKey} from '../../app/node_modules/nostr-tools/lib/esm/index.js';
+import {decrypt} from '../../app/node_modules/nostr-tools/lib/esm/nip49.js';
+const base='/home/pi/.config/vetta/';
+for(const file of ['vetta-org-key.json','vetta-org-key.ncryptsec','turnover-passphrase.txt'])if((statSync(base+file).mode&0o077)!==0)throw Error('Key artifact permissions are not owner-only');
+const encrypted=readFileSync(base+'vetta-org-key.ncryptsec','utf8').trim();
+const passphrase=readFileSync(base+'turnover-passphrase.txt','utf8').trim();
+const recovered=decrypt(encrypted,passphrase);
+const config=JSON.parse(readFileSync(new URL('../../app/src/publisher-config.json',import.meta.url),'utf8'));
+if(getPublicKey(recovered)!==config.pubkey)throw Error('Recovered key mismatch');
+recovered.fill(0);
+const receipt={checkedAt:new Date().toISOString(),encryptedRecovery:true,publicKeyMatchesPin:true,ownerOnlyFiles:true,recipientDelivery:false,recipientRecovery:false,limitation:'Local recovery only; encrypted file and passphrase remain colocated. Recipient and separate delivery channel await confirmation.'};
+writeFileSync(new URL('../../review/recovery-verification.json',import.meta.url),JSON.stringify(receipt,null,2)+'\n');
+console.log('Local encrypted recovery verified against pinned publisher. Recipient handover remains incomplete.');

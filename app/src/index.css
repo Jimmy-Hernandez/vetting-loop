@@ -572,3 +572,11 @@ h1,h2,h3{text-wrap:balance;}
   nav.acts a{font-size:10.5px;letter-spacing:.06em;padding:8px 4px;}
   .acts a .no{letter-spacing:.14em;}
 }
+
+/* Reviewed roster cards retain the established document layout. */
+.acts-grid article.card{background:var(--white);padding:26px 22px;min-width:0;}
+.acts-grid article.card p+p{margin-top:10px;}
+.acts-grid article.card h3 a{text-decoration:none;}
+.acts-grid article.card h3 a:hover{text-decoration:underline;}
+.acts-grid article.card blockquote{font-size:14px;white-space:pre-wrap;margin:18px 0;}
+.doc .empty[role=note]{font-style:normal;color:var(--ink);text-align:left;}

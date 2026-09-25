@@ -1,0 +1,8 @@
+{
+  "relay": "wss://relay.damus.io",
+  "verifiedSignedEvents": 4,
+  "roster": 20,
+  "snapshotId": "440664bce3792bedd8b57a55322f0394997500da802fc294bee65ff92009417c",
+  "correctionId": "f1d3f1c5e11283e5b9b2b726954010cfe03b49227775a47543cb506652514648",
+  "verifiedAt": "2026-09-25T13:22:54.948Z"
+}

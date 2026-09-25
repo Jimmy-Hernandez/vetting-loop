@@ -1,0 +1,218 @@
+[
+  {
+    "host": "https://vetta.agent9.dev",
+    "path": "/data/release.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "exactReleaseMatch": true
+  },
+  {
+    "host": "https://vetta.agent9.dev",
+    "path": "/manifest.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "sha256Match": true
+  },
+  {
+    "host": "https://vetta.agent9.dev",
+    "path": "/manifest-event.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "sha256Match": true
+  },
+  {
+    "host": "https://vetta.agent9.dev",
+    "path": "/.well-known/nostr.json?name=vetta",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "publicKeyMatch": true
+  },
+  {
+    "host": "https://vetta.agent9.dev",
+    "path": "/downloads/vetta-offline.zip",
+    "status": 200,
+    "type": "application/zip",
+    "cors": "*",
+    "sha256Match": true
+  },
+  {
+    "host": "https://vetta.agent9.dev",
+    "path": "/data/episode.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "legacyDataExcluded": true
+  },
+  {
+    "host": "https://vetta.agent9.dev",
+    "path": "/data/divisions.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "legacyDataExcluded": true
+  },
+  {
+    "host": "https://vetta.agent9.dev",
+    "path": "/data/hansard-excerpts.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "legacyDataExcluded": true
+  },
+  {
+    "host": "https://vetta.agent9.dev",
+    "path": "/data/terry/ledger.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "legacyDataExcluded": true
+  },
+  {
+    "host": "https://vetta-dci.pages.dev",
+    "path": "/data/release.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "exactReleaseMatch": true
+  },
+  {
+    "host": "https://vetta-dci.pages.dev",
+    "path": "/manifest.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "sha256Match": true
+  },
+  {
+    "host": "https://vetta-dci.pages.dev",
+    "path": "/manifest-event.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "sha256Match": true
+  },
+  {
+    "host": "https://vetta-dci.pages.dev",
+    "path": "/.well-known/nostr.json?name=vetta",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "publicKeyMatch": true
+  },
+  {
+    "host": "https://vetta-dci.pages.dev",
+    "path": "/downloads/vetta-offline.zip",
+    "status": 200,
+    "type": "application/zip",
+    "cors": "*",
+    "sha256Match": true
+  },
+  {
+    "host": "https://vetta-dci.pages.dev",
+    "path": "/data/episode.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "legacyDataExcluded": true
+  },
+  {
+    "host": "https://vetta-dci.pages.dev",
+    "path": "/data/divisions.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "legacyDataExcluded": true
+  },
+  {
+    "host": "https://vetta-dci.pages.dev",
+    "path": "/data/hansard-excerpts.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "legacyDataExcluded": true
+  },
+  {
+    "host": "https://vetta-dci.pages.dev",
+    "path": "/data/terry/ledger.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "legacyDataExcluded": true
+  },
+  {
+    "host": "https://vetta-ke.pages.dev",
+    "path": "/data/release.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "exactReleaseMatch": true
+  },
+  {
+    "host": "https://vetta-ke.pages.dev",
+    "path": "/manifest.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "sha256Match": true
+  },
+  {
+    "host": "https://vetta-ke.pages.dev",
+    "path": "/manifest-event.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "sha256Match": true
+  },
+  {
+    "host": "https://vetta-ke.pages.dev",
+    "path": "/.well-known/nostr.json?name=vetta",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "publicKeyMatch": true
+  },
+  {
+    "host": "https://vetta-ke.pages.dev",
+    "path": "/downloads/vetta-offline.zip",
+    "status": 200,
+    "type": "application/zip",
+    "cors": "*",
+    "sha256Match": true
+  },
+  {
+    "host": "https://vetta-ke.pages.dev",
+    "path": "/data/episode.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "legacyDataExcluded": true
+  },
+  {
+    "host": "https://vetta-ke.pages.dev",
+    "path": "/data/divisions.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "legacyDataExcluded": true
+  },
+  {
+    "host": "https://vetta-ke.pages.dev",
+    "path": "/data/hansard-excerpts.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "legacyDataExcluded": true
+  },
+  {
+    "host": "https://vetta-ke.pages.dev",
+    "path": "/data/terry/ledger.json",
+    "status": 200,
+    "type": "application/json",
+    "cors": "*",
+    "legacyDataExcluded": true
+  }
+]

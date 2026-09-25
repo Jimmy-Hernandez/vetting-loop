@@ -1,0 +1,6 @@
+{
+  "release": "2026.9.3",
+  "asset": "cloudflared-linux-arm64",
+  "sha256": "sha256:aaeb2d7d0da3614634c7e03ab13487a1522c2e79165ed2929cfe23d5e95b326d",
+  "digest_matches": true
+}
