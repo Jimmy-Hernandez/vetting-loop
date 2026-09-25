@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { TerryLedger } from '../terryTypes';
 import { loadTerryLedger } from '../data';
+import { NOSTR_ENABLED } from '../nostr-fallback';
 
 // /about — the tool's own page. Approved copy, verbatim (brief 2026-09-24).
 // Static document register: same tokens, same .doc conventions as Methodology.
@@ -14,7 +15,15 @@ export default function About() {
   const nPeople = people.length;
   const gateCycleIds = new Set((ledger?.cycles ?? []).filter((c) => c.gate).map((c) => c.id));
   const houseRejections = allAppointments.filter((x) => x.outcome === 'rejected' && gateCycleIds.has(x.cycle)).length;
-  const assertPositive = (n: number, w: string) => { if (n <= 0) throw new Error('computed ' + n + ' for ' + w); return n; };
+  // Integrity guard: never render a zero where the record should have people.
+  // It must only be evaluated once the ledger has LOADED — asserting during the
+  // pre-load render (nPeople === 0) throws and blanks the whole app.
+  const loaded = ledger !== null;
+  const assertPositive = (n: number, w: string) => {
+    if (!loaded) return null;                       // still loading: no assertion
+    if (n <= 0) throw new Error('computed ' + n + ' for ' + w);
+    return n;
+  };
 
   return (
     <main className="doc">
@@ -32,7 +41,7 @@ export default function About() {
       <section className="sec" style={{ marginTop: 'var(--s6)' }}>
         <div className="outcome" role="list" aria-label="The record at a glance">
           <div className="cell" role="listitem">
-            <div className="fig" style={{ color: 'var(--red)' }}>{assertPositive(nPeople, 'people')}</div>
+            <div className="fig" style={{ color: 'var(--red)' }}>{assertPositive(nPeople, 'people') ?? '—'}</div>
             <div className="cap">People in the record</div>
           </div>
           <div className="cell" role="listitem">
@@ -151,8 +160,17 @@ export default function About() {
             <div>
               <h4>Redundant by design</h4>
               <p>
-                The record is published to Nostr relays — community networks no single authority controls — so it
-                survives any one server&rsquo;s failure.
+                {NOSTR_ENABLED ? (
+                  <>
+                    The record is published to Nostr relays — community networks no single authority controls — so it
+                    survives any one server&rsquo;s failure.
+                  </>
+                ) : (
+                  <>
+                    Signed, tamper-evident publication to Nostr relays is built and tested. It is currently paused
+                    while the record completes a further due-diligence pass — the layer ships switched off, not absent.
+                  </>
+                )}
               </p>
             </div>
           </li>
