@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import { loadTerryLedger } from '../data';
 import type { TerryLedger } from '../terryTypes';
 
+const WHAT_NOT = [
+  'They are not machine-learning predictions. No model infers anything about anyone.',
+  'They are not allegations of fraud, corruption or misconduct.',
+  'They are not rankings. People are not scored, sorted or compared.',
+];
+
 export default function Methodology() {
   const [ledger, setLedger] = useState<TerryLedger | null>(null);
   useEffect(() => { loadTerryLedger().then((l) => setLedger(l)); }, []);
@@ -167,6 +173,15 @@ export default function Methodology() {
             </li>
           ))}
         </ol>
+      
+        <div className="sig-notblock" style={{ marginTop: 'var(--s4)' }}>
+          <h4>What signals are not</h4>
+          <ul>
+            {WHAT_NOT.map((line, i) => (
+              <li key={i}>{line}</li>
+            ))}
+          </ul>
+        </div>
       </section>
 
 <section className="sec">

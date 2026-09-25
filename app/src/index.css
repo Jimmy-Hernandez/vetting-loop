@@ -43,19 +43,7 @@ a:hover{color:var(--red);}
 .breadcrumb .sep{color:var(--red);margin:0 6px;font-weight:700;}
 .breadcrumb .here{color:var(--red-dark);}
 .breadcrumb a{text-decoration:none;}
-nav.acts{display:flex;gap:4px;}
-nav.acts a{
-  font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-  text-decoration:none;color:#777;padding:8px 14px 6px;border-bottom:3px solid transparent;
-}
-nav.acts a:hover{color:var(--ink);}
-nav.acts a[aria-current="page"]{color:var(--ink-strong);border-bottom-color:var(--red);}
-nav.acts a .no{display:block;font-size:9px;font-weight:600;color:var(--grey-400);letter-spacing:.12em;}
-nav.acts a[aria-current="page"] .no{color:var(--red);}
-nav.acts a.util{border-bottom-width:1px;padding:8px 10px 7px;letter-spacing:.12em;color:#999;font-weight:600;}
-nav.acts a.util:hover{color:var(--ink);}
-nav.acts a.util[aria-current="page"]{color:var(--ink-strong);border-bottom-color:var(--grey-400);}
-
+navnavnavnavnavnavnavnavnav
 /* ============ layout ============ */
 .doc{max-width:1120px;margin:0 auto;padding:0 24px 96px;}
 .measure{max-width:var(--measure);margin-left:auto;margin-right:auto;}
@@ -505,3 +493,11 @@ blockquote.flag-q p{margin:0;}
   .tri-grid .tcard{position:relative;}
   .tri-grid .tcard:not(:last-child)::after{content:"";position:absolute;left:50%;bottom:calc(-1 * var(--s6) - 7px);width:12px;height:12px;border-right:2px solid var(--grey-400);border-bottom:2px solid var(--grey-400);transform:translateX(-50%) rotate(45deg);}
 }
+
+/* unified nav — all items equal weight (2026-09-24 redesign) */
+.acts{display:flex;gap:2px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.acts a{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:#777;padding:10px 12px 8px;border-bottom:2px solid transparent;white-space:nowrap;}
+.acts a .no{display:block;font-size:8.5px;font-weight:700;color:var(--grey-400);letter-spacing:.18em;margin-bottom:2px;}
+.acts a:hover{color:var(--ink);}
+.acts a[aria-current="page"]{color:var(--ink-strong);border-bottom-color:var(--red);}
+.acts a[aria-current="page"] .no{color:var(--red);}

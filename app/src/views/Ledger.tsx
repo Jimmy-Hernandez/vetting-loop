@@ -226,7 +226,7 @@ export default function Ledger() {
                     {(p.appointments ?? []).map((a) => (
                       <div key={a.id} className="led-appt">
                         <span className="led-portfolio">{a.portfolio}</span>
-                        {a.cycle === 'CS 2024' ? (
+                        {a.cycle === 'cs-2024' ? (
                           <Link className={'led-outcome led-out-' + a.outcome} to="/vote" title="How this batch was approved — the voice vote with no recorded division">{a.outcome}</Link>
                         ) : (
                           <span className={'led-outcome led-out-' + a.outcome}>{a.outcome}</span>

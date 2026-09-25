@@ -17,6 +17,7 @@ function Chrome({ children }: { children: ReactNode }) {
     { to: '/nominees', no: 'Act 1', label: 'Before' },
     { to: '/hearings', no: 'Act 2', label: 'During' },
     { to: '/vote', no: 'Act 3', label: 'After' },
+    { to: '/ledger', no: 'Record', label: 'Ledger' },
     { to: '/', no: '', label: 'About' },
   ];
   return (
@@ -27,17 +28,17 @@ function Chrome({ children }: { children: ReactNode }) {
             <img src="/vetta-emblem.png" alt="Vetta emblem" width="26" height="26" style={{ display: 'block', borderRadius: 4 }} />
             <span className="here">Vetta</span>
           </div>
-          <nav className="acts" aria-label="Vetta — three acts">
+          <nav className="acts" aria-label="Vetta — main navigation">
             {acts.map((a) => (
               <NavLink key={a.to} to={a.to} aria-current={loc.pathname === a.to ? 'page' : undefined}>
                 <span className="no">{a.no}</span>
                 {a.label}
               </NavLink>
             ))}
-            <NavLink to="/ledger" className="util" aria-current={loc.pathname === '/ledger' ? 'page' : undefined}>
+            <NavLink to="/ledger" aria-current={loc.pathname === '/ledger' ? 'page' : undefined}>
+              <span className="no">Record</span>
               Ledger
             </NavLink>
-
           </nav>
         </div>
       </header>

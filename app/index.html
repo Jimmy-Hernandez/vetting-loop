@@ -12,7 +12,7 @@
       // HashRouter deep-link shim: /nominees -> /#/nominees etc. (legacy clean paths)
       (function () {
         var p = location.pathname.replace(/\/+$/, '');
-        var map = { '/nominees': 1, '/vote': 1, '/methodology': 1, '/fallback': 1, '/about': 1, '/ledger': 1, '/signals': 1 };
+        var map = { '/nominees': 1, '/hearings': 1, '/vote': 1, '/methodology': 1, '/fallback': 1, '/about': 1, '/ledger': 1 };;
         var m = p.match(/^\/nominee\/([a-z0-9-]+)$/);
         if (m) { location.replace('/#/nominee/' + m[1]); }
         else if (map[p]) { location.replace('/#' + p); }
