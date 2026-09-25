@@ -25,7 +25,7 @@ function Chrome({ children }: { children: ReactNode }) {
       <header className="chrome">
         <div className="chrome-inner">
           <div className="breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <img src="/vetta-emblem.png" alt="Vetta emblem" width="26" height="26" style={{ display: 'block', borderRadius: 4 }} />
+            <img src="/vetta-emblem.png" alt="Vetta emblem" width="108" height="40" style={{ display: 'block' }} />
             <span className="here">Vetta</span>
           </div>
           <nav className="acts" aria-label="Vetta — main navigation">
