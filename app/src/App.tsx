@@ -21,8 +21,8 @@ function Chrome({ children }: { children: ReactNode }) {
   // The three acts read as one sequence: phase above, subject below.
   const acts = [
     { to: '/', no: '', phase: 'Home', label: 'About', aria: 'About VETTA' },
-    { to: '/nominees', no: '01', phase: 'BEFORE', label: 'THE VOICE', aria: 'Act 1, before: the voice' },
-    { to: '/hearings', no: '02', phase: 'DURING', label: 'THE VOTE', aria: 'Act 2, during: the vote' },
+    { to: '/nominees', no: '01', phase: 'BEFORE', label: 'VOICE', aria: 'Act 1, before: the voice' },
+    { to: '/hearings', no: '02', phase: 'DURING', label: 'VOTE', aria: 'Act 2, during: the vote' },
     { to: '/vote', no: '03', phase: 'AFTER', label: 'VERDICT', aria: 'Act 3, after: the verdict' },
     { to: '/ledger', no: '', phase: 'The data', label: 'Ledger', aria: 'Ledger, the full data', cta: true },
   ];
