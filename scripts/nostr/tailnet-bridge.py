@@ -9,7 +9,7 @@ Usage:  python3 scripts/nostr/tailnet-bridge.py [listen_port=7779]
 """
 import asyncio, socket, sys
 
-LISTEN_IP = "100.97.35.100"          # jimmys-mac-mini on the tailnet
+LISTEN_IP = os.environ.get("BRIDGE_LISTEN_IP", "127.0.0.1")  # set to this host's tailnet address
 LISTEN_PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 7779
 TARGET = ("127.0.0.1", 7778)
 

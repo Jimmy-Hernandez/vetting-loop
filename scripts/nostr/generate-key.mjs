@@ -7,7 +7,7 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const REPO = '/Users/jimmy/Desktop/vetting-loop';
+const REPO = fileURLToPath(new URL('../..', import.meta.url)); // repo root, wherever it is cloned
 const OUT = join(REPO, 'scripts', 'nostr', 'vetting-loop-key.json');
 
 if (existsSync(OUT)) {

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # run-relay-macmini.sh — spin up the vetting-loop crash-demo relay (strfry).
-# INDEPENDENT of SatPicks: new container name 'vetting-relay', own volume,
-# loopback port 7778. Does NOT touch the running satpicks-relay container.
+# Fully independent: own container name 'vetting-relay', own volume,
+# loopback port 7778. Does NOT touch any unrelated relay container on this host.
 #
 # Usage:
 #   scripts/nostr/run-relay-macmini.sh            # start (idempotent)
@@ -23,9 +23,9 @@ case "${1:-}" in
   *) echo "Usage: $0 [--down]"; exit 2 ;;
 esac
 
-# Safety: confirm we are NOT operating on the satpicks relay.
-if docker ps --format '{{.Names}}' | grep -Fx 'satpicks-relay' >/dev/null; then
-  echo "NOTE: satpicks-relay is running and will NOT be touched."
+# Safety: confirm we are NOT operating on an unrelated relay container.
+if docker ps --format '{{.Names}}' | grep -Fxv 'vetting-relay' | grep -q 'relay' >/dev/null; then
+  echo "NOTE: another relay container is running and will NOT be touched."
 fi
 
 if docker ps --format '{{.Names}}' | grep -Fxq "$CONTAINER"; then

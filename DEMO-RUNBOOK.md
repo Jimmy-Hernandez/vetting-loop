@@ -18,18 +18,22 @@
 > ```
 > Two gates on purpose: an exported env var alone is too easy to leave set in a shell, and this lane writes to third-party public relays once it runs.
 >
-> **Already-published events:** a pre-existing test record (22 records × 3 publishes = 66 events) sits on the LOCAL relay only (127.0.0.1, not reachable off-machine). A partial copy escaped to `relay.damus.io` earlier and is **public** — that copy cannot be withdrawn by switching a flag; it needs a NIP-09 deletion request. Flagged for the owner's decision.
+> **Already-published events: PURGED** (verified 2026-09-25).
+> - **Public relays:** 10 events had reached `relay.damus.io`. A NIP-09 deletion request was accepted, and a re-query now returns **0 events** from our key. `nos.lol` returns 0. Re-inventory any time with `node scripts/nostr/purge-events.mjs` (add `--confirm` to send deletion requests).
+> - **Local relay:** database wiped, container stopped. A backup of the purged DB is kept at `~/vetting-relay/purged-db-backup-*.tar.gz` for the audit; delete it once the audit closes.
+> - **Nothing from this project is currently published anywhere.**
 
 Staged demo: crash the local web server, show the record still reachable via
 Nostr relays. Three copies exist at the end: (1) Mac mini relay `vetting-relay`
 on 127.0.0.1:7778, (2) Terry's Raspberry Pi relay, (3) a public relay
 (default: wss://relay.damus.io — swap for any public relay you prefer).
 
-**SatPicks boundary:** this demo uses ONLY the `vetting-relay` container and
-the standalone keypair in `scripts/nostr/vetting-loop-key.json` (gitignored).
-Never touch `satpicks-relay`, satpicks keys, or relay.satpicks.com.
+**Boundary:** this demo uses ONLY the `vetting-relay` container and the standalone
+keypair in `scripts/nostr/vetting-loop-key.json` (gitignored, never committed).
+An unrelated relay container belonging to a separate project may exist on this host —
+it is out of scope. Do not touch containers you did not create for this demo.
 
-Absolute paths throughout; all commands run from `/Users/jimmy/Desktop/vetting-loop`.
+All commands run from the repository root.
 
 ---
 
@@ -129,7 +133,7 @@ Three independent copies. Demo complete.
   `*.key.json` are gitignored.
 - App-side network code is subscribe/fetch ONLY — nothing in `app/src` publishes.
 - The `vetting-relay` container is disposable (`--down`), volume retained.
-- SatPicks infra is off-limits for this demo.
+- Unrelated infrastructure on this host is off-limits for this demo.
 
 
 ## Server toggle (MacBook DSH launchd — prevents auto-respawn during the kill step)

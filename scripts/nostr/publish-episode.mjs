@@ -6,9 +6,10 @@ import { finalizeEvent, nip19 } from 'nostr-tools';
 import { WebSocket } from 'ws';
 import { assertPublishEnabled } from './nostr-config.mjs';
 import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
 
-const REPO = '/Users/jimmy/Desktop/vetting-loop';
+const REPO = fileURLToPath(new URL('../..', import.meta.url)); // repo root, wherever it is cloned
 const EPISODE = join(REPO, 'app', 'public', 'data', 'episode.json');
 const DIVISIONS = join(REPO, 'app', 'public', 'data', 'divisions.json');
 const HANSARD = join(REPO, 'app', 'public', 'data', 'hansard-excerpts.json');
