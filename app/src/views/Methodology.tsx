@@ -70,6 +70,10 @@ export default function Methodology() {
               <span className="cite">
                 <b>Access</b> mzalendo.com voting-patterns; per-MP CSVs mirrored in this repo at data/mzalendo/
               </span>
+              <span className="cite">
+                <b>Licence</b> Data courtesy of <a href="https://mzalendo.com" target="_blank" rel="noopener noreferrer">Mzalendo</a>,
+                used under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
+              </span>
             </div>
           </li>
           <li>

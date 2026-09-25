@@ -18,7 +18,7 @@ function Chrome({ children }: { children: ReactNode }) {
     { to: '/nominees', no: 'Act 1', label: 'Before' },
     { to: '/hearings', no: 'Act 2', label: 'During' },
     { to: '/vote', no: 'Act 3', label: 'After' },
-    { to: '/ledger', no: 'Record', label: 'Ledger' },
+    { to: '/ledger', no: 'The record', label: 'Ledger', cta: true },
   ];
   return (
     <>
@@ -30,7 +30,7 @@ function Chrome({ children }: { children: ReactNode }) {
           </Link>
           <nav className="acts" aria-label="Main navigation">
             {acts.map((a) => (
-              <NavLink key={a.to} to={a.to} end aria-current={loc.pathname === a.to ? 'page' : undefined}>
+              <NavLink key={a.to} to={a.to} end className={a.cta ? 'act-cta' : undefined} aria-current={loc.pathname === a.to ? 'page' : undefined}>
                 <span className="no">{a.no || 'Home'}</span>
                 {a.label}
               </NavLink>
@@ -56,7 +56,7 @@ function Chrome({ children }: { children: ReactNode }) {
         </div>
         <div className="fin-base">
           <span>All claims source-linked<span className="dot">·</span>Non-partisan<span className="dot">·</span>Civic tech prototype</span>
-          <span>Parliamentary data via <a href="https://mzalendo.com" target="_blank" rel="noopener noreferrer">Mzalendo</a> (CC BY-SA)</span>
+          <Link to="/methodology">Sources and data credits</Link>
         </div>
       </footer>
     </>
