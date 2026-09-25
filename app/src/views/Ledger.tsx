@@ -43,7 +43,7 @@ function daysBetween(a: string, b: string): number | null {
   return Math.round((db.getTime() - da.getTime()) / 86400000);
 }
 
-export default function Ledger() {
+export function LedgerRecord({ embedded = false }: { embedded?: boolean } = {}) {
   const [ledger, setLedger] = useState<TerryLedger | null>(null);
   const [ep, setEp] = useState<Episode | null>(null);
   const [q, setQ] = useState('');
@@ -109,13 +109,20 @@ export default function Ledger() {
   if (!ledger) return <main className="doc" />;
 
   return (
-    <main className="doc">
+    <>
       <header className="masthead">
         <p className="kicker"><span className="rule"></span>13th Parliament · Kenya</p>
-        <h1>
-          <span style={{ color: 'var(--red)' }}>{assertPositive(totalAppointments, 'appointments')} nominations.</span>{' '}
-          {houseRejections === 1 ? 'One rejection.' : <>{houseRejections} rejections.</>}
-        </h1>
+        {embedded ? (
+          <h2 style={{ margin: 0 }}>
+            <span style={{ color: 'var(--red)' }}>{assertPositive(totalAppointments, 'appointments')} nominations.</span>{' '}
+            {houseRejections === 1 ? 'One rejection.' : <>{houseRejections} rejections.</>}
+          </h2>
+        ) : (
+          <h1>
+            <span style={{ color: 'var(--red)' }}>{assertPositive(totalAppointments, 'appointments')} nominations.</span>{' '}
+            {houseRejections === 1 ? 'One rejection.' : <>{houseRejections} rejections.</>}
+          </h1>
+        )}
         <p className="standfirst">
           Parliament vets every Cabinet Secretary and Principal Secretary before they take office. This tool
           shows what that gate actually does. 93 people carry 111 nominations across ten vetting cycles
@@ -274,6 +281,15 @@ export default function Ledger() {
         (KITT lane). Combined from two independent builds (Vetta × Vetting Record). Verification tiers: ○ compiled · ◐ cross-checked ·
         ✓ gazette-verified.
       </p>
+    </>
+  );
+}
+
+// The ledger page: masthead + the record itself.
+export default function Ledger() {
+  return (
+    <main className="doc">
+      <LedgerRecord />
     </main>
   );
 }

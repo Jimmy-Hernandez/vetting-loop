@@ -167,7 +167,7 @@ export default function Methodology() {
           Patterns in the appointment record are flagged by <b>deterministic rules</b>: published,
           re-runnable by hand, no model guesses. A signal flags a pattern in the <i>process</i> worth
           scrutiny; it is never a finding about a person's conduct, and nothing here scores a real person.
-          Each rule's matches are shown on the <Link to="/ledger">people ledger</Link>.
+          Each rule's matches are shown on the <Link to="/vote#ledger-record">people record</Link>.
         </p>
         <ol style={{ marginTop: 'var(--s4)', paddingLeft: 'var(--s6)' }}>
           {signals.map((sig) => (

@@ -46,7 +46,7 @@ export default function About() {
       <div className="hero-inner">
         <div className="hero-copy">
           <p className="hero-kicker"><span className="rule"></span>Kenya · Parliamentary vetting · 2022 to 2025</p>
-          <h1 id="hero-title">Impunity begins at confirmation<span className="stop">.</span></h1>
+          <h1 id="hero-title">Vetta. Vetting in action<span className="stop">.</span></h1>
           <p className="hero-lede">
             VETTA closes the loop between citizens and Parliament before the hearing, during, and after the vote on
             infrastructure that already exists. We’ll bring the receipts.
@@ -322,7 +322,7 @@ export default function About() {
           <h2>Beyond the August 2024 episode</h2>
         </div>
         <div className="acts-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
-          <Link className="card" to="/ledger">
+          <Link className="card" to="/vote#ledger-record">
             <span className="act-no">Every person</span>
             <h3>The people ledger</h3>
             <p>{ledger ? `${nPeople} people, ${allAppointments.length} appointments` : 'Every person and appointment'}, verification tiers on every entry.</p>

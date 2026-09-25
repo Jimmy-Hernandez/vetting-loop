@@ -24,7 +24,7 @@ function Chrome({ children }: { children: ReactNode }) {
     { to: '/nominees', no: '01', phase: 'BEFORE', label: 'VOICE', aria: 'Act 1, before: the voice' },
     { to: '/hearings', no: '02', phase: 'DURING', label: 'VOTE', aria: 'Act 2, during: the vote' },
     { to: '/vote', no: '03', phase: 'AFTER', label: 'VERDICT', aria: 'Act 3, after: the verdict' },
-    { to: '/ledger', no: '', phase: 'The data', label: 'Ledger', aria: 'Ledger, the full data', cta: true },
+    { to: '/vote#ledger-record', no: '', phase: 'The data', label: 'Record', aria: 'The full people record, on the verdict page', cta: true },
   ];
   return (
     <>
@@ -49,7 +49,7 @@ function Chrome({ children }: { children: ReactNode }) {
         <div className="fin">
           <div className="fin-brand">
             <img src="/brand/vetta-lockup-reverse.svg" alt="VETTA" width="113" height="22" />
-            <p>The public record of parliamentary vetting. Impunity begins at confirmation.</p>
+            <p>The public record of parliamentary vetting. Vetting in action.</p>
           </div>
           <nav className="fin-links" aria-label="Footer">
             {/* Only what the header does not already carry: how the record is built and kept honest. */}

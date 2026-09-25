@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import type { DivisionsFile, Episode, HansardExcerpt } from '../types';
 import { loadDivisions, loadEpisode, loadHansardExcerpts, placeholderDivisions } from '../data';
 import Triptych from './Triptych';
+import { LedgerRecord } from './Ledger';
 import { Link } from 'react-router-dom';
 
 export default function Vote() {
@@ -38,6 +39,19 @@ export default function Vote() {
       </header>
 
       {/* ============ SIGNATURE TRIPTYCH: flag → question → outcome ============ */}
+      {/* The people ledger, relocated from the retired /ledger route to the top of the verdict page. */}
+      <section className="sec" id="ledger-record" style={{ marginTop: 'var(--s8)' }}>
+        <div className="sechead">
+          <span className="no">00 - The full record</span>
+          <h2>The people record, in one table</h2>
+          <p className="dek">
+            Every person, every nomination and every computed signal, in one place. Filter by office type or
+            signal; each row links through to the hearing record where one exists.
+          </p>
+        </div>
+        <LedgerRecord embedded />
+      </section>
+
       <Triptych ep={ep} excerpts={hx} hansardDate={v.hansard_date} hansardLine={v.hansard_line} />
 
       <section className="sec" style={{ marginTop: 'var(--s8)' }}>
@@ -136,7 +150,7 @@ export default function Vote() {
           <section className="prior-cycle" style={{ margin: 'var(--s6) 0' }}>
         <p style={{ margin: 0 }}>
           This episode is one batch of <b>93 nominations across 10 vetting cycles</b> since 2022.{' '}
-          <Link to="/ledger" style={{ textDecoration: 'underline' }}>View the full people ledger →</Link>
+          <a href="#ledger-record" style={{ textDecoration: 'underline' }}>Jump to the full people record →</a>
         </p>
       </section>
 </main>
