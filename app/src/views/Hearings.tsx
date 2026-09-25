@@ -44,18 +44,18 @@ export default function Hearings() {
           <span className="no">The batch record</span>
           <h2>Two channels, one hearing</h2>
         </div>
-        <div style={{ display: 'flex', gap: 'var(--s6)', flexWrap: 'wrap', marginTop: 'var(--s4)' }}>
-          <div>
-            <div style={{ fontSize: '2rem', fontWeight: 700 }}>{totAsked}</div>
-            <div style={{ opacity: 0.75 }}>questions the committee asked</div>
+        <div className="outcome" role="list" aria-label="Batch hearing figures, computed from the report">
+          <div className="cell" role="listitem">
+            <div className="fig">{totAsked}</div>
+            <div className="cap">questions the committee asked</div>
           </div>
-          <div>
-            <div style={{ fontSize: '2rem', fontWeight: 700 }}>{totMem}</div>
-            <div style={{ opacity: 0.75 }}>memoranda observations recorded ({headers}/20 with a formal section)</div>
+          <div className="cell" role="listitem">
+            <div className="fig">{totMem}</div>
+            <div className="cap">memoranda observations ({headers}/20 formal)</div>
           </div>
-          <div>
-            <div style={{ fontSize: '2rem', fontWeight: 700 }}>{totIgnored}</div>
-            <div style={{ opacity: 0.75 }}>citizen affidavit clauses preserved</div>
+          <div className="cell" role="listitem">
+            <div className="fig">{totIgnored}</div>
+            <div className="cap">citizen affidavit clauses preserved</div>
           </div>
         </div>
         <p className="standfirst" style={{ marginTop: 'var(--s4)' }}>

@@ -77,6 +77,7 @@ export default function Nominees() {
         <div className="nomgrid">
           {nom.map((n) => {
             const c = countsFor(n);
+            const memHeaderFound = !!(n.memoranda?.header_found);
             return (
               <Link key={n.id} to={`/nominee/${n.slug || n.id}`} className={`nomcard${n.status === 'rejected' ? ' rejected' : ''}`}>
                 <span className={`badge ${n.status}`}>{n.status}</span>
@@ -84,9 +85,11 @@ export default function Nominees() {
                 <h3>{n.name}</h3>
                 <p className="portfolio">{n.portfolio}</p>
                 <div className="counts">
-                  <span className="fl"><b>{c.flags}</b> flags</span>
-                  <span><b>{c.positive}</b> positive</span>
-                  <span><b>{c.memoranda}</b> memoranda</span>
+                  <span className="fl" title={c.flags === 0 ? 'No documented flags in sources reviewed' : ''}><b>{c.flags}</b> flags</span>
+                  <span title={c.positive === 0 ? 'No positive findings recorded' : ''}><b>{c.positive}</b> positive</span>
+                  <span title={memHeaderFound ? undefined : 'No formal memoranda section in the committee report — inline narrative only'}>
+                    <b>{memHeaderFound ? c.memoranda : '—'}</b> memoranda
+                  </span>
                   {n.subsequentEvents?.length ? <span className="ev-dot" title="Has post-vote events" aria-label="Has post-vote events"></span> : null}
                 </div>
               </Link>
