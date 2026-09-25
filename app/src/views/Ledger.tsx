@@ -92,7 +92,6 @@ export default function Ledger() {
   const approvedAppointments = allAppointments.filter((a) => a.outcome === 'approved').length;
   const gateCycleIds = new Set((ledger?.cycles ?? []).filter((c) => c.gate).map((c) => c.id));
   const houseRejections = allAppointments.filter((a) => a.outcome === 'rejected' && gateCycleIds.has(a.cycle)).length;
-  const nPeople = peopleRaw.length;
   const assertPositive = (n: number, what: string) => { if (n <= 0) throw new Error(`ledger computation returned ${n} for ${what}`); return n; };
   const returnees = nom.filter((n) => n.priorRole?.priorRoleType === 'cs_returnee' || n.priorRole?.priorRoleType === 'constitutional_office').length;
   const vacancyDays = daysBetween(GENDER_VACANCY_FROM, GENDER_VACANCY_TO);
@@ -114,7 +113,7 @@ export default function Ledger() {
       <header className="masthead">
         <p className="kicker"><span className="rule"></span>13th Parliament · Kenya</p>
         <h1>
-          <span style={{ color: 'var(--red)' }}>{assertPositive(nPeople, 'people')} nominations.</span>{' '}
+          <span style={{ color: 'var(--red)' }}>{assertPositive(totalAppointments, 'appointments')} nominations.</span>{' '}
           {houseRejections === 1 ? 'One rejection.' : <>{houseRejections} rejections.</>}
         </h1>
         <p className="standfirst">
