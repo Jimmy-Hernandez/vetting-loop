@@ -15,6 +15,8 @@ export default function About() {
   const gateCycleIds = new Set((ledger?.cycles ?? []).filter((c) => c.gate).map((c) => c.id));
   const houseRejections = allAppointments.filter((x) => x.outcome === 'rejected' && gateCycleIds.has(x.cycle)).length;
   const assertPositive = (n: number, w: string) => { if (n <= 0) throw new Error('computed ' + n + ' for ' + w); return n; };
+  // Figures render as an honest dash until the ledger has loaded; the assert applies to loaded data only.
+  const fig = (n: number, w: string) => (ledger ? assertPositive(n, w) : '—');
 
   return (
     <main className="doc">
@@ -30,17 +32,17 @@ export default function About() {
       </header>
 
       <section className="sec" style={{ marginTop: 'var(--s6)' }}>
-        <div className="outcome" role="list" aria-label="The record at a glance">
+        <div className="outcome outcome-4" role="list" aria-label="The record at a glance">
           <div className="cell" role="listitem">
-            <div className="fig" style={{ color: 'var(--red)' }}>{assertPositive(nPeople, 'people')}</div>
+            <div className="fig" style={{ color: 'var(--red)' }}>{fig(nPeople, 'people')}</div>
             <div className="cap">People in the record</div>
           </div>
           <div className="cell" role="listitem">
-            <div className="fig">{allAppointments.length}</div>
+            <div className="fig">{fig(allAppointments.length, 'appointments')}</div>
             <div className="cap">Nominations across ten cycles</div>
           </div>
           <div className="cell" role="listitem">
-            <div className="fig">{houseRejections === 1 ? 1 : houseRejections}</div>
+            <div className="fig">{ledger ? houseRejections : '—'}</div>
             <div className="cap">{houseRejections === 1 ? 'Gate rejection' : 'Gate rejections'}</div>
           </div>
           <div className="cell" role="listitem">
@@ -266,7 +268,7 @@ export default function About() {
           <Link className="card" to="/ledger">
             <span className="act-no">Every person</span>
             <h3>The people ledger</h3>
-            <p>93 people, 111 appointments, verification tiers on every entry.</p>
+            <p>{ledger ? `${nPeople} people, ${allAppointments.length} appointments` : 'Every person and appointment'}, verification tiers on every entry.</p>
             <span className="go">Open the ledger →</span>
           </Link>
           <Link className="card" to="/methodology">

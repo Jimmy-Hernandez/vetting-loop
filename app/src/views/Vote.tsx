@@ -1,3 +1,4 @@
+import ExtLink from '../ExtLink';
 import { useEffect, useState } from 'react';
 import type { DivisionsFile, Episode, HansardExcerpt } from '../types';
 import { loadDivisions, loadEpisode, loadHansardExcerpts, placeholderDivisions } from '../data';
@@ -86,9 +87,9 @@ export default function Vote() {
             </div>
             <p className="db-foot">
               Recorded per-MP.{' '}
-              {fb.result_url && <a href={fb.result_url}>Division result</a>}
-              {fb.per_mp_csv_url && <> · <a href={fb.per_mp_csv_url}>Per-MP CSV</a></>}
-              {' '}· <a href="https://mzalendo.com/research-and-knowledge/voting-patterns/na/1/">Voting patterns</a>
+              {fb.result_url && <ExtLink href={fb.result_url}>Division result</ExtLink>}
+              {fb.per_mp_csv_url && <> · <ExtLink href={fb.per_mp_csv_url}>Per-MP CSV</ExtLink></>}
+              {' '}· <ExtLink href="https://mzalendo.com/research-and-knowledge/voting-patterns/na/1/">Voting patterns</ExtLink>
             </p>
           </div>
         ) : (

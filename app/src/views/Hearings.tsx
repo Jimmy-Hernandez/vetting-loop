@@ -71,7 +71,8 @@ export default function Hearings() {
           <span className="no">Per nominee</span>
           <h2>The hearing record, nominee by nominee</h2>
         </div>
-        <table className="led-table" style={{ marginTop: 'var(--s4)' }}>
+        <div className="led-table-wrap" style={{ marginTop: 'var(--s4)' }}>
+        <table className="led-table">
           <thead>
             <tr>
               <th>Nominee</th>
@@ -100,6 +101,7 @@ export default function Hearings() {
             ))}
           </tbody>
         </table>
+        </div>
         <p className="standfirst" style={{ marginTop: 'var(--s4)' }}>
           Why the memoranda column matters: the Committee invited the public to submit objections before
           the hearings. Where its report preserves those submissions formally, you can read what citizens

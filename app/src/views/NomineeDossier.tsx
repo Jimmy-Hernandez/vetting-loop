@@ -1,3 +1,4 @@
+import ExtLink from '../ExtLink';
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import type { Episode, Nominee } from '../types';
@@ -114,7 +115,7 @@ export default function NomineeDossier() {
               <p className="q">“{epi.q}”</p>
               <p className="attr">
                 — {epi.attr}
-                {epi.url && <> · <a href={epi.url}>{epi.url}</a></>}
+                {epi.url && <> · <ExtLink href={epi.url} /></>}
               </p>
             </blockquote>
           </div>
@@ -136,7 +137,7 @@ export default function NomineeDossier() {
                   <p>“{f.quote}”</p>
                   <span className="cite">
                     <b>Source</b> {f.publisher}{f.date ? ` · ${f.date}` : ''}
-                    {f.url && <> · <a href={f.url}>{f.url}</a></>}
+                    {f.url && <> · <ExtLink href={f.url} /></>}
                     {f.legal_status && <> · <b>Legal status</b> {f.legal_status}</>}
                   </span>
                 </div>
@@ -190,18 +191,20 @@ export default function NomineeDossier() {
           <div className="qcols">
             <h4>Asked ({asked.length})</h4>
             {asked.length === 0 ? <Empty>No questions recorded.</Empty> : (
+              <>
+              <p className="kicker"><span className="rule"></span>Act 2 · During — the hearing record · <Link to="/hearings">batch view</Link></p>
               <ul>
-                <p className="kicker"><span className="rule"></span>Act 2 · During — the hearing record · <Link to="/hearings">batch view</Link></p>
-            {asked.map((q, i) => (
+                {asked.map((q, i) => (
                   <li key={i}>
                     {q.text}
                     <br />
                     <span className="src-chip">{q.source === 'mp' ? `MP${q.mp_name ? ' · ' + q.mp_name : ''}` : 'Committee'}</span>
-                    {q.source_url && <a href={q.source_url}> source</a>}
+                    {q.source_url && <> <ExtLink href={q.source_url}>source</ExtLink></>}
                     {q.line ? <span className="src-chip">line {q.line}</span> : null}
                   </li>
                 ))}
               </ul>
+              </>
             )}
           </div>
           <div className="qcols">
@@ -215,7 +218,7 @@ export default function NomineeDossier() {
                     {q.kind === 'affidavit_clause' && <span className="src-chip citizen">citizen memorandum</span>}
                     {!q.kind && <span className="src-chip citizen">citizen</span>}
                     {q.needs_verification && <span className="src-chip unverified">unverified</span>}
-                    {q.source_url && <a href={q.source_url}> source</a>}
+                    {q.source_url && <> <ExtLink href={q.source_url}>source</ExtLink></>}
                     {q.line ? <span className="src-chip">line {q.line}</span> : null}
                   </li>
                 ))}

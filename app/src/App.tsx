@@ -22,28 +22,41 @@ function Chrome({ children }: { children: ReactNode }) {
   ];
   return (
     <>
+      <a className="skip" href="#main">Skip to content</a>
       <header className="chrome">
         <div className="chrome-inner">
-          <div className="breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <img src="/vetta-emblem.png" alt="Vetta emblem" width="72" height="40" style={{ display: 'block' }} />
-            <span className="here">Vetta</span>
-          </div>
-          <nav className="acts" aria-label="Vetta — main navigation">
+          <Link to="/" className="brand" aria-label="VETTA, home">
+            <img src="/brand/vetta-lockup-reverse.svg" alt="VETTA" width="123" height="24" />
+          </Link>
+          <nav className="acts" aria-label="Main navigation">
             {acts.map((a) => (
-              <NavLink key={a.to} to={a.to} aria-current={loc.pathname === a.to ? 'page' : undefined}>
-                <span className="no">{a.no}</span>
+              <NavLink key={a.to} to={a.to} end aria-current={loc.pathname === a.to ? 'page' : undefined}>
+                <span className="no">{a.no || 'Start'}</span>
                 {a.label}
               </NavLink>
             ))}
-
           </nav>
         </div>
       </header>
-      {children}
+      <div id="main">{children}</div>
       <footer className="sitefoot">
         <div className="fin">
-          <span>Vetta — a civic tech tool<span className="dot">·</span>Impunity begins at confirmation.</span>
-          <span>All claims source-linked<span className="dot">·</span>Non-partisan<span className="dot">·</span><Link to="/">About</Link><span className="dot">·</span><Link to="/methodology">Methodology</Link></span>
+          <div className="fin-brand">
+            <img src="/brand/vetta-lockup-reverse.svg" alt="VETTA" width="113" height="22" />
+            <p>The public record of parliamentary vetting. Impunity begins at confirmation.</p>
+          </div>
+          <nav className="fin-links" aria-label="Footer">
+            <Link to="/">About</Link>
+            <Link to="/nominees">Nominees</Link>
+            <Link to="/hearings">Hearings</Link>
+            <Link to="/vote">The vote</Link>
+            <Link to="/ledger">Ledger</Link>
+            <Link to="/methodology">Methodology</Link>
+          </nav>
+        </div>
+        <div className="fin-base">
+          <span>All claims source-linked<span className="dot">·</span>Non-partisan<span className="dot">·</span>Civic tech prototype</span>
+          <span>Parliamentary data via <a href="https://mzalendo.com" target="_blank" rel="noopener noreferrer">Mzalendo</a> (CC BY-SA)</span>
         </div>
       </footer>
     </>

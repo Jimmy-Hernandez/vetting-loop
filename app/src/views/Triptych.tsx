@@ -72,7 +72,7 @@ export default function Triptych({
             <div className="tfoot">
               <p className="src">
                 Source: {flag.publisher}, {flag.date} —{' '}
-                <a href={flag.url} target="_blank" rel="noreferrer">{flag.url.replace(/^https?:\/\/(www\.)?/, '').slice(0, 64)}…</a>
+                <a href={flag.url} target="_blank" rel="noopener noreferrer">{flag.url.replace(/^https?:\/\/(www\.)?/, '').slice(0, 64)}…</a>
               </p>
             </div>
           )}
@@ -87,7 +87,7 @@ export default function Triptych({
           <div className="tbody">
             {vote ? (
               <>
-                <div className="hansard">
+                <div className="hansard-hero">
                   <p className="vote-line">
                     <span className="speaker">{vote.ex.speaker} · putting the Question</span>
                     {vote.line}
@@ -105,7 +105,7 @@ export default function Triptych({
             <div className="tfoot">
               <p className="src">
                 Source: National Assembly Official Report (Hansard), {hansardDate} —{' '}
-                <a href={voteUrl} target="_blank" rel="noreferrer">mzalendo.com/…/hansard/wednesday-7th-august-2024-afternoon-sitting</a>
+                <a href={voteUrl} target="_blank" rel="noopener noreferrer">mzalendo.com/…/hansard/wednesday-7th-august-2024-afternoon-sitting</a>
               </p>
             </div>
           )}
