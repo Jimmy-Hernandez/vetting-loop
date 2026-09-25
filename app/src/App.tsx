@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import { useEffect } from 'react';
 import Hearings from './views/Hearings';
@@ -31,7 +31,7 @@ function Chrome({ children }: { children: ReactNode }) {
           <nav className="acts" aria-label="Main navigation">
             {acts.map((a) => (
               <NavLink key={a.to} to={a.to} end aria-current={loc.pathname === a.to ? 'page' : undefined}>
-                <span className="no">{a.no || 'Start'}</span>
+                <span className="no">{a.no || 'Home'}</span>
                 {a.label}
               </NavLink>
             ))}
@@ -75,7 +75,7 @@ function Fallback() {
 
 export default function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Chrome>
         <Routes>
           <Route path="/" element={<About />} />
@@ -91,6 +91,6 @@ export default function App() {
           <Route path="*" element={<Fallback />} />
         </Routes>
       </Chrome>
-    </HashRouter>
+    </BrowserRouter>
   );
 }

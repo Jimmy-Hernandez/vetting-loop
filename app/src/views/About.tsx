@@ -1,7 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { TerryLedger } from '../terryTypes';
 import { loadTerryLedger } from '../data';
+
+// Count-up for hero figures. Renders the final value immediately under reduced motion or before JS timing.
+function CountUp({ value }: { value: number | string | null }) {
+  const [shown, setShown] = useState<number | string>(typeof value === 'number' ? 0 : value ?? '…');
+  const raf = useRef(0);
+  useEffect(() => {
+    if (typeof value !== 'number') { setShown(value ?? '…'); return; }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setShown(value); return; }
+    const t0 = performance.now(), dur = 1400;
+    const tick = (t: number) => {
+      const k = Math.max(0, Math.min(1, (t - t0) / dur));
+      setShown(Math.round(value * (1 - Math.pow(1 - k, 3))));
+      if (k < 1) raf.current = requestAnimationFrame(tick);
+    };
+    raf.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf.current);
+  }, [value]);
+  return <>{shown}</>;
+}
 
 // /about - the tool's own page. Approved copy, verbatim (brief 2026-09-24).
 // Static document register: same tokens, same .doc conventions as Methodology.
@@ -18,45 +37,73 @@ export default function About() {
   // Figures render as an honest dash until the ledger has loaded; the assert applies to loaded data only.
   const fig = (n: number, w: string) => (ledger ? assertPositive(n, w) : 'n/a');
 
-  return (
-    <main className="doc">
-      <header className="masthead">
-        <p className="kicker"><span className="rule"></span>About the tool</p>
-        <h1>Vetta: the public record of parliamentary vetting</h1>
-        <p className="standfirst">
-          Vetta is a public register of parliamentary vetting: who was nominated for office, what citizens
-          submitted, what the committee asked, and how each decision was made. Every claim is sourced to a
-          document; every number can be checked. It is built to run as a durable public instrument, independent of any single host.
-        </p>
-        <div className="close" aria-hidden="true"></div>
-      </header>
+  const hansardUrl = 'https://mzalendo.com/democracy-tools/hansard/wednesday-7th-august-2024-afternoon-sitting-1728/';
 
-      <section className="sec" style={{ marginTop: 'var(--s6)' }}>
-        <div className="outcome outcome-4" role="list" aria-label="The record at a glance">
-          <div className="cell" role="listitem">
-            <div className="fig" style={{ color: 'var(--red)' }}>{fig(nPeople, 'people')}</div>
-            <div className="cap">People in the record</div>
-          </div>
-          <div className="cell" role="listitem">
-            <div className="fig">{fig(allAppointments.length, 'appointments')}</div>
-            <div className="cap">Nominations across ten cycles</div>
-          </div>
-          <div className="cell" role="listitem">
-            <div className="fig">{ledger ? houseRejections : 'n/a'}</div>
-            <div className="cap">{houseRejections === 1 ? 'Gate rejection' : 'Gate rejections'}</div>
-          </div>
-          <div className="cell" role="listitem">
-            <div className="fig">10 cycles</div>
-            <div className="cap">2022 to 2025, CS · PS · envoys</div>
+  return (
+    <>
+    <section className="hero" aria-labelledby="hero-title">
+      <div className="hero-inner">
+        <div className="hero-copy">
+          <p className="hero-kicker"><span className="rule"></span>Kenya · Parliamentary vetting · 2022 to 2025</p>
+          <h1 id="hero-title">Impunity begins at confirmation<span className="stop">.</span></h1>
+          <p className="hero-lede">
+            VETTA is the public record of parliamentary vetting: who was nominated, what citizens submitted,
+            what the committee asked, and how each decision was made. Every claim is sourced.
+          </p>
+          <div className="hero-cta">
+            <Link className="btn btn-primary" to="/nominees">Open the nominee register <span aria-hidden="true">→</span></Link>
+            <Link className="btn btn-ghost" to="/vote">See how the vote went</Link>
           </div>
         </div>
-        <p className="standfirst" style={{ marginTop: 'var(--s6)' }}>
-          Parliament must vet every Cabinet Secretary and Principal Secretary before they take office.
-          Vetta is the public record of how that gate actually behaves: before the hearing, during it,
-          and after the vote.
-        </p>
-      </section>
+        <figure className="hero-exhibit">
+          <div className="ex-meta"><span>Exhibit A</span><span>Hansard · National Assembly · 7 Aug 2024</span></div>
+          <blockquote>(Question put and agreed&nbsp;to)</blockquote>
+          <div className="ex-rule" aria-hidden="true"></div>
+          <figcaption>
+            The 19 approvals in August 2024 passed on a voice vote. The record shows only this line.{' '}
+            <a href={hansardUrl} target="_blank" rel="noopener noreferrer">Read the Hansard ↗</a>
+          </figcaption>
+        </figure>
+      </div>
+      <div className="hero-stats" role="list" aria-label="The record at a glance">
+        <div className="hstat" role="listitem">
+          <div className="fig red"><CountUp value={ledger ? fig(nPeople, 'people') : null} /></div>
+          <div className="cap">People in the record</div>
+        </div>
+        <div className="hstat" role="listitem">
+          <div className="fig"><CountUp value={ledger ? fig(allAppointments.length, 'appointments') : null} /></div>
+          <div className="cap">Nominations across ten cycles</div>
+        </div>
+        <div className="hstat" role="listitem">
+          <div className="fig"><CountUp value={ledger ? houseRejections : null} /></div>
+          <div className="cap">{houseRejections === 1 ? 'Gate rejection' : 'Gate rejections'}</div>
+        </div>
+        <div className="hstat" role="listitem">
+          <div className="fig"><CountUp value={10} /></div>
+          <div className="cap">Cycles · CS · PS · envoys</div>
+        </div>
+      </div>
+    </section>
 
+    <main className="doc">
+      <section className="sec" style={{ marginTop: 'var(--s12)' }}>
+        <div className="sechead">
+          <span className="no">About the tool</span>
+          <h2>Vetta: the public record of parliamentary vetting</h2>
+        </div>
+        <div className="prose">
+          <p>
+            Vetta is a public register of parliamentary vetting: who was nominated for office, what citizens
+            submitted, what the committee asked, and how each decision was made. Every claim is sourced to a
+            document; every number can be checked. It is built to run as a durable public instrument, independent of any single host.
+          </p>
+          <p>
+            Parliament must vet every Cabinet Secretary and Principal Secretary before they take office.
+            Vetta is the public record of how that gate actually behaves: before the hearing, during it,
+            and after the vote.
+          </p>
+        </div>
+      </section>
 
       <section className="sec" style={{ marginTop: 48 }}>
         <div className="sechead">
@@ -279,7 +326,8 @@ export default function About() {
           </Link>
         </div>
       </section>
-    
-</main>
+
+    </main>
+    </>
   );
 }
