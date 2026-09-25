@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@noble/curves": "^2.0.1",
+    "@noble/hashes": "^2.0.1",
     "nostr-tools": "^2.25.2"
   }
 }
