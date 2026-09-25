@@ -77,13 +77,13 @@ export default function NomineeDossier() {
           {n.priorRole?.prior_role && (
             <div className="di"><dt>Prior role (2022 cabinet)</dt>
               <dd>
-                {n.priorRole.prior_role} — {n.priorRole.prior_portfolio}
+                {n.priorRole.prior_role}, {n.priorRole.prior_portfolio}
                 {n.priorRole.priorRoleType === 'constitutional_office' && <span className="status-note" style={{ display: 'block' }}>Constitutional office (Attorney-General), appointed alongside the cabinet rather than vetted as a CS nominee</span>}
               </dd>
             </div>
           )}
           <div className="di"><dt>Party</dt><dd>{n.party ? <span className="party">{n.party}</span> : <span className="status-note">Not recorded</span>}</dd></div>
-          <div className="di"><dt>Report reference</dt><dd>{n.reportPageRef || '—'}</dd></div>
+          <div className="di"><dt>Report reference</dt><dd>{n.reportPageRef || 'n/a'}</dd></div>
           <div className="di">
             <dt>Status</dt>
             <dd>
@@ -114,7 +114,7 @@ export default function NomineeDossier() {
             <blockquote>
               <p className="q">“{epi.q}”</p>
               <p className="attr">
-                — {epi.attr}
+                {epi.attr}
                 {epi.url && <> · <ExtLink href={epi.url} /></>}
               </p>
             </blockquote>
@@ -149,7 +149,7 @@ export default function NomineeDossier() {
 
       <Section no="§ 2" title="Positive findings" dek="Co-equal with flags. Page and OCR confidence cited.">
         {pos.length === 0 ? (
-          <Empty>No positive findings recorded — an honest empty result, not an omission.</Empty>
+          <Empty>No positive findings recorded. This is an honest empty result, not an omission.</Empty>
         ) : (
           <ol className="findings positive">
             {pos.map((p, i) => (
@@ -176,7 +176,7 @@ export default function NomineeDossier() {
               <div className="ck" key={k}>
                 <dt>{label}</dt>
                 <dd>
-                  {c ? c.outcome || '—' : <span className="none">No record in file</span>}
+                  {c ? c.outcome || 'n/a' : <span className="none">No record in file</span>}
                   {c?.page ? <span className="status-note" style={{ display: 'block', fontWeight: 500, color: '#888', fontSize: 11 }}>p. {c.page}</span> : null}
                   {c?.quote ? <span className="q">“{c.quote}”</span> : null}
                 </dd>
@@ -186,13 +186,13 @@ export default function NomineeDossier() {
         </dl>
       </Section>
 
-      <Section no="§ 4" title="The hearing" dek="What the committee asked — and what went unasked.">
+      <Section no="§ 4" title="The hearing" dek="What the committee asked, and what went unasked.">
         <div className="qa-cols">
           <div className="qcols">
             <h4>Asked ({asked.length})</h4>
             {asked.length === 0 ? <Empty>No questions recorded.</Empty> : (
               <>
-              <p className="kicker"><span className="rule"></span>Act 2 · During — the hearing record · <Link to="/hearings">batch view</Link></p>
+              <p className="kicker"><span className="rule"></span>Act 2 · During · the hearing record · <Link to="/hearings">batch view</Link></p>
               <ul>
                 {asked.map((q, i) => (
                   <li key={i}>
@@ -232,7 +232,7 @@ export default function NomineeDossier() {
         <div className="memoranda">
           {mem?.header_found ? (
             <>
-              <h4>Memoranda from the public — observed by the Committee</h4>
+              <h4>Memoranda from the public, as observed by the Committee</h4>
               <span className="mtag">{mem.count ?? 0} memoranda observed</span>
               {mem.quote && <p className="q">“{mem.quote}”</p>}
               <span className="mref">
@@ -243,7 +243,7 @@ export default function NomineeDossier() {
             </>
           ) : (
             <>
-              <span className="mtag missing">No memoranda section in the Committee report — inline narrative only.</span>
+              <span className="mtag missing">No memoranda section in the Committee report; inline narrative only.</span>
               {mem?.quote && <p className="q">“{mem.quote}”</p>}
               {mem?.hdr_line ? <span className="mref">Report L{mem.hdr_line}</span> : null}
               {mem?.needs_verification && <span className="src-chip unverified">needs verification</span>}

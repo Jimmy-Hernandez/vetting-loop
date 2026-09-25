@@ -29,7 +29,7 @@ const EV = {
   ],
   'nominee-10': [ // Ndung'u
     { date: '2025-01-17', text: 'Replaced as Information, Communication and the Digital Economy CS by William Kabogo Gitau.' },
-    { date: null, text: 'Subsequently removed from cabinet and nominated envoy to Ghana — publicly declined (tracker records this in its later-2025 changes without a date).' },
+    { date: null, text: 'Subsequently removed from cabinet and nominated envoy to Ghana; publicly declined (tracker records this in its later-2025 changes without a date).' },
   ],
   'nominee-12': [ // Mvurya
     { date: '2025-01-17', text: 'Replaced as Investments, Trade and Industry CS by Lee Kinyanjui (tracker: "Salim Mvurya (moved)").' },

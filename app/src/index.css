@@ -458,7 +458,7 @@ table.led-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:8
 .tcard .tfoot .src a{color:#888;text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere;}
 .tcard .tfoot .src a:hover{color:var(--red-dark);}
 
-/* card 1 — the flag */
+/* card 1 - the flag */
 .c-flag{border-top:3px solid var(--red);}
 .c-flag .thead .t-kick{color:var(--red-dark);}
 .dossier-name{font-size:18px;font-weight:800;line-height:1.25;color:var(--ink-strong);}
@@ -473,7 +473,7 @@ blockquote.flag-q p{margin:0;}
 .flag-status{margin:0;font-size:11.5px;line-height:1.55;color:#888;}
 .flag-status b{font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:10px;color:#999;}
 
-/* card 2 — the question */
+/* card 2 - the question */
 .c-q{background:var(--paper);}
 .c-q .tbody{font-size:14px;}
 .hansard-hero{font-size:13.5px;color:#555;display:flex;flex-direction:column;gap:var(--s3);}
@@ -483,7 +483,7 @@ blockquote.flag-q p{margin:0;}
 .empty-line span{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;color:#999;}
 .empty-line .dash{color:var(--grey-400);}
 
-/* card 3 — the outcome (dark, from mockup variant C) */
+/* card 3 - the outcome (dark, from mockup variant C) */
 .c-out{background:var(--black);border-color:var(--black);color:var(--white);}
 .c-out .thead{border-bottom-color:#282d34;}
 .c-out .thead .t-kick{color:#8b949e;}

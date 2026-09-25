@@ -1,8 +1,8 @@
 {
  "slug": "cs-vetting-august-2024",
- "title": "The Vetting of the Cabinet — August 2024",
+ "title": "The Vetting of the Cabinet, August 2024",
  "date": "2024-08-07",
- "summary": "August 2024 Committee on Appointments vetting of 20 Cabinet Secretary nominees: 4 days of public hearings at County Hall (1-4 Aug 2024), the Committee's Second Report tabled and voted in the National Assembly on 7 August 2024 — 19 approved by voice vote ('(Question put and agreed to)'), 1 rejected (Ms Stella Soi Lang'at). No per-MP recorded vote exists for any approval; that absence is rendered as data.",
+ "summary": "August 2024 Committee on Appointments vetting of 20 Cabinet Secretary nominees: 4 days of public hearings at County Hall (1-4 Aug 2024), the Committee's Second Report tabled and voted in the National Assembly on 7 August 2024. 19 approved by voice vote ('(Question put and agreed to)'), 1 rejected (Ms Stella Soi Lang'at). No per-MP recorded vote exists for any approval; that absence is rendered as data.",
  "sources": {
   "committee_report": {
    "url": "https://www.parliament.go.ke/sites/default/files/2024-08/2ND%20REPORT%20OF%20THE%20COMMITTEE%20ON%20APPOINTMENTS%20AUGUST%202024.pdf",
@@ -3131,7 +3131,7 @@
     },
     {
      "date": null,
-     "text": "Subsequently removed from cabinet and nominated envoy to Ghana — publicly declined (tracker records this in its later-2025 changes without a date).",
+     "text": "Subsequently removed from cabinet and nominated envoy to Ghana; publicly declined (tracker records this in its later-2025 changes without a date).",
      "source": "compiled-tracker",
      "needs_verification": true
     }
@@ -6353,40 +6353,40 @@
  "gateGaps": [
   {
    "title": "No recorded per-MP vote",
-   "text": "The 19 approvals passed by voice vote on 7 August 2024. Hansard records only \"(Question put and agreed to)\" — no per-MP vote exists anywhere in the record.",
+   "text": "The 19 approvals passed by voice vote on 7 August 2024. Hansard records only \"(Question put and agreed to)\". No per-MP vote exists anywhere in the record.",
    "source": "Hansard, 7 Aug 2024 (data/hansard/aug7-2024-na.txt); Committee on Appointments Second Report",
    "needs_verification": true
   },
   {
-   "title": "The Kemosi case — declined, yet gazetted",
-   "text": "Vincent Mogaka Kemosi, nominated High Commissioner to Ghana (March 2024), declined vetting citing personal and family matters — and was nonetheless gazetted in May 2024. The vetting gate applies only to those who appear before it.",
+   "title": "The Kemosi case: declined, yet gazetted",
+   "text": "Vincent Mogaka Kemosi, nominated High Commissioner to Ghana (March 2024), declined vetting citing personal and family matters, and was nonetheless gazetted in May 2024. The vetting gate applies only to those who appear before it.",
    "source": "compiled tracker / The Star 4 May 2024",
    "needs_verification": true
   },
   {
    "title": "One rejection in three cycles",
-   "text": "Of three CS vetting cycles 2022–2024 (22 + 20 + 20 nominees), one nominee has been rejected — Stella Soi Lang'at, August 2024.",
+   "text": "Of three CS vetting cycles 2022 to 2024 (22 + 20 + 20 nominees), one nominee has been rejected: Stella Soi Lang'at, August 2024.",
    "source": "compiled tracker (2022 Part 1 slate: 22; 2024: 20 vetted; Lang'at rejection, Committee on Appointments Second Report)",
    "needs_verification": true
   },
   {
    "title": "Scrutiny concentrates where risk is acute",
-   "text": "The Goma (DR Congo) consul-general post is the only station with repeated knowledge-of-docket pushback — a 2025 nominee was reminded that 'we have rejected a nominee to this station before for lack of knowledge.' Scrutiny as exception, confirmation as default.",
-   "source": "compiled observations (Gaita) — Capital FM/press reports",
+   "text": "The Goma (DR Congo) consul-general post is the only station with repeated knowledge-of-docket pushback. A 2025 nominee was reminded that 'we have rejected a nominee to this station before for lack of knowledge.' Scrutiny as exception, confirmation as default.",
+   "source": "compiled observations (Gaita); Capital FM/press reports",
    "needs_verification": true
   }
  ],
  "stats": {
   "returnees_cs": 9,
   "returnees_docket_rotated": 6,
-  "returnees_note": "9 of 19 approvals had served in the 2022 cabinet (incl. the AG→CS move); 6 rotated dockets (compiled sources differ on membership — needs_verification)"
+  "returnees_note": "9 of 19 approvals had served in the 2022 cabinet (incl. the AG→CS move); 6 rotated dockets (compiled sources differ on membership; needs_verification)"
  },
  "priorCycles": {
   "cabinet_2022": {
    "nominated": "2022-09-27",
    "vetted": "2022-10",
    "outcome": "all approved (no rejections recorded)",
-   "source": "compiled tracker (Gaita) — The Star 27 Sep 2022, Wikipedia cross-check",
+   "source": "compiled tracker (Gaita); The Star 27 Sep 2022, Wikipedia cross-check",
    "needs_verification": true,
    "nominees": [
     {
@@ -6396,14 +6396,14 @@
      "fate": "Not re-appointed to the August 2024 cabinet",
      "status": "approved",
      "approval_cycle": "2022-10",
-     "note": "Prime Cabinet Secretary — retained through the 2024 dissolution (not among the 21 removed)"
+     "note": "Prime Cabinet Secretary, retained through the 2024 dissolution (not among the 21 removed)"
     },
     {
      "name": "Kithure Kindiki",
      "portfolio": "Interior and National Administration",
      "cycle": "2022-09",
      "returned_in_2024": "nominee-01",
-     "fate": "Returned — re-appointed in the August 2024 reconstitution",
+     "fate": "Returned; re-appointed in the August 2024 reconstitution",
      "returned_slug": "kithure-kindiki",
      "status": "approved",
      "approval_cycle": "2022-10"
@@ -6429,7 +6429,7 @@
      "portfolio": "Defence",
      "cycle": "2022-09",
      "returned_in_2024": "nominee-07",
-     "fate": "Returned — re-appointed in the August 2024 reconstitution",
+     "fate": "Returned; re-appointed in the August 2024 reconstitution",
      "returned_slug": "aden-bare-duale",
      "status": "approved",
      "approval_cycle": "2022-10"
@@ -6439,7 +6439,7 @@
      "portfolio": "Water, Sanitation and Irrigation",
      "cycle": "2022-09",
      "returned_in_2024": "nominee-03",
-     "fate": "Returned — re-appointed in the August 2024 reconstitution",
+     "fate": "Returned; re-appointed in the August 2024 reconstitution",
      "returned_slug": "alice-wahome",
      "status": "approved",
      "approval_cycle": "2022-10"
@@ -6449,7 +6449,7 @@
      "portfolio": "Foreign and Diaspora Affairs",
      "cycle": "2022-09",
      "returned_in_2024": "nominee-17",
-     "fate": "Returned — re-appointed in the August 2024 reconstitution",
+     "fate": "Returned; re-appointed in the August 2024 reconstitution",
      "returned_slug": "alfred-nganga-mutua",
      "status": "approved",
      "approval_cycle": "2022-10"
@@ -6467,7 +6467,7 @@
      "portfolio": "East African Community and Regional Development",
      "cycle": "2022-09",
      "returned_in_2024": "nominee-13",
-     "fate": "Returned — re-appointed in the August 2024 reconstitution",
+     "fate": "Returned; re-appointed in the August 2024 reconstitution",
      "returned_slug": "rebecca-miano",
      "status": "approved",
      "approval_cycle": "2022-10"
@@ -6477,7 +6477,7 @@
      "portfolio": "Roads and Transport",
      "cycle": "2022-09",
      "returned_in_2024": "nominee-15",
-     "fate": "Returned — re-appointed in the August 2024 reconstitution",
+     "fate": "Returned; re-appointed in the August 2024 reconstitution",
      "returned_slug": "onesimus-kipchumba-murkomen",
      "status": "approved",
      "approval_cycle": "2022-10"
@@ -6519,7 +6519,7 @@
      "portfolio": "Energy and Petroleum",
      "cycle": "2022-09",
      "returned_in_2024": "nominee-09",
-     "fate": "Returned — re-appointed in the August 2024 reconstitution",
+     "fate": "Returned; re-appointed in the August 2024 reconstitution",
      "returned_slug": "davis-chirchir",
      "status": "approved",
      "approval_cycle": "2022-10"
@@ -6545,7 +6545,7 @@
      "portfolio": "Mining, Blue Economy and Maritime Affairs",
      "cycle": "2022-09",
      "returned_in_2024": "nominee-12",
-     "fate": "Returned — re-appointed in the August 2024 reconstitution",
+     "fate": "Returned; re-appointed in the August 2024 reconstitution",
      "returned_slug": "salim-mvurya-mgala",
      "status": "approved",
      "approval_cycle": "2022-10"
@@ -6579,7 +6579,7 @@
      "portfolio": "Environment, Climate Change and Forestry",
      "cycle": "2022-09",
      "returned_in_2024": "nominee-05",
-     "fate": "Returned — re-appointed in the August 2024 reconstitution",
+     "fate": "Returned; re-appointed in the August 2024 reconstitution",
      "returned_slug": "roselinda-soipan-tuya",
      "status": "approved",
      "approval_cycle": "2022-10"

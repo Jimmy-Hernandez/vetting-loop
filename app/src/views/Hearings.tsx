@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import type { Episode } from '../types';
 import { loadEpisode, placeholderEpisode } from '../data';
 
-// Act 2 · During — the hearing record at batch scale.
+// Act 2 · During - the hearing record at batch scale.
 // What citizens submitted (memoranda) vs what the committee asked (hearing record),
 // aggregated across all 20 nominees. Per-person depth lives in each dossier.
 
@@ -28,13 +28,13 @@ export default function Hearings() {
   return (
     <main className="doc">
       <header className="masthead">
-        <p className="kicker"><span className="rule"></span>Act 2 · During — the hearing record</p>
-        <h1>What was asked — and what was submitted</h1>
+        <p className="kicker"><span className="rule"></span>Act 2 · During · the hearing record</p>
+        <h1>What was asked, and what was submitted</h1>
         <p className="standfirst">
-          The public had already submitted their memoranda before the sitting began — that record
+          The public had already submitted their memoranda before the sitting began. That record
           lives in <Link to="/nominees">Act 1, with the nominees they were filed against</Link>. This page is what
           the committee did with them in the room: what <b>{nom.length} nominees</b> were actually asked
-          across four days at County Hall, and how each submission was handled — preserved
+          across four days at County Hall, and how each submission was handled, preserved
           verbatim from the Committee's own report, page-referenced.</p>
         <div className="close" aria-hidden="true"></div>
       </header>
@@ -59,8 +59,8 @@ export default function Hearings() {
           </div>
         </div>
         <p className="standfirst" style={{ marginTop: 'var(--s4)' }}>
-          The record of what was asked is full. The record of what the public submitted — and whether
-          each submission was answered — is thinner, because the Committee's own report preserves it
+          The record of what was asked is full. The record of what the public submitted, and whether
+          each submission was answered, is thinner, because the Committee's own report preserves it
           unevenly: 15 of 20 nominees have a formal memoranda section; for the rest the observations
           survive only as inline narrative. We render both honestly, per nominee below.
         </p>
@@ -94,7 +94,7 @@ export default function Hearings() {
                 <td>
                   {mem.header_found
                     ? <span>{mem.count} observation{mem.count === 1 ? '' : 's'} · report p.{mem.report_page}</span>
-                    : <span style={{ opacity: 0.7 }}>inline narrative only — honest absence</span>}
+                    : <span style={{ opacity: 0.7 }}>inline narrative only (honest absence)</span>}
                 </td>
                 <td><Link to={`/nominee/${n.slug || n.id}`}>Open dossier →</Link></td>
               </tr>
@@ -105,14 +105,14 @@ export default function Hearings() {
         <p className="standfirst" style={{ marginTop: 'var(--s4)' }}>
           Why the memoranda column matters: the Committee invited the public to submit objections before
           the hearings. Where its report preserves those submissions formally, you can read what citizens
-          said and what the Committee observed. Where it does not, we say so — an honest gap is part of
+          said and what the Committee observed. Where it does not, we say so. An honest gap is part of
           the record too.
         </p>
       </section>
 
       <section className="prior-cycle" style={{ margin: 'var(--s6) 0' }}>
         <p style={{ margin: 0 }}>
-          Next: how the batch was decided —{' '}
+          Next: how the batch was decided.{' '}
           <Link to="/vote" style={{ textDecoration: 'underline' }}>Act 3 · The Vote That Wasn't Recorded →</Link>
         </p>
       </section>

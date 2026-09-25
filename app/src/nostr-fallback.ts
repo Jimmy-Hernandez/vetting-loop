@@ -1,4 +1,4 @@
-// nostr-fallback.ts — crash-demo fallback reader.
+// nostr-fallback.ts - crash-demo fallback reader.
 // READ-ONLY network code: subscribes to relays by tag, parses kind-1 notes into
 // episode/nominee/trail payloads for the /fallback view. Never publishes.
 //

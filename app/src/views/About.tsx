@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import type { TerryLedger } from '../terryTypes';
 import { loadTerryLedger } from '../data';
 
-// /about — the tool's own page. Approved copy, verbatim (brief 2026-09-24).
+// /about - the tool's own page. Approved copy, verbatim (brief 2026-09-24).
 // Static document register: same tokens, same .doc conventions as Methodology.
 export default function About() {
-  // hero figures — computed from terry/ledger.json, same derivation as /ledger
+  // hero figures - computed from terry/ledger.json, same derivation as /ledger
   const [ledger, setLedger] = useState<TerryLedger | null>(null);
   useEffect(() => { loadTerryLedger().then((l) => setLedger(l)); }, []);
   const people = ledger?.people ?? [];
@@ -16,15 +16,15 @@ export default function About() {
   const houseRejections = allAppointments.filter((x) => x.outcome === 'rejected' && gateCycleIds.has(x.cycle)).length;
   const assertPositive = (n: number, w: string) => { if (n <= 0) throw new Error('computed ' + n + ' for ' + w); return n; };
   // Figures render as an honest dash until the ledger has loaded; the assert applies to loaded data only.
-  const fig = (n: number, w: string) => (ledger ? assertPositive(n, w) : '—');
+  const fig = (n: number, w: string) => (ledger ? assertPositive(n, w) : 'n/a');
 
   return (
     <main className="doc">
       <header className="masthead">
         <p className="kicker"><span className="rule"></span>About the tool</p>
-        <h1>Vetta — the public record of parliamentary vetting</h1>
+        <h1>Vetta: the public record of parliamentary vetting</h1>
         <p className="standfirst">
-          Vetta is a public register of parliamentary vetting — who was nominated for office, what citizens
+          Vetta is a public register of parliamentary vetting: who was nominated for office, what citizens
           submitted, what the committee asked, and how each decision was made. Every claim is sourced to a
           document; every number can be checked. It is built to run as a durable public instrument, independent of any single host.
         </p>
@@ -42,17 +42,17 @@ export default function About() {
             <div className="cap">Nominations across ten cycles</div>
           </div>
           <div className="cell" role="listitem">
-            <div className="fig">{ledger ? houseRejections : '—'}</div>
+            <div className="fig">{ledger ? houseRejections : 'n/a'}</div>
             <div className="cap">{houseRejections === 1 ? 'Gate rejection' : 'Gate rejections'}</div>
           </div>
           <div className="cell" role="listitem">
             <div className="fig">10 cycles</div>
-            <div className="cap">2022 — 2025, CS · PS · envoys</div>
+            <div className="cap">2022 to 2025, CS · PS · envoys</div>
           </div>
         </div>
         <p className="standfirst" style={{ marginTop: 'var(--s6)' }}>
           Parliament must vet every Cabinet Secretary and Principal Secretary before they take office.
-          Vetta is the public record of how that gate actually behaves — before the hearing, during it,
+          Vetta is the public record of how that gate actually behaves: before the hearing, during it,
           and after the vote.
         </p>
       </section>
@@ -66,13 +66,13 @@ export default function About() {
         <div className="prose">
           <p>
             The Constitution of Kenya promises transparency, accountability and public participation (Articles 10
-            and 232), and demands integrity of anyone seeking state office (Chapter Six). Vetting — the public
-            confirmation of Cabinet and other senior appointments — is where those promises are tested in the open.
+            and 232), and demands integrity of anyone seeking state office (Chapter Six). Vetting, the public
+            confirmation of Cabinet and other senior appointments, is where those promises are tested in the open.
           </p>
           <p>
             In practice, the record shows a gap. Across three vetting cycles in the 13th Parliament, 62 nominees
             faced the committee: 22 in 2022, 51 Principal Secretaries in 2022, 20 Cabinet Secretaries in August
-            2024. One was rejected. The 19 approvals in August 2024 passed on a voice vote — the record shows only
+            2024. One was rejected. The 19 approvals in August 2024 passed on a voice vote. The record shows only
             &ldquo;(Question put and agreed&nbsp;to)&rdquo;. A nominee in the 2024 diplomatic cycle declined vetting
             and was appointed anyway. The record exists; the accountability of the record is what Vetta adds.
           </p>
@@ -105,13 +105,13 @@ export default function About() {
           <Link className="card" to="/hearings">
             <span className="act-no">Act 2 · During</span>
             <h3>The hearing record</h3>
-            <p>Who asked what, tagged by topic — citizen questions shown alongside: asked vs. ignored.</p>
+            <p>Who asked what, tagged by topic, with citizen questions shown alongside: asked vs. ignored.</p>
             <span className="go">Open the hearing record →</span>
           </Link>
           <Link className="card" to="/vote">
             <span className="act-no">Act 3 · After</span>
             <h3>The accountability trail</h3>
-            <p>Report vs. submissions, side by side. Per-MP vote on every approval — one query.</p>
+            <p>Report vs. submissions, side by side. Per-MP vote on every approval, in one query.</p>
             <span className="go">Trace a nominee →</span>
           </Link>
         </div>
@@ -133,7 +133,7 @@ export default function About() {
             <div>
               <h4>Nothing to seize</h4>
               <p>
-                Vetta is a static document, not a service — no database, no backend, no accounts. A copy is a
+                Vetta is a static document, not a service. No database, no backend, no accounts. A copy is a
                 complete copy.
               </p>
             </div>
@@ -153,7 +153,7 @@ export default function About() {
             <div>
               <h4>Redundant by design</h4>
               <p>
-                The record is published to Nostr relays — community networks no single authority controls — so it
+                The record is published to Nostr relays, community networks no single authority controls, so it
                 survives any one server&rsquo;s failure.
               </p>
             </div>
@@ -274,7 +274,7 @@ export default function About() {
           <Link className="card" to="/methodology">
             <span className="act-no">Pattern rules</span>
             <h3>Methodology &amp; signals</h3>
-            <p>Eight deterministic rules over the appointment record — computed, not asserted.</p>
+            <p>Eight deterministic rules over the appointment record. Computed, not asserted.</p>
             <span className="go">How it works →</span>
           </Link>
         </div>

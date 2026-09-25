@@ -35,7 +35,7 @@ export default function Methodology() {
             <div>
               <h4>Committee on Appointments, Second Report, August 2024</h4>
               <p>
-                Per-nominee questions, memoranda observations and background checks for all 20 nominees —
+                Per-nominee questions, memoranda observations and background checks for all 20 nominees:
                 the primary record of what the committee asked and what citizens submitted against each
                 appointment. Cited by line reference throughout.
               </p>
@@ -50,7 +50,7 @@ export default function Methodology() {
             <div>
               <h4>National Assembly Hansard, 7 August 2024</h4>
               <p>
-                The motion, the debate and the approval — quoted verbatim with line references, including
+                The motion, the debate and the approval, quoted verbatim with line references, including
                 the approval mechanism itself: “(Question put and agreed&nbsp;to)”.
               </p>
               <span className="cite">
@@ -63,7 +63,7 @@ export default function Methodology() {
             <div>
               <h4>Mzalendo voting records</h4>
               <p>
-                10 recorded National Assembly divisions, including the Finance Bill 2024 — the contrast
+                10 recorded National Assembly divisions, including the Finance Bill 2024. This is the contrast
                 dataset: what a recorded, per-MP vote looks like beside a vetting approval that was carried
                 on a voice vote.
               </p>
@@ -77,7 +77,7 @@ export default function Methodology() {
             <div>
               <h4>Press record</h4>
               <p>
-                33 sourced integrity flags — each carrying quotation, publisher, date and URL — drawn from
+                33 sourced integrity flags, each carrying quotation, publisher, date and URL, drawn from
                 the Daily Nation, The Star, Citizen, Capital FM, the Standard and other outlets.
               </p>
               <span className="cite">
@@ -88,10 +88,10 @@ export default function Methodology() {
           <li>
             <span className="num">5</span>
             <div>
-              <h4>Compiled analysis — “Vetting Observations, CSs and PSs, 13th Parliament”</h4>
+              <h4>Compiled analysis: “Vetting Observations, CSs and PSs, 13th Parliament”</h4>
               <p>
                 Cross-checked compilation of rejections, returnee rates and exit pathways across three
-                vetting cycles (C. Gaita, 24 September 2026; PRESS-T1 — press-sourced, verify against the
+                vetting cycles (C. Gaita, 24 September 2026; PRESS-T1: press-sourced, verify against the
                 Kenya Gazette and Hansard before external citation). The source of the design requirements
                 below (§7).
               </p>
@@ -114,10 +114,10 @@ export default function Methodology() {
             <span className="num">1</span>
             <div>
               <h4>Track appearances, not just outcomes</h4>
-              <p>Who was nominated, who appeared, who was approved, who declined, who was rejected — and on what stated grounds.</p>
+              <p>Who was nominated, who appeared, who was approved, who declined, who was rejected, and on what stated grounds.</p>
               <span className="cite">
-                This platform: the nominees register renders each official outcome with its source — including the
-                single rejection and the committee’s stated ground — and the /vote record reproduces the House’s
+                This platform: the nominees register renders each official outcome with its source, including the
+                single rejection and the committee’s stated ground, and the /vote record reproduces the House’s
                 voice-vote line verbatim rather than an invented division.
               </span>
             </div>
@@ -148,7 +148,7 @@ export default function Methodology() {
             <span className="num">4</span>
             <div>
               <h4>Note the stated grounds verbatim</h4>
-              <p>The committee’s own language is the primary evidence of where scrutiny happened — and where it did not.</p>
+              <p>The committee’s own language is the primary evidence of where scrutiny happened, and where it did not.</p>
               <span className="cite">
                 This platform: quotations render verbatim with publisher and date; nothing is paraphrased into the record.
               </span>
@@ -160,7 +160,7 @@ export default function Methodology() {
             <section style={{ marginTop: 'var(--s8)' }}>
         <h2>How we compute: signals, not scores</h2>
         <p className="standfirst">
-          Patterns in the appointment record are flagged by <b>deterministic rules</b> — published,
+          Patterns in the appointment record are flagged by <b>deterministic rules</b>: published,
           re-runnable by hand, no model guesses. A signal flags a pattern in the <i>process</i> worth
           scrutiny; it is never a finding about a person's conduct, and nothing here scores a real person.
           Each rule's matches are shown on the <Link to="/ledger">people ledger</Link>.
@@ -168,7 +168,7 @@ export default function Methodology() {
         <ol style={{ marginTop: 'var(--s4)', paddingLeft: 'var(--s6)' }}>
           {signals.map((sig) => (
             <li key={sig.id} style={{ marginBottom: 'var(--s3)' }}>
-              <b>{sig.label}</b> — {sig.rule}
+              <b>{sig.label}</b>: {sig.rule}
               <div style={{ opacity: 0.75, fontSize: '0.9em', marginTop: 2 }}>{sig.why}</div>
             </li>
           ))}

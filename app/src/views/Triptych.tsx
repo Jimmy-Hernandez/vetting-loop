@@ -1,6 +1,6 @@
 import type { Episode, Flag, HansardExcerpt } from '../types';
 
-// HERO TRIPTYCH — data-thin selection helpers (no hard-coded content).
+// HERO TRIPTYCH - data-thin selection helpers (no hard-coded content).
 // Card 1 flag: the strongest sourced flag = the EACC-relevant one (publisher/claim mention EACC), else flags[0].
 function pickFlag(flags: Flag[] | null | undefined): Flag | null {
   if (!flags || flags.length === 0) return null;
@@ -33,7 +33,7 @@ export default function Triptych({
   const voteUrl = vote?.ex.url || '';
 
   return (
-    <section className="tri" aria-label="Juxtaposition: flag, question, outcome — the approval record">
+    <section className="tri" aria-label="Juxtaposition: flag, question, outcome, the approval record">
       <div className="tri-connect" aria-hidden="true">
         <div className="tnode"><span className="num">1</span><span className="tlabel">The Flag</span><span className="tline"></span></div>
         <div className="tnode"><span className="num">2</span><span className="tlabel">The Question in Parliament</span><span className="tline"></span></div>
@@ -41,7 +41,7 @@ export default function Triptych({
       </div>
 
       <div className="tri-grid">
-        {/* CARD 1 — THE FLAG */}
+        {/* CARD 1 - THE FLAG */}
         <article className="tcard c-flag">
           <div className="thead">
             <div className="t-kick">{op ? `Nominee file · ${op.reportPageRef || 'the record'}` : 'Nominee file'}</div>
@@ -52,7 +52,7 @@ export default function Triptych({
               <>
                 <div>
                   <div className="dossier-name">{op.name.replace(/ \(OCR:.*\)/, '')}</div>
-                  <div className="dossier-role">Nominee — {op.portfolio.replace(/^Cabinet Secretary for /, '')}</div>
+                  <div className="dossier-role">Nominee · {op.portfolio.replace(/^Cabinet Secretary for /, '')}</div>
                 </div>
                 <div className="chips">
                   <span className="chip chip-self">Sourced flag</span>
@@ -61,24 +61,24 @@ export default function Triptych({
                 <blockquote className="flag-q"><p>{flag.quote}</p></blockquote>
                 <p className="flag-claim">{flag.claim}</p>
                 <p className="flag-status">
-                  <b>Legal status</b> — {flag.legal_status}
+                  <b>Legal status:</b> {flag.legal_status}
                 </p>
               </>
             ) : (
-              <div className="empty">No sourced flag available — nothing is asserted here.</div>
+              <div className="empty">No sourced flag available. Nothing is asserted here.</div>
             )}
           </div>
           {flag && (
             <div className="tfoot">
               <p className="src">
-                Source: {flag.publisher}, {flag.date} —{' '}
+                Source: {flag.publisher}, {flag.date} ·{' '}
                 <a href={flag.url} target="_blank" rel="noopener noreferrer">{flag.url.replace(/^https?:\/\/(www\.)?/, '').slice(0, 64)}…</a>
               </p>
             </div>
           )}
         </article>
 
-        {/* CARD 2 — THE QUESTION IN PARLIAMENT */}
+        {/* CARD 2 - THE QUESTION IN PARLIAMENT */}
         <article className="tcard c-q">
           <div className="thead">
             <div className="t-kick">Hansard · National Assembly · {hansardDate}</div>
@@ -94,24 +94,24 @@ export default function Triptych({
                   </p>
                 </div>
                 <div className="empty-line">
-                  <span><span className="dash">—</span>&nbsp; no member raised this on the floor · no recorded vote exists &nbsp;<span className="dash">—</span></span>
+                  <span>no member raised this on the floor · no recorded vote exists</span>
                 </div>
               </>
             ) : (
-              <div className="empty">Hansard excerpt channel unavailable — nothing is asserted here.</div>
+              <div className="empty">Hansard excerpt channel unavailable. Nothing is asserted here.</div>
             )}
           </div>
           {vote && (
             <div className="tfoot">
               <p className="src">
-                Source: National Assembly Official Report (Hansard), {hansardDate} —{' '}
+                Source: National Assembly Official Report (Hansard), {hansardDate} ·{' '}
                 <a href={voteUrl} target="_blank" rel="noopener noreferrer">mzalendo.com/…/hansard/wednesday-7th-august-2024-afternoon-sitting</a>
               </p>
             </div>
           )}
         </article>
 
-        {/* CARD 3 — THE OUTCOME */}
+        {/* CARD 3 - THE OUTCOME */}
         <article className="tcard c-out">
           <div className="thead">
             <div className="t-kick">House decision · {hansardDate}</div>
@@ -123,11 +123,11 @@ export default function Triptych({
               <p className="verdict-sub">{op ? op.portfolio.replace(/^Cabinet Secretary for /, '') : 'Cabinet appointment'}</p>
             </div>
             <ul className="verdict-facts">
-              <li><b>Margin:</b> voice vote — “{hansardLine || '(Question put and agreed to)'}”</li>
+              <li><b>Margin:</b> voice vote, “{hansardLine || '(Question put and agreed to)'}”</li>
               <li><b>Recorded votes:</b> none exist for any of the 19 approvals</li>
             </ul>
             <div className="querybox">
-              <div className="q">Query — “How did my MP vote on this nominee?”</div>
+              <div className="q">Query: “How did my MP vote on this nominee?”</div>
               <div className="a">No recorded vote<small>The record cannot answer “who approved?”</small></div>
             </div>
           </div>
@@ -140,7 +140,7 @@ export default function Triptych({
       <div className="tri-caption">
         <span className="qmark">¶</span>
         <p>
-          The flag. The one-line record of debate. The green light — in that order.{' '}
+          The flag. The one-line record of debate. The green light. In that order.{' '}
           <span className="thin">Nothing here is editorial: the juxtaposition is the argument, and each card stands on its own sourced record.</span>
         </p>
       </div>

@@ -1,4 +1,4 @@
-// Terry's ledger schema (Vetting Record / Agent9) — ke-vetting-ledger/1
+// Terry's ledger schema (Vetting Record / Agent9) - ke-vetting-ledger/1
 // Source of truth: app/public/data/terry/ledger.json (fetched from vetting-record.pages.dev).
 
 export interface TerryAppointment {

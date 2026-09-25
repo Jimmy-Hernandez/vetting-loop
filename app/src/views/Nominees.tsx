@@ -37,7 +37,7 @@ export default function Nominees() {
               <div className="sechead">
                 <span className="no">Before the sitting</span>
                 <h2>What citizens submitted</h2>
-                <p className="dek">Parliament invited memoranda from the public ahead of the hearings. The submissions — preserved verbatim in the Committee's own report, page-referenced — travelled with each nominee into the room.</p>
+                <p className="dek">Parliament invited memoranda from the public ahead of the hearings. The submissions, preserved verbatim in the Committee's own report and page-referenced, travelled with each nominee into the room.</p>
               </div>
               <div className="outcome" role="list" aria-label="Citizen submissions, computed from the record">
                 <div className="cell" role="listitem">
@@ -54,7 +54,7 @@ export default function Nominees() {
                 </div>
               </div>
               <p className="standfirst" style={{ marginTop: 'var(--s4)', maxWidth: 'none' }}>
-                Where the report holds no formal section, submissions appear as inline narrative — shown as
+                Where the report holds no formal section, submissions appear as inline narrative, shown as
                 an absence, never padded. Each nominee&rsquo;s dossier lists their submissions with page references.
               </p>
             </section>
@@ -67,12 +67,12 @@ export default function Nominees() {
           return (
             <section style={{ marginTop: 'var(--s4)' }}>
               <p className="standfirst" style={{ marginTop: 0 }}>
-                <b>Context.</b> The cabinet nominated {pc.nominated} — {pc.nominees.length} CS nominees —
+                <b>Context.</b> The cabinet nominated {pc.nominated} ({pc.nominees.length} CS nominees),
                 was vetted and {pc.outcome.toLowerCase()}. {rets.length} of them reappear among the {' '}
                 {nom.filter((x) => x.status === 'approved').length} approvals vetted {ep.date}.
                 {pc.needs_verification && <span className="chip">verify vs Kenya Gazette</span>}
               </p>
-              <h2 style={{ marginTop: 'var(--s6)', fontSize: '1.15rem' }}>The 2022 slate — 22 nominees, and what became of each</h2>
+              <h2 style={{ marginTop: 'var(--s6)', fontSize: '1.15rem' }}>The 2022 slate: 22 nominees, and what became of each</h2>
               <p className="standfirst" style={{ marginTop: 'var(--s2)' }}>
                 The full original list, preserved as published. Each entry links to its dossier where
                 the nominee returned in this episode's reconstitution.
@@ -120,8 +120,8 @@ export default function Nominees() {
                 <div className="counts">
                   <span className="fl" title={c.flags === 0 ? 'No documented flags in sources reviewed' : ''}><b>{c.flags}</b> flags</span>
                   <span title={c.positive === 0 ? 'No positive findings recorded' : ''}><b>{c.positive}</b> positive</span>
-                  <span title={memHeaderFound ? undefined : 'No formal memoranda section in the committee report — inline narrative only'}>
-                    <b>{memHeaderFound ? c.memoranda : '—'}</b> memoranda
+                  <span title={memHeaderFound ? undefined : 'No formal memoranda section in the committee report; inline narrative only'}>
+                    <b>{memHeaderFound ? c.memoranda : 'n/a'}</b> memoranda
                   </span>
                   {n.subsequentEvents?.length ? <span className="ev-dot" title="Has post-vote events" aria-label="Has post-vote events"></span> : null}
                 </div>
