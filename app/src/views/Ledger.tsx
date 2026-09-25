@@ -132,7 +132,7 @@ export default function Ledger() {
         <div className="close" aria-hidden="true"></div>
       </header>
 
-      <div className="outcome" role="list" aria-label="Key figures, computed from the record">
+      <div className="outcome outcome-4" role="list" aria-label="Key figures, computed from the record">
         <div className="cell" role="listitem">
           <div className="fig">
             {totalAppointments > 0 ? `${approvedAppointments} of ${totalAppointments}` : '—'}

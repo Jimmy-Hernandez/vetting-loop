@@ -108,6 +108,8 @@ sup.fn a:hover{text-decoration:underline;}
 .gloss p strong{color:var(--ink-strong);font-weight:700;}
 
 /* outcome figures */
+.outcome-4{grid-template-columns:1fr 1fr 1fr 1fr;}
+
 .outcome{
   display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line);
   border:1px solid var(--line);margin-top:var(--s12);border-radius:var(--r1);overflow:hidden;
