@@ -1,8 +1,21 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import type { TerryLedger } from '../terryTypes';
+import { loadTerryLedger } from '../data';
 
 // /about — the tool's own page. Approved copy, verbatim (brief 2026-09-24).
 // Static document register: same tokens, same .doc conventions as Methodology.
 export default function About() {
+  // hero figures — computed from terry/ledger.json, same derivation as /ledger
+  const [ledger, setLedger] = useState<TerryLedger | null>(null);
+  useEffect(() => { loadTerryLedger().then((l) => setLedger(l)); }, []);
+  const people = ledger?.people ?? [];
+  const allAppointments = people.flatMap((p) => p.appointments ?? []);
+  const nPeople = people.length;
+  const gateCycleIds = new Set((ledger?.cycles ?? []).filter((c) => c.gate).map((c) => c.id));
+  const houseRejections = allAppointments.filter((x) => x.outcome === 'rejected' && gateCycleIds.has(x.cycle)).length;
+  const assertPositive = (n: number, w: string) => { if (n <= 0) throw new Error('computed ' + n + ' for ' + w); return n; };
+
   return (
     <main className="doc">
       <header className="masthead">
@@ -15,6 +28,33 @@ export default function About() {
         </p>
         <div className="close" aria-hidden="true"></div>
       </header>
+
+      <section className="sec" style={{ marginTop: 'var(--s6)' }}>
+        <div className="outcome" role="list" aria-label="The record at a glance">
+          <div className="cell" role="listitem">
+            <div className="fig" style={{ color: 'var(--red)' }}>{assertPositive(nPeople, 'people')}</div>
+            <div className="cap">People in the record</div>
+          </div>
+          <div className="cell" role="listitem">
+            <div className="fig">{allAppointments.length}</div>
+            <div className="cap">Nominations across ten cycles</div>
+          </div>
+          <div className="cell" role="listitem">
+            <div className="fig">{houseRejections === 1 ? 1 : houseRejections}</div>
+            <div className="cap">{houseRejections === 1 ? 'Gate rejection' : 'Gate rejections'}</div>
+          </div>
+          <div className="cell" role="listitem">
+            <div className="fig">10 cycles</div>
+            <div className="cap">2022 — 2025, CS · PS · envoys</div>
+          </div>
+        </div>
+        <p className="standfirst" style={{ marginTop: 'var(--s6)' }}>
+          Parliament must vet every Cabinet Secretary and Principal Secretary before they take office.
+          Vetta is the public record of how that gate actually behaves — before the hearing, during it,
+          and after the vote.
+        </p>
+      </section>
+
 
       <section className="sec" style={{ marginTop: 48 }}>
         <div className="sechead">

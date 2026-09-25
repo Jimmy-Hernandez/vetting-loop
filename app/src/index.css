@@ -45,6 +45,11 @@ a:hover{color:var(--red);}
 .breadcrumb a{text-decoration:none;}
 navnavnavnavnavnavnavnavnav
 /* ============ layout ============ */
+/* full-width guard: every view root constrained, centered (appwide margin fix) */
+main.doc > *{max-width:100%;}
+main.doc > .outcome{max-width:100%;}
+.masthead h1,.masthead .standfirst{max-width:1120px;margin-left:auto;margin-right:auto;}
+
 .doc{max-width:1120px;margin:0 auto;padding:0 24px 96px;}
 .measure{max-width:var(--measure);margin-left:auto;margin-right:auto;}
 
