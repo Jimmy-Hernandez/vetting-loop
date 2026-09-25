@@ -68,7 +68,8 @@ function parseNominee(ev: NostrEvent, slug: string): FallbackNominee | null {
   const flags: FallbackFlag[] = [];
   for (const line of section(ev.content, 'FLAGS')) {
     // "- [legal_status] claim (Publisher, date)"
-    const m = line.match(/^- \[(.+?)\] (.+) \(([^,]+), ([0-9-]+)\)$/);
+    // section() already strips the leading "- ", so anchor on the bracket, not "- ["
+    const m = line.match(/^\[(.+?)\] (.+) \(([^,]+), ([0-9-]+)\)$/);
     if (m) flags.push({ legal_status: m[1], claim: m[2], publisher: m[3], date: m[4] });
   }
   const positiveCount = section(ev.content, 'POSITIVE FINDINGS').length;
