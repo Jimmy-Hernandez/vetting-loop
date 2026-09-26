@@ -1,0 +1,124 @@
+{
+  "id": "2026-09-25-complete",
+  "generated": "2026-09-25T21:15:00Z",
+  "scope": "full local dual-lane + 1 source audit, replacing the 2026-09-25 5-lane time-boxed audit",
+  "lanes": {
+    "line-ref-A": {
+      "model": "deepseek-v4-flash-0731",
+      "method": "SequenceMatcher + contiguous-block disambiguation",
+      "status": "completed",
+      "counts": {"OK": 517, "AMBIGUOUS": 0, "NOT_FOUND": 4, "total": 521},
+      "independent_re_verification": "all 517 OK rows re-checked, 0 failures, ratio >=0.92 at reported line",
+      "monotonicity": "asked[] blocks 20/20 strictly ascending per nominee (ignored[] shared 1, legitimate)",
+      "defect_characterization": "0/510 asked old_lines correct; 301 exceed the 12,274-line file; no consistent offset; 4 NOT_FOUND are content (garbled/duplicated clauses), not line-number fixable"
+    },
+    "line-ref-B": {
+      "model": "deepseek-v4-flash-0731",
+      "method": "word-containment index + window-rescue",
+      "status": "completed",
+      "counts": {"OK": 472, "AMBIGUOUS": 22, "NOT_FOUND": 16, "total": 510},
+      "NOT_FOUND_characterization": "12 page-break artifacts embedded in record .text (OCR page-boundary defect, 2024 incident-ledger pattern); 4 other"
+    },
+    "source-verification": {
+      "model": "deepseek-v4-flash-0731",
+      "method": "curl HEAD+GET + archive.org availability + Hansard verbatim + 2022 cross-check",
+      "status": "completed",
+      "findings": {
+        "T1_flags_sampled": {
+          "sampled": 12,
+          "MATCH": 12,
+          "exact_quote": 10,
+          "verbatim_with_unmarked_elision": 2,
+          "transport": {"200_HEAD": 9, "403_HEAD_200_GET": 3, "timeout": 0}
+        },
+        "T2_hansard": {
+          "premise_mismatch": "briefing asserted 19 flags->Hansard; 0 of 32 flags carry a source_url — all 32 are news URLs. Corrected.",
+          "excerpts_cross_verified": 7,
+          "MATCH": 6,
+          "MATCH-ELIDED": 1
+        },
+        "T3_2022": {
+          "malonza_overturn": "FIXED-CONFIRMED",
+          "broadly_consistent": "21 other 2022 records flat approved, no committeeRecommendation field",
+          "minority_dissent_flagged_for_caveat": ["aisha-jumwa", "mithika-linturi"],
+          "minority_dissent_confidence": "LOW (1 quota-walled outlet, snippet-only)"
+        },
+        "T4_blocked": {
+          "joho_flags0": {
+            "primary_url_status": "STILL BLOCKED (403 HEAD+GET, no Wayback snapshot)",
+            "claim_corroborated_by": ["TNX 200", "Daily Monitor UG 200", "Nation 978316 200", "Business Daily 200"],
+            "fix_recommendation": "repoint flag url to Nation 978316 (reachable)"
+          }
+        },
+        "META": {
+          "flag_count_discrepancy": "32 (served episode.json) vs 33 (news-flags.json + stale dist)",
+          "missing_flag": "Muturi nairobiwire flag present in source + dist, absent from served episode.json — matches the 2026-09-25 'disallowed source' fix (removal was CORRECT)",
+          "2022_roster_drift": "episode.json 22 2022 nominees vs ledger 23 (Muturi 2022-Land-CS missing from episode priorCycles; a 2022-vs-2024 conflation)"
+        }
+      }
+    }
+  },
+  "adjudication": {
+    "method": "dual-signature (both lanes agree exactly) OR Lane A only with fresh independent re-check >=0.92",
+    "applied": 511,
+    "applied_agree_both": 472,
+    "applied_A_resolved": 39,
+    "already_correct_skipped": 6,
+    "deferred_NOT_FOUND": 4,
+    "deferred_reason": "content defects (garbled/duplicated clauses), not a line-number fix; 12 page-break-embedded texts are a separate rendering fix"
+  },
+  "independent_third_verification": {
+    "method": "fresh code (neither lane's), SequenceMatcher over 1-7-line windows, no normalization of the .text field",
+    "records_checked": 521,
+    "asked_all_pass": true,
+    "failures_below_092": 4,
+    "failures_detail": "the 4 deferred NOT_FOUND ignored[] records (content defect, intentionally untouched)",
+    "non_line_field_changes": "0 (only 'line' values; 1 trailing-brace reflow is cosmetic)",
+    "monotonicity_breaks": {
+      "total": 1,
+      "case": "roselinda-soipan-tuya / julius-migos-ogamba '(7) THAT…' shared line 4283",
+      "verdict": "legitimate — two identical clauses, single shared occurrence"
+    }
+  },
+  "git_commit": "cf64695",
+  "files_touched": ["app/public/data/episode.json (line field of 511 asked/ignored records only)"],
+  "deferred_open_items": [
+    {
+      "id": "defer-1",
+      "what": "4 ignored[] records with garbled/duplicated .text",
+      "why": "content defect, not a line-ref fix; needs source re-extraction",
+      "owner": "Terry (next data lane)"
+    },
+    {
+      "id": "defer-2",
+      "what": "12 page-break artifacts (===== PAGE n =====) embedded inside asked .text",
+      "why": "2024 incident-ledger pattern (OCR page-boundary); a rendering/trimming fix",
+      "owner": "Terry"
+    },
+    {
+      "id": "defer-3",
+      "what": "Joho flags[0] URL 403 + no archive",
+      "recommendation": "repoint to Nation 978316 (verified reachable, same claim)",
+      "owner": "owner decision (Terry / KITT)"
+    },
+    {
+      "id": "defer-4",
+      "what": "Jumwa/Linturi 2022 records: add 'minority dissent reported' annotation",
+      "confidence": "LOW — 1 quota-walled outlet, snippet-only; do NOT hard-edit",
+      "owner": "owner decision"
+    },
+    {
+      "id": "defer-5",
+      "what": "episode.json 2022 per-record layer lacks committeeRecommendation field; 22-vs-23 roster drift (Muturi 2022-Land-CS)",
+      "why": "data-layer inconsistency, not a 2026-09-25 audit finding per se; needs a 2022 data pass",
+      "owner": "Terry"
+    },
+    {
+      "id": "defer-6",
+      "what": "2 unmarked verbatim-quote elisions (Soi flags[1], Hansard excerpt[2])",
+      "recommendation": "add ellipsis markers or split; the source pages verified 100% present",
+      "owner": "content polish (low priority)"
+    }
+  ],
+  "verdict": "line-ref integrity restored (511 verified); 6 items deferred as NOT fabricated but requiring separate fixes"
+}
